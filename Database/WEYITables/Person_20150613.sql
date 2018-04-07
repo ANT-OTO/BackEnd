@@ -1,0 +1,1 @@
+ALTER TABLE [Person] ALTER COLUMN [Pwd] nvarchar(128)
