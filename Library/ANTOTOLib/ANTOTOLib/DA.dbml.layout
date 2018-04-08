@@ -2,52 +2,10 @@
 <ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 9.5" name="antoto_db">
   <DataContextMoniker Name="/antoto_dbDataContext" />
   <nestedChildShapes>
-    <classShape Id="6b95c47d-72f2-40c7-a490-19f82b768e6b" isExpanded="false" absoluteBounds="7.5, 0.5, 2, 0.45">
-      <DataClassMoniker Name="/antoto_dbDataContext/SecFunction" />
-      <nestedChildShapes>
-        <elementListCompartment Id="30186939-5eef-4b0b-846c-0da5d9df7771" absoluteBounds="7.515, 0.96, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="a8f6bbe7-afea-41fb-934c-0d3b0dfee1fc" isExpanded="false" absoluteBounds="7.5, 1.125, 2, 0.45">
-      <DataClassMoniker Name="/antoto_dbDataContext/SecFunctionCompany" />
-      <nestedChildShapes>
-        <elementListCompartment Id="d4ebf68e-e862-4287-9003-e9ee82c1a18c" absoluteBounds="7.5150000000000006, 1.585, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="753a5c98-5e50-4119-a878-a63506d69a4b" isExpanded="false" absoluteBounds="5.125, 1.75, 2, 0.45">
-      <DataClassMoniker Name="/antoto_dbDataContext/SecRole" />
-      <nestedChildShapes>
-        <elementListCompartment Id="ea9479fd-7357-4ad6-b5b8-d4ba157d743b" absoluteBounds="5.1400000000000006, 2.21, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="5844ec58-95f0-4110-823b-2f53da9e3874" isExpanded="false" absoluteBounds="7.5, 1.75, 2, 0.45">
-      <DataClassMoniker Name="/antoto_dbDataContext/SecRoleCompany" />
-      <nestedChildShapes>
-        <elementListCompartment Id="a3dee0a6-4728-45cb-8aa3-fa4d4fbc9d5f" absoluteBounds="7.5150000000000006, 2.21, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="f8589589-d89f-4f15-a632-e0b945646af9" isExpanded="false" absoluteBounds="5.125, 1.125, 2, 0.45">
-      <DataClassMoniker Name="/antoto_dbDataContext/SecRoleUser" />
-      <nestedChildShapes>
-        <elementListCompartment Id="5f8e69b8-907a-4064-b6a9-4fc3a28fa9b1" absoluteBounds="5.14, 1.585, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
     <classShape Id="f31c1d6f-9c5e-437e-9427-0acad6ef74c0" absoluteBounds="6.75, 6.75, 2, 2.5401025390624996">
       <DataClassMoniker Name="/antoto_dbDataContext/SecRoleFunction" />
       <nestedChildShapes>
         <elementListCompartment Id="82b1cb85-f583-456e-9698-d7240c9f8fd9" absoluteBounds="6.765, 7.21, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="b31b9283-ebc0-43fc-993a-b000aca52109" isExpanded="false" absoluteBounds="5.125, 0.5, 2, 0.45">
-      <DataClassMoniker Name="/antoto_dbDataContext/User" />
-      <nestedChildShapes>
-        <elementListCompartment Id="d5855f21-135b-4dd4-a830-0973b6fcae95" isExpanded="false" absoluteBounds="5.14, 0.96, 1.9700000000000002, 0.2493896484375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="8bedecd5-cd3d-41d2-9b66-370efb2154ee" isExpanded="false" absoluteBounds="7.5, 2.5, 2, 0.45">
-      <DataClassMoniker Name="/antoto_dbDataContext/Company" />
-      <nestedChildShapes>
-        <elementListCompartment Id="85e77d96-53d9-4ff1-a9eb-73993ff0c16d" absoluteBounds="7.5150000000000006, 2.96, 1.9700000000000002, 3.3262125651041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>
