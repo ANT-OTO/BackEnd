@@ -29,6 +29,8 @@ namespace ANTOTOLib
             public List<Role> ChildRoleList { get; set; }
             public List<Function> FunctionList { get; set; }
             public string RoleName { get; set; }
+            public bool changeable { get; set; }
+            public bool Available { get; set; }
         }
 
         public class Function

@@ -164,6 +164,18 @@ namespace ANTOTOLib
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pSecRoleId, pSecFunctionId, pGranted, pActionForSubRole, pActionForSubFunction, pLastUpdateBy, pLastUpdateByType);
 			return ((int)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.tfnCompanyRoleListGet", IsComposable=true)]
+		public IQueryable<tfnCompanyRoleListGetResult> tfnCompanyRoleListGet([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCompanyId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pUserId)
+		{
+			return this.CreateMethodCallQuery<tfnCompanyRoleListGetResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pCompanyId, pUserId);
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.tfnSecRoleFunctionListGet", IsComposable=true)]
+		public IQueryable<tfnSecRoleFunctionListGetResult> tfnSecRoleFunctionListGet([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pSecRoleId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pUserId)
+		{
+			return this.CreateMethodCallQuery<tfnSecRoleFunctionListGetResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pSecRoleId, pUserId);
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.SecFunction")]
@@ -2482,6 +2494,256 @@ namespace ANTOTOLib
 			if ((this.PropertyChanged != null))
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	public partial class tfnCompanyRoleListGetResult
+	{
+		
+		private int _SecRoleId;
+		
+		private int _ParentRoleId;
+		
+		private int _CompanyId;
+		
+		private string _RoleName;
+		
+		private bool _Changable;
+		
+		private bool _Available;
+		
+		public tfnCompanyRoleListGetResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SecRoleId", DbType="Int NOT NULL")]
+		public int SecRoleId
+		{
+			get
+			{
+				return this._SecRoleId;
+			}
+			set
+			{
+				if ((this._SecRoleId != value))
+				{
+					this._SecRoleId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ParentRoleId", DbType="Int NOT NULL")]
+		public int ParentRoleId
+		{
+			get
+			{
+				return this._ParentRoleId;
+			}
+			set
+			{
+				if ((this._ParentRoleId != value))
+				{
+					this._ParentRoleId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CompanyId", DbType="Int NOT NULL")]
+		public int CompanyId
+		{
+			get
+			{
+				return this._CompanyId;
+			}
+			set
+			{
+				if ((this._CompanyId != value))
+				{
+					this._CompanyId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RoleName", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string RoleName
+		{
+			get
+			{
+				return this._RoleName;
+			}
+			set
+			{
+				if ((this._RoleName != value))
+				{
+					this._RoleName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Changable", DbType="Bit NOT NULL")]
+		public bool Changable
+		{
+			get
+			{
+				return this._Changable;
+			}
+			set
+			{
+				if ((this._Changable != value))
+				{
+					this._Changable = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Available", DbType="Bit NOT NULL")]
+		public bool Available
+		{
+			get
+			{
+				return this._Available;
+			}
+			set
+			{
+				if ((this._Available != value))
+				{
+					this._Available = value;
+				}
+			}
+		}
+	}
+	
+	public partial class tfnSecRoleFunctionListGetResult
+	{
+		
+		private int _SecFunctionId;
+		
+		private string _FunctionKey;
+		
+		private string _FunctionName;
+		
+		private string _ParentFunctionKey;
+		
+		private int _ParentSecFunctionId;
+		
+		private bool _Available;
+		
+		private bool _Granted;
+		
+		public tfnSecRoleFunctionListGetResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SecFunctionId", DbType="Int NOT NULL")]
+		public int SecFunctionId
+		{
+			get
+			{
+				return this._SecFunctionId;
+			}
+			set
+			{
+				if ((this._SecFunctionId != value))
+				{
+					this._SecFunctionId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FunctionKey", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string FunctionKey
+		{
+			get
+			{
+				return this._FunctionKey;
+			}
+			set
+			{
+				if ((this._FunctionKey != value))
+				{
+					this._FunctionKey = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FunctionName", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string FunctionName
+		{
+			get
+			{
+				return this._FunctionName;
+			}
+			set
+			{
+				if ((this._FunctionName != value))
+				{
+					this._FunctionName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ParentFunctionKey", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string ParentFunctionKey
+		{
+			get
+			{
+				return this._ParentFunctionKey;
+			}
+			set
+			{
+				if ((this._ParentFunctionKey != value))
+				{
+					this._ParentFunctionKey = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ParentSecFunctionId", DbType="Int NOT NULL")]
+		public int ParentSecFunctionId
+		{
+			get
+			{
+				return this._ParentSecFunctionId;
+			}
+			set
+			{
+				if ((this._ParentSecFunctionId != value))
+				{
+					this._ParentSecFunctionId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Available", DbType="Bit NOT NULL")]
+		public bool Available
+		{
+			get
+			{
+				return this._Available;
+			}
+			set
+			{
+				if ((this._Available != value))
+				{
+					this._Available = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Granted", DbType="Bit NOT NULL")]
+		public bool Granted
+		{
+			get
+			{
+				return this._Granted;
+			}
+			set
+			{
+				if ((this._Granted != value))
+				{
+					this._Granted = value;
+				}
 			}
 		}
 	}

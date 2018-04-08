@@ -138,4 +138,29 @@
     <Parameter Name="pLastUpdateByType" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
   </Function>
+  <Function Name="dbo.tfnCompanyRoleListGet" Method="tfnCompanyRoleListGet" IsComposable="true">
+    <Parameter Name="pCompanyId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pUserId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="tfnCompanyRoleListGetResult">
+      <Column Name="SecRoleId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ParentRoleId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CompanyId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RoleName" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="Changable" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Available" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.tfnSecRoleFunctionListGet" Method="tfnSecRoleFunctionListGet" IsComposable="true">
+    <Parameter Name="pSecRoleId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pUserId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="tfnSecRoleFunctionListGetResult">
+      <Column Name="SecFunctionId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FunctionKey" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="FunctionName" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="ParentFunctionKey" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="ParentSecFunctionId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Available" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Granted" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
 </Database>
