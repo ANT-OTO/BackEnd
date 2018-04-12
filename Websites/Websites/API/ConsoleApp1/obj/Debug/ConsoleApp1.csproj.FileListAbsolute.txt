@@ -17,3 +17,9 @@ C:\Users\Xiang\Documents\BackEnd\Websites\Websites\API\ConsoleApp1\obj\Debug\Con
 C:\Users\Xiang\Documents\BackEnd\Websites\Websites\API\ConsoleApp1\obj\Debug\ConsoleApp1.csproj.CoreCompileInputs.cache
 C:\Users\Xiang\Documents\BackEnd\Websites\Websites\API\ConsoleApp1\obj\Debug\ConsoleApp1.exe
 C:\Users\Xiang\Documents\BackEnd\Websites\Websites\API\ConsoleApp1\obj\Debug\ConsoleApp1.pdb
+C:\Users\matth\workspace2018\BackEnd\Websites\Websites\API\ConsoleApp1\bin\Debug\ConsoleApp1.exe.config
+C:\Users\matth\workspace2018\BackEnd\Websites\Websites\API\ConsoleApp1\bin\Debug\ConsoleApp1.exe
+C:\Users\matth\workspace2018\BackEnd\Websites\Websites\API\ConsoleApp1\bin\Debug\ConsoleApp1.pdb
+C:\Users\matth\workspace2018\BackEnd\Websites\Websites\API\ConsoleApp1\obj\Debug\ConsoleApp1.csprojResolveAssemblyReference.cache
+C:\Users\matth\workspace2018\BackEnd\Websites\Websites\API\ConsoleApp1\obj\Debug\ConsoleApp1.exe
+C:\Users\matth\workspace2018\BackEnd\Websites\Websites\API\ConsoleApp1\obj\Debug\ConsoleApp1.pdb

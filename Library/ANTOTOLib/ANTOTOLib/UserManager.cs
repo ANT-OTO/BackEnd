@@ -11,9 +11,9 @@ namespace ANTOTOLib
     {
         
 
-        public static User login(string loginName, string password)
+        public static DataModel.User login(string loginName, string password)
         {
-            User result = null;
+            DataModel.User result = null;
             return result;
         }
 

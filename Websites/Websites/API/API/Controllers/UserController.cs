@@ -35,7 +35,7 @@ namespace API.Controllers
         /// <returns></returns>
         [Route("")]
         [HttpGet]
-        public UserManager.User PersonStatusGet()
+        public DataModel.User PersonStatusGet()
         {
 
             #region SSL Requirement
@@ -50,7 +50,7 @@ namespace API.Controllers
             string Error = string.Empty;
 
 
-            UserManager.User result = null;
+            DataModel.User result = null;
 
             try
             {
@@ -75,6 +75,50 @@ namespace API.Controllers
 
             return result;
         }
+
+        /// <summary>
+        /// Get Person's current status
+        /// </summary>
+        /// <returns></returns>
+        [Route("Login")]
+        [HttpPost]
+        public DataModel.User Login(string loginName, string password)
+        {
+
+            int ErrId = 0;
+            string Error = string.Empty;
+
+
+            DataModel.User result = null;
+
+            try
+            {
+                result = UserManager.login(loginName, password);
+                if(result == null)
+                {
+                    Error = "Login Failed"; 
+                }
+            }
+            catch (Exception exp)
+            {
+                MethodBase a = MethodBase.GetCurrentMethod();
+                string ErrorInfo = "Class: " + a.DeclaringType.ToString() + "; " + a.ToString() + '\r' + '\n'
+                        + "Error Msg: " + exp.Message;
+                //ErrId = ErrorLog.Insert(ErrorInfo);
+                //APIError aeObj = new APIError(psObj.SystemLanguageId, "System Error");
+                //aeObj.Description = aeObj.Description + " " + ErrId.ToString();
+                throw new HttpResponseException(Request.CreateResponse(HttpStatusCode.BadRequest, "Login Error"));
+            }
+
+            if (!String.IsNullOrEmpty(Error))
+            {
+                throw new HttpResponseException(Request.CreateResponse(HttpStatusCode.BadRequest, Error));
+            }
+
+            return result;
+        }
+
+
 
         /// <summary>
         /// Set Person's TimeZone

@@ -36,6 +36,7 @@ namespace ANTOTOLib
             }
             return result;
         }
+
         public static Role getRoleDetail(int RoleId, int CompanyId, int UserId)
         {
             Role result = null;
@@ -60,6 +61,7 @@ namespace ANTOTOLib
             }
             return result;
         }
+
         private static List<Role> getChildRole(int RoleId, IQueryable<tfnCompanyRoleListGetResult> rolelist, bool FunctionNeed, int UserId)
         {
             List<Role> result = new List<Role>();

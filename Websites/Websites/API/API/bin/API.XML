@@ -492,12 +492,59 @@
             </summary>
             <param name="documentPath">The physical path to XML document.</param>
         </member>
+        <member name="T:API.Controllers.SecurityController">
+            <summary>
+            Client related functions
+            </summary>
+        </member>
+        <member name="M:API.Controllers.SecurityController.GetAvailableRoleList(System.Boolean)">
+            <summary>
+            GetList
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.SecurityController.GetRoleDetail(System.Int32)">
+            <summary>
+            Get Role Detail
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.SecurityController.GetFunctionList(System.Int32)">
+            <summary>
+            Get Function List
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.SecurityController.CreateRole(System.String,System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            GetList
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.SecurityController.UpdateRole(System.String,System.Int32,System.Boolean)">
+            <summary>
+            GetList
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.SecurityController.GrantFunctionToRole(System.Int32,System.Int32,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            GetList
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:API.Controllers.UserController">
             <summary>
             Client related functions
             </summary>
         </member>
         <member name="M:API.Controllers.UserController.PersonStatusGet">
+            <summary>
+            Get Person's current status
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.UserController.Login(System.String,System.String)">
             <summary>
             Get Person's current status
             </summary>
