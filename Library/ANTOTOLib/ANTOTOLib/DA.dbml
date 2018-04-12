@@ -1,72 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="ANTOTO" Class="antoto_dbDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="AppSettings" ConnectionString="Data Source=.\SQLEXPRESS;Initial Catalog=ANTOTO;Integrated Security=True" SettingsObjectName="ANTOTOLib.Properties.Settings" SettingsPropertyName="ANTOTOConnectionString" Provider="System.Data.SqlClient" />
-  <Table Name="dbo.SecFunction" Member="SecFunctions">
-    <Type Name="SecFunction">
-      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="FunctionName" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
-      <Column Name="FunctionKey" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="ParentFunctionKey" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="Available" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="Version" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
-      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="LastUpdate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="LastUpdateBy" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="LastUpdateByType" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-    </Type>
-  </Table>
-  <Table Name="dbo.SecFunctionCompany" Member="SecFunctionCompanies">
-    <Type Name="SecFunctionCompany">
-      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="SecFunctionId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="CompanyId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Available" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="Version" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
-      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="LastUpdate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="LastUpdateBy" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="LastUpdateByType" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-    </Type>
-  </Table>
-  <Table Name="dbo.SecRole" Member="SecRoles">
-    <Type Name="SecRole">
-      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="RoleName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="ParentRoleId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="SystemRole" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="Available" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="Version" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
-      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="LastUpdate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="LastUpdateBy" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="LastUpdateByType" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-    </Type>
-  </Table>
-  <Table Name="dbo.SecRoleCompany" Member="SecRoleCompanies">
-    <Type Name="SecRoleCompany">
-      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="SecRoleId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="CompanyId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Available" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="Version" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
-      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="LastUpdate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="LastUpdateBy" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="LastUpdateByType" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-    </Type>
-  </Table>
-  <Table Name="dbo.SecRoleUser" Member="SecRoleUsers">
-    <Type Name="SecRoleUser">
-      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="SecRoleId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="UserId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Available" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="Version" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
-      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="LastUpdate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="LastUpdateBy" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="LastUpdateByType" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-    </Type>
-  </Table>
   <Table Name="dbo.SecRoleFunction" Member="SecRoleFunctions">
     <Type Name="SecRoleFunction">
       <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -78,42 +11,6 @@
       <Column Name="LastUpdate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Column Name="LastUpdateBy" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="LastUpdateByType" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-    </Type>
-  </Table>
-  <Table Name="dbo.[User]" Member="Users">
-    <Type Name="User">
-      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="FirstName" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
-      <Column Name="LastName" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
-      <Column Name="Email" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
-      <Column Name="LoginName" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
-      <Column Name="Password" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
-      <Column Name="PhoneNumberId" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
-      <Column Name="AddressId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Available" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="Version" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
-      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="LastUpdate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Company" Member="Companies">
-    <Type Name="Company">
-      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="CompanyName" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
-      <Column Name="CompanyCode" Type="System.String" DbType="NVarChar(64) NOT NULL" CanBeNull="false" />
-      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="ContactFirstName" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
-      <Column Name="ContactLastName" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
-      <Column Name="AddressId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Phone" Type="System.String" DbType="VarChar(32) NOT NULL" CanBeNull="false" />
-      <Column Name="Phone2" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
-      <Column Name="Fax" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
-      <Column Name="Email" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
-      <Column Name="Version" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
-      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="LastUpdate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="LastUpdateBy" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="LastUpdateByType" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
   <Function Name="dbo.sp_Role_Update" Method="sp_Role_Update">
