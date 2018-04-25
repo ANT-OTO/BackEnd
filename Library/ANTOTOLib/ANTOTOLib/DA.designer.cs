@@ -128,6 +128,12 @@ namespace ANTOTOLib
 			pToken = ((string)(result.GetParameterValue(7)));
 			return ((int)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.tfnUserCompanyListGet", IsComposable=true)]
+		public IQueryable<tfnUserCompanyListGetResult> tfnUserCompanyListGet([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pUserId)
+		{
+			return this.CreateMethodCallQuery<tfnUserCompanyListGetResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pUserId);
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.SecRoleFunction")]
@@ -1103,6 +1109,68 @@ namespace ANTOTOLib
 				if ((this._Available != value))
 				{
 					this._Available = value;
+				}
+			}
+		}
+	}
+	
+	public partial class tfnUserCompanyListGetResult
+	{
+		
+		private System.Nullable<int> _CompanyId;
+		
+		private string _CompanyName;
+		
+		private System.Nullable<int> _RoleId;
+		
+		public tfnUserCompanyListGetResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CompanyId", DbType="Int")]
+		public System.Nullable<int> CompanyId
+		{
+			get
+			{
+				return this._CompanyId;
+			}
+			set
+			{
+				if ((this._CompanyId != value))
+				{
+					this._CompanyId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CompanyName", DbType="NVarChar(256)")]
+		public string CompanyName
+		{
+			get
+			{
+				return this._CompanyName;
+			}
+			set
+			{
+				if ((this._CompanyName != value))
+				{
+					this._CompanyName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RoleId", DbType="Int")]
+		public System.Nullable<int> RoleId
+		{
+			get
+			{
+				return this._RoleId;
+			}
+			set
+			{
+				if ((this._RoleId != value))
+				{
+					this._RoleId = value;
 				}
 			}
 		}

@@ -60,11 +60,12 @@ namespace API.Controllers
 
             try
             {
-                result = ANTOTOLib.UserManager.GetUser(UserSession.UserId);
+                result = ANTOTOLib.UserManager.GetUser(UserSession.UserId, UserSession.CompanyId);
                 if(result == null)
                 {
                     Error = "User Info Retrieve Fail";
                 }
+                
             }
             catch (Exception exp)
             {

@@ -15,6 +15,7 @@ namespace ANTOTOLib
             antoto_dbDataContext db = new antoto_dbDataContext();
             string realPwd = StringCipher.HashPassword(password);
             var list = db.sp_UserLogin(loginName, realPwd);
+            int defaultCompanyId = 0;
             if(list!=null)
             {
                 var companyList = new List<CompanyRole>();
@@ -26,23 +27,17 @@ namespace ANTOTOLib
                         result = new User();
                     }
                     UserId = item.UserId.Value;
-                    CompanyRole role = new CompanyRole();
-                    role.CompanyId = item.CompanyId.Value;
-                    role.CompanyName = item.CompanyName;
+                    result.DefaultCompanyId = item.CompanyId.Value;
                     if (item.isDefault.Value)
                     {
-                        result.DefaultCompanyId = item.CompanyId.Value;
+                        defaultCompanyId = item.CompanyId.Value;
+                        break;
                     }
-                    role.Role = CompanySecurity.getRoleDetail(item.RoleId.Value, item.CompanyId.Value, item.UserId.Value);
-                    companyList.Add(role);
                 }
                 if(UserId > 0)
                 {
-                    result = GetUser(UserId);
-                    if(result!= null)
-                    {
-                        result.companyList = companyList;
-                    }
+                    result = GetUser(UserId, 0);
+                    
                 }
             }
             if(result== null)
@@ -50,7 +45,6 @@ namespace ANTOTOLib
                 list = db.sp_UserLogin(loginName, password);
                 if (list != null)
                 {
-                    var companyList = new List<CompanyRole>();
                     int UserId = 0;
                     foreach (var item in list)
                     {
@@ -59,31 +53,28 @@ namespace ANTOTOLib
                             result = new User();
                         }
                         UserId = item.UserId.Value;
-                        CompanyRole role = new CompanyRole();
-                        role.CompanyId = item.CompanyId.Value;
-                        role.CompanyName = item.CompanyName;
+                        result.UserId = UserId;
+                        result.DefaultCompanyId = item.CompanyId.Value;
                         if (item.isDefault.Value)
                         {
-                            result.DefaultCompanyId = item.CompanyId.Value;
+                            defaultCompanyId = item.CompanyId.Value;
+                            break;
                         }
-                        role.Role = CompanySecurity.getRoleDetail(item.RoleId.Value, item.CompanyId.Value, item.UserId.Value);
-                        companyList.Add(role);
                     }
                     if (UserId > 0)
                     {
-                        result = GetUser(UserId);
-                        if (result != null)
-                        {
-                            result.companyList = companyList;
-                        }
+                        result = GetUser(UserId, 0);
+
                     }
+
                 }
             }
-            if(result == null)
+            if(result == null || defaultCompanyId == 0)
             {
                 return null;
             }
-            var userSession =  UserSession.Create(result.UserId, result.DefaultCompanyId, 60 * 60 * 30, SystemLanguageId);
+
+            var userSession =  UserSession.Create(result.UserId, defaultCompanyId, 60 * 60 * 30, SystemLanguageId);
             if(userSession != null)
             {
                 ResultToken temp = new ResultToken();
@@ -96,7 +87,7 @@ namespace ANTOTOLib
             }
         }
 
-        public static User GetUser(int pUserId)
+        public static User GetUser(int pUserId, int pCompanyId)
         {
             antoto_dbDataContext db = new antoto_dbDataContext();
             User result = new User();
@@ -126,6 +117,26 @@ namespace ANTOTOLib
                     result.PhoneNumber.PhoneNumberId = item.PhoneNumberId;
                     result.PhoneNumber.Phonenumber = item.PhoneNumber;
                     break;
+                }
+            }
+            if(result.UserId != 0)
+            {
+                var list2 = db.tfnUserCompanyListGet(pUserId);
+                if (list2 != null && list2.Count() > 0)
+                {
+                    result.companyList = new List<CompanyRole>();
+                    foreach(var item in list2)
+                    {
+                        CompanyRole role = new CompanyRole();
+                        role.CompanyId = item.CompanyId.Value;
+                        role.CompanyName = item.CompanyName;
+                        if (role.CompanyId == pCompanyId)
+                        {
+                            result.DefaultCompanyId = item.CompanyId.Value;
+                        }
+                        role.Role = CompanySecurity.getRoleDetail(item.RoleId.Value, item.CompanyId.Value, pUserId);
+                        result.companyList.Add(role);
+                    }
                 }
             }
             return result;

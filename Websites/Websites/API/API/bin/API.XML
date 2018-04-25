@@ -515,19 +515,19 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="M:API.Controllers.SecurityController.CreateRole(System.String,System.Int32,System.Int32,System.Boolean)">
+        <member name="M:API.Controllers.SecurityController.CreateRole(ANTOTOLib.ParaDataModel.ParaRoleCreate)">
             <summary>
             GetList
             </summary>
             <returns></returns>
         </member>
-        <member name="M:API.Controllers.SecurityController.UpdateRole(System.String,System.Int32,System.Boolean)">
+        <member name="M:API.Controllers.SecurityController.UpdateRole(ANTOTOLib.DataModel.Role)">
             <summary>
             GetList
             </summary>
             <returns></returns>
         </member>
-        <member name="M:API.Controllers.SecurityController.GrantFunctionToRole(System.Int32,System.Int32,System.Boolean,System.Boolean,System.Boolean)">
+        <member name="M:API.Controllers.SecurityController.GrantFunctionToRole(ANTOTOLib.ParaDataModel.ParaRoleGrantFunction)">
             <summary>
             GetList
             </summary>

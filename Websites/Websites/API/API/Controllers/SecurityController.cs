@@ -48,18 +48,24 @@ namespace API.Controllers
             //#endregion
 
 
-            DataModel.User user = null;
-            DataModel.Company company = null;
+            
 
             int ErrId = 0;
             string Error = string.Empty;
-
+            #region Token
+            UserSession UserSession = UserSession.Validate(HeaderProcessor.ReadValueFromHeader(Request, "ANTToken"));
+            if (UserSession == null)
+            {
+                Error = "Required Login";
+                throw new HttpResponseException(Request.CreateResponse(HttpStatusCode.Forbidden, Error));
+            }
+            #endregion
 
             List<DataModel.Role> result = null;
 
             try
             {
-               result = CompanySecurity.getAvailableRoleList(0, 0, FunctionNeed);
+               result = CompanySecurity.getAvailableRoleList(UserSession.CompanyId, UserSession.UserId, FunctionNeed);
             }
             catch (Exception exp)
             {
@@ -97,20 +103,26 @@ namespace API.Controllers
             //    throw new HttpResponseException(Request.CreateResponse(HttpStatusCode.Forbidden, "Requires SSL"));
             //}
             //#endregion
-            DataModel.User user = null;
-            DataModel.Company company = null;
+            
 
             int ErrId = 0;
             string Error = string.Empty;
 
-
+            #region Token
+            UserSession UserSession = UserSession.Validate(HeaderProcessor.ReadValueFromHeader(Request, "ANTToken"));
+            if (UserSession == null)
+            {
+                Error = "Required Login";
+                throw new HttpResponseException(Request.CreateResponse(HttpStatusCode.Forbidden, Error));
+            }
+            #endregion
             DataModel.Role result = null;
 
 
 
             try
             {
-                CompanySecurity.getRoleDetail(RoleId, company.CompanyId, user.UserId);
+                result = CompanySecurity.getRoleDetail(RoleId, UserSession.CompanyId, UserSession.UserId);
             }
             catch (Exception exp)
             {
@@ -148,18 +160,23 @@ namespace API.Controllers
             //    throw new HttpResponseException(Request.CreateResponse(HttpStatusCode.Forbidden, "Requires SSL"));
             //}
             //#endregion
-            DataModel.User user = null;
-            DataModel.Company company = null;
 
             int ErrId = 0;
             string Error = string.Empty;
-
+            #region Token
+            UserSession UserSession = UserSession.Validate(HeaderProcessor.ReadValueFromHeader(Request, "ANTToken"));
+            if (UserSession == null)
+            {
+                Error = "Required Login";
+                throw new HttpResponseException(Request.CreateResponse(HttpStatusCode.Forbidden, Error));
+            }
+            #endregion
 
             List<DataModel.Function> result = null;
             
             try
             {
-                result = CompanySecurity.getFunctionList(RoleId, user.UserId, company.CompanyId);
+                result = CompanySecurity.getFunctionList(RoleId, UserSession.UserId, UserSession.CompanyId);
             }
             catch (Exception exp)
             {
@@ -187,7 +204,7 @@ namespace API.Controllers
         /// <returns></returns>
         [Route("Role/CreateRole")]
         [HttpPost]
-        public DataModel.Role CreateRole(String RoleName, int ParentRoleId, int CopyRoleId, bool SystemRole)
+        public DataModel.Role CreateRole(ParaDataModel.ParaRoleCreate roleCreate)
         {
 
             //#region SSL Requirement
@@ -196,20 +213,25 @@ namespace API.Controllers
             //    throw new HttpResponseException(Request.CreateResponse(HttpStatusCode.Forbidden, "Requires SSL"));
             //}
             //#endregion
-            DataModel.Company company = null;
-            DataModel.User user = null;
 
 
             int ErrId = 0;
             string Error = string.Empty;
 
-
+            #region Token
+            UserSession UserSession = UserSession.Validate(HeaderProcessor.ReadValueFromHeader(Request, "ANTToken"));
+            if (UserSession == null)
+            {
+                Error = "Required Login";
+                throw new HttpResponseException(Request.CreateResponse(HttpStatusCode.Forbidden, Error));
+            }
+            #endregion
 
             DataModel.Role result = null;
 
             try
             {
-                result = CompanySecurity.createRole(RoleName, company.CompanyId, ParentRoleId, CopyRoleId, SystemRole, user.UserId);
+                result = CompanySecurity.createRole(roleCreate.RoleName, UserSession.CompanyId, roleCreate.ParentRoleId, roleCreate.CopyRoleId, roleCreate.SystemRole, UserSession.UserId);
             }
             catch (Exception exp)
             {
@@ -238,7 +260,7 @@ namespace API.Controllers
         /// <returns></returns>
         [Route("Role/UpdateRole")]
         [HttpPost]
-        public DataModel.Role UpdateRole(String RoleName, int RoleId, bool Available)
+        public DataModel.Role UpdateRole(DataModel.Role role)
         {
 
             //#region SSL Requirement
@@ -247,20 +269,26 @@ namespace API.Controllers
             //    throw new HttpResponseException(Request.CreateResponse(HttpStatusCode.Forbidden, "Requires SSL"));
             //}
             //#endregion
-            DataModel.Company company = null;
-            DataModel.User user = null;
+           
 
 
             int ErrId = 0;
             string Error = string.Empty;
-
+            #region Token
+            UserSession UserSession = UserSession.Validate(HeaderProcessor.ReadValueFromHeader(Request, "ANTToken"));
+            if (UserSession == null)
+            {
+                Error = "Required Login";
+                throw new HttpResponseException(Request.CreateResponse(HttpStatusCode.Forbidden, Error));
+            }
+            #endregion
 
 
             DataModel.Role result = null;
 
             try
             {
-                result = CompanySecurity.updateRole(RoleName, RoleId, Available, user.UserId, company.CompanyId);
+                result = CompanySecurity.updateRole(role.RoleName, role.RoleId.Value, role.Available, UserSession.UserId, UserSession.CompanyId);
             }
             catch (Exception exp)
             {
@@ -288,7 +316,7 @@ namespace API.Controllers
         /// <returns></returns>
         [Route("Role/GrantFunctionToRole")]
         [HttpPost]
-        public HttpResponseMessage GrantFunctionToRole(int RoleId, int FunctionId, bool granted, bool ActionForSubRole, bool ActionForSubFunction)
+        public HttpResponseMessage GrantFunctionToRole(ParaDataModel.ParaRoleGrantFunction grantFunction)
         {
 
             //#region SSL Requirement
@@ -297,20 +325,25 @@ namespace API.Controllers
             //    throw new HttpResponseException(Request.CreateResponse(HttpStatusCode.Forbidden, "Requires SSL"));
             //}
             //#endregion
-            DataModel.Company company = null;
-            DataModel.User user = null;
 
 
             int ErrId = 0;
             string Error = string.Empty;
 
-
+            #region Token
+            UserSession UserSession = UserSession.Validate(HeaderProcessor.ReadValueFromHeader(Request, "ANTToken"));
+            if (UserSession == null)
+            {
+                Error = "Required Login";
+                throw new HttpResponseException(Request.CreateResponse(HttpStatusCode.Forbidden, Error));
+            }
+            #endregion
 
             DataModel.Role result = null;
 
             try
             {
-                CompanySecurity.grantFunctionToRole(RoleId, FunctionId, granted, ActionForSubRole, ActionForSubFunction, user.UserId);
+                CompanySecurity.grantFunctionToRole(grantFunction.RoleId, grantFunction.FunctionId, grantFunction.granted, grantFunction.ActionForSubRole, grantFunction.ActionForSubFunction, UserSession.UserId);
             }
             catch (Exception exp)
             {

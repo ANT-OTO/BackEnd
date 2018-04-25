@@ -41,7 +41,7 @@ SET NOCOUNT ON
 	declare @pTime datetime = getutcdate()
 	
 	update a
-	set a.Expired = 0,
+	set a.Expired = 1,
 		a.LastUpdate = @pTime,
 		a.LastUpdateBy = @pLastUpdateBy,
 		a.LastUpdateByType = @pLastUpdateByType

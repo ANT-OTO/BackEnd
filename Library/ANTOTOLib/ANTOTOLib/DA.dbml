@@ -112,4 +112,12 @@
     <Parameter Name="pToken" Type="System.String" DbType="NVarChar(256)" Direction="InOut" />
     <Return Type="System.Int32" />
   </Function>
+  <Function Name="dbo.tfnUserCompanyListGet" Method="tfnUserCompanyListGet" IsComposable="true">
+    <Parameter Name="pUserId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="tfnUserCompanyListGetResult">
+      <Column Name="CompanyId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CompanyName" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="RoleId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
 </Database>
