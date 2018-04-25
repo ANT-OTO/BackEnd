@@ -66,8 +66,8 @@ CREATE TABLE [dbo].[Company](
 	[ContactFirstName] [nvarchar](256) NOT NULL,
 	[ContactLastName] [nvarchar](256) NOT NULL,
 	[AddressId] [int] NOT NULL,
-	[Phone] [varchar](32) NOT NULL,
-	[Phone2] [varchar](32) NULL,
+	[PhoneNumberId] [varchar](32) NOT NULL,
+	[PhoneNumberId2] [varchar](32) NULL,
 	[Fax] [varchar](32) NULL,
 	[Email] [nvarchar](256) NULL,
 

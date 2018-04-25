@@ -27,10 +27,13 @@ GO
 Alter procedure [dbo].[sp_UserSession_Create] 
 	@pUserId int,
 	@pExpiredSeconds int,
-	@pToken nvarchar(256) output,
 	@pSystemLanguageId int,
+	@pCompanyId int,
 	@pLastUpdateBy int,
-	@pLastUpdateByType int
+	@pLastUpdateByType int,
+	@pUserSessionId int output,
+	@pToken nvarchar(256) output
+
 AS
 
 SET NOCOUNT ON
@@ -46,7 +49,6 @@ SET NOCOUNT ON
 	where a.UserId = @pUserId
 	and a.Expired = 0
 
-
 	select @pToken = replace(NEWID(), '-', '')
 
 	insert into UserSession
@@ -56,15 +58,24 @@ SET NOCOUNT ON
 		[SystemLanguageId],
 		[Expired],
 		[ExpireSeconds],
+		[CompanyId],
 		[CreateDate],
 		[LastUpdate],
 		[LastUpdateBy],
 		[LastUpdateByType]
 	)
-	select	@pUserId, @pToken, @pSystemLanguageId, 0, @pExpiredSeconds,
+	select	@pUserId, @pToken, @pSystemLanguageId, 0, @pExpiredSeconds,@pCompanyId,
 			@pTime, @pTime, @pLastUpdateBy, @pLastUpdateByType
 
-
+	if(@@ROWCOUNT > 0)
+	BEGIN
+		select @pUserSessionId = SCOPE_IDENTITY()
+	END
+	else
+	begin
+		select @pUserSessionId = 0
+		select @pToken = ''
+	end
 
 	
 

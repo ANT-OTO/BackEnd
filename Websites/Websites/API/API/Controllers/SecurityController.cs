@@ -40,12 +40,14 @@ namespace API.Controllers
         public List<DataModel.Role> GetAvailableRoleList(bool FunctionNeed)
         {
 
-            #region SSL Requirement
-            if (Request.RequestUri.Scheme != Uri.UriSchemeHttps)
-            {
-                throw new HttpResponseException(Request.CreateResponse(HttpStatusCode.Forbidden, "Requires SSL"));
-            }
-            #endregion
+            //#region SSL Requirement
+            //if (Request.RequestUri.Scheme != Uri.UriSchemeHttps)
+            //{
+            //    throw new HttpResponseException(Request.CreateResponse(HttpStatusCode.Forbidden, "Requires SSL"));
+            //}
+            //#endregion
+
+
             DataModel.User user = null;
             DataModel.Company company = null;
 
@@ -89,12 +91,12 @@ namespace API.Controllers
         public DataModel.Role GetRoleDetail(int RoleId)
         {
 
-            #region SSL Requirement
-            if (Request.RequestUri.Scheme != Uri.UriSchemeHttps)
-            {
-                throw new HttpResponseException(Request.CreateResponse(HttpStatusCode.Forbidden, "Requires SSL"));
-            }
-            #endregion
+            //#region SSL Requirement
+            //if (Request.RequestUri.Scheme != Uri.UriSchemeHttps)
+            //{
+            //    throw new HttpResponseException(Request.CreateResponse(HttpStatusCode.Forbidden, "Requires SSL"));
+            //}
+            //#endregion
             DataModel.User user = null;
             DataModel.Company company = null;
 
@@ -140,12 +142,12 @@ namespace API.Controllers
         public List<DataModel.Function> GetFunctionList(int RoleId)
         {
 
-            #region SSL Requirement
-            if (Request.RequestUri.Scheme != Uri.UriSchemeHttps)
-            {
-                throw new HttpResponseException(Request.CreateResponse(HttpStatusCode.Forbidden, "Requires SSL"));
-            }
-            #endregion
+            //#region SSL Requirement
+            //if (Request.RequestUri.Scheme != Uri.UriSchemeHttps)
+            //{
+            //    throw new HttpResponseException(Request.CreateResponse(HttpStatusCode.Forbidden, "Requires SSL"));
+            //}
+            //#endregion
             DataModel.User user = null;
             DataModel.Company company = null;
 
@@ -188,12 +190,12 @@ namespace API.Controllers
         public DataModel.Role CreateRole(String RoleName, int ParentRoleId, int CopyRoleId, bool SystemRole)
         {
 
-            #region SSL Requirement
-            if (Request.RequestUri.Scheme != Uri.UriSchemeHttps)
-            {
-                throw new HttpResponseException(Request.CreateResponse(HttpStatusCode.Forbidden, "Requires SSL"));
-            }
-            #endregion
+            //#region SSL Requirement
+            //if (Request.RequestUri.Scheme != Uri.UriSchemeHttps)
+            //{
+            //    throw new HttpResponseException(Request.CreateResponse(HttpStatusCode.Forbidden, "Requires SSL"));
+            //}
+            //#endregion
             DataModel.Company company = null;
             DataModel.User user = null;
 
@@ -239,12 +241,12 @@ namespace API.Controllers
         public DataModel.Role UpdateRole(String RoleName, int RoleId, bool Available)
         {
 
-            #region SSL Requirement
-            if (Request.RequestUri.Scheme != Uri.UriSchemeHttps)
-            {
-                throw new HttpResponseException(Request.CreateResponse(HttpStatusCode.Forbidden, "Requires SSL"));
-            }
-            #endregion
+            //#region SSL Requirement
+            //if (Request.RequestUri.Scheme != Uri.UriSchemeHttps)
+            //{
+            //    throw new HttpResponseException(Request.CreateResponse(HttpStatusCode.Forbidden, "Requires SSL"));
+            //}
+            //#endregion
             DataModel.Company company = null;
             DataModel.User user = null;
 
@@ -289,12 +291,12 @@ namespace API.Controllers
         public HttpResponseMessage GrantFunctionToRole(int RoleId, int FunctionId, bool granted, bool ActionForSubRole, bool ActionForSubFunction)
         {
 
-            #region SSL Requirement
-            if (Request.RequestUri.Scheme != Uri.UriSchemeHttps)
-            {
-                throw new HttpResponseException(Request.CreateResponse(HttpStatusCode.Forbidden, "Requires SSL"));
-            }
-            #endregion
+            //#region SSL Requirement
+            //if (Request.RequestUri.Scheme != Uri.UriSchemeHttps)
+            //{
+            //    throw new HttpResponseException(Request.CreateResponse(HttpStatusCode.Forbidden, "Requires SSL"));
+            //}
+            //#endregion
             DataModel.Company company = null;
             DataModel.User user = null;
 

@@ -112,10 +112,7 @@ namespace API.Areas.HelpPage
             if (type != null && !typeof(HttpResponseMessage).IsAssignableFrom(type))
             {
                 object sampleObject = GetSampleObject(type);
-
-                IEnumerable<MediaTypeFormatter> filteredFormatters = formatters.Where(frmtr => frmtr.GetType() != typeof(System.Web.Http.ModelBinding.JQueryMvcFormUrlEncodedFormatter));
-
-                foreach (var formatter in filteredFormatters)
+                foreach (var formatter in formatters)
                 {
                     foreach (MediaTypeHeaderValue mediaType in formatter.SupportedMediaTypes)
                     {

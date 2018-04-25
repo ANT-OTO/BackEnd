@@ -61,12 +61,14 @@ CREATE TABLE [dbo].[User](
 	[Email] nvarchar(256) NOT NULL,
 	[LoginName] nvarchar(256) NOT NULL,
 	[Password] nvarchar(256) NOT NULL,
-	[PhoneNumberId] nvarchar(256) NOT NULL,
+	[PhoneNumberId] int NOT NULL,
 	[AddressId] int NOT NULL,
 	[Available] bit NOT NULL,
 	[Version] [timestamp] NOT NULL,
 	[CreateDate] [datetime] NOT NULL,
 	[LastUpdate] [datetime] NOT NULL,
+	[LastUpdateBy] int NOT NULL,
+	[LastUpdateByType] int NOT NULL
  CONSTRAINT [PK_User] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC

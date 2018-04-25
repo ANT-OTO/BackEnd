@@ -99,6 +99,35 @@ namespace ANTOTOLib
 		{
 			return this.CreateMethodCallQuery<tfnSecRoleFunctionListGetResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pSecRoleId, pUserId);
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_UserSession_Validate")]
+		public ISingleResult<sp_UserSession_ValidateResult> sp_UserSession_Validate([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pToken)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pToken);
+			return ((ISingleResult<sp_UserSession_ValidateResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_UserLogin")]
+		public ISingleResult<sp_UserLoginResult> sp_UserLogin([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pEmail, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(512)")] string pPwd)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pEmail, pPwd);
+			return ((ISingleResult<sp_UserLoginResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.tfnUserProfileGet", IsComposable=true)]
+		public IQueryable<tfnUserProfileGetResult> tfnUserProfileGet([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pUserId)
+		{
+			return this.CreateMethodCallQuery<tfnUserProfileGetResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pUserId);
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_UserSession_Create")]
+		public int sp_UserSession_Create([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pUserId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pExpiredSeconds, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pSystemLanguageId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCompanyId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pLastUpdateBy, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pLastUpdateByType, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> pUserSessionId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] ref string pToken)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pUserId, pExpiredSeconds, pSystemLanguageId, pCompanyId, pLastUpdateBy, pLastUpdateByType, pUserSessionId, pToken);
+			pUserSessionId = ((System.Nullable<int>)(result.GetParameterValue(6)));
+			pToken = ((string)(result.GetParameterValue(7)));
+			return ((int)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.SecRoleFunction")]
@@ -600,6 +629,480 @@ namespace ANTOTOLib
 				if ((this._Granted != value))
 				{
 					this._Granted = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_UserSession_ValidateResult
+	{
+		
+		private int _UserId;
+		
+		private int _SystemLanguageId;
+		
+		private int _CompanyId;
+		
+		public sp_UserSession_ValidateResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserId", DbType="Int NOT NULL")]
+		public int UserId
+		{
+			get
+			{
+				return this._UserId;
+			}
+			set
+			{
+				if ((this._UserId != value))
+				{
+					this._UserId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SystemLanguageId", DbType="Int NOT NULL")]
+		public int SystemLanguageId
+		{
+			get
+			{
+				return this._SystemLanguageId;
+			}
+			set
+			{
+				if ((this._SystemLanguageId != value))
+				{
+					this._SystemLanguageId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CompanyId", DbType="Int NOT NULL")]
+		public int CompanyId
+		{
+			get
+			{
+				return this._CompanyId;
+			}
+			set
+			{
+				if ((this._CompanyId != value))
+				{
+					this._CompanyId = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_UserLoginResult
+	{
+		
+		private System.Nullable<int> _UserId;
+		
+		private System.Nullable<int> _CompanyId;
+		
+		private string _CompanyName;
+		
+		private System.Nullable<bool> _isDefault;
+		
+		private System.Nullable<int> _RoleId;
+		
+		public sp_UserLoginResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserId", DbType="Int")]
+		public System.Nullable<int> UserId
+		{
+			get
+			{
+				return this._UserId;
+			}
+			set
+			{
+				if ((this._UserId != value))
+				{
+					this._UserId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CompanyId", DbType="Int")]
+		public System.Nullable<int> CompanyId
+		{
+			get
+			{
+				return this._CompanyId;
+			}
+			set
+			{
+				if ((this._CompanyId != value))
+				{
+					this._CompanyId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CompanyName", DbType="NVarChar(256)")]
+		public string CompanyName
+		{
+			get
+			{
+				return this._CompanyName;
+			}
+			set
+			{
+				if ((this._CompanyName != value))
+				{
+					this._CompanyName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_isDefault", DbType="Bit")]
+		public System.Nullable<bool> isDefault
+		{
+			get
+			{
+				return this._isDefault;
+			}
+			set
+			{
+				if ((this._isDefault != value))
+				{
+					this._isDefault = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RoleId", DbType="Int")]
+		public System.Nullable<int> RoleId
+		{
+			get
+			{
+				return this._RoleId;
+			}
+			set
+			{
+				if ((this._RoleId != value))
+				{
+					this._RoleId = value;
+				}
+			}
+		}
+	}
+	
+	public partial class tfnUserProfileGetResult
+	{
+		
+		private string _FirstName;
+		
+		private string _LastName;
+		
+		private string _Email;
+		
+		private string _LoginName;
+		
+		private string _Password;
+		
+		private int _PhoneNumberId;
+		
+		private int _PhoneNumberCountryId;
+		
+		private string _PhoneNumber;
+		
+		private int _AddressId;
+		
+		private string _Address1;
+		
+		private string _Address2;
+		
+		private string _City;
+		
+		private string _District;
+		
+		private string _State;
+		
+		private string _Zip;
+		
+		private int _CountryId;
+		
+		private bool _Available;
+		
+		public tfnUserProfileGetResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FirstName", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string FirstName
+		{
+			get
+			{
+				return this._FirstName;
+			}
+			set
+			{
+				if ((this._FirstName != value))
+				{
+					this._FirstName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastName", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string LastName
+		{
+			get
+			{
+				return this._LastName;
+			}
+			set
+			{
+				if ((this._LastName != value))
+				{
+					this._LastName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Email", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string Email
+		{
+			get
+			{
+				return this._Email;
+			}
+			set
+			{
+				if ((this._Email != value))
+				{
+					this._Email = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LoginName", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string LoginName
+		{
+			get
+			{
+				return this._LoginName;
+			}
+			set
+			{
+				if ((this._LoginName != value))
+				{
+					this._LoginName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Password", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string Password
+		{
+			get
+			{
+				return this._Password;
+			}
+			set
+			{
+				if ((this._Password != value))
+				{
+					this._Password = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PhoneNumberId", DbType="Int NOT NULL")]
+		public int PhoneNumberId
+		{
+			get
+			{
+				return this._PhoneNumberId;
+			}
+			set
+			{
+				if ((this._PhoneNumberId != value))
+				{
+					this._PhoneNumberId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PhoneNumberCountryId", DbType="Int NOT NULL")]
+		public int PhoneNumberCountryId
+		{
+			get
+			{
+				return this._PhoneNumberCountryId;
+			}
+			set
+			{
+				if ((this._PhoneNumberCountryId != value))
+				{
+					this._PhoneNumberCountryId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PhoneNumber", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string PhoneNumber
+		{
+			get
+			{
+				return this._PhoneNumber;
+			}
+			set
+			{
+				if ((this._PhoneNumber != value))
+				{
+					this._PhoneNumber = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AddressId", DbType="Int NOT NULL")]
+		public int AddressId
+		{
+			get
+			{
+				return this._AddressId;
+			}
+			set
+			{
+				if ((this._AddressId != value))
+				{
+					this._AddressId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Address1", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string Address1
+		{
+			get
+			{
+				return this._Address1;
+			}
+			set
+			{
+				if ((this._Address1 != value))
+				{
+					this._Address1 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Address2", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string Address2
+		{
+			get
+			{
+				return this._Address2;
+			}
+			set
+			{
+				if ((this._Address2 != value))
+				{
+					this._Address2 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_City", DbType="NVarChar(128) NOT NULL", CanBeNull=false)]
+		public string City
+		{
+			get
+			{
+				return this._City;
+			}
+			set
+			{
+				if ((this._City != value))
+				{
+					this._City = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_District", DbType="NVarChar(128)")]
+		public string District
+		{
+			get
+			{
+				return this._District;
+			}
+			set
+			{
+				if ((this._District != value))
+				{
+					this._District = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_State", DbType="NVarChar(128) NOT NULL", CanBeNull=false)]
+		public string State
+		{
+			get
+			{
+				return this._State;
+			}
+			set
+			{
+				if ((this._State != value))
+				{
+					this._State = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Zip", DbType="NVarChar(32) NOT NULL", CanBeNull=false)]
+		public string Zip
+		{
+			get
+			{
+				return this._Zip;
+			}
+			set
+			{
+				if ((this._Zip != value))
+				{
+					this._Zip = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CountryId", DbType="Int NOT NULL")]
+		public int CountryId
+		{
+			get
+			{
+				return this._CountryId;
+			}
+			set
+			{
+				if ((this._CountryId != value))
+				{
+					this._CountryId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Available", DbType="Bit NOT NULL")]
+		public bool Available
+		{
+			get
+			{
+				return this._Available;
+			}
+			set
+			{
+				if ((this._Available != value))
+				{
+					this._Available = value;
 				}
 			}
 		}

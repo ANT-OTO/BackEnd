@@ -61,7 +61,7 @@ CREATE TABLE [dbo].[UserSession](
 	[SystemLanguageId] int NOT NULL,
 	[Expired] bit NOT NULL,
 	[ExpireSeconds] int NOT NULL,
-	
+	[CompanyId] int NOT NULL,
 	[Version] [timestamp] NOT NULL,
 	[CreateDate] [datetime] NOT NULL,
 	[LastUpdate] [datetime] NOT NULL,

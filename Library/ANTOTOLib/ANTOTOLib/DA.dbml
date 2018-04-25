@@ -60,4 +60,56 @@
       <Column Name="Granted" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
+  <Function Name="dbo.sp_UserSession_Validate" Method="sp_UserSession_Validate">
+    <Parameter Name="pToken" Type="System.String" DbType="NVarChar(256)" />
+    <ElementType Name="sp_UserSession_ValidateResult">
+      <Column Name="UserId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SystemLanguageId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CompanyId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_UserLogin" Method="sp_UserLogin">
+    <Parameter Name="pEmail" Type="System.String" DbType="NVarChar(256)" />
+    <Parameter Name="pPwd" Type="System.String" DbType="NVarChar(512)" />
+    <ElementType Name="sp_UserLoginResult">
+      <Column Name="UserId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CompanyId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CompanyName" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="isDefault" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="RoleId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.tfnUserProfileGet" Method="tfnUserProfileGet" IsComposable="true">
+    <Parameter Name="pUserId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="tfnUserProfileGetResult">
+      <Column Name="FirstName" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="LastName" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="LoginName" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="PhoneNumberId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PhoneNumberCountryId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PhoneNumber" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="AddressId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Address1" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="Address2" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="City" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="District" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="State" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="Zip" Type="System.String" DbType="NVarChar(32) NOT NULL" CanBeNull="false" />
+      <Column Name="CountryId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Available" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_UserSession_Create" Method="sp_UserSession_Create">
+    <Parameter Name="pUserId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pExpiredSeconds" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pSystemLanguageId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pCompanyId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pLastUpdateBy" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pLastUpdateByType" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pUserSessionId" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="pToken" Type="System.String" DbType="NVarChar(256)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
 </Database>

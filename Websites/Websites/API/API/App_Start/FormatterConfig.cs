@@ -11,15 +11,17 @@ namespace API
     {
         public static void RegisterFormatters(MediaTypeFormatterCollection formatters)
         {
-            var jsonFormatter = formatters.JsonFormatter;
-            jsonFormatter.SerializerSettings = new JsonSerializerSettings
-            {
-                ContractResolver = new CamelCasePropertyNamesContractResolver()
-            };
+            //var jsonFormatter = formatters.JsonFormatter;
+            //jsonFormatter.SerializerSettings = new JsonSerializerSettings
+            //{
+            //    ContractResolver = new CamelCasePropertyNamesContractResolver()
+            //};
+            //// Insert the JSONP formatter in front of the standard JSON formatter.
+            //var jsonpFormatter = new JsonpMediaTypeFormatter(formatters.JsonFormatter);
+            //formatters.Insert(0, jsonpFormatter);
+            formatters.JsonFormatter.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Serialize;
+            formatters.JsonFormatter.SerializerSettings.PreserveReferencesHandling = Newtonsoft.Json.PreserveReferencesHandling.Objects;
 
-            // Insert the JSONP formatter in front of the standard JSON formatter.
-            var jsonpFormatter = new JsonpMediaTypeFormatter(formatters.JsonFormatter);
-            formatters.Insert(0, jsonpFormatter);
         }
     }
 }

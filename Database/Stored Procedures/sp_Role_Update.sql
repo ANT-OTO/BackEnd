@@ -93,7 +93,7 @@ begin
 		if(@pCopeFromRoleId = 0)
 		begin
 			-- default function
-			if(@pParentRoleId = 0)
+			if(@pParentRoleId > 0)
 			begin
 				insert into [dbo].[SecRoleFunction]
 				(

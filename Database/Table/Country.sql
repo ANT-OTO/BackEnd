@@ -61,6 +61,7 @@ CREATE TABLE [dbo].[Country](
 	[ISOCode] nvarchar(64) NOT NULL,
 	[Abbreviation] nvarchar(64) NOT NULL,
 	[RegionCode] nvarchar(64) NOT NULL, --Country Phone Number Prefix
+	[Available] bit NOT NULL,
 	[Version] [timestamp] NOT NULL,
 	[CreateDate] [datetime] NOT NULL,
 	[LastUpdate] [datetime] NOT NULL,

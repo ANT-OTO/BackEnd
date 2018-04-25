@@ -5,7 +5,6 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-
 using System.Reflection;
 
 using System.Threading.Tasks;
@@ -38,23 +37,34 @@ namespace API.Controllers
         public DataModel.User PersonStatusGet()
         {
 
-            #region SSL Requirement
-            if (Request.RequestUri.Scheme != Uri.UriSchemeHttps)
-            {
-                throw new HttpResponseException(Request.CreateResponse(HttpStatusCode.Forbidden, "Requires SSL"));
-            }
-            #endregion
+            //#region SSL Requirement
+            //if (Request.RequestUri.Scheme != Uri.UriSchemeHttps)
+            //{
+            //    throw new HttpResponseException(Request.CreateResponse(HttpStatusCode.Forbidden, "Requires SSL"));
+            //}
+            //#endregion
 
 
             int ErrId = 0;
             string Error = string.Empty;
-
+            #region Token
+            UserSession UserSession = UserSession.Validate(HeaderProcessor.ReadValueFromHeader(Request, "ANTToken"));
+            if(UserSession == null)
+            {
+                Error = "Required Login";
+                throw new HttpResponseException(Request.CreateResponse(HttpStatusCode.Forbidden, Error));
+            }
+            #endregion
 
             DataModel.User result = null;
 
             try
             {
-                
+                result = ANTOTOLib.UserManager.GetUser(UserSession.UserId);
+                if(result == null)
+                {
+                    Error = "User Info Retrieve Fail";
+                }
             }
             catch (Exception exp)
             {
@@ -82,18 +92,15 @@ namespace API.Controllers
         /// <returns></returns>
         [Route("Login")]
         [HttpPost]
-        public DataModel.User Login(string loginName, string password)
+        public DataModel.ResultToken Login(ParaDataModel.ParaUserLogin loginInfo)
         {
 
             int ErrId = 0;
             string Error = string.Empty;
-
-
-            DataModel.User result = null;
-
+            DataModel.ResultToken result = null;
             try
             {
-                result = UserManager.login(loginName, password);
+                result = UserManager.login(loginInfo.LoginName, loginInfo.Password, loginInfo.SystemLanguageId);
                 if(result == null)
                 {
                     Error = "Login Failed"; 
@@ -107,7 +114,7 @@ namespace API.Controllers
                 //ErrId = ErrorLog.Insert(ErrorInfo);
                 //APIError aeObj = new APIError(psObj.SystemLanguageId, "System Error");
                 //aeObj.Description = aeObj.Description + " " + ErrId.ToString();
-                throw new HttpResponseException(Request.CreateResponse(HttpStatusCode.BadRequest, "Login Error"));
+                throw new HttpResponseException(Request.CreateResponse(HttpStatusCode.BadRequest, "ErrorInfo"));
             }
 
             if (!String.IsNullOrEmpty(Error))
@@ -120,54 +127,7 @@ namespace API.Controllers
 
 
 
-        /// <summary>
-        /// Set Person's TimeZone
-        /// </summary>
-        /// <param name="TimeZoneObj">Only the DeviceTypeCodeId (1 for iPhone, 2 for Android, 3 for Windows Phone) and TimeZoneId are required</param>
-        /// <returns></returns>
-        [Route("TimeZone")]
-        [HttpPost]
-        public HttpResponseMessage PersonTimeZoneSet()
-        {
-
-            #region SSL Requirement
-            if (Request.RequestUri.Scheme != Uri.UriSchemeHttps)
-            {
-                throw new HttpResponseException(Request.CreateResponse(HttpStatusCode.Forbidden, "Requires SSL"));
-            }
-            #endregion
-
-
-            int ErrId = 0;
-            string Error = string.Empty;
-            
-
-            
-            try
-            {
-
-               
-
-            }
-            catch (Exception exp)
-            {
-                MethodBase a = MethodBase.GetCurrentMethod();
-                string ErrorInfo = "Class: " + a.DeclaringType.ToString() + "; " + a.ToString() + '\r' + '\n'
-                        + "Error Msg: " + exp.Message;
-                //ErrId = ErrorLog.Insert(ErrorInfo);
-
-                //APIError aeObj = new APIError(psObj.SystemLanguageId, "System Error");
-                //aeObj.Description = aeObj.Description + " " + ErrId.ToString();
-                throw new HttpResponseException(Request.CreateResponse(HttpStatusCode.BadRequest, "System Error"));
-            }
-
-            if (!String.IsNullOrEmpty(Error))
-            {
-                throw new HttpResponseException(Request.CreateResponse(HttpStatusCode.BadRequest, Error));
-            }
-
-            return Request.CreateResponse(HttpStatusCode.OK);
-        }
+        
 
 
         

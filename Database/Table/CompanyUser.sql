@@ -62,6 +62,8 @@ CREATE TABLE [dbo].[CompanyUser](
 	[Version] [timestamp] NOT NULL,
 	[CreateDate] [datetime] NOT NULL,
 	[LastUpdate] [datetime] NOT NULL,
+	[LastUpdateBy] int NOT NULL,
+	[LastUpdateByType] int NOT NULL
  CONSTRAINT [PK_CompanyUser] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC

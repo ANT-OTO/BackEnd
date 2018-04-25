@@ -204,10 +204,12 @@ SET NOCOUNT ON
 					[AddressId],
 					[Available],
 					[CreateDate],
-					[LastUpdate]
+					[LastUpdate],
+					[LastUpdateBy],
+					[LastUpdateByType]
 				)
 				select	@pFirstName, @pLastName, @pEmail, @pLoginName, @pPassword, @PhoneNumberId,
-						@AddressId, 1, @pTime, @pTime
+						@AddressId, 1, @pTime, @pTime, @pUpdateUserId, 1
 
 				if(@@ROWCOUNT > 0)
 				begin

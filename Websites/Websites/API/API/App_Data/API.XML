@@ -544,17 +544,10 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="M:API.Controllers.UserController.Login(System.String,System.String)">
+        <member name="M:API.Controllers.UserController.Login(ANTOTOLib.ParaDataModel.ParaUserLogin)">
             <summary>
             Get Person's current status
             </summary>
-            <returns></returns>
-        </member>
-        <member name="M:API.Controllers.UserController.PersonTimeZoneSet">
-            <summary>
-            Set Person's TimeZone
-            </summary>
-            <param name="TimeZoneObj">Only the DeviceTypeCodeId (1 for iPhone, 2 for Android, 3 for Windows Phone) and TimeZoneId are required</param>
             <returns></returns>
         </member>
     </members>

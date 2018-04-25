@@ -19,15 +19,21 @@ namespace API
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
-            if (System.Configuration.ConfigurationManager.AppSettings["JSONP"] == "Y")
-            {
-                FormatterConfig.RegisterFormatters(GlobalConfiguration.Configuration.Formatters);
-            }
+            //if (System.Configuration.ConfigurationManager.AppSettings["JSONP"] == "Y")
+            //{
+            //    FormatterConfig.RegisterFormatters(GlobalConfiguration.Configuration.Formatters);
+            //}
 
             var json = GlobalConfiguration.Configuration.Formatters.JsonFormatter;
 
             json.SerializerSettings.NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore;
+            json.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Serialize;
+            json.SerializerSettings.PreserveReferencesHandling = Newtonsoft.Json.PreserveReferencesHandling.All;
 
+
+            GlobalConfiguration.Configuration.Formatters.Remove(GlobalConfiguration.Configuration.Formatters.XmlFormatter);
+
+       
             /*
              * json.SerializerSettings.Culture = new CultureInfo("it-IT");
              * json.SerializerSettings.DateTimeZoneHandling = Newtonsoft.Json.DateTimeZoneHandling.Utc;
@@ -37,7 +43,7 @@ namespace API
              * 
              * */
 
-            
+
         }
     }
 }
