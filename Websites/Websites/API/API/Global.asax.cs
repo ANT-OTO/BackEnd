@@ -11,7 +11,9 @@ namespace API
 {
     public class WebApiApplication : System.Web.HttpApplication
     {
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
         protected void Application_Start()
+#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
         {
             AreaRegistration.RegisterAllAreas();
             GlobalConfiguration.Configure(WebApiConfig.Register);
@@ -27,8 +29,8 @@ namespace API
             var json = GlobalConfiguration.Configuration.Formatters.JsonFormatter;
 
             json.SerializerSettings.NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore;
-            json.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Serialize;
-            json.SerializerSettings.PreserveReferencesHandling = Newtonsoft.Json.PreserveReferencesHandling.All;
+            //json.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Serialize;
+            //json.SerializerSettings.PreserveReferencesHandling = Newtonsoft.Json.PreserveReferencesHandling.All;
 
 
             GlobalConfiguration.Configuration.Formatters.Remove(GlobalConfiguration.Configuration.Formatters.XmlFormatter);

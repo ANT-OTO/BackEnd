@@ -54,8 +54,10 @@ SET NOCOUNT ON
 		inner join SecRoleCompany c (nolock) on b.CompanyId = c.CompanyId
 		inner join SecRoleUser d (nolock) on c.SecRoleId = d.SecRoleId
 		inner join Company e (nolock) on b.CompanyId = e.Id
-	where a.LoginName = @pEmail 
+		inner join PhoneNumber f (nolock) on a.PhoneNumberId = f.Id
+	where (a.LoginName = @pEmail or f.PhoneNumber = @pEmail or a.Email = @pEmail) 
 	and a.Password = @pPwd
+	and e.Active = 1
 
 
 	declare @defaultCompanyId int = 0

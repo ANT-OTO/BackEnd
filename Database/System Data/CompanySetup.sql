@@ -1,20 +1,20 @@
-﻿declare @pCompanyName nvarchar(256) = 'Test Company'
-declare @pContactFirstName nvarchar(256) = 'Test'
-declare @pContactLastName nvarchar(256) = 'Company'
-declare @pCompanyCode nvarchar(256) = 'TEST'
+﻿declare @pCompanyName nvarchar(256) = 'FL Miami'
+declare @pContactFirstName nvarchar(256) = 'Yi'
+declare @pContactLastName nvarchar(256) = 'Yang'
+declare @pCompanyCode nvarchar(256) = 'HOME'
 declare @pPhoneNumber nvarchar(256) = '9999999999'
 declare @pPhoneNumberCountryId int = 183
 declare @pPhoneNumber2 nvarchar(256) = '9999999999'
 declare @pPhoneNumberCountryId2 int = 183
 --select * from Country
-declare @pEmail nvarchar(256) = 'test@company.com'
+declare @pEmail nvarchar(256) = 'yangyi@ant-oto.com'
 declare @pFax nvarchar(256) = ''
-declare @pAddress1 nvarchar(256) = 'abcdefg'
+declare @pAddress1 nvarchar(256) = '1619 Orion ln'
 declare @pAddress2 nvarchar(256) = ''
-declare @pCity nvarchar(256) = 'Davie'
+declare @pCity nvarchar(256) = 'Weston'
 declare @pDistrict nvarchar(256) = ''
 declare @pState nvarchar(256) = 'FL'
-declare @pZip nvarchar(64) = '33330'
+declare @pZip nvarchar(64) = '33327'
 declare @pCountryId int = 183
 declare @pTime datetime = getutcdate()
 
@@ -91,4 +91,65 @@ begin
 	select @pCompanyId = SCOPE_IDENTITY()
 	select * from Company where Id = @pCompanyId
 
+	--Insert Role
+	declare @pSecRoleId int = 0
+	exec [dbo].[sp_Role_Update] 
+	@pSecRoleId output,
+	N'管理员',
+	0,
+	0,
+	1,
+	@pCompanyId, 
+	0,
+	1,
+	1
+	select @pSecRoleId = 0
+	exec [dbo].[sp_Role_Update] 
+	@pSecRoleId output,
+	N'终端用户',
+	0,
+	0,
+	1,
+	@pCompanyId, 
+	0,
+	1,
+	1
+
+	select @pSecRoleId = 0
+	exec [dbo].[sp_Role_Update] 
+	@pSecRoleId output,
+	N'采购管理员',
+	0,
+	0,
+	1,
+	@pCompanyId, 
+	0,
+	1,
+	1
+	
+
+	select @pSecRoleId = 0
+	exec [dbo].[sp_Role_Update] 
+	@pSecRoleId output,
+	N'仓库管理员',
+	0,
+	0,
+	1,
+	@pCompanyId, 
+	0,
+	1,
+	1
+
+
+	select @pSecRoleId = 0
+	exec [dbo].[sp_Role_Update] 
+	@pSecRoleId output,
+	N'广告管理员',
+	0,
+	0,
+	1,
+	@pCompanyId, 
+	0,
+	1,
+	1
 end

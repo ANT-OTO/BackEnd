@@ -2,10 +2,170 @@
 <ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 9.5" name="antoto_db">
   <DataContextMoniker Name="/antoto_dbDataContext" />
   <nestedChildShapes>
-    <classShape Id="f31c1d6f-9c5e-437e-9427-0acad6ef74c0" absoluteBounds="6.75, 6.75, 2, 2.5401025390624996">
+    <classShape Id="f31c1d6f-9c5e-437e-9427-0acad6ef74c0" absoluteBounds="6.75, 6.75, 2, 2.5401025390625005">
       <DataClassMoniker Name="/antoto_dbDataContext/SecRoleFunction" />
       <nestedChildShapes>
         <elementListCompartment Id="82b1cb85-f583-456e-9698-d7240c9f8fd9" absoluteBounds="6.765, 7.21, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="bdadb710-fab1-41a7-bc10-f6ca967d4ec9" isExpanded="false" absoluteBounds="0.5, 0.5, 2, 0.45">
+      <DataClassMoniker Name="/antoto_dbDataContext/Brand" />
+      <nestedChildShapes>
+        <elementListCompartment Id="170beec1-567b-4b7d-9ead-65e7012df6ce" absoluteBounds="0.51499999999999968, 0.96, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="dfd2ea11-ad64-40ce-bfc2-a3e7f58d2cd3" isExpanded="false" absoluteBounds="0.5, 1.25, 2, 0.45">
+      <DataClassMoniker Name="/antoto_dbDataContext/BrandY" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fe056aef-c70f-4a58-9704-58ab61a2fd95" absoluteBounds="0.51500000000000012, 1.71, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(1.5 : 0.95); (1.5 : 1.25)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/antoto_dbDataContext/Brand/Brand_BrandY" />
+      <nodes>
+        <classShapeMoniker Id="bdadb710-fab1-41a7-bc10-f6ca967d4ec9" />
+        <classShapeMoniker Id="dfd2ea11-ad64-40ce-bfc2-a3e7f58d2cd3" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="eb4ac95b-6e02-44e8-97f8-80c114c064f6" isExpanded="false" absoluteBounds="2.625, 1.25, 2, 0.45">
+      <DataClassMoniker Name="/antoto_dbDataContext/Category" />
+      <nestedChildShapes>
+        <elementListCompartment Id="baea2dbf-62c8-4a2d-b25e-91ba064cb974" absoluteBounds="2.6399999999999997, 1.71, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="62ef1e42-d7ab-4fd9-b7d5-91a2a0b627d1" isExpanded="false" absoluteBounds="2.625, 0.5, 2, 0.45">
+      <DataClassMoniker Name="/antoto_dbDataContext/CategoryBrand" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4ac6eaf1-9a8f-4d53-9b24-45f7fc7f87ff" absoluteBounds="2.6399999999999997, 0.96, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="86caec6d-f94a-47e2-a0d7-42b630730107" isExpanded="false" absoluteBounds="2.625, 1.875, 2, 0.45">
+      <DataClassMoniker Name="/antoto_dbDataContext/CategoryY" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6f14e4fc-1c5d-4cf3-99a8-151468ea3a2c" absoluteBounds="2.64, 2.335, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3.625 : 1.7); (3.625 : 1.875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/antoto_dbDataContext/Category/Category_CategoryY" />
+      <nodes>
+        <classShapeMoniker Id="eb4ac95b-6e02-44e8-97f8-80c114c064f6" />
+        <classShapeMoniker Id="86caec6d-f94a-47e2-a0d7-42b630730107" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.625 : 0.725); (2.5 : 0.725)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/antoto_dbDataContext/CategoryBrand/CategoryBrand_Brand" />
+      <nodes>
+        <classShapeMoniker Id="62ef1e42-d7ab-4fd9-b7d5-91a2a0b627d1" />
+        <classShapeMoniker Id="bdadb710-fab1-41a7-bc10-f6ca967d4ec9" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3.625 : 0.95); (3.625 : 1.25)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/antoto_dbDataContext/CategoryBrand/CategoryBrand_Category" />
+      <nodes>
+        <classShapeMoniker Id="62ef1e42-d7ab-4fd9-b7d5-91a2a0b627d1" />
+        <classShapeMoniker Id="eb4ac95b-6e02-44e8-97f8-80c114c064f6" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="9d68e9cb-53bd-4dc1-a521-2d28dcf61ee6" isExpanded="false" absoluteBounds="4.75, 0.75, 2, 0.45">
+      <DataClassMoniker Name="/antoto_dbDataContext/CodeList" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b7aeec5e-1021-4178-80ae-b3ce1a86702a" absoluteBounds="4.765, 1.21, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c031f0da-4177-4aed-85e6-e0c98aff9fae" isExpanded="false" absoluteBounds="4.75, 1.5, 2, 0.45">
+      <DataClassMoniker Name="/antoto_dbDataContext/CodeListY" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4aa36493-54a5-4e1a-9ef7-a7f49d751d6f" absoluteBounds="4.765, 1.96, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(4.96875 : 1.2); (4.96875 : 1.5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/antoto_dbDataContext/CodeList/CodeList_CodeListY" />
+      <nodes>
+        <classShapeMoniker Id="9d68e9cb-53bd-4dc1-a521-2d28dcf61ee6" />
+        <classShapeMoniker Id="c031f0da-4177-4aed-85e6-e0c98aff9fae" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="eb9161f4-1734-4573-9181-96ddd2baf92f" isExpanded="false" absoluteBounds="0.5, 2, 2, 0.45">
+      <DataClassMoniker Name="/antoto_dbDataContext/CompanyBrand" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8e7e22ee-c632-4e2f-b553-d12127d3b873" absoluteBounds="0.51500000000000012, 2.46, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5baf65a7-fc37-43dd-aba4-1c9ca192e242" isExpanded="false" absoluteBounds="2.625, 2.5, 2, 0.45">
+      <DataClassMoniker Name="/antoto_dbDataContext/CompanyCategory" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7973669b-c31f-4c0c-9f70-4eaf19f5312e" absoluteBounds="2.64, 2.96, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(0.5 : 2); (0.125 : 1.625); (0.125 : 1.325); (0.5 : 0.95)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/antoto_dbDataContext/CompanyBrand/CompanyBrand_Brand" />
+      <nodes>
+        <classShapeMoniker Id="eb9161f4-1734-4573-9181-96ddd2baf92f" />
+        <classShapeMoniker Id="bdadb710-fab1-41a7-bc10-f6ca967d4ec9" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3.625 : 2.5); (3.625 : 2.3875); (4.6875 : 2.3875); (4.6875 : 1.475); (4.625 : 1.475)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/antoto_dbDataContext/CompanyCategory/CompanyCategory_Category" />
+      <nodes>
+        <classShapeMoniker Id="5baf65a7-fc37-43dd-aba4-1c9ca192e242" />
+        <classShapeMoniker Id="eb4ac95b-6e02-44e8-97f8-80c114c064f6" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="0910eea9-918b-4184-8d3b-706638a85395" isExpanded="false" absoluteBounds="4.75, 2.25, 2, 0.45">
+      <DataClassMoniker Name="/antoto_dbDataContext/Company" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9e4d8050-9be5-49b8-81d2-5bb1bdea7273" absoluteBounds="4.765, 2.71, 1.9700000000000002, 3.3262125651041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(1.5 : 2.45); (1.5 : 2.5125); (2.5625 : 2.5125); (2.5625 : 2.4125); (4.75 : 2.4125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/antoto_dbDataContext/CompanyBrand/CompanyBrand_Company" />
+      <nodes>
+        <classShapeMoniker Id="eb9161f4-1734-4573-9181-96ddd2baf92f" />
+        <classShapeMoniker Id="0910eea9-918b-4184-8d3b-706638a85395" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.625 : 2.6); (4.75 : 2.6)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/antoto_dbDataContext/CompanyCategory/CompanyCategory_Company" />
+      <nodes>
+        <classShapeMoniker Id="5baf65a7-fc37-43dd-aba4-1c9ca192e242" />
+        <classShapeMoniker Id="0910eea9-918b-4184-8d3b-706638a85395" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="ad98db23-e22d-4a8f-85e7-a222308339c2" absoluteBounds="4.875, 3.25, 2, 2.9247054036458326">
+      <DataClassMoniker Name="/antoto_dbDataContext/Country" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3d379068-f481-4333-895a-ac0841f09b8d" absoluteBounds="4.89, 3.71, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="975ce5f4-0edd-4f65-94a8-9c0bb8776358" absoluteBounds="2.625, 3.25, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/antoto_dbDataContext/CountryY" />
+      <nestedChildShapes>
+        <elementListCompartment Id="55b1eb0a-9580-498c-925e-803c058f5538" absoluteBounds="2.6399999999999997, 3.71, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(4.875 : 4.57303487141927); (4.625 : 4.57303487141927)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/antoto_dbDataContext/Country/Country_CountryY" />
+      <nodes>
+        <classShapeMoniker Id="ad98db23-e22d-4a8f-85e7-a222308339c2" />
+        <classShapeMoniker Id="975ce5f4-0edd-4f65-94a8-9c0bb8776358" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="2978d436-005d-48d6-8ef4-6a554cb137f1" absoluteBounds="0.5, 2.875, 2, 2.5401025390624996">
+      <DataClassMoniker Name="/antoto_dbDataContext/SystemLanguage" />
+      <nestedChildShapes>
+        <elementListCompartment Id="de10dd16-7d7d-4faa-8510-396a372d4051" absoluteBounds="0.51499999999999968, 3.335, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1c83f4c3-38fe-4e7c-a817-6b178534f78a" absoluteBounds="5.625, 0.5, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/antoto_dbDataContext/LockManager" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4537e15c-314a-4874-b73a-23251aa2f17a" absoluteBounds="5.64, 0.96, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="45e1d765-da4b-4758-821a-a50f12fbe93c" absoluteBounds="5.25, 0.5, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/antoto_dbDataContext/ErrorLog" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3491f0bf-0638-48b4-a6e0-1f057b7b449b" absoluteBounds="5.265, 0.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

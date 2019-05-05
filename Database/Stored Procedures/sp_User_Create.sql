@@ -74,6 +74,35 @@ SET NOCOUNT ON
 			a.LastUpdateByType = 1
 		from [User] a
 		where a.Id = @pUserId
+		--update Address / update Phone
+		declare @PhoneNumberId int = 0
+		declare @AddressId int = 0
+		select @PhoneNumberId = a.PhoneNumberId,
+				@AddressId = a.AddressId
+		from ANTOTO.dbo.[User] a (nolock)
+		where a.Id = @pUserId 
+
+		update a
+		set a.Address1 = @pAddress1,
+			a.Address2 = isnull(@pAddress2, ''),
+			a.City = @pCity,
+			a.CountryId = @pCountryId,
+			a.LastUpdate = @pTime,
+			a.LastUpdateBy = @pUpdateUserId,
+			a.LastUpdateByType = 1,
+			a.State = @pState,
+			a.Zip = @pZip
+		from [Address] a 
+		where a.Id = @AddressId
+
+		update a
+		set a.PhoneNumber = @pPhoneNumber,
+			a.CountryId = @pPhoneCountryId,
+			a.LastUpdate = @pTime,
+			a.LastUpdateBy = @pUpdateUserId,
+			a.LastUpdateByType = 1
+		from PhoneNumber a (nolock)
+		where a.Id = @PhoneNumberId
 
 		declare @pCurrentRoleId int = 0
 		select @pCurrentRoleId = a.Id
@@ -144,7 +173,7 @@ SET NOCOUNT ON
 			select @pError = 'Account already exists.'
 			return
 		end
-		declare @AddressId int = 0
+		select @AddressId = 0
 		insert into [dbo].[Address]
 		(
 			[Address1],
@@ -160,7 +189,7 @@ SET NOCOUNT ON
 			[LastUpdateByType]
 		)
 		select	@pAddress1 as [Address1],
-				@pAddress2 as [Address2],
+				isnull(@pAddress2, '') as [Address2],
 				@pCity as [City],
 				'' as [District],
 				@pState as [State],
@@ -174,7 +203,7 @@ SET NOCOUNT ON
 		begin
 			select @AddressId = SCOPE_IDENTITY()
 
-			declare @PhoneNumberId int = 0
+			select @PhoneNumberId = 0
 			insert into [dbo].[PhoneNumber]
 			(
 				[CountryId],

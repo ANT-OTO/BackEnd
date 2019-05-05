@@ -37,7 +37,11 @@ AS
 SET NOCOUNT ON
 
 	declare @pTime datetime = getutcdate()
-	
+	if(@pGranted = 0)
+	begin
+		select @pActionForSubFunction = 1
+		select @pActionForSubRole = 1
+	end
     declare @pFunctionTable Table
 	(
 		[SecFunctionKey] nvarchar(256)
@@ -52,8 +56,7 @@ SET NOCOUNT ON
 	(
 	  SELECT a.FunctionKey, a.ParentFunctionKey
 	  FROM SecFunction a (nolock)
-	  WHERE a.ParentFunctionKey = '' or a.ParentFunctionKey is null
-
+	  WHERE a.Id = @pSecFunctionId
 	  UNION ALL
 
 	  SELECT b.FunctionKey, b.ParentFunctionKey
@@ -82,7 +85,7 @@ SET NOCOUNT ON
 	(
 	  SELECT a.Id, a.ParentRoleId
 	  FROM SecRole a (nolock)
-	  WHERE a.ParentRoleId = 0 or a.ParentRoleId is null
+	  WHERE a.Id = @pSecRoleId
 
 	  UNION ALL
 

@@ -33,6 +33,51 @@ namespace ANTOTOLib
     partial void InsertSecRoleFunction(SecRoleFunction instance);
     partial void UpdateSecRoleFunction(SecRoleFunction instance);
     partial void DeleteSecRoleFunction(SecRoleFunction instance);
+    partial void InsertBrand(Brand instance);
+    partial void UpdateBrand(Brand instance);
+    partial void DeleteBrand(Brand instance);
+    partial void InsertBrandY(BrandY instance);
+    partial void UpdateBrandY(BrandY instance);
+    partial void DeleteBrandY(BrandY instance);
+    partial void InsertCategory(Category instance);
+    partial void UpdateCategory(Category instance);
+    partial void DeleteCategory(Category instance);
+    partial void InsertCategoryBrand(CategoryBrand instance);
+    partial void UpdateCategoryBrand(CategoryBrand instance);
+    partial void DeleteCategoryBrand(CategoryBrand instance);
+    partial void InsertCategoryY(CategoryY instance);
+    partial void UpdateCategoryY(CategoryY instance);
+    partial void DeleteCategoryY(CategoryY instance);
+    partial void InsertCodeList(CodeList instance);
+    partial void UpdateCodeList(CodeList instance);
+    partial void DeleteCodeList(CodeList instance);
+    partial void InsertCodeListY(CodeListY instance);
+    partial void UpdateCodeListY(CodeListY instance);
+    partial void DeleteCodeListY(CodeListY instance);
+    partial void InsertCompanyBrand(CompanyBrand instance);
+    partial void UpdateCompanyBrand(CompanyBrand instance);
+    partial void DeleteCompanyBrand(CompanyBrand instance);
+    partial void InsertCompanyCategory(CompanyCategory instance);
+    partial void UpdateCompanyCategory(CompanyCategory instance);
+    partial void DeleteCompanyCategory(CompanyCategory instance);
+    partial void InsertCompany(Company instance);
+    partial void UpdateCompany(Company instance);
+    partial void DeleteCompany(Company instance);
+    partial void InsertCountry(Country instance);
+    partial void UpdateCountry(Country instance);
+    partial void DeleteCountry(Country instance);
+    partial void InsertCountryY(CountryY instance);
+    partial void UpdateCountryY(CountryY instance);
+    partial void DeleteCountryY(CountryY instance);
+    partial void InsertSystemLanguage(SystemLanguage instance);
+    partial void UpdateSystemLanguage(SystemLanguage instance);
+    partial void DeleteSystemLanguage(SystemLanguage instance);
+    partial void InsertLockManager(LockManager instance);
+    partial void UpdateLockManager(LockManager instance);
+    partial void DeleteLockManager(LockManager instance);
+    partial void InsertErrorLog(ErrorLog instance);
+    partial void UpdateErrorLog(ErrorLog instance);
+    partial void DeleteErrorLog(ErrorLog instance);
     #endregion
 		
 		public antoto_dbDataContext() : 
@@ -70,6 +115,126 @@ namespace ANTOTOLib
 			get
 			{
 				return this.GetTable<SecRoleFunction>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Brand> Brands
+		{
+			get
+			{
+				return this.GetTable<Brand>();
+			}
+		}
+		
+		public System.Data.Linq.Table<BrandY> Brandies
+		{
+			get
+			{
+				return this.GetTable<BrandY>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Category> Categories
+		{
+			get
+			{
+				return this.GetTable<Category>();
+			}
+		}
+		
+		public System.Data.Linq.Table<CategoryBrand> CategoryBrands
+		{
+			get
+			{
+				return this.GetTable<CategoryBrand>();
+			}
+		}
+		
+		public System.Data.Linq.Table<CategoryY> CategoryYs
+		{
+			get
+			{
+				return this.GetTable<CategoryY>();
+			}
+		}
+		
+		public System.Data.Linq.Table<CodeList> CodeLists
+		{
+			get
+			{
+				return this.GetTable<CodeList>();
+			}
+		}
+		
+		public System.Data.Linq.Table<CodeListY> CodeListies
+		{
+			get
+			{
+				return this.GetTable<CodeListY>();
+			}
+		}
+		
+		public System.Data.Linq.Table<CompanyBrand> CompanyBrands
+		{
+			get
+			{
+				return this.GetTable<CompanyBrand>();
+			}
+		}
+		
+		public System.Data.Linq.Table<CompanyCategory> CompanyCategories
+		{
+			get
+			{
+				return this.GetTable<CompanyCategory>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Company> Companies
+		{
+			get
+			{
+				return this.GetTable<Company>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Country> Countries
+		{
+			get
+			{
+				return this.GetTable<Country>();
+			}
+		}
+		
+		public System.Data.Linq.Table<CountryY> CountryYs
+		{
+			get
+			{
+				return this.GetTable<CountryY>();
+			}
+		}
+		
+		public System.Data.Linq.Table<SystemLanguage> SystemLanguages
+		{
+			get
+			{
+				return this.GetTable<SystemLanguage>();
+			}
+		}
+		
+		public System.Data.Linq.Table<LockManager> LockManagers
+		{
+			get
+			{
+				return this.GetTable<LockManager>();
+			}
+		}
+		
+		public System.Data.Linq.Table<ErrorLog> ErrorLogs
+		{
+			get
+			{
+				return this.GetTable<ErrorLog>();
 			}
 		}
 		
@@ -133,6 +298,2080 @@ namespace ANTOTOLib
 		public IQueryable<tfnUserCompanyListGetResult> tfnUserCompanyListGet([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pUserId)
 		{
 			return this.CreateMethodCallQuery<tfnUserCompanyListGetResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pUserId);
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.tfnCompanyBrandListGet", IsComposable=true)]
+		public IQueryable<tfnCompanyBrandListGetResult> tfnCompanyBrandListGet([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCompanyId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pSystemLanguageId)
+		{
+			return this.CreateMethodCallQuery<tfnCompanyBrandListGetResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pCompanyId, pSystemLanguageId);
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.tfnCompanyCategoryBrandRelationListGet", IsComposable=true)]
+		public IQueryable<tfnCompanyCategoryBrandRelationListGetResult> tfnCompanyCategoryBrandRelationListGet([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCompanyId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCategoryId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pBrandId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pSystemLanguageId)
+		{
+			return this.CreateMethodCallQuery<tfnCompanyCategoryBrandRelationListGetResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pCompanyId, pCategoryId, pBrandId, pSystemLanguageId);
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_User_Search")]
+		public ISingleResult<sp_User_SearchResult> sp_User_Search([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string pUserFirstName, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string pUserLastName, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pRoleId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pEmail, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCompanyId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Bit")] System.Nullable<bool> pAvailable, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="PageSize", DbType="Int")] System.Nullable<int> pageSize, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Page", DbType="Int")] ref System.Nullable<int> page, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Total", DbType="Int")] ref System.Nullable<int> total, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="TotalPages", DbType="Int")] ref System.Nullable<int> totalPages)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pUserFirstName, pUserLastName, pRoleId, pEmail, pCompanyId, pAvailable, pageSize, page, total, totalPages);
+			page = ((System.Nullable<int>)(result.GetParameterValue(7)));
+			total = ((System.Nullable<int>)(result.GetParameterValue(8)));
+			totalPages = ((System.Nullable<int>)(result.GetParameterValue(9)));
+			return ((ISingleResult<sp_User_SearchResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_User_Create")]
+		public int sp_User_Create(
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> pUserId, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pRoleId, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pFirstName, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pLastName, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pEmail, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pLoginName, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pPassword, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pPhoneNumber, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pPhoneCountryId, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pAddress1, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pAddress2, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pCity, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(64)")] string pState, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(64)")] string pZip, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCountryId, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pUpdateUserId, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCompanyId, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Bit")] System.Nullable<bool> pAvailable, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] ref string pError)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pUserId, pRoleId, pFirstName, pLastName, pEmail, pLoginName, pPassword, pPhoneNumber, pPhoneCountryId, pAddress1, pAddress2, pCity, pState, pZip, pCountryId, pUpdateUserId, pCompanyId, pAvailable, pError);
+			pUserId = ((System.Nullable<int>)(result.GetParameterValue(0)));
+			pError = ((string)(result.GetParameterValue(18)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.tfnCountryListGet", IsComposable=true)]
+		public IQueryable<tfnCountryListGetResult> tfnCountryListGet([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pSystemLanguageId)
+		{
+			return this.CreateMethodCallQuery<tfnCountryListGetResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pSystemLanguageId);
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.tfnSystemLanguageListGet", IsComposable=true)]
+		public IQueryable<tfnSystemLanguageListGetResult> tfnSystemLanguageListGet()
+		{
+			return this.CreateMethodCallQuery<tfnSystemLanguageListGetResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.tfnCompanyCategoryListGet", IsComposable=true)]
+		public IQueryable<tfnCompanyCategoryListGetResult> tfnCompanyCategoryListGet([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCompanyId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pParentCategoryId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pSystemLanguageId)
+		{
+			return this.CreateMethodCallQuery<tfnCompanyCategoryListGetResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pCompanyId, pParentCategoryId, pSystemLanguageId);
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_WizardSessionCreateForProductNew")]
+		public int sp_WizardSessionCreateForProductNew([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> pWizardSessionId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCategoryId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pBrandId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pUserId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCompanyId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pWizardSessionId, pCategoryId, pBrandId, pUserId, pCompanyId);
+			pWizardSessionId = ((System.Nullable<int>)(result.GetParameterValue(0)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_WizardSessionStepElementInputDetailGet")]
+		public ISingleResult<sp_WizardSessionStepElementInputDetailGetResult> sp_WizardSessionStepElementInputDetailGet([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pWizardSessionId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(64)")] string pWizardMasterStepCode, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pWizardSessionStepElementId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pWizardSessionId, pWizardMasterStepCode, pWizardSessionStepElementId);
+			return ((ISingleResult<sp_WizardSessionStepElementInputDetailGetResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_WizardSessionStepElementInputValueGet")]
+		public ISingleResult<sp_WizardSessionStepElementInputValueGetResult> sp_WizardSessionStepElementInputValueGet([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pWizardSessionId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(64)")] string pWizardMasterStepCode, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pWizardSessionStepElementInputId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pWizardSessionId, pWizardMasterStepCode, pWizardSessionStepElementInputId);
+			return ((ISingleResult<sp_WizardSessionStepElementInputValueGetResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_WizardSessionStepElementListGet")]
+		public ISingleResult<sp_WizardSessionStepElementListGetResult> sp_WizardSessionStepElementListGet([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pWizardSessionId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(64)")] string pWizardMasterStepCode)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pWizardSessionId, pWizardMasterStepCode);
+			return ((ISingleResult<sp_WizardSessionStepElementListGetResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_WizardSessionStepElementPromptDetailGet")]
+		public ISingleResult<sp_WizardSessionStepElementPromptDetailGetResult> sp_WizardSessionStepElementPromptDetailGet([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pWizardSessionId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(64)")] string pWizardMasterStepCode, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pWizardSessionStepElementId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pWizardSessionId, pWizardMasterStepCode, pWizardSessionStepElementId);
+			return ((ISingleResult<sp_WizardSessionStepElementPromptDetailGetResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_WizardSessionStepListGet")]
+		public ISingleResult<sp_WizardSessionStepListGetResult> sp_WizardSessionStepListGet([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pWizardSessionId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pWizardSessionId);
+			return ((ISingleResult<sp_WizardSessionStepListGetResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.tfnWizardListDetailGet", IsComposable=true)]
+		public IQueryable<tfnWizardListDetailGetResult> tfnWizardListDetailGet([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pWizardListId)
+		{
+			return this.CreateMethodCallQuery<tfnWizardListDetailGetResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pWizardListId);
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_WizardSessionInput_Set")]
+		public int sp_WizardSessionInput_Set([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pWizardSessionId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(64)")] string pWizardSessionStepCode, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pWizardMasterStepElementInputId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pOrder, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(512)")] string pStepValue, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pStepIntValue, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pStepSourceId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(64)")] string pStepSourceTable)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pWizardSessionId, pWizardSessionStepCode, pWizardMasterStepElementInputId, pOrder, pStepValue, pStepIntValue, pStepSourceId, pStepSourceTable);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_WizardSessionItemPublish")]
+		public int sp_WizardSessionItemPublish([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pWizardSessionId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> pItemId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] ref string pError)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pWizardSessionId, pItemId, pError);
+			pItemId = ((System.Nullable<int>)(result.GetParameterValue(1)));
+			pError = ((string)(result.GetParameterValue(2)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.tfnCodeList", IsComposable=true)]
+		public IQueryable<tfnCodeListResult> tfnCodeList([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pSystemLanguageId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(128)")] string pCategory)
+		{
+			return this.CreateMethodCallQuery<tfnCodeListResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pSystemLanguageId, pCategory);
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sfnCodeList", IsComposable=true)]
+		public string sfnCodeList([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pSystemLanguageId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(128)")] string pCategory, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCodeId)
+		{
+			return ((string)(this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pSystemLanguageId, pCategory, pCodeId).ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.tfnCompanyCategoryListGetByName", IsComposable=true)]
+		public IQueryable<tfnCompanyCategoryListGetByNameResult> tfnCompanyCategoryListGetByName([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCompanyId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(64)")] string pCategorySearchName, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pSystemLanguageId)
+		{
+			return this.CreateMethodCallQuery<tfnCompanyCategoryListGetByNameResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pCompanyId, pCategorySearchName, pSystemLanguageId);
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_Brand_Insert")]
+		public int sp_Brand_Insert([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pName, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(512)")] string pDescription, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCategoryId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCompanyId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Bit")] System.Nullable<bool> pAvailable, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> pBrandId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pLastUpdateBy, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pLastUpdateByType)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pName, pDescription, pCategoryId, pCompanyId, pAvailable, pBrandId, pLastUpdateBy, pLastUpdateByType);
+			pBrandId = ((System.Nullable<int>)(result.GetParameterValue(5)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_Item_Delete")]
+		public int sp_Item_Delete([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCompanyId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pItemId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] ref string pError, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pLastUpdateBy, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pLastUpdateByType)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pCompanyId, pItemId, pError, pLastUpdateBy, pLastUpdateByType);
+			pError = ((string)(result.GetParameterValue(2)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_Item_Search")]
+		public ISingleResult<sp_Item_SearchResult> sp_Item_Search(
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCompanyId, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pSKU, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pProductCode, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pItemName, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pItemStatusCodeId, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pCategory, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pBrand, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pFileId, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pProductDescription, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pModelNumber, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pSupplierSKU, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="PageSize", DbType="Int")] System.Nullable<int> pageSize, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Page", DbType="Int")] ref System.Nullable<int> page, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Total", DbType="Int")] ref System.Nullable<int> total, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="TotalPages", DbType="Int")] ref System.Nullable<int> totalPages, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pSystemLanguageId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pCompanyId, pSKU, pProductCode, pItemName, pItemStatusCodeId, pCategory, pBrand, pFileId, pProductDescription, pModelNumber, pSupplierSKU, pageSize, page, total, totalPages, pSystemLanguageId);
+			page = ((System.Nullable<int>)(result.GetParameterValue(12)));
+			total = ((System.Nullable<int>)(result.GetParameterValue(13)));
+			totalPages = ((System.Nullable<int>)(result.GetParameterValue(14)));
+			return ((ISingleResult<sp_Item_SearchResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_FileUpdate")]
+		public int sp_FileUpdate([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pPara1, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pPara2, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pPara3, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pPara4, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pUserId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> pFileId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pPara1, pPara2, pPara3, pPara4, pUserId, pFileId);
+			pFileId = ((System.Nullable<int>)(result.GetParameterValue(5)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.tfnFileGet", IsComposable=true)]
+		public IQueryable<tfnFileGetResult> tfnFileGet([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pFileId)
+		{
+			return this.CreateMethodCallQuery<tfnFileGetResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pFileId);
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_FileInsert")]
+		public int sp_FileInsert([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(64)")] string pFileExt, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pFileName, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pFileStoreTypeCodeId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pFilePath, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(512)")] string pFilePublicUrl, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(512)")] string pMFilePublicUrl, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(512)")] string pSFilePublicUrl, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pUserId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> pFileId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pFileExt, pFileName, pFileStoreTypeCodeId, pFilePath, pFilePublicUrl, pMFilePublicUrl, pSFilePublicUrl, pUserId, pFileId);
+			pFileId = ((System.Nullable<int>)(result.GetParameterValue(8)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.tfnCurrencyListGet", IsComposable=true)]
+		public IQueryable<tfnCurrencyListGetResult> tfnCurrencyListGet([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pSystemLanguageId)
+		{
+			return this.CreateMethodCallQuery<tfnCurrencyListGetResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pSystemLanguageId);
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_SupplierPlaceInfoSet")]
+		public int sp_SupplierPlaceInfoSet([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pSupplierName, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pSupplierLocation, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pPriceInfo, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCurrencyId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(MAX)")] string pDescription, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pUserId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> pSupplierPlaceInfoId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pSupplierName, pSupplierLocation, pPriceInfo, pCurrencyId, pDescription, pUserId, pSupplierPlaceInfoId);
+			pSupplierPlaceInfoId = ((System.Nullable<int>)(result.GetParameterValue(6)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.tfnSupplierPlaceInfoGet", IsComposable=true)]
+		public IQueryable<tfnSupplierPlaceInfoGetResult> tfnSupplierPlaceInfoGet([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pSupplierPlaceInfoId)
+		{
+			return this.CreateMethodCallQuery<tfnSupplierPlaceInfoGetResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pSupplierPlaceInfoId);
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_WizardSessionInput_Clear")]
+		public int sp_WizardSessionInput_Clear([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pWizardSessionId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(64)")] string pWizardSessionStepCode, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pWizardMasterStepElementInputId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pWizardSessionId, pWizardSessionStepCode, pWizardMasterStepElementInputId);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_CategorySearch")]
+		public ISingleResult<sp_CategorySearchResult> sp_CategorySearch([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pSearchWord, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCompanyId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pSystemLanguageId, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="PageSize", DbType="Int")] System.Nullable<int> pageSize, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Page", DbType="Int")] ref System.Nullable<int> page, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Total", DbType="Int")] ref System.Nullable<int> total, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="TotalPages", DbType="Int")] ref System.Nullable<int> totalPages)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pSearchWord, pCompanyId, pSystemLanguageId, pageSize, page, total, totalPages);
+			page = ((System.Nullable<int>)(result.GetParameterValue(4)));
+			total = ((System.Nullable<int>)(result.GetParameterValue(5)));
+			totalPages = ((System.Nullable<int>)(result.GetParameterValue(6)));
+			return ((ISingleResult<sp_CategorySearchResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.tfnCompanyCategoryListGetByCategoryId", IsComposable=true)]
+		public IQueryable<tfnCompanyCategoryListGetByCategoryIdResult> tfnCompanyCategoryListGetByCategoryId([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCompanyId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCategoryId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pSystemLanguageId)
+		{
+			return this.CreateMethodCallQuery<tfnCompanyCategoryListGetByCategoryIdResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pCompanyId, pCategoryId, pSystemLanguageId);
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ItemRelatedUPCInfoSet")]
+		public int sp_ItemRelatedUPCInfoSet([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pUPC, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pDescription, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pSaleTag, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> pItemRelatedUPCInfoId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pUPC, pDescription, pSaleTag, pItemRelatedUPCInfoId);
+			pItemRelatedUPCInfoId = ((System.Nullable<int>)(result.GetParameterValue(3)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.tfnItemRelatedUPCInfoGet", IsComposable=true)]
+		public IQueryable<tfnItemRelatedUPCInfoGetResult> tfnItemRelatedUPCInfoGet([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pItemRelatedUPCInfoId)
+		{
+			return this.CreateMethodCallQuery<tfnItemRelatedUPCInfoGetResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pItemRelatedUPCInfoId);
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_BrandSearch")]
+		public ISingleResult<sp_BrandSearchResult> sp_BrandSearch([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pSearchWord, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCompanyId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pSystemLanguageId, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="PageSize", DbType="Int")] System.Nullable<int> pageSize, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Page", DbType="Int")] ref System.Nullable<int> page, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Total", DbType="Int")] ref System.Nullable<int> total, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="TotalPages", DbType="Int")] ref System.Nullable<int> totalPages)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pSearchWord, pCompanyId, pSystemLanguageId, pageSize, page, total, totalPages);
+			page = ((System.Nullable<int>)(result.GetParameterValue(4)));
+			total = ((System.Nullable<int>)(result.GetParameterValue(5)));
+			totalPages = ((System.Nullable<int>)(result.GetParameterValue(6)));
+			return ((ISingleResult<sp_BrandSearchResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_Item_VariationCopy")]
+		public int sp_Item_VariationCopy([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pWizardSessionId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pItemId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pVariationReasonCodeId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pVariationTitle, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> pCopiedItemId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> pCopiedWizardSessionId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pUserId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pWizardSessionId, pItemId, pVariationReasonCodeId, pVariationTitle, pCopiedItemId, pCopiedWizardSessionId, pUserId);
+			pCopiedItemId = ((System.Nullable<int>)(result.GetParameterValue(4)));
+			pCopiedWizardSessionId = ((System.Nullable<int>)(result.GetParameterValue(5)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ItemVariationTitleSet")]
+		public int sp_ItemVariationTitleSet([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pItemId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pWizardSessionId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pVariationTitle, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pVariationReasonCodeId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pLastUpdateBy, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pLastUpdateByType, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> pItemPropertyId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pItemId, pWizardSessionId, pVariationTitle, pVariationReasonCodeId, pLastUpdateBy, pLastUpdateByType, pItemPropertyId);
+			pItemPropertyId = ((System.Nullable<int>)(result.GetParameterValue(6)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.tfnItemVariationInfoGet", IsComposable=true)]
+		public IQueryable<tfnItemVariationInfoGetResult> tfnItemVariationInfoGet([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pItemId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pWizardSessionId)
+		{
+			return this.CreateMethodCallQuery<tfnItemVariationInfoGetResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pItemId, pWizardSessionId);
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sfnWizardSessionStepCodeIsFinal", IsComposable=true)]
+		public System.Nullable<bool> sfnWizardSessionStepCodeIsFinal([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pStepCode, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pWizardSessionId)
+		{
+			return ((System.Nullable<bool>)(this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pStepCode, pWizardSessionId).ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_Item_GetFromWizardSessionId")]
+		public ISingleResult<sp_Item_GetFromWizardSessionIdResult> sp_Item_GetFromWizardSessionId([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pWizardSessionId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCompanyId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pSystemLanguageId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pWizardSessionId, pCompanyId, pSystemLanguageId);
+			return ((ISingleResult<sp_Item_GetFromWizardSessionIdResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ItemRelatedListGet")]
+		public ISingleResult<sp_ItemRelatedListGetResult> sp_ItemRelatedListGet([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pWizardSessionId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pItemId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pSystemLanguageId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pWizardSessionId, pItemId, pSystemLanguageId);
+			return ((ISingleResult<sp_ItemRelatedListGetResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.tfnItemGetByUPC", IsComposable=true)]
+		public IQueryable<tfnItemGetByUPCResult> tfnItemGetByUPC([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pUPC, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCompanyId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pUserId)
+		{
+			return this.CreateMethodCallQuery<tfnItemGetByUPCResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pUPC, pCompanyId, pUserId);
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ItemPackageApprove")]
+		public int sp_ItemPackageApprove([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pItemSubmitPackageId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCategoryId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pBrandId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCompanyId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pUserId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pItemUpdatePackageId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> pItemId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> pWizardSessionId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pItemSubmitPackageId, pCategoryId, pBrandId, pCompanyId, pUserId, pItemUpdatePackageId, pItemId, pWizardSessionId);
+			pItemId = ((System.Nullable<int>)(result.GetParameterValue(6)));
+			pWizardSessionId = ((System.Nullable<int>)(result.GetParameterValue(7)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ItemPackageCancel")]
+		public int sp_ItemPackageCancel([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> pItemSubmitPackageId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCompanyId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pUserId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> pItemUpdatePackageId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pItemSubmitPackageId, pCompanyId, pUserId, pItemUpdatePackageId);
+			pItemSubmitPackageId = ((System.Nullable<int>)(result.GetParameterValue(0)));
+			pItemUpdatePackageId = ((System.Nullable<int>)(result.GetParameterValue(3)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ItemPackageReject")]
+		public int sp_ItemPackageReject([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> pItemSubmitPackageId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCompanyId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pUserId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> pItemUpdatePackageId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pItemSubmitPackageId, pCompanyId, pUserId, pItemUpdatePackageId);
+			pItemSubmitPackageId = ((System.Nullable<int>)(result.GetParameterValue(0)));
+			pItemUpdatePackageId = ((System.Nullable<int>)(result.GetParameterValue(3)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ItemPackageResourceInsert")]
+		public int sp_ItemPackageResourceInsert([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pSourceId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(64)")] string pSourceTable, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pFileId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pResourceTypeCodeId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(MAX)")] string pDescription, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pUserId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> pItemPackageResourceId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pSourceId, pSourceTable, pFileId, pResourceTypeCodeId, pDescription, pUserId, pItemPackageResourceId);
+			pItemPackageResourceId = ((System.Nullable<int>)(result.GetParameterValue(6)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ItemPackageSubmit")]
+		public int sp_ItemPackageSubmit([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pUPC, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pPrice, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCurrencyId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(MAX)")] string pProductName, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pWeight, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(MAX)")] string pSaleTitle, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pSalePlace, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(MAX)")] string pDiscountDescription, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(MAX)")] string pSizeRange, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(MAX)")] string pColorRange, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pUserId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCompanyId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> pItemSubmitPackageId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pUPC, pPrice, pCurrencyId, pProductName, pWeight, pSaleTitle, pSalePlace, pDiscountDescription, pSizeRange, pColorRange, pUserId, pCompanyId, pItemSubmitPackageId);
+			pItemSubmitPackageId = ((System.Nullable<int>)(result.GetParameterValue(12)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.tfnItemPackageResourceListGet", IsComposable=true)]
+		public IQueryable<tfnItemPackageResourceListGetResult> tfnItemPackageResourceListGet([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pSourceTable, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pSourceId)
+		{
+			return this.CreateMethodCallQuery<tfnItemPackageResourceListGetResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pSourceTable, pSourceId);
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ItemPackageUpdate")]
+		public int sp_ItemPackageUpdate([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pUPC, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pPrice, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCurrencyId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pWeight, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(MAX)")] string pSaleTitle, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pSalePlace, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(MAX)")] string pDiscountDescription, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(MAX)")] string pSizeRange, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(MAX)")] string pColorRange, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pUserId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCompanyId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> pItemUpdatePackageId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pUPC, pPrice, pCurrencyId, pWeight, pSaleTitle, pSalePlace, pDiscountDescription, pSizeRange, pColorRange, pUserId, pCompanyId, pItemUpdatePackageId);
+			pItemUpdatePackageId = ((System.Nullable<int>)(result.GetParameterValue(11)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ItemOnSaleRequestCancel")]
+		public int sp_ItemOnSaleRequestCancel([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> pItemOnSaleRequestId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pUserId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pItemOnSaleRequestId, pUserId);
+			pItemOnSaleRequestId = ((System.Nullable<int>)(result.GetParameterValue(0)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ItemOnSaleRequestTempBufferGet")]
+		public ISingleResult<sp_ItemOnSaleRequestTempBufferGetResult> sp_ItemOnSaleRequestTempBufferGet([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCompanyId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pUserId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pSystemLanguageId, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="PageSize", DbType="Int")] System.Nullable<int> pageSize, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Page", DbType="Int")] ref System.Nullable<int> page, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Total", DbType="Int")] ref System.Nullable<int> total, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="TotalPages", DbType="Int")] ref System.Nullable<int> totalPages)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pCompanyId, pUserId, pSystemLanguageId, pageSize, page, total, totalPages);
+			page = ((System.Nullable<int>)(result.GetParameterValue(4)));
+			total = ((System.Nullable<int>)(result.GetParameterValue(5)));
+			totalPages = ((System.Nullable<int>)(result.GetParameterValue(6)));
+			return ((ISingleResult<sp_ItemOnSaleRequestTempBufferGetResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ItemOnSaleRequestFinish")]
+		public int sp_ItemOnSaleRequestFinish([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> pItemOnSaleRequestId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pUserId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pItemOnSaleRequestId, pUserId);
+			pItemOnSaleRequestId = ((System.Nullable<int>)(result.GetParameterValue(0)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ItemOnSaleRequestPlatformInsert")]
+		public int sp_ItemOnSaleRequestPlatformInsert([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pItemOnSaleRequestId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pPlatformName, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pUserId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> pItemOnSaleRequestPlatformInfoId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pItemOnSaleRequestId, pPlatformName, pUserId, pItemOnSaleRequestPlatformInfoId);
+			pItemOnSaleRequestPlatformInfoId = ((System.Nullable<int>)(result.GetParameterValue(3)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ItemOnSaleRequestWorkOn")]
+		public int sp_ItemOnSaleRequestWorkOn([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> pItemOnSaleRequestId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pUserId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pItemOnSaleRequestId, pUserId);
+			pItemOnSaleRequestId = ((System.Nullable<int>)(result.GetParameterValue(0)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ItemPackageInsertBuffer")]
+		public int sp_ItemPackageInsertBuffer([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pSourceId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pSourceTable, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pUserId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pPrice, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCurrencyId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(MAX)")] string pDescription, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> pItemOnSaleRequestTempBufferId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pSourceId, pSourceTable, pUserId, pPrice, pCurrencyId, pDescription, pItemOnSaleRequestTempBufferId);
+			pItemOnSaleRequestTempBufferId = ((System.Nullable<int>)(result.GetParameterValue(6)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_Item_GetFromItemId")]
+		public ISingleResult<sp_Item_GetFromItemIdResult> sp_Item_GetFromItemId([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pItemId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCompanyId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pSystemLanguageId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pItemId, pCompanyId, pSystemLanguageId);
+			return ((ISingleResult<sp_Item_GetFromItemIdResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.tfnItemOnSalePlatformListGet", IsComposable=true)]
+		public IQueryable<tfnItemOnSalePlatformListGetResult> tfnItemOnSalePlatformListGet([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pItemOnSaleRequestId)
+		{
+			return this.CreateMethodCallQuery<tfnItemOnSalePlatformListGetResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pItemOnSaleRequestId);
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ItemOnSaleRequestPlatformUpdate")]
+		public int sp_ItemOnSaleRequestPlatformUpdate([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pPlatformName, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pUserId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Bit")] System.Nullable<bool> pAvailable, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> pItemOnSaleRequestPlatformInfoId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pPlatformName, pUserId, pAvailable, pItemOnSaleRequestPlatformInfoId);
+			pItemOnSaleRequestPlatformInfoId = ((System.Nullable<int>)(result.GetParameterValue(3)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ItemPackageUpdateAfter")]
+		public int sp_ItemPackageUpdateAfter([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> pItemSubmitPackageId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> pItemUpdatePackageId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pPrice, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCurrencyId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(MAX)")] string pProductName, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pWeight, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(MAX)")] string pSaleTitle, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pSalePlace, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(MAX)")] string pDiscountDescription, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(MAX)")] string pSizeRange, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(MAX)")] string pColorRange, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pUserId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCompanyId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pItemSubmitPackageId, pItemUpdatePackageId, pPrice, pCurrencyId, pProductName, pWeight, pSaleTitle, pSalePlace, pDiscountDescription, pSizeRange, pColorRange, pUserId, pCompanyId);
+			pItemSubmitPackageId = ((System.Nullable<int>)(result.GetParameterValue(0)));
+			pItemUpdatePackageId = ((System.Nullable<int>)(result.GetParameterValue(1)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ItemPackageResourceClear")]
+		public int sp_ItemPackageResourceClear([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pSourceId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(64)")] string pSourceTable, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pUserId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pSourceId, pSourceTable, pUserId);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ItemOnSaleRequestCreate")]
+		public int sp_ItemOnSaleRequestCreate([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pItemOnSaleRequestTempBufferId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pItemId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pPrice, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCurrencyId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(MAX)")] string pDescription, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> pItemOnSaleRequestId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pItemSubmitPackageId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pItemUpdatePackageId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pUserId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pItemOnSaleRequestTempBufferId, pItemId, pPrice, pCurrencyId, pDescription, pItemOnSaleRequestId, pItemSubmitPackageId, pItemUpdatePackageId, pUserId);
+			pItemOnSaleRequestId = ((System.Nullable<int>)(result.GetParameterValue(5)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ItemOnSaleRequestGet")]
+		public ISingleResult<sp_ItemOnSaleRequestGetResult> sp_ItemOnSaleRequestGet([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pItemOnSaleRequestStatusCodeId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCompanyId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pUserId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pSystemLanguageId, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="PageSize", DbType="Int")] System.Nullable<int> pageSize, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Page", DbType="Int")] ref System.Nullable<int> page, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Total", DbType="Int")] ref System.Nullable<int> total, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="TotalPages", DbType="Int")] ref System.Nullable<int> totalPages)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pItemOnSaleRequestStatusCodeId, pCompanyId, pUserId, pSystemLanguageId, pageSize, page, total, totalPages);
+			page = ((System.Nullable<int>)(result.GetParameterValue(5)));
+			total = ((System.Nullable<int>)(result.GetParameterValue(6)));
+			totalPages = ((System.Nullable<int>)(result.GetParameterValue(7)));
+			return ((ISingleResult<sp_ItemOnSaleRequestGetResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ItemOnSaleRequestGetById")]
+		public ISingleResult<sp_ItemOnSaleRequestGetByIdResult> sp_ItemOnSaleRequestGetById([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pItemOnSaleRequestId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pUserId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pSystemLanguageId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pItemOnSaleRequestId, pUserId, pSystemLanguageId);
+			return ((ISingleResult<sp_ItemOnSaleRequestGetByIdResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ItemPackageGetByManager")]
+		public ISingleResult<sp_ItemPackageGetByManagerResult> sp_ItemPackageGetByManager([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pSearchWord, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pItemPackageStatusCodeId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCompanyId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pUserId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pSystemLanguageId, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="PageSize", DbType="Int")] System.Nullable<int> pageSize, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Page", DbType="Int")] ref System.Nullable<int> page, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Total", DbType="Int")] ref System.Nullable<int> total, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="TotalPages", DbType="Int")] ref System.Nullable<int> totalPages)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pSearchWord, pItemPackageStatusCodeId, pCompanyId, pUserId, pSystemLanguageId, pageSize, page, total, totalPages);
+			page = ((System.Nullable<int>)(result.GetParameterValue(6)));
+			total = ((System.Nullable<int>)(result.GetParameterValue(7)));
+			totalPages = ((System.Nullable<int>)(result.GetParameterValue(8)));
+			return ((ISingleResult<sp_ItemPackageGetByManagerResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ItemPackageGetBySourceId")]
+		public ISingleResult<sp_ItemPackageGetBySourceIdResult> sp_ItemPackageGetBySourceId([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pSourceId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pSourceTable, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCompanyId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pUserId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pSystemLanguageId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pSourceId, pSourceTable, pCompanyId, pUserId, pSystemLanguageId);
+			return ((ISingleResult<sp_ItemPackageGetBySourceIdResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ItemPackageGetByUserId")]
+		public ISingleResult<sp_ItemPackageGetByUserIdResult> sp_ItemPackageGetByUserId([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pSearchWord, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pItemPackageStatusCodeId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCompanyId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pUserId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pSystemLanguageId, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="PageSize", DbType="Int")] System.Nullable<int> pageSize, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Page", DbType="Int")] ref System.Nullable<int> page, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Total", DbType="Int")] ref System.Nullable<int> total, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="TotalPages", DbType="Int")] ref System.Nullable<int> totalPages)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pSearchWord, pItemPackageStatusCodeId, pCompanyId, pUserId, pSystemLanguageId, pageSize, page, total, totalPages);
+			page = ((System.Nullable<int>)(result.GetParameterValue(6)));
+			total = ((System.Nullable<int>)(result.GetParameterValue(7)));
+			totalPages = ((System.Nullable<int>)(result.GetParameterValue(8)));
+			return ((ISingleResult<sp_ItemPackageGetByUserIdResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ItemOnSale_Create")]
+		public int sp_ItemOnSale_Create([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pItemId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pTitle, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pDescription, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pVariationTitle, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Decimal(10,2)")] System.Nullable<decimal> pPrice, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCurrencyId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pSaleTitle, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pUserId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> pItemOnSaleId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pItemId, pTitle, pDescription, pVariationTitle, pPrice, pCurrencyId, pSaleTitle, pUserId, pItemOnSaleId);
+			pItemOnSaleId = ((System.Nullable<int>)(result.GetParameterValue(8)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ItemOnSale_Disable")]
+		public int sp_ItemOnSale_Disable([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pItemId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pUserId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pItemId, pUserId);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ItemOnSaleBulletPointClear")]
+		public int sp_ItemOnSaleBulletPointClear([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pItemOnSaleId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pUserId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pItemOnSaleId, pUserId);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ItemOnSaleBulletPointUpdate")]
+		public int sp_ItemOnSaleBulletPointUpdate([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pItemOnSaleId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pBulletPoint, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pOrder, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pUserId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> pItemOnSaleDetailId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pItemOnSaleId, pBulletPoint, pOrder, pUserId, pItemOnSaleDetailId);
+			pItemOnSaleDetailId = ((System.Nullable<int>)(result.GetParameterValue(4)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ItemOnSaleResourceClear")]
+		public int sp_ItemOnSaleResourceClear([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pItemOnSaleId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pUserId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pItemOnSaleId, pUserId);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ItemOnSaleResourceUpdate")]
+		public int sp_ItemOnSaleResourceUpdate([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pItemOnSaleId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pResourceTypeCodeId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pFileId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Bit")] System.Nullable<bool> pIsMain, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pOrder, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pDescription, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pDescription_2, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pUserId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> pItemOnSaleDetailId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pItemOnSaleId, pResourceTypeCodeId, pFileId, pIsMain, pOrder, pDescription, pDescription_2, pUserId, pItemOnSaleDetailId);
+			pItemOnSaleDetailId = ((System.Nullable<int>)(result.GetParameterValue(8)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.tfnItemOnSaleInfoGet", IsComposable=true)]
+		public IQueryable<tfnItemOnSaleInfoGetResult> tfnItemOnSaleInfoGet([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pItemOnSaleId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pItemId)
+		{
+			return this.CreateMethodCallQuery<tfnItemOnSaleInfoGetResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pItemOnSaleId, pItemId);
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.tfnItemOnSaleBulletPointInfoGet", IsComposable=true)]
+		public IQueryable<tfnItemOnSaleBulletPointInfoGetResult> tfnItemOnSaleBulletPointInfoGet([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pItemOnSaleId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pItemId)
+		{
+			return this.CreateMethodCallQuery<tfnItemOnSaleBulletPointInfoGetResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pItemOnSaleId, pItemId);
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.tfnItemOnSaleResourceInfoGet", IsComposable=true)]
+		public IQueryable<tfnItemOnSaleResourceInfoGetResult> tfnItemOnSaleResourceInfoGet([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pItemOnSaleId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pItemId)
+		{
+			return this.CreateMethodCallQuery<tfnItemOnSaleResourceInfoGetResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pItemOnSaleId, pItemId);
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_Customer_Create")]
+		public int sp_Customer_Create(
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pFirstName, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pLastName, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pPhoneNumber, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCountryId, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pNickName, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pEmail, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pLoginName, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pPassword, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pDescription, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Bit")] System.Nullable<bool> pAvailable, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pLastUpdateBy, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCompanyId, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pThirdPartyUId, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pThirdPartyNickName, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCustomerTypeCodeId, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pAvatarUrl, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(64)")] string pGender, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> pCustomerId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pFirstName, pLastName, pPhoneNumber, pCountryId, pNickName, pEmail, pLoginName, pPassword, pDescription, pAvailable, pLastUpdateBy, pCompanyId, pThirdPartyUId, pThirdPartyNickName, pCustomerTypeCodeId, pAvatarUrl, pGender, pCustomerId);
+			pCustomerId = ((System.Nullable<int>)(result.GetParameterValue(17)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_CustomerGet")]
+		public ISingleResult<sp_CustomerGetResult> sp_CustomerGet([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCustomerId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pCustomerId);
+			return ((ISingleResult<sp_CustomerGetResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_CustomerSearch")]
+		public ISingleResult<sp_CustomerSearchResult> sp_CustomerSearch([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pSearchWord, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCustomerTypeCodeId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCompanyId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pSystemLanguageId, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="PageSize", DbType="Int")] System.Nullable<int> pageSize, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Page", DbType="Int")] ref System.Nullable<int> page, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Total", DbType="Int")] ref System.Nullable<int> total, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="TotalPages", DbType="Int")] ref System.Nullable<int> totalPages)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pSearchWord, pCustomerTypeCodeId, pCompanyId, pSystemLanguageId, pageSize, page, total, totalPages);
+			page = ((System.Nullable<int>)(result.GetParameterValue(5)));
+			total = ((System.Nullable<int>)(result.GetParameterValue(6)));
+			totalPages = ((System.Nullable<int>)(result.GetParameterValue(7)));
+			return ((ISingleResult<sp_CustomerSearchResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_CustomerSession_UpdateCompany")]
+		public int sp_CustomerSession_UpdateCompany([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCustomerId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCompanyId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pCustomerId, pCompanyId);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_CustomerCompanyListGet")]
+		public ISingleResult<sp_CustomerCompanyListGetResult> sp_CustomerCompanyListGet([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCustomerId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pCustomerId);
+			return ((ISingleResult<sp_CustomerCompanyListGetResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_CustomerLogin")]
+		public int sp_CustomerLogin([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pLoginName, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pPassword, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pWechatUId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pAlibabaUId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pNickName, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pSystemLanguageId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pExpiredSeconds, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pCompanyCode, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> pCustomerSessionId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] ref string pToken)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pLoginName, pPassword, pWechatUId, pAlibabaUId, pNickName, pSystemLanguageId, pExpiredSeconds, pCompanyCode, pCustomerSessionId, pToken);
+			pCustomerSessionId = ((System.Nullable<int>)(result.GetParameterValue(8)));
+			pToken = ((string)(result.GetParameterValue(9)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_CustomerSession_Validate")]
+		public ISingleResult<sp_CustomerSession_ValidateResult> sp_CustomerSession_Validate([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pToken)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pToken);
+			return ((ISingleResult<sp_CustomerSession_ValidateResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_CustomerAddressResourceClear")]
+		public int sp_CustomerAddressResourceClear([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCustomer_AddressId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pCustomer_AddressId);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_CustomerAddressSubmitUpdate")]
+		public int sp_CustomerAddressSubmitUpdate(
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCustomerId, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pContactName, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pContactLastName, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pContactPhoneNumber, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pContactPhoneCountryId, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pAddress1, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pAddress2, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pCity, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(64)")] string pState, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(64)")] string pZip, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Bit")] System.Nullable<bool> pDefaultShipping, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCountryId, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Bit")] System.Nullable<bool> pAvailable, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pUpdateUserId, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCompanyId, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> pCustomer_AddressId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pCustomerId, pContactName, pContactLastName, pContactPhoneNumber, pContactPhoneCountryId, pAddress1, pAddress2, pCity, pState, pZip, pDefaultShipping, pCountryId, pAvailable, pUpdateUserId, pCompanyId, pCustomer_AddressId);
+			pCustomer_AddressId = ((System.Nullable<int>)(result.GetParameterValue(15)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_CustomerAddressResourceInsert")]
+		public int sp_CustomerAddressResourceInsert([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCustomer_AddressId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pFileId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> pCustomer_AddressResourceId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pCustomer_AddressId, pFileId, pCustomer_AddressResourceId);
+			pCustomer_AddressResourceId = ((System.Nullable<int>)(result.GetParameterValue(2)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.tfnCustomerAddressResourceGet", IsComposable=true)]
+		public IQueryable<tfnCustomerAddressResourceGetResult> tfnCustomerAddressResourceGet([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCustomerAddressId)
+		{
+			return this.CreateMethodCallQuery<tfnCustomerAddressResourceGetResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pCustomerAddressId);
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.tfnCompanyGetById", IsComposable=true)]
+		public IQueryable<tfnCompanyGetByIdResult> tfnCompanyGetById([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCompanyId)
+		{
+			return this.CreateMethodCallQuery<tfnCompanyGetByIdResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pCompanyId);
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.tfnCompanyGetByCode", IsComposable=true)]
+		public IQueryable<tfnCompanyGetByCodeResult> tfnCompanyGetByCode([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pCompanyCode)
+		{
+			return this.CreateMethodCallQuery<tfnCompanyGetByCodeResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pCompanyCode);
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_Customer_ShoppingCartClear")]
+		public int sp_Customer_ShoppingCartClear([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCustomerId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pCustomerId);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_Customer_ShoppingCartUpdate")]
+		public int sp_Customer_ShoppingCartUpdate([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCustomerId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pItemId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pQuantity, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pUserId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> pCustomer_ShoppingCart_ItemId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pCustomerId, pItemId, pQuantity, pUserId, pCustomer_ShoppingCart_ItemId);
+			pCustomer_ShoppingCart_ItemId = ((System.Nullable<int>)(result.GetParameterValue(4)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_Customer_OrderCreate")]
+		public int sp_Customer_OrderCreate([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCustomerId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCustomer_AddressId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pDiscountCode, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCompanyId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pUserId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> pCustomer_OrderId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pCustomerId, pCustomer_AddressId, pDiscountCode, pCompanyId, pUserId, pCustomer_OrderId);
+			pCustomer_OrderId = ((System.Nullable<int>)(result.GetParameterValue(5)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_Customer_OrderItemInsert")]
+		public int sp_Customer_OrderItemInsert([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCustomer_OrderId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pItemId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Decimal(10,2)")] System.Nullable<decimal> pUnitAmount, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pQuantity, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCurrencyId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pUserId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> pCustomer_Order_ItemId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pCustomer_OrderId, pItemId, pUnitAmount, pQuantity, pCurrencyId, pUserId, pCustomer_Order_ItemId);
+			pCustomer_Order_ItemId = ((System.Nullable<int>)(result.GetParameterValue(6)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_Customer_OrderPay")]
+		public int sp_Customer_OrderPay([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCustomerPaymentMethodCodeId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Decimal(10,2)")] System.Nullable<decimal> pTotalAmount, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCurrencyId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(MAX)")] string pDetail, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCustomer_OrderId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> pCustomer_OrderPaymentId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pCustomerPaymentMethodCodeId, pTotalAmount, pCurrencyId, pDetail, pCustomer_OrderId, pCustomer_OrderPaymentId);
+			pCustomer_OrderPaymentId = ((System.Nullable<int>)(result.GetParameterValue(5)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_Customer_OrderPriceCalculate")]
+		public int sp_Customer_OrderPriceCalculate([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCustomer_OrderId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pPromoCode)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pCustomer_OrderId, pPromoCode);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.tfnCustomer_OrderPaymentGet", IsComposable=true)]
+		public IQueryable<tfnCustomer_OrderPaymentGetResult> tfnCustomer_OrderPaymentGet([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCustomer_OrderId)
+		{
+			return this.CreateMethodCallQuery<tfnCustomer_OrderPaymentGetResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pCustomer_OrderId);
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.tfnCustomer_OrderItemsGet", IsComposable=true)]
+		public IQueryable<tfnCustomer_OrderItemsGetResult> tfnCustomer_OrderItemsGet([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCustomer_OrderId)
+		{
+			return this.CreateMethodCallQuery<tfnCustomer_OrderItemsGetResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pCustomer_OrderId);
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.tfnCustomer_OrderGet", IsComposable=true)]
+		public IQueryable<tfnCustomer_OrderGetResult> tfnCustomer_OrderGet([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCustomer_OrderId)
+		{
+			return this.CreateMethodCallQuery<tfnCustomer_OrderGetResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pCustomer_OrderId);
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.tfnCustomerAddressGetById", IsComposable=true)]
+		public IQueryable<tfnCustomerAddressGetByIdResult> tfnCustomerAddressGetById([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCustomer_AddressId)
+		{
+			return this.CreateMethodCallQuery<tfnCustomerAddressGetByIdResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pCustomer_AddressId);
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.tfnCustomerAddressGet", IsComposable=true)]
+		public IQueryable<tfnCustomerAddressGetResult> tfnCustomerAddressGet([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCustomerId)
+		{
+			return this.CreateMethodCallQuery<tfnCustomerAddressGetResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pCustomerId);
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_CustomerAddressIDUpdate")]
+		public int sp_CustomerAddressIDUpdate([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCustomer_AddressId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pIDNumber, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> pCustomer_AddressIDId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pCustomer_AddressId, pIDNumber, pCustomer_AddressIDId);
+			pCustomer_AddressIDId = ((System.Nullable<int>)(result.GetParameterValue(2)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_Customer_OrderSearch")]
+		public ISingleResult<sp_Customer_OrderSearchResult> sp_Customer_OrderSearch([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pProductName, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pCustomerName, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pCustomerThirdPartyId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCustomerTypeCodeId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="DateTime")] System.Nullable<System.DateTime> pDateStart, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="DateTime")] System.Nullable<System.DateTime> pDateEnd, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCustomerOrderStatusCodeId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Bit")] System.Nullable<bool> pIsPaid, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pAddressSearchWord, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCompanyId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pSystemLanguageId, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="PageSize", DbType="Int")] System.Nullable<int> pageSize, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Page", DbType="Int")] ref System.Nullable<int> page, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Total", DbType="Int")] ref System.Nullable<int> total, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="TotalPages", DbType="Int")] ref System.Nullable<int> totalPages)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pProductName, pCustomerName, pCustomerThirdPartyId, pCustomerTypeCodeId, pDateStart, pDateEnd, pCustomerOrderStatusCodeId, pIsPaid, pAddressSearchWord, pCompanyId, pSystemLanguageId, pageSize, page, total, totalPages);
+			page = ((System.Nullable<int>)(result.GetParameterValue(12)));
+			total = ((System.Nullable<int>)(result.GetParameterValue(13)));
+			totalPages = ((System.Nullable<int>)(result.GetParameterValue(14)));
+			return ((ISingleResult<sp_Customer_OrderSearchResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_Customer_ItemOnSaleSearch")]
+		public ISingleResult<sp_Customer_ItemOnSaleSearchResult> sp_Customer_ItemOnSaleSearch([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pProductName, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Decimal(10,2)")] System.Nullable<decimal> pPriceStart, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Decimal(10,2)")] System.Nullable<decimal> pPriceEnd, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCompanyId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pSystemLanguageId, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="PageSize", DbType="Int")] System.Nullable<int> pageSize, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Page", DbType="Int")] ref System.Nullable<int> page, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Total", DbType="Int")] ref System.Nullable<int> total, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="TotalPages", DbType="Int")] ref System.Nullable<int> totalPages)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pProductName, pPriceStart, pPriceEnd, pCompanyId, pSystemLanguageId, pageSize, page, total, totalPages);
+			page = ((System.Nullable<int>)(result.GetParameterValue(6)));
+			total = ((System.Nullable<int>)(result.GetParameterValue(7)));
+			totalPages = ((System.Nullable<int>)(result.GetParameterValue(8)));
+			return ((ISingleResult<sp_Customer_ItemOnSaleSearchResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_Customer_OrderSearchByCustomer")]
+		public ISingleResult<sp_Customer_OrderSearchByCustomerResult> sp_Customer_OrderSearchByCustomer([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pProductName, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCustomerId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="DateTime")] System.Nullable<System.DateTime> pDateStart, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="DateTime")] System.Nullable<System.DateTime> pDateEnd, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCustomerOrderStatusCodeId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Bit")] System.Nullable<bool> pIsPaid, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pAddressSearchWord, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCompanyId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pSystemLanguageId, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="PageSize", DbType="Int")] System.Nullable<int> pageSize, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Page", DbType="Int")] ref System.Nullable<int> page, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Total", DbType="Int")] ref System.Nullable<int> total, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="TotalPages", DbType="Int")] ref System.Nullable<int> totalPages)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pProductName, pCustomerId, pDateStart, pDateEnd, pCustomerOrderStatusCodeId, pIsPaid, pAddressSearchWord, pCompanyId, pSystemLanguageId, pageSize, page, total, totalPages);
+			page = ((System.Nullable<int>)(result.GetParameterValue(10)));
+			total = ((System.Nullable<int>)(result.GetParameterValue(11)));
+			totalPages = ((System.Nullable<int>)(result.GetParameterValue(12)));
+			return ((ISingleResult<sp_Customer_OrderSearchByCustomerResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.tfnCustomerShoppingCartContentGet", IsComposable=true)]
+		public IQueryable<tfnCustomerShoppingCartContentGetResult> tfnCustomerShoppingCartContentGet([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCustomerId)
+		{
+			return this.CreateMethodCallQuery<tfnCustomerShoppingCartContentGetResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pCustomerId);
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_PurchasePoolTaskSearch")]
+		public ISingleResult<sp_PurchasePoolTaskSearchResult> sp_PurchasePoolTaskSearch([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pItemPurchaseStatusCodeId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pPurchasePlaceSearch, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="DateTime")] System.Nullable<System.DateTime> pCreateDateFrom, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="DateTime")] System.Nullable<System.DateTime> pCreateDateTo, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pUserId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCompanyId, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="PageSize", DbType="Int")] System.Nullable<int> pageSize, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Page", DbType="Int")] ref System.Nullable<int> page, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Total", DbType="Int")] ref System.Nullable<int> total, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="TotalPages", DbType="Int")] ref System.Nullable<int> totalPages)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pItemPurchaseStatusCodeId, pPurchasePlaceSearch, pCreateDateFrom, pCreateDateTo, pUserId, pCompanyId, pageSize, page, total, totalPages);
+			page = ((System.Nullable<int>)(result.GetParameterValue(7)));
+			total = ((System.Nullable<int>)(result.GetParameterValue(8)));
+			totalPages = ((System.Nullable<int>)(result.GetParameterValue(9)));
+			return ((ISingleResult<sp_PurchasePoolTaskSearchResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ItemPurchasePoolGenerate")]
+		public int sp_ItemPurchasePoolGenerate([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCompanyId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> pItemPurchasePoolCompanyId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pCompanyId, pItemPurchasePoolCompanyId);
+			pItemPurchasePoolCompanyId = ((System.Nullable<int>)(result.GetParameterValue(1)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.tfnItemPurchaseTaskGet", IsComposable=true)]
+		public IQueryable<tfnItemPurchaseTaskGetResult> tfnItemPurchaseTaskGet([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pItemPurchaseTaskId)
+		{
+			return this.CreateMethodCallQuery<tfnItemPurchaseTaskGetResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pItemPurchaseTaskId);
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_PurchasePoolTaskAccept")]
+		public int sp_PurchasePoolTaskAccept([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pItemPurchasePoolId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pItemId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pQuantity, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pUserId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> pItemPurchaseTaskId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pItemPurchasePoolId, pItemId, pQuantity, pUserId, pItemPurchaseTaskId);
+			pItemPurchaseTaskId = ((System.Nullable<int>)(result.GetParameterValue(4)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_PurchasePoolTaskFinish")]
+		public int sp_PurchasePoolTaskFinish([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pUserId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Decimal(10,2)")] System.Nullable<decimal> pFinalUnitPrice, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Decimal(10,2)")] System.Nullable<decimal> pFinalTotalPrice, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pReason, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> pItemPurchaseTaskId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pUserId, pFinalUnitPrice, pFinalTotalPrice, pReason, pItemPurchaseTaskId);
+			pItemPurchaseTaskId = ((System.Nullable<int>)(result.GetParameterValue(4)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_PurchasePoolTaskCancel")]
+		public int sp_PurchasePoolTaskCancel([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pReason, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> pItemPurchaseTaskId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pReason, pItemPurchaseTaskId);
+			pItemPurchaseTaskId = ((System.Nullable<int>)(result.GetParameterValue(1)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_PurchasePoolTaskChange")]
+		public int sp_PurchasePoolTaskChange([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pItemId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pQuantity, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pUserId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> pItemPurchaseTaskId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pItemId, pQuantity, pUserId, pItemPurchaseTaskId);
+			pItemPurchaseTaskId = ((System.Nullable<int>)(result.GetParameterValue(3)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ItemPurchaseTaskResourceUpdate")]
+		public int sp_ItemPurchaseTaskResourceUpdate([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pItemPurchaseTaskId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pFileId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pResourceTypeCodeId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pOrder, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pDescription, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pDescription_2, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pUserId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> pItemPurchaseTaskResourceId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pItemPurchaseTaskId, pFileId, pResourceTypeCodeId, pOrder, pDescription, pDescription_2, pUserId, pItemPurchaseTaskResourceId);
+			pItemPurchaseTaskResourceId = ((System.Nullable<int>)(result.GetParameterValue(7)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ItemPurchaseTaskResourceClear")]
+		public int sp_ItemPurchaseTaskResourceClear([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pItemPurchaseTaskId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pUserId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pItemPurchaseTaskId, pUserId);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.tfnItemPurchaseTaskResourceGet", IsComposable=true)]
+		public IQueryable<tfnItemPurchaseTaskResourceGetResult> tfnItemPurchaseTaskResourceGet([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pItemPurchaseTaskId)
+		{
+			return this.CreateMethodCallQuery<tfnItemPurchaseTaskResourceGetResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pItemPurchaseTaskId);
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_WarehouseLevelUpdate")]
+		public int sp_WarehouseLevelUpdate([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pWareHouseId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pLevelName, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pLevelCode, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Bit")] System.Nullable<bool> pAvailable, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pUserId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCompanyId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> pWareHouseLevelId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pWareHouseId, pLevelName, pLevelCode, pAvailable, pUserId, pCompanyId, pWareHouseLevelId);
+			pWareHouseLevelId = ((System.Nullable<int>)(result.GetParameterValue(6)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_WarehouseZoneUpdate")]
+		public int sp_WarehouseZoneUpdate([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pWareHouseLevelId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pZoneCode, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pZoneName, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Bit")] System.Nullable<bool> pAvailable, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pUserId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCompanyId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> pWareHouseZoneId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pWareHouseLevelId, pZoneCode, pZoneName, pAvailable, pUserId, pCompanyId, pWareHouseZoneId);
+			pWareHouseZoneId = ((System.Nullable<int>)(result.GetParameterValue(6)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_WarehouseRackLevelUpdate")]
+		public int sp_WarehouseRackLevelUpdate([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pWareHouseRackId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pRackLevelCode, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pRackLevelName, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Bit")] System.Nullable<bool> pAvailable, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pUserId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCompanyId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> pWareHouseRackLevelId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pWareHouseRackId, pRackLevelCode, pRackLevelName, pAvailable, pUserId, pCompanyId, pWareHouseRackLevelId);
+			pWareHouseRackLevelId = ((System.Nullable<int>)(result.GetParameterValue(6)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_WarehouseRackUpdate")]
+		public int sp_WarehouseRackUpdate([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pWareHouseZoneId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pRackCode, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pRackName, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Bit")] System.Nullable<bool> pAvailable, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pUserId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCompanyId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> pWareHouseRackId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pWareHouseZoneId, pRackCode, pRackName, pAvailable, pUserId, pCompanyId, pWareHouseRackId);
+			pWareHouseRackId = ((System.Nullable<int>)(result.GetParameterValue(6)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.tfnWareHouseLevelListGet", IsComposable=true)]
+		public IQueryable<tfnWareHouseLevelListGetResult> tfnWareHouseLevelListGet([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pWarehouseId)
+		{
+			return this.CreateMethodCallQuery<tfnWareHouseLevelListGetResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pWarehouseId);
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.tfnWareHouseZoneListGet", IsComposable=true)]
+		public IQueryable<tfnWareHouseZoneListGetResult> tfnWareHouseZoneListGet([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pWarehouseLevelId)
+		{
+			return this.CreateMethodCallQuery<tfnWareHouseZoneListGetResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pWarehouseLevelId);
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.tfnWareHouseListGet", IsComposable=true)]
+		public IQueryable<tfnWareHouseListGetResult> tfnWareHouseListGet([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCompanyId)
+		{
+			return this.CreateMethodCallQuery<tfnWareHouseListGetResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pCompanyId);
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.tfnWareHouseRackLevelListGet", IsComposable=true)]
+		public IQueryable<tfnWareHouseRackLevelListGetResult> tfnWareHouseRackLevelListGet([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pWareHouseRackId)
+		{
+			return this.CreateMethodCallQuery<tfnWareHouseRackLevelListGetResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pWareHouseRackId);
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.tfnWareHouseRackListGet", IsComposable=true)]
+		public IQueryable<tfnWareHouseRackListGetResult> tfnWareHouseRackListGet([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pWareHouseZoneId)
+		{
+			return this.CreateMethodCallQuery<tfnWareHouseRackListGetResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pWareHouseZoneId);
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.tfnWareHouseGet", IsComposable=true)]
+		public IQueryable<tfnWareHouseGetResult> tfnWareHouseGet([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pWareHouseId)
+		{
+			return this.CreateMethodCallQuery<tfnWareHouseGetResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pWareHouseId);
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_WarehouseUpdate")]
+		public int sp_WarehouseUpdate([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pContactManagerName, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pContactNumber, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pContactCountryId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(512)")] string pAddress1, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(512)")] string pAddress2, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pCity, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(64)")] string pState, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(64)")] string pZip, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCountryId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pWareHouse_Name, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Bit")] System.Nullable<bool> pAvailable, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pUserId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCompanyId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> pWareHouseId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pContactManagerName, pContactNumber, pContactCountryId, pAddress1, pAddress2, pCity, pState, pZip, pCountryId, pWareHouse_Name, pAvailable, pUserId, pCompanyId, pWareHouseId);
+			pWareHouseId = ((System.Nullable<int>)(result.GetParameterValue(13)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.tfnWareHouseLevelGet", IsComposable=true)]
+		public IQueryable<tfnWareHouseLevelGetResult> tfnWareHouseLevelGet([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pWarehouseLevelId)
+		{
+			return this.CreateMethodCallQuery<tfnWareHouseLevelGetResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pWarehouseLevelId);
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.tfnWareHouseRackGet", IsComposable=true)]
+		public IQueryable<tfnWareHouseRackGetResult> tfnWareHouseRackGet([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pWareHouseRackId)
+		{
+			return this.CreateMethodCallQuery<tfnWareHouseRackGetResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pWareHouseRackId);
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.tfnWareHouseRackLevelGet", IsComposable=true)]
+		public IQueryable<tfnWareHouseRackLevelGetResult> tfnWareHouseRackLevelGet([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pWareHouseRackLevelId)
+		{
+			return this.CreateMethodCallQuery<tfnWareHouseRackLevelGetResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pWareHouseRackLevelId);
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.tfnWareHouseZoneGet", IsComposable=true)]
+		public IQueryable<tfnWareHouseZoneGetResult> tfnWareHouseZoneGet([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pWarehouseZoneId)
+		{
+			return this.CreateMethodCallQuery<tfnWareHouseZoneGetResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pWarehouseZoneId);
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.tfnWareHouseCartListGet", IsComposable=true)]
+		public IQueryable<tfnWareHouseCartListGetResult> tfnWareHouseCartListGet([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pWareHouseId)
+		{
+			return this.CreateMethodCallQuery<tfnWareHouseCartListGetResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pWareHouseId);
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.tfnWareHouseCartGet", IsComposable=true)]
+		public IQueryable<tfnWareHouseCartGetResult> tfnWareHouseCartGet([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pWarehouseCartId)
+		{
+			return this.CreateMethodCallQuery<tfnWareHouseCartGetResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pWarehouseCartId);
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_WarehouseCartUpdate")]
+		public int sp_WarehouseCartUpdate([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pWareHouseId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pCartName, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pCartCode, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Bit")] System.Nullable<bool> pAvailable, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pUserId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCompanyId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> pWareHouseCartId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pWareHouseId, pCartName, pCartCode, pAvailable, pUserId, pCompanyId, pWareHouseCartId);
+			pWareHouseCartId = ((System.Nullable<int>)(result.GetParameterValue(6)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.tfnPurchasePoolItemCompanyPurchasePlaceGet", IsComposable=true)]
+		public IQueryable<tfnPurchasePoolItemCompanyPurchasePlaceGetResult> tfnPurchasePoolItemCompanyPurchasePlaceGet([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCompanyId)
+		{
+			return this.CreateMethodCallQuery<tfnPurchasePoolItemCompanyPurchasePlaceGetResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pCompanyId);
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_PurchasePoolTaskActiveSearchByUPC")]
+		public ISingleResult<sp_PurchasePoolTaskActiveSearchByUPCResult> sp_PurchasePoolTaskActiveSearchByUPC([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pUPC, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pUserId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCompanyId, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="PageSize", DbType="Int")] System.Nullable<int> pageSize, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Page", DbType="Int")] ref System.Nullable<int> page, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Total", DbType="Int")] ref System.Nullable<int> total, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="TotalPages", DbType="Int")] ref System.Nullable<int> totalPages)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pUPC, pUserId, pCompanyId, pageSize, page, total, totalPages);
+			page = ((System.Nullable<int>)(result.GetParameterValue(4)));
+			total = ((System.Nullable<int>)(result.GetParameterValue(5)));
+			totalPages = ((System.Nullable<int>)(result.GetParameterValue(6)));
+			return ((ISingleResult<sp_PurchasePoolTaskActiveSearchByUPCResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_StockItemGroupGet")]
+		public ISingleResult<sp_StockItemGroupGetResult> sp_StockItemGroupGet([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pStockItemGroupId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> pStockItemGroupStatusCodeId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(64)")] ref string pStockItemGroupStatus, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> pStockItemPaymentId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pStockItemGroupId, pStockItemGroupStatusCodeId, pStockItemGroupStatus, pStockItemPaymentId);
+			pStockItemGroupStatusCodeId = ((System.Nullable<int>)(result.GetParameterValue(1)));
+			pStockItemGroupStatus = ((string)(result.GetParameterValue(2)));
+			pStockItemPaymentId = ((System.Nullable<int>)(result.GetParameterValue(3)));
+			return ((ISingleResult<sp_StockItemGroupGetResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_Customer_Update")]
+		public int sp_Customer_Update([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pFirstName, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pLastName, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pPhoneNumber, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCountryId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pNickName, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pEmail, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pLoginName, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pPassword, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pDescription, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Bit")] System.Nullable<bool> pAvailable, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pLastUpdateBy, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCompanyId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> pCustomerId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pFirstName, pLastName, pPhoneNumber, pCountryId, pNickName, pEmail, pLoginName, pPassword, pDescription, pAvailable, pLastUpdateBy, pCompanyId, pCustomerId);
+			pCustomerId = ((System.Nullable<int>)(result.GetParameterValue(12)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sfnCustomerExistsInCompany", IsComposable=true)]
+		public System.Nullable<int> sfnCustomerExistsInCompany([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCompanyId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pLoginName)
+		{
+			return ((System.Nullable<int>)(this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pCompanyId, pLoginName).ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ANTOTOShippingOrderItemInsert")]
+		public int sp_ANTOTOShippingOrderItemInsert(
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pShippingOrderId, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pItemId, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pStockItemId, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pItemName, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pQuantity, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pUnit, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Decimal(10,2)")] System.Nullable<decimal> pWeight, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pWeightUnit, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Decimal(10,2)")] System.Nullable<decimal> pPrice, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCurrencyId, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Decimal(10,2)")] System.Nullable<decimal> pTaxPrice, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(64)")] string pSourceArea, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pGoodCode, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pStateBarCode, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pBrand, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pSpecifications, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pLastUpdateBy, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pLastUpdateByType, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> pShippingOrderItemId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pShippingOrderId, pItemId, pStockItemId, pItemName, pQuantity, pUnit, pWeight, pWeightUnit, pPrice, pCurrencyId, pTaxPrice, pSourceArea, pGoodCode, pStateBarCode, pBrand, pSpecifications, pLastUpdateBy, pLastUpdateByType, pShippingOrderItemId);
+			pShippingOrderItemId = ((System.Nullable<int>)(result.GetParameterValue(18)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.tfnShippingOrderItemsGet", IsComposable=true)]
+		public IQueryable<tfnShippingOrderItemsGetResult> tfnShippingOrderItemsGet([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pShippingOrderId)
+		{
+			return this.CreateMethodCallQuery<tfnShippingOrderItemsGetResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pShippingOrderId);
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ShippingAddressCreate")]
+		public int sp_ShippingAddressCreate([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pContactName, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pContactLastName, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pContactPhoneNumber, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pContactPhoneCountryId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pAddress1, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pAddress2, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pCity, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(64)")] string pState, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(64)")] string pZip, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCountryId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> pShippingAddressId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pContactName, pContactLastName, pContactPhoneNumber, pContactPhoneCountryId, pAddress1, pAddress2, pCity, pState, pZip, pCountryId, pShippingAddressId);
+			pShippingAddressId = ((System.Nullable<int>)(result.GetParameterValue(10)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ANTOTOShippingOrderPriceCalculate")]
+		public int sp_ANTOTOShippingOrderPriceCalculate([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pShippingOrderId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pShippingOrderId);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.tfnShippingAddressGetById", IsComposable=true)]
+		public IQueryable<tfnShippingAddressGetByIdResult> tfnShippingAddressGetById([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pShippingAddressId)
+		{
+			return this.CreateMethodCallQuery<tfnShippingAddressGetByIdResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pShippingAddressId);
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ANTOTOShippingOrderCreate")]
+		public int sp_ANTOTOShippingOrderCreate([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCustomerId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCustomerOrderId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pReferenceOrderCode, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCompanyFromAddressId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCustomer_AddressId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pShippingChannelId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Decimal(10,2)")] System.Nullable<decimal> pPrice, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCurrencyId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Decimal(10,2)")] System.Nullable<decimal> pTotalWeight, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pWeightUnitId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pShippingOrderStatusCodeId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pUserId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pSourceCompanyId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pHandlerCompanyId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> pShippingOrderId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pCustomerId, pCustomerOrderId, pReferenceOrderCode, pCompanyFromAddressId, pCustomer_AddressId, pShippingChannelId, pPrice, pCurrencyId, pTotalWeight, pWeightUnitId, pShippingOrderStatusCodeId, pUserId, pSourceCompanyId, pHandlerCompanyId, pShippingOrderId);
+			pShippingOrderId = ((System.Nullable<int>)(result.GetParameterValue(14)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ANTOTOShippingOrderQuickCreate")]
+		public int sp_ANTOTOShippingOrderQuickCreate([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCustomerId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pReferenceOrderCode, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pFromShippingAddressId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pToShippingAddressId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pShippingChannelId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Decimal(10,2)")] System.Nullable<decimal> pPrice, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCurrencyId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Decimal(10,2)")] System.Nullable<decimal> pTotalWeight, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pWeightUnitId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pShippingOrderStatusCodeId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pUserId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pSourceCompanyId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pHandlerCompanyId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> pShippingOrderId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pCustomerId, pReferenceOrderCode, pFromShippingAddressId, pToShippingAddressId, pShippingChannelId, pPrice, pCurrencyId, pTotalWeight, pWeightUnitId, pShippingOrderStatusCodeId, pUserId, pSourceCompanyId, pHandlerCompanyId, pShippingOrderId);
+			pShippingOrderId = ((System.Nullable<int>)(result.GetParameterValue(13)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.tfnShippingOrderTaxPaymentGet", IsComposable=true)]
+		public IQueryable<tfnShippingOrderTaxPaymentGetResult> tfnShippingOrderTaxPaymentGet([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pShippingOrderId)
+		{
+			return this.CreateMethodCallQuery<tfnShippingOrderTaxPaymentGetResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pShippingOrderId);
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ANTOTOShippingOrderTaxPaymentSet")]
+		public int sp_ANTOTOShippingOrderTaxPaymentSet([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pShippingOrderId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pTaxPaymentMethod, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Decimal(10,2)")] System.Nullable<decimal> pTaxPrice, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCurrencyId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> pShippingOrderTaxPaymentId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pShippingOrderId, pTaxPaymentMethod, pTaxPrice, pCurrencyId, pShippingOrderTaxPaymentId);
+			pShippingOrderTaxPaymentId = ((System.Nullable<int>)(result.GetParameterValue(4)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ANTOTOShippingOrderShippingChannelUpdate")]
+		public int sp_ANTOTOShippingOrderShippingChannelUpdate([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> pShippingOrderId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pShippingChannelId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pUserId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pLastUpdateBy, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pLastUpdateByType)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pShippingOrderId, pShippingChannelId, pUserId, pLastUpdateBy, pLastUpdateByType);
+			pShippingOrderId = ((System.Nullable<int>)(result.GetParameterValue(0)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_LogisticCompanyUserCreate")]
+		public int sp_LogisticCompanyUserCreate(
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCompanyId, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pCompanyName, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pContactFirstName, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pContactLastName, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pCompanyCode, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pPhoneNumber, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pPhoneNumberCountryId, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pEmail, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pFax, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pAddress1, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pAddress2, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pCity, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pDistrict, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pState, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(64)")] string pZip, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCountryId, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pUserLoginName, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pPassword, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> pCustomerCompanyId, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pLastUpdateUserId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pCompanyId, pCompanyName, pContactFirstName, pContactLastName, pCompanyCode, pPhoneNumber, pPhoneNumberCountryId, pEmail, pFax, pAddress1, pAddress2, pCity, pDistrict, pState, pZip, pCountryId, pUserLoginName, pPassword, pCustomerCompanyId, pLastUpdateUserId);
+			pCustomerCompanyId = ((System.Nullable<int>)(result.GetParameterValue(18)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_LogisticCompanyUserUpdate")]
+		public int sp_LogisticCompanyUserUpdate(
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCompanyId, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pCompanyName, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pContactFirstName, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pContactLastName, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pCompanyCode, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pPhoneNumber, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pPhoneNumberCountryId, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pEmail, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pFax, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pAddress1, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pAddress2, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pCity, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pDistrict, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pState, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(64)")] string pZip, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCountryId, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pUserLoginName, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pPassword, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Bit")] System.Nullable<bool> pAvailable, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> pCustomerCompanyId, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pLastUpdateUserId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pCompanyId, pCompanyName, pContactFirstName, pContactLastName, pCompanyCode, pPhoneNumber, pPhoneNumberCountryId, pEmail, pFax, pAddress1, pAddress2, pCity, pDistrict, pState, pZip, pCountryId, pUserLoginName, pPassword, pAvailable, pCustomerCompanyId, pLastUpdateUserId);
+			pCustomerCompanyId = ((System.Nullable<int>)(result.GetParameterValue(19)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.tfnLogisticCompanyInfoGet", IsComposable=true)]
+		public IQueryable<tfnLogisticCompanyInfoGetResult> tfnLogisticCompanyInfoGet([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCompanyId)
+		{
+			return this.CreateMethodCallQuery<tfnLogisticCompanyInfoGetResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pCompanyId);
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_CompanyLogisticCompanySearch")]
+		public ISingleResult<sp_CompanyLogisticCompanySearchResult> sp_CompanyLogisticCompanySearch([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pName, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pCompanyCode, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pEmail, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pUserId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCompanyId, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="PageSize", DbType="Int")] System.Nullable<int> pageSize, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Page", DbType="Int")] ref System.Nullable<int> page, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Total", DbType="Int")] ref System.Nullable<int> total, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="TotalPages", DbType="Int")] ref System.Nullable<int> totalPages)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pName, pCompanyCode, pEmail, pUserId, pCompanyId, pageSize, page, total, totalPages);
+			page = ((System.Nullable<int>)(result.GetParameterValue(6)));
+			total = ((System.Nullable<int>)(result.GetParameterValue(7)));
+			totalPages = ((System.Nullable<int>)(result.GetParameterValue(8)));
+			return ((ISingleResult<sp_CompanyLogisticCompanySearchResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_BatchHandlerSetup")]
+		public int sp_BatchHandlerSetup([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> pBatchHandlerId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pBatchTemplateId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pBatchStatusCodeId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pUserId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pLastUpdateBy, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pLastUpdateByType)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pBatchHandlerId, pBatchTemplateId, pBatchStatusCodeId, pUserId, pLastUpdateBy, pLastUpdateByType);
+			pBatchHandlerId = ((System.Nullable<int>)(result.GetParameterValue(0)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_BatchHandlerRecordInsert")]
+		public int sp_BatchHandlerRecordInsert([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pBatchHandlerId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> pBatchHandlerRecordId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pLastUpdateBy, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pLastUpdateByType)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pBatchHandlerId, pBatchHandlerRecordId, pLastUpdateBy, pLastUpdateByType);
+			pBatchHandlerRecordId = ((System.Nullable<int>)(result.GetParameterValue(1)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_BatchHandlerProceed")]
+		public int sp_BatchHandlerProceed([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> pBatchHandlerId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pUserId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pLastUpdateBy, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pLastUpdateByType)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pBatchHandlerId, pUserId, pLastUpdateBy, pLastUpdateByType);
+			pBatchHandlerId = ((System.Nullable<int>)(result.GetParameterValue(0)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sfnBatchHandlerColumnIdGetByColumnName", IsComposable=true)]
+		public System.Nullable<int> sfnBatchHandlerColumnIdGetByColumnName([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pColumnName, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pBatchHandlerId)
+		{
+			return ((System.Nullable<int>)(this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pColumnName, pBatchHandlerId).ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_BatchHandlerRecordDetailInsert")]
+		public int sp_BatchHandlerRecordDetailInsert([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pBatchHandlerRecordId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pColumnName, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> pBatchHandlerRecordDetailId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pValue, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pLastUpdateBy, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pLastUpdateByType)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pBatchHandlerRecordId, pColumnName, pBatchHandlerRecordDetailId, pValue, pLastUpdateBy, pLastUpdateByType);
+			pBatchHandlerRecordDetailId = ((System.Nullable<int>)(result.GetParameterValue(2)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_BatchHandlerRecordCheck")]
+		public int sp_BatchHandlerRecordCheck([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pBatchHandlerId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pUserId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pLastUpdateBy, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pLastUpdateByType)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pBatchHandlerId, pUserId, pLastUpdateBy, pLastUpdateByType);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.tfnBatchHandlerRecordListGet", IsComposable=true)]
+		public IQueryable<tfnBatchHandlerRecordListGetResult> tfnBatchHandlerRecordListGet([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pBatchHandlerId)
+		{
+			return this.CreateMethodCallQuery<tfnBatchHandlerRecordListGetResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pBatchHandlerId);
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.tfnBatchHandlerGet", IsComposable=true)]
+		public IQueryable<tfnBatchHandlerGetResult> tfnBatchHandlerGet([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pBatchHandlerId)
+		{
+			return this.CreateMethodCallQuery<tfnBatchHandlerGetResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pBatchHandlerId);
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.tfnBatchHandlerColumnListGet", IsComposable=true)]
+		public IQueryable<tfnBatchHandlerColumnListGetResult> tfnBatchHandlerColumnListGet([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pBatchHandlerId)
+		{
+			return this.CreateMethodCallQuery<tfnBatchHandlerColumnListGetResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pBatchHandlerId);
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_BatchHandlerRecordDetailUpdate")]
+		public int sp_BatchHandlerRecordDetailUpdate([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pBatchHandlerRecordDetailId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pValue, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pLastUpdateBy, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pLastUpdateByType)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pBatchHandlerRecordDetailId, pValue, pLastUpdateBy, pLastUpdateByType);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_BatchHandlerComplete")]
+		public int sp_BatchHandlerComplete([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pBatchHandlerId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pUserId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pLastUpdateBy, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pLastUpdateByType)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pBatchHandlerId, pUserId, pLastUpdateBy, pLastUpdateByType);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_BatchHandlerCancel")]
+		public int sp_BatchHandlerCancel([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pBatchHandlerId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pUserId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pLastUpdateBy, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pLastUpdateByType)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pBatchHandlerId, pUserId, pLastUpdateBy, pLastUpdateByType);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.tfnBatchTemplateListGet", IsComposable=true)]
+		public IQueryable<tfnBatchTemplateListGetResult> tfnBatchTemplateListGet([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCompanyId)
+		{
+			return this.CreateMethodCallQuery<tfnBatchTemplateListGetResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pCompanyId);
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ErrorLog_Insert")]
+		public int sp_ErrorLog_Insert([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(MAX)")] string pValue, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(64)")] string pType)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pValue, pType);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.tfnBatchHandlerRecordDetailGet", IsComposable=true)]
+		public IQueryable<tfnBatchHandlerRecordDetailGetResult> tfnBatchHandlerRecordDetailGet([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pBatchHandlerRecordId)
+		{
+			return this.CreateMethodCallQuery<tfnBatchHandlerRecordDetailGetResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pBatchHandlerRecordId);
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_BatchHandlerPropertySet")]
+		public int sp_BatchHandlerPropertySet([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pBatchHandlerId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(64)")] string pPropertyName, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pPropertyValue, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pUserId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pLastUpdateBy, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pLastUpdateByType)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pBatchHandlerId, pPropertyName, pPropertyValue, pUserId, pLastUpdateBy, pLastUpdateByType);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ShippingChannelCompany_Set")]
+		public int sp_ShippingChannelCompany_Set([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCompanyId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pShippingChannelId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Decimal(10,2)")] System.Nullable<decimal> pTaxRate, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Decimal(10,2)")] System.Nullable<decimal> pPriceFirstRate, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Decimal(10,2)")] System.Nullable<decimal> pPriceAdditionRate, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pWeightUnit, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pWeightFirst, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Decimal(10,2)")] System.Nullable<decimal> pUnitPriceFirst, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Decimal(10,2)")] System.Nullable<decimal> pUnitPriceAdditional, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Bit")] System.Nullable<bool> pJumpToInt, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Bit")] System.Nullable<bool> pTaxPaymentMethodAvailable, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Bit")] System.Nullable<bool> pAvailable, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> pShippingChannelCompanyId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pLastUpdateBy, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pLastUpdateByType)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pCompanyId, pShippingChannelId, pTaxRate, pPriceFirstRate, pPriceAdditionRate, pWeightUnit, pWeightFirst, pUnitPriceFirst, pUnitPriceAdditional, pJumpToInt, pTaxPaymentMethodAvailable, pAvailable, pShippingChannelCompanyId, pLastUpdateBy, pLastUpdateByType);
+			pShippingChannelCompanyId = ((System.Nullable<int>)(result.GetParameterValue(12)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ShippingChannelServiceUpdate")]
+		public int sp_ShippingChannelServiceUpdate([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pShippingChannelId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pServiceName, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Decimal(10,2)")] System.Nullable<decimal> pServicePrice, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCurrencyId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Bit")] System.Nullable<bool> pOptional, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Bit")] System.Nullable<bool> pAvailable, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pLastUpdateBy, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pLastUpdateByType, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> pShippingChannelIncrementServiceId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pShippingChannelId, pServiceName, pServicePrice, pCurrencyId, pOptional, pAvailable, pLastUpdateBy, pLastUpdateByType, pShippingChannelIncrementServiceId);
+			pShippingChannelIncrementServiceId = ((System.Nullable<int>)(result.GetParameterValue(8)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ShippingChannelServiceClear")]
+		public int sp_ShippingChannelServiceClear([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pShippingChannelId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pLastUpdateBy, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pLastUpdateByType)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pShippingChannelId, pLastUpdateBy, pLastUpdateByType);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.tfnShippingChannelIncrementListGet", IsComposable=true)]
+		public IQueryable<tfnShippingChannelIncrementListGetResult> tfnShippingChannelIncrementListGet([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pShippingChannelId)
+		{
+			return this.CreateMethodCallQuery<tfnShippingChannelIncrementListGetResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pShippingChannelId);
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.tfnShippingOrderLabelListGet", IsComposable=true)]
+		public IQueryable<tfnShippingOrderLabelListGetResult> tfnShippingOrderLabelListGet([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pShippingOrderId)
+		{
+			return this.CreateMethodCallQuery<tfnShippingOrderLabelListGetResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pShippingOrderId);
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.tfnShippingOrderGet", IsComposable=true)]
+		public IQueryable<tfnShippingOrderGetResult> tfnShippingOrderGet([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pShippingOrderId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pShippingOrderCode)
+		{
+			return this.CreateMethodCallQuery<tfnShippingOrderGetResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pShippingOrderId, pShippingOrderCode);
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ShippingAddressUpdate")]
+		public int sp_ShippingAddressUpdate([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pContactName, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pContactLastName, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pContactPhoneNumber, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pContactPhoneCountryId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pAddress1, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pAddress2, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pCity, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(64)")] string pState, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(64)")] string pZip, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCountryId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> pShippingAddressId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pContactName, pContactLastName, pContactPhoneNumber, pContactPhoneCountryId, pAddress1, pAddress2, pCity, pState, pZip, pCountryId, pShippingAddressId);
+			pShippingAddressId = ((System.Nullable<int>)(result.GetParameterValue(10)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ShippingOrderPriceCharge")]
+		public int sp_ShippingOrderPriceCharge([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pShippingOrderId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pUserId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pShippingOrderId, pUserId);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.tfnShippingOrderCompanyTransactionListGet", IsComposable=true)]
+		public IQueryable<tfnShippingOrderCompanyTransactionListGetResult> tfnShippingOrderCompanyTransactionListGet([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pShippingOrderId)
+		{
+			return this.CreateMethodCallQuery<tfnShippingOrderCompanyTransactionListGetResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pShippingOrderId);
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_CompanyTransactionSearch")]
+		public ISingleResult<sp_CompanyTransactionSearchResult> sp_CompanyTransactionSearch([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCompanyId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="DateTime")] System.Nullable<System.DateTime> pBeginDate, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="DateTime")] System.Nullable<System.DateTime> pEndDate, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pDescriptionSearch, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="PageSize", DbType="Int")] System.Nullable<int> pageSize, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Page", DbType="Int")] ref System.Nullable<int> page, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Total", DbType="Int")] ref System.Nullable<int> total, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="TotalPages", DbType="Int")] ref System.Nullable<int> totalPages)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pCompanyId, pBeginDate, pEndDate, pDescriptionSearch, pageSize, page, total, totalPages);
+			page = ((System.Nullable<int>)(result.GetParameterValue(5)));
+			total = ((System.Nullable<int>)(result.GetParameterValue(6)));
+			totalPages = ((System.Nullable<int>)(result.GetParameterValue(7)));
+			return ((ISingleResult<sp_CompanyTransactionSearchResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_CompanyTransactionRequestSearch")]
+		public ISingleResult<sp_CompanyTransactionRequestSearchResult> sp_CompanyTransactionRequestSearch([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCompanyId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="DateTime")] System.Nullable<System.DateTime> pBeginDate, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="DateTime")] System.Nullable<System.DateTime> pEndDate, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCompanyTransactionRequestStatusCodeId, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="PageSize", DbType="Int")] System.Nullable<int> pageSize, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Page", DbType="Int")] ref System.Nullable<int> page, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Total", DbType="Int")] ref System.Nullable<int> total, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="TotalPages", DbType="Int")] ref System.Nullable<int> totalPages)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pCompanyId, pBeginDate, pEndDate, pCompanyTransactionRequestStatusCodeId, pageSize, page, total, totalPages);
+			page = ((System.Nullable<int>)(result.GetParameterValue(5)));
+			total = ((System.Nullable<int>)(result.GetParameterValue(6)));
+			totalPages = ((System.Nullable<int>)(result.GetParameterValue(7)));
+			return ((ISingleResult<sp_CompanyTransactionRequestSearchResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_CompanyTransactionRequestDeny")]
+		public int sp_CompanyTransactionRequestDeny([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> pCompanyTransactionRequestId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pUserId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pLastUpdateBy, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pLastUpdateByType)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pCompanyTransactionRequestId, pUserId, pLastUpdateBy, pLastUpdateByType);
+			pCompanyTransactionRequestId = ((System.Nullable<int>)(result.GetParameterValue(0)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_CompanyTransactionRequestApprove")]
+		public int sp_CompanyTransactionRequestApprove([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> pCompanyTransactionRequestId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pUserId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pLastUpdateBy, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pLastUpdateByType)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pCompanyTransactionRequestId, pUserId, pLastUpdateBy, pLastUpdateByType);
+			pCompanyTransactionRequestId = ((System.Nullable<int>)(result.GetParameterValue(0)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_CompanyTransactionRequestCancel")]
+		public int sp_CompanyTransactionRequestCancel([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> pCompanyTransactionRequestId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pUserId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pLastUpdateBy, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pLastUpdateByType)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pCompanyTransactionRequestId, pUserId, pLastUpdateBy, pLastUpdateByType);
+			pCompanyTransactionRequestId = ((System.Nullable<int>)(result.GetParameterValue(0)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_CompanyTransactionRequestCreate")]
+		public int sp_CompanyTransactionRequestCreate([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> pCompanyTransactionRequestId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pSourceCompanyId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pHandlerCompanyId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Decimal(10,2)")] System.Nullable<decimal> pAmount, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCurrencyId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pDescription, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pUserId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pLastUpdateBy, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pLastUpdateByType)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pCompanyTransactionRequestId, pSourceCompanyId, pHandlerCompanyId, pAmount, pCurrencyId, pDescription, pUserId, pLastUpdateBy, pLastUpdateByType);
+			pCompanyTransactionRequestId = ((System.Nullable<int>)(result.GetParameterValue(0)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_CompanyTransactionRequestFile_Update")]
+		public int sp_CompanyTransactionRequestFile_Update([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCompanyTransactionRequestId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pFileId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pLastUpdateBy, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pLastUpdateByType, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> pCompanyTransactionRequestFileId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pCompanyTransactionRequestId, pFileId, pLastUpdateBy, pLastUpdateByType, pCompanyTransactionRequestFileId);
+			pCompanyTransactionRequestFileId = ((System.Nullable<int>)(result.GetParameterValue(4)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_CompanyTransactionRequestFile_Clear")]
+		public int sp_CompanyTransactionRequestFile_Clear([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCompanyTransactionRequestId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pLastUpdateBy, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pLastUpdateByType)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pCompanyTransactionRequestId, pLastUpdateBy, pLastUpdateByType);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.tfnCompanyTransactionRequestFileGet", IsComposable=true)]
+		public IQueryable<tfnCompanyTransactionRequestFileGetResult> tfnCompanyTransactionRequestFileGet([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCompanyTransactionRequestId)
+		{
+			return this.CreateMethodCallQuery<tfnCompanyTransactionRequestFileGetResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pCompanyTransactionRequestId);
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.tfnCompanyTransactionRequestGet", IsComposable=true)]
+		public IQueryable<tfnCompanyTransactionRequestGetResult> tfnCompanyTransactionRequestGet([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCompanyTransactionRequestId)
+		{
+			return this.CreateMethodCallQuery<tfnCompanyTransactionRequestGetResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pCompanyTransactionRequestId);
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ANTOTOShippingOrderWeightUpdate")]
+		public int sp_ANTOTOShippingOrderWeightUpdate([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Decimal(10,2)")] System.Nullable<decimal> pTotalWeight, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pWeightUnitId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pUserId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> pShippingOrderId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pTotalWeight, pWeightUnitId, pUserId, pShippingOrderId);
+			pShippingOrderId = ((System.Nullable<int>)(result.GetParameterValue(3)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ANTOTOShippingOrderSent")]
+		public int sp_ANTOTOShippingOrderSent([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pUserId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> pShippingOrderId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pUserId, pShippingOrderId);
+			pShippingOrderId = ((System.Nullable<int>)(result.GetParameterValue(1)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ANTOTOShippingOrderStartReview")]
+		public int sp_ANTOTOShippingOrderStartReview([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pUserId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> pShippingOrderId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pUserId, pShippingOrderId);
+			pShippingOrderId = ((System.Nullable<int>)(result.GetParameterValue(1)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ANTOTOShippingOrderFinishReview")]
+		public int sp_ANTOTOShippingOrderFinishReview([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pUserId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> pShippingOrderId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pUserId, pShippingOrderId);
+			pShippingOrderId = ((System.Nullable<int>)(result.GetParameterValue(1)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ANTOTOShippingOrderCancelReview")]
+		public int sp_ANTOTOShippingOrderCancelReview([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pUserId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> pShippingOrderId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pUserId, pShippingOrderId);
+			pShippingOrderId = ((System.Nullable<int>)(result.GetParameterValue(1)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ANTOTOShippingOrderCancel")]
+		public int sp_ANTOTOShippingOrderCancel([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pUserId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> pShippingOrderId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pUserId, pShippingOrderId);
+			pShippingOrderId = ((System.Nullable<int>)(result.GetParameterValue(1)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ANTOTOShippingOrderUpdate")]
+		public int sp_ANTOTOShippingOrderUpdate([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCustomerId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pReferenceOrderCode, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pFromShippingAddressId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pToShippingAddressId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pShippingChannelId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Decimal(10,2)")] System.Nullable<decimal> pTotalWeight, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pWeightUnitId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pShippingOrderStatusCodeId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pUserId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pSourceCompanyId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pHandlerCompanyId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> pShippingOrderId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pCustomerId, pReferenceOrderCode, pFromShippingAddressId, pToShippingAddressId, pShippingChannelId, pTotalWeight, pWeightUnitId, pShippingOrderStatusCodeId, pUserId, pSourceCompanyId, pHandlerCompanyId, pShippingOrderId);
+			pShippingOrderId = ((System.Nullable<int>)(result.GetParameterValue(11)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ANTOTOShippingOrderItemClear")]
+		public int sp_ANTOTOShippingOrderItemClear([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pShippingOrderId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pShippingOrderId);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ANTOTOShippingOrderRoutingHistoryInsert")]
+		public int sp_ANTOTOShippingOrderRoutingHistoryInsert([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pShippingOrderId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pAcceptedAddress, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pOpCode, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pRemarkDetail, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="DateTime")] System.Nullable<System.DateTime> pAcceptedTime, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pSourceId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pSourceTable, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pUserId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pLastUpdateBy, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pLastUpdateByType, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> pShippingOrderRouteHistoryId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pShippingOrderId, pAcceptedAddress, pOpCode, pRemarkDetail, pAcceptedTime, pSourceId, pSourceTable, pUserId, pLastUpdateBy, pLastUpdateByType, pShippingOrderRouteHistoryId);
+			pShippingOrderRouteHistoryId = ((System.Nullable<int>)(result.GetParameterValue(10)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_CompanyTransactionCustomerQuickAction")]
+		public int sp_CompanyTransactionCustomerQuickAction([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pSourceCompanyId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pHandlerCompanyId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Decimal(10,2)")] System.Nullable<decimal> pAmount, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCurrencyId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pDescription, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pTransactionTypeCodeId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pUserId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pLastUpdateBy, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pLastUpdateByType, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> pCompanyTransactionId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pSourceCompanyId, pHandlerCompanyId, pAmount, pCurrencyId, pDescription, pTransactionTypeCodeId, pUserId, pLastUpdateBy, pLastUpdateByType, pCompanyTransactionId);
+			pCompanyTransactionId = ((System.Nullable<int>)(result.GetParameterValue(9)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.tfnShippingOrderIdentityProfileFileGet", IsComposable=true)]
+		public IQueryable<tfnShippingOrderIdentityProfileFileGetResult> tfnShippingOrderIdentityProfileFileGet([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pShippingOrderIdentityProfileId)
+		{
+			return this.CreateMethodCallQuery<tfnShippingOrderIdentityProfileFileGetResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pShippingOrderIdentityProfileId);
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.tfnShippingOrderIdentityProfileGet", IsComposable=true)]
+		public IQueryable<tfnShippingOrderIdentityProfileGetResult> tfnShippingOrderIdentityProfileGet([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pShippingOrderId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pShippingOrderCode)
+		{
+			return this.CreateMethodCallQuery<tfnShippingOrderIdentityProfileGetResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pShippingOrderId, pShippingOrderCode);
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ShippingOrderIDFileUpload")]
+		public int sp_ShippingOrderIDFileUpload([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pFileId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pShippingOrderIdentityProfileId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> pShippingOrderIdentityProfileFileId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pFileId, pShippingOrderIdentityProfileId, pShippingOrderIdentityProfileFileId);
+			pShippingOrderIdentityProfileFileId = ((System.Nullable<int>)(result.GetParameterValue(2)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ShippingOrderIDUpload")]
+		public int sp_ShippingOrderIDUpload([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pShippingOrderId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pShippingOrderCode, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pIDNumber, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pName, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pPhoneNumber, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> pShippingOrderIdentityProfileId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pShippingOrderId, pShippingOrderCode, pIDNumber, pName, pPhoneNumber, pShippingOrderIdentityProfileId);
+			pShippingOrderIdentityProfileId = ((System.Nullable<int>)(result.GetParameterValue(5)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ShippingOrderIDFileClear")]
+		public int sp_ShippingOrderIDFileClear([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pShippingOrderIdentityProfileId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pShippingOrderIdentityProfileId);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ShippingOrderLabelUpdate")]
+		public int sp_ShippingOrderLabelUpdate([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pShippingOrderId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pLabelNumber, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pLabelName, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pFileId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pOrder, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pUserId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> pShippingOrderLabelId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pShippingOrderId, pLabelNumber, pLabelName, pFileId, pOrder, pUserId, pShippingOrderLabelId);
+			pShippingOrderLabelId = ((System.Nullable<int>)(result.GetParameterValue(6)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.tfnShippingOrderLabelGet", IsComposable=true)]
+		public IQueryable<tfnShippingOrderLabelGetResult> tfnShippingOrderLabelGet([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pShippingOrderLabelId)
+		{
+			return this.CreateMethodCallQuery<tfnShippingOrderLabelGetResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pShippingOrderLabelId);
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.tfnShippingOrderSubOrderRoutingTransactionListGet", IsComposable=true)]
+		public IQueryable<tfnShippingOrderSubOrderRoutingTransactionListGetResult> tfnShippingOrderSubOrderRoutingTransactionListGet([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pShippingOrderSubOrderId)
+		{
+			return this.CreateMethodCallQuery<tfnShippingOrderSubOrderRoutingTransactionListGetResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pShippingOrderSubOrderId);
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ShippingOrderSubOrderDelete")]
+		public int sp_ShippingOrderSubOrderDelete([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pShippingOrderSubOrderId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pShippingOrderSubOrderId);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ShippingOrderSubOrderTrackRecordInsert")]
+		public int sp_ShippingOrderSubOrderTrackRecordInsert([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pShippingOrderSubOrderId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pAcceptedAddress, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pOpCode, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(MAX)")] string pRemarkDetail, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="DateTime")] System.Nullable<System.DateTime> pAcceptTime, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pSourceId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pSourceTable, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pUserId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Bit")] System.Nullable<bool> pAvailable, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> pShippingOrderSubOrderRoutingTrackId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pShippingOrderSubOrderId, pAcceptedAddress, pOpCode, pRemarkDetail, pAcceptTime, pSourceId, pSourceTable, pUserId, pAvailable, pShippingOrderSubOrderRoutingTrackId);
+			pShippingOrderSubOrderRoutingTrackId = ((System.Nullable<int>)(result.GetParameterValue(9)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ShippingOrderSubOrderInsert")]
+		public int sp_ShippingOrderSubOrderInsert([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pShippingOrderId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pSubOrderTypeCodeId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pSubOrderCode, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(MAX)")] string pSubOrderDescription, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pUserId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pLastUpdateBy, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pLastUpdateByType, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> pShippingOrderSubOrderId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pShippingOrderId, pSubOrderTypeCodeId, pSubOrderCode, pSubOrderDescription, pUserId, pLastUpdateBy, pLastUpdateByType, pShippingOrderSubOrderId);
+			pShippingOrderSubOrderId = ((System.Nullable<int>)(result.GetParameterValue(7)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.tfnShippingOrderSubOrderGet", IsComposable=true)]
+		public IQueryable<tfnShippingOrderSubOrderGetResult> tfnShippingOrderSubOrderGet([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pShippingOrderSubOrderId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pShippingOrderSubOrderCode)
+		{
+			return this.CreateMethodCallQuery<tfnShippingOrderSubOrderGetResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pShippingOrderSubOrderId, pShippingOrderSubOrderCode);
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.tfnShippingOrderSubOrderListGet", IsComposable=true)]
+		public IQueryable<tfnShippingOrderSubOrderListGetResult> tfnShippingOrderSubOrderListGet([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pShippingOrderId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pShippingOrderCode)
+		{
+			return this.CreateMethodCallQuery<tfnShippingOrderSubOrderListGetResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pShippingOrderId, pShippingOrderCode);
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ShippingOrderBatchHandlerSearch")]
+		public ISingleResult<sp_ShippingOrderBatchHandlerSearchResult> sp_ShippingOrderBatchHandlerSearch([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCompanyId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pShippingOrderCode, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pBatchHandlerCode, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pShippingOrderActionTypeCodeId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pBatchHandlerStatusCodeId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="DateTime")] System.Nullable<System.DateTime> pBeginDate, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="DateTime")] System.Nullable<System.DateTime> pEndDate, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="PageSize", DbType="Int")] System.Nullable<int> pageSize, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Page", DbType="Int")] ref System.Nullable<int> page, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Total", DbType="Int")] ref System.Nullable<int> total, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="TotalPages", DbType="Int")] ref System.Nullable<int> totalPages)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pCompanyId, pShippingOrderCode, pBatchHandlerCode, pShippingOrderActionTypeCodeId, pBatchHandlerStatusCodeId, pBeginDate, pEndDate, pageSize, page, total, totalPages);
+			page = ((System.Nullable<int>)(result.GetParameterValue(8)));
+			total = ((System.Nullable<int>)(result.GetParameterValue(9)));
+			totalPages = ((System.Nullable<int>)(result.GetParameterValue(10)));
+			return ((ISingleResult<sp_ShippingOrderBatchHandlerSearchResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ShippingOrderBatchHandlerCreate")]
+		public int sp_ShippingOrderBatchHandlerCreate([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCompanyId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pUserId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pShippingChannelId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pShippingOrderActionTypeCodeId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> pShippingOrderBatchHandlerId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pCompanyId, pUserId, pShippingChannelId, pShippingOrderActionTypeCodeId, pShippingOrderBatchHandlerId);
+			pShippingOrderBatchHandlerId = ((System.Nullable<int>)(result.GetParameterValue(4)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ShippingOrderBatchHandlerDetailUpdate")]
+		public int sp_ShippingOrderBatchHandlerDetailUpdate([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pShippingOrderCode, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pShippingOrderBatchHandlerId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Bit")] System.Nullable<bool> pAvailable, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pUserId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> pShippingOrderBatchHandlerDetailId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pShippingOrderCode, pShippingOrderBatchHandlerId, pAvailable, pUserId, pShippingOrderBatchHandlerDetailId);
+			pShippingOrderBatchHandlerDetailId = ((System.Nullable<int>)(result.GetParameterValue(4)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ShippingOrderBatchHandlerDetailPreUpdate")]
+		public int sp_ShippingOrderBatchHandlerDetailPreUpdate([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pShippingOrderCode, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pShippingOrderBatchHandlerId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] ref string pError)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pShippingOrderCode, pShippingOrderBatchHandlerId, pError);
+			pError = ((string)(result.GetParameterValue(2)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ShippingOrderBatchHandlerStatusUpdate")]
+		public int sp_ShippingOrderBatchHandlerStatusUpdate([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pShippingOrderBatchHandlerId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pBatchHandlerStatusCodeId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pUserId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pShippingOrderBatchHandlerId, pBatchHandlerStatusCodeId, pUserId);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.tfnShippingOrderBatchHandlerDetailListGet", IsComposable=true)]
+		public IQueryable<tfnShippingOrderBatchHandlerDetailListGetResult> tfnShippingOrderBatchHandlerDetailListGet([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pShippingOrderBatchHandlerId)
+		{
+			return this.CreateMethodCallQuery<tfnShippingOrderBatchHandlerDetailListGetResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pShippingOrderBatchHandlerId);
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.tfnShippingOrderBatchHandlerGet", IsComposable=true)]
+		public IQueryable<tfnShippingOrderBatchHandlerGetResult> tfnShippingOrderBatchHandlerGet([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pShippingOrderBatchHandlerId)
+		{
+			return this.CreateMethodCallQuery<tfnShippingOrderBatchHandlerGetResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pShippingOrderBatchHandlerId);
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.tfnShippingOrderBatchHandlerActionGet", IsComposable=true)]
+		public IQueryable<tfnShippingOrderBatchHandlerActionGetResult> tfnShippingOrderBatchHandlerActionGet([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pShippingOrderBatchHandlerId)
+		{
+			return this.CreateMethodCallQuery<tfnShippingOrderBatchHandlerActionGetResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pShippingOrderBatchHandlerId);
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ShippingOrderBatchHandlerActionUpdate")]
+		public int sp_ShippingOrderBatchHandlerActionUpdate([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pShippingOrderBatchHandlerId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pSubOrderTypeCodeId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pSubOrderCode, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(MAX)")] string pSubOrderDescription)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pShippingOrderBatchHandlerId, pSubOrderTypeCodeId, pSubOrderCode, pSubOrderDescription);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.tfnCompanyAddressGetById", IsComposable=true)]
+		public IQueryable<tfnCompanyAddressGetByIdResult> tfnCompanyAddressGetById([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCompanyFromAddressId)
+		{
+			return this.CreateMethodCallQuery<tfnCompanyAddressGetByIdResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pCompanyFromAddressId);
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.tfnCompanyAddressGet", IsComposable=true)]
+		public IQueryable<tfnCompanyAddressGetResult> tfnCompanyAddressGet([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCompanyId)
+		{
+			return this.CreateMethodCallQuery<tfnCompanyAddressGetResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pCompanyId);
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_CompanyFromAddressSubmitUpdate")]
+		public int sp_CompanyFromAddressSubmitUpdate([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCompanyId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pContactName, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pContactLastName, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pContactPhoneNumber, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pContactPhoneCountryId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pAddress1, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pAddress2, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pCity, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(64)")] string pState, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(64)")] string pZip, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCountryId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Bit")] System.Nullable<bool> pDefaultShipping, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Bit")] System.Nullable<bool> pAvailable, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pUpdateUserId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> pCompanyFromAddressId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pCompanyId, pContactName, pContactLastName, pContactPhoneNumber, pContactPhoneCountryId, pAddress1, pAddress2, pCity, pState, pZip, pCountryId, pDefaultShipping, pAvailable, pUpdateUserId, pCompanyFromAddressId);
+			pCompanyFromAddressId = ((System.Nullable<int>)(result.GetParameterValue(14)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ANTOTOShippingOrderAdditionalInfoSet")]
+		public int sp_ANTOTOShippingOrderAdditionalInfoSet([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pShippingOrderId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pPackageCount, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pShippingOrderTaxPaymentTypeCodeId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> pShippingOrderAdditionalInfoId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pShippingOrderId, pPackageCount, pShippingOrderTaxPaymentTypeCodeId, pShippingOrderAdditionalInfoId);
+			pShippingOrderAdditionalInfoId = ((System.Nullable<int>)(result.GetParameterValue(3)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.tfnShippingOrderAdditionalInfoGet", IsComposable=true)]
+		public IQueryable<tfnShippingOrderAdditionalInfoGetResult> tfnShippingOrderAdditionalInfoGet([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pShippingOrderId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pShippingOrderCode)
+		{
+			return this.CreateMethodCallQuery<tfnShippingOrderAdditionalInfoGetResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pShippingOrderId, pShippingOrderCode);
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ShippingChannelCustomerCompanyGrantRight")]
+		public int sp_ShippingChannelCustomerCompanyGrantRight([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCustomerCompanyId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pShippingChannelId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Bit")] System.Nullable<bool> pGranted, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pUserId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pLastUpdateBy, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pLastUpdateByType)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pCustomerCompanyId, pShippingChannelId, pGranted, pUserId, pLastUpdateBy, pLastUpdateByType);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sfnShippingOrderCheckForPrecharge", IsComposable=true)]
+		public string sfnShippingOrderCheckForPrecharge([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pShippingOrderId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pShippingOrderCode, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCustomerCompanyId)
+		{
+			return ((string)(this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pShippingOrderId, pShippingOrderCode, pCustomerCompanyId).ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sfnCompanyCurrentBalanceGet", IsComposable=true)]
+		public System.Nullable<decimal> sfnCompanyCurrentBalanceGet([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCustomerCompanyId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCurrencyId)
+		{
+			return ((System.Nullable<decimal>)(this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pCustomerCompanyId, pCurrencyId).ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sfnShippingOrderUnPaidPrice", IsComposable=true)]
+		public System.Nullable<decimal> sfnShippingOrderUnPaidPrice([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pShippingOrderId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pShippingOrderCode)
+		{
+			return ((System.Nullable<decimal>)(this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pShippingOrderId, pShippingOrderCode).ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sfnShippingOrderUnPaidTaxPrice", IsComposable=true)]
+		public System.Nullable<decimal> sfnShippingOrderUnPaidTaxPrice([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pShippingOrderId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pShippingOrderCode)
+		{
+			return ((System.Nullable<decimal>)(this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pShippingOrderId, pShippingOrderCode).ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ShippingOrderReceiptCurrencyAmountUpdate")]
+		public int sp_ShippingOrderReceiptCurrencyAmountUpdate([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> pShippingOrderBatchReceiptId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCurrencyId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Decimal(10,2)")] System.Nullable<decimal> pPriceNeedToCharge, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Decimal(10,2)")] System.Nullable<decimal> pPricePaid)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pShippingOrderBatchReceiptId, pCurrencyId, pPriceNeedToCharge, pPricePaid);
+			pShippingOrderBatchReceiptId = ((System.Nullable<int>)(result.GetParameterValue(0)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ShippingOrderReceiptShippingOrderUpdate")]
+		public int sp_ShippingOrderReceiptShippingOrderUpdate([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> pShippingOrderBatchReceiptId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pShippingOrderId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pShippingOrderBatchReceiptId, pShippingOrderId);
+			pShippingOrderBatchReceiptId = ((System.Nullable<int>)(result.GetParameterValue(0)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ShippingOrderReceiptUpdate")]
+		public int sp_ShippingOrderReceiptUpdate([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> pShippingOrderBatchReceiptId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] ref string pReceiptNumber, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCustomerCompanyId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pShippingOrderBatchReceiptId, pReceiptNumber, pCustomerCompanyId);
+			pShippingOrderBatchReceiptId = ((System.Nullable<int>)(result.GetParameterValue(0)));
+			pReceiptNumber = ((string)(result.GetParameterValue(1)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ShippingOrderReceiptUpdateFile")]
+		public int sp_ShippingOrderReceiptUpdateFile([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> pShippingOrderBatchReceiptId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pFileId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pShippingOrderBatchReceiptId, pFileId);
+			pShippingOrderBatchReceiptId = ((System.Nullable<int>)(result.GetParameterValue(0)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ShippingOrderIdentityProfileMatch")]
+		public int sp_ShippingOrderIdentityProfileMatch([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pShippingOrderId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pShippingOrderId);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ShippingOrderIdentityProfileMatchBack")]
+		public int sp_ShippingOrderIdentityProfileMatchBack([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pChinaIdentityProfileId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pChinaIdentityProfileId);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ChinaIdentifyProfile_Update")]
+		public int sp_ChinaIdentifyProfile_Update([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(64)")] string pName, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pPhoneNumber, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pIdentityNumber, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pFrontFileId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pBackFileId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> pChinaIdentifyProfileId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pName, pPhoneNumber, pIdentityNumber, pFrontFileId, pBackFileId, pChinaIdentifyProfileId);
+			pChinaIdentifyProfileId = ((System.Nullable<int>)(result.GetParameterValue(5)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.tfnChinaIdentityProfileGet", IsComposable=true)]
+		public IQueryable<tfnChinaIdentityProfileGetResult> tfnChinaIdentityProfileGet([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pName, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pPhoneNumber)
+		{
+			return this.CreateMethodCallQuery<tfnChinaIdentityProfileGetResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pName, pPhoneNumber);
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.tfnChinaIdentityProfileGetByIdentityNumber", IsComposable=true)]
+		public IQueryable<tfnChinaIdentityProfileGetByIdentityNumberResult> tfnChinaIdentityProfileGetByIdentityNumber([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pIdentityNumber)
+		{
+			return this.CreateMethodCallQuery<tfnChinaIdentityProfileGetByIdentityNumberResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pIdentityNumber);
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ShippingOrderSubOrderTrackRecordClear")]
+		public int sp_ShippingOrderSubOrderTrackRecordClear([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pShippingOrderSubOrderId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pShippingOrderSubOrderId);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_GetLock")]
+		public int sp_GetLock([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(128)")] string pLockName, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Bit")] ref System.Nullable<bool> pSuccess)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pLockName, pSuccess);
+			pSuccess = ((System.Nullable<bool>)(result.GetParameterValue(1)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_BatchHandlerRecordPropertySet")]
+		public int sp_BatchHandlerRecordPropertySet([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pBatchHandlerRecordId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(64)")] string pPropertyName, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pPropertyValue, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pUserId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pLastUpdateBy, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pLastUpdateByType)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pBatchHandlerRecordId, pPropertyName, pPropertyValue, pUserId, pLastUpdateBy, pLastUpdateByType);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sfnBatchHandlerRecordDetailPropertyGet", IsComposable=true)]
+		public string sfnBatchHandlerRecordDetailPropertyGet([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pBatchHandlerRecordId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pPropertyName)
+		{
+			return ((string)(this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pBatchHandlerRecordId, pPropertyName).ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sfnSFExpressOrderCodeGetByNameAndPhoneNumber", IsComposable=true)]
+		public string sfnSFExpressOrderCodeGetByNameAndPhoneNumber([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pName, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pPhoneNumber)
+		{
+			return ((string)(this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pName, pPhoneNumber).ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_BatchHandlerRecordDetailGenerateShippingOrder")]
+		public int sp_BatchHandlerRecordDetailGenerateShippingOrder([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pBatchHandlerRecordId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> pShippingOrderId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pBatchHandlerRecordId, pShippingOrderId);
+			pShippingOrderId = ((System.Nullable<int>)(result.GetParameterValue(1)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.tfnSFShippingOrderNeedTrack", IsComposable=true)]
+		public IQueryable<tfnSFShippingOrderNeedTrackResult> tfnSFShippingOrderNeedTrack()
+		{
+			return this.CreateMethodCallQuery<tfnSFShippingOrderNeedTrackResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ShippingOrderProfileSFValidateUpdate")]
+		public int sp_ShippingOrderProfileSFValidateUpdate([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pShippingOrderId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Bit")] System.Nullable<bool> pValidated)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pShippingOrderId, pValidated);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ShippingOrderProfileGenerate")]
+		public int sp_ShippingOrderProfileGenerate([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pShippingOrderId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pShippingOrderId);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.tfnShippingOrderProfileNeedGenerate", IsComposable=true)]
+		public IQueryable<tfnShippingOrderProfileNeedGenerateResult> tfnShippingOrderProfileNeedGenerate()
+		{
+			return this.CreateMethodCallQuery<tfnShippingOrderProfileNeedGenerateResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.tfnShippingOrderProfileNeedSFValidate", IsComposable=true)]
+		public IQueryable<tfnShippingOrderProfileNeedSFValidateResult> tfnShippingOrderProfileNeedSFValidate()
+		{
+			return this.CreateMethodCallQuery<tfnShippingOrderProfileNeedSFValidateResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ShippingOrderSearch")]
+		public ISingleResult<sp_ShippingOrderSearchResult> sp_ShippingOrderSearch(
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pShippingOrderCode, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pReferenceOrderCode, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pSearchCustomerName, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pCountryName, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pPhoneNumber, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pShippingOrderStatusCodeId, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pAddress, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pSourceCompanyId, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pHandlerCompanyId, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Bit")] System.Nullable<bool> pIDReady, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pIDNumber, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pBatchRecordNumber, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Bit")] System.Nullable<bool> pLabelReady, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pProductName, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="DateTime")] System.Nullable<System.DateTime> pSearchBeginDate, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="DateTime")] System.Nullable<System.DateTime> pSearchEndDate, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="PageSize", DbType="Int")] System.Nullable<int> pageSize, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Page", DbType="Int")] ref System.Nullable<int> page, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Total", DbType="Int")] ref System.Nullable<int> total, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="TotalPages", DbType="Int")] ref System.Nullable<int> totalPages)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pShippingOrderCode, pReferenceOrderCode, pSearchCustomerName, pCountryName, pPhoneNumber, pShippingOrderStatusCodeId, pAddress, pSourceCompanyId, pHandlerCompanyId, pIDReady, pIDNumber, pBatchRecordNumber, pLabelReady, pProductName, pSearchBeginDate, pSearchEndDate, pageSize, page, total, totalPages);
+			page = ((System.Nullable<int>)(result.GetParameterValue(17)));
+			total = ((System.Nullable<int>)(result.GetParameterValue(18)));
+			totalPages = ((System.Nullable<int>)(result.GetParameterValue(19)));
+			return ((ISingleResult<sp_ShippingOrderSearchResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.tfnCompanyShippingChannelListGet", IsComposable=true)]
+		public IQueryable<tfnCompanyShippingChannelListGetResult> tfnCompanyShippingChannelListGet([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCompanyId)
+		{
+			return this.CreateMethodCallQuery<tfnCompanyShippingChannelListGetResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pCompanyId);
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.tfnCompanyShippingChannelListGetNew", IsComposable=true)]
+		public IQueryable<tfnCompanyShippingChannelListGetNewResult> tfnCompanyShippingChannelListGetNew([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCompanyId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pUserId)
+		{
+			return this.CreateMethodCallQuery<tfnCompanyShippingChannelListGetNewResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pCompanyId, pUserId);
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.tfnShippingChannelGetById", IsComposable=true)]
+		public IQueryable<tfnShippingChannelGetByIdResult> tfnShippingChannelGetById([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pShippingChannelId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCompanyId)
+		{
+			return this.CreateMethodCallQuery<tfnShippingChannelGetByIdResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pShippingChannelId, pCompanyId);
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ShippingChannelLogisticCompany_Set")]
+		public int sp_ShippingChannelLogisticCompany_Set(
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCompanyId, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pShippingChannelName, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(256)")] string pShippingChannelCode, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pShippingChannelTypeCodeId, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Decimal(10,2)")] System.Nullable<decimal> pTaxRate, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Decimal(10,2)")] System.Nullable<decimal> pPriceFirstRate, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Decimal(10,2)")] System.Nullable<decimal> pPriceAdditionRate, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pWeightUnit, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pWeightFirst, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Decimal(10,2)")] System.Nullable<decimal> pUnitPriceFirst, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Decimal(10,2)")] System.Nullable<decimal> pUnitPriceAdditional, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Bit")] System.Nullable<bool> pJumpToInt, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Bit")] System.Nullable<bool> pTaxPaymentMethodAvailable, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Bit")] System.Nullable<bool> pAvailable, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Bit")] System.Nullable<bool> pIDCheckBeforeShipping, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Bit")] System.Nullable<bool> pIDCheckDuplicateBeforeShipping, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pIDDuplicateNumberLimitation, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> pShippingChannelId, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pLastUpdateBy, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pLastUpdateByType)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pCompanyId, pShippingChannelName, pShippingChannelCode, pShippingChannelTypeCodeId, pTaxRate, pPriceFirstRate, pPriceAdditionRate, pWeightUnit, pWeightFirst, pUnitPriceFirst, pUnitPriceAdditional, pJumpToInt, pTaxPaymentMethodAvailable, pAvailable, pIDCheckBeforeShipping, pIDCheckDuplicateBeforeShipping, pIDDuplicateNumberLimitation, pShippingChannelId, pLastUpdateBy, pLastUpdateByType);
+			pShippingChannelId = ((System.Nullable<int>)(result.GetParameterValue(17)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ShippingChannelPriceRangeDelete")]
+		public int sp_ShippingChannelPriceRangeDelete([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> pShippingChannelPriceRangeId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCompanyId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pLastUpdateBy, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pLastUpdateByType)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pShippingChannelPriceRangeId, pCompanyId, pLastUpdateBy, pLastUpdateByType);
+			pShippingChannelPriceRangeId = ((System.Nullable<int>)(result.GetParameterValue(0)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ShippingChannelPriceRangeEdit")]
+		public int sp_ShippingChannelPriceRangeEdit([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pShippingChannelId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCurrencyId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Decimal(10,2)")] System.Nullable<decimal> pWeightMax, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> pShippingChannelPriceRangeId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Decimal(10,2)")] System.Nullable<decimal> pPrice, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pLastUpdateBy, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pLastUpdateByType)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pShippingChannelId, pCurrencyId, pWeightMax, pShippingChannelPriceRangeId, pPrice, pLastUpdateBy, pLastUpdateByType);
+			pShippingChannelPriceRangeId = ((System.Nullable<int>)(result.GetParameterValue(3)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.tfnShippingChannelPriceRangeListGet", IsComposable=true)]
+		public IQueryable<tfnShippingChannelPriceRangeListGetResult> tfnShippingChannelPriceRangeListGet([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pShippingChannelId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCompanyId)
+		{
+			return this.CreateMethodCallQuery<tfnShippingChannelPriceRangeListGetResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pShippingChannelId, pCompanyId);
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ShippingChannelPriceRangeCompanySet")]
+		public int sp_ShippingChannelPriceRangeCompanySet([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pShippingChannelId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCompanyId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pShippingChannelPriceRangeId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Decimal(10,2)")] System.Nullable<decimal> pPrice, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pLastUpdateBy, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pLastUpdateByType)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pShippingChannelId, pCompanyId, pShippingChannelPriceRangeId, pPrice, pLastUpdateBy, pLastUpdateByType);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ShippingChannelPriceRangeCompanyDelete")]
+		public int sp_ShippingChannelPriceRangeCompanyDelete([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pShippingChannelId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pCompanyId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pShippingChannelPriceRangeId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Decimal(10,2)")] System.Nullable<decimal> pPrice, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pLastUpdateBy, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pLastUpdateByType)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pShippingChannelId, pCompanyId, pShippingChannelPriceRangeId, pPrice, pLastUpdateBy, pLastUpdateByType);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ShippingOrderSFOrderNumberGet")]
+		public int sp_ShippingOrderSFOrderNumberGet([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pShippingOrderId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(MAX)")] ref string pSFOrderNumber)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pShippingOrderId, pSFOrderNumber);
+			pSFOrderNumber = ((string)(result.GetParameterValue(1)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.tfnShippingOrderLabelNeedGenerate", IsComposable=true)]
+		public IQueryable<tfnShippingOrderLabelNeedGenerateResult> tfnShippingOrderLabelNeedGenerate()
+		{
+			return this.CreateMethodCallQuery<tfnShippingOrderLabelNeedGenerateResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.tfnShippingOrderLabelNeedHtmlConvertPdf", IsComposable=true)]
+		public IQueryable<tfnShippingOrderLabelNeedHtmlConvertPdfResult> tfnShippingOrderLabelNeedHtmlConvertPdf()
+		{
+			return this.CreateMethodCallQuery<tfnShippingOrderLabelNeedHtmlConvertPdfResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ShippingOrderLabelPdfInsert")]
+		public int sp_ShippingOrderLabelPdfInsert([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pShippingOrderLabelId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pFileId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> pShippingOrderLabelPdfFileId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pShippingOrderLabelId, pFileId, pShippingOrderLabelPdfFileId);
+			pShippingOrderLabelPdfFileId = ((System.Nullable<int>)(result.GetParameterValue(2)));
+			return ((int)(result.ReturnValue));
 		}
 	}
 	
@@ -365,6 +2604,4734 @@ namespace ANTOTOLib
 					this._LastUpdateByType = value;
 					this.SendPropertyChanged("LastUpdateByType");
 					this.OnLastUpdateByTypeChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Brand")]
+	public partial class Brand : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private int _ParentBrandId;
+		
+		private string _BrandName;
+		
+		private string _BrandDescription;
+		
+		private string _BrandCategoryDescription;
+		
+		private bool _SystemBrand;
+		
+		private bool _Available;
+		
+		private System.Data.Linq.Binary _Version;
+		
+		private System.DateTime _CreateDate;
+		
+		private System.DateTime _LastUpdate;
+		
+		private int _LastUpdateBy;
+		
+		private int _LastUpdateByType;
+		
+		private EntitySet<BrandY> _Brandies;
+		
+		private EntityRef<CategoryBrand> _CategoryBrand;
+		
+		private EntityRef<CompanyBrand> _CompanyBrand;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnParentBrandIdChanging(int value);
+    partial void OnParentBrandIdChanged();
+    partial void OnBrandNameChanging(string value);
+    partial void OnBrandNameChanged();
+    partial void OnBrandDescriptionChanging(string value);
+    partial void OnBrandDescriptionChanged();
+    partial void OnBrandCategoryDescriptionChanging(string value);
+    partial void OnBrandCategoryDescriptionChanged();
+    partial void OnSystemBrandChanging(bool value);
+    partial void OnSystemBrandChanged();
+    partial void OnAvailableChanging(bool value);
+    partial void OnAvailableChanged();
+    partial void OnVersionChanging(System.Data.Linq.Binary value);
+    partial void OnVersionChanged();
+    partial void OnCreateDateChanging(System.DateTime value);
+    partial void OnCreateDateChanged();
+    partial void OnLastUpdateChanging(System.DateTime value);
+    partial void OnLastUpdateChanged();
+    partial void OnLastUpdateByChanging(int value);
+    partial void OnLastUpdateByChanged();
+    partial void OnLastUpdateByTypeChanging(int value);
+    partial void OnLastUpdateByTypeChanged();
+    #endregion
+		
+		public Brand()
+		{
+			this._Brandies = new EntitySet<BrandY>(new Action<BrandY>(this.attach_Brandies), new Action<BrandY>(this.detach_Brandies));
+			this._CategoryBrand = default(EntityRef<CategoryBrand>);
+			this._CompanyBrand = default(EntityRef<CompanyBrand>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true, UpdateCheck=UpdateCheck.Never)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					if ((this._CategoryBrand.HasLoadedOrAssignedValue || this._CompanyBrand.HasLoadedOrAssignedValue))
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ParentBrandId", DbType="Int NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public int ParentBrandId
+		{
+			get
+			{
+				return this._ParentBrandId;
+			}
+			set
+			{
+				if ((this._ParentBrandId != value))
+				{
+					this.OnParentBrandIdChanging(value);
+					this.SendPropertyChanging();
+					this._ParentBrandId = value;
+					this.SendPropertyChanged("ParentBrandId");
+					this.OnParentBrandIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BrandName", DbType="NVarChar(256) NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
+		public string BrandName
+		{
+			get
+			{
+				return this._BrandName;
+			}
+			set
+			{
+				if ((this._BrandName != value))
+				{
+					this.OnBrandNameChanging(value);
+					this.SendPropertyChanging();
+					this._BrandName = value;
+					this.SendPropertyChanged("BrandName");
+					this.OnBrandNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BrandDescription", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
+		public string BrandDescription
+		{
+			get
+			{
+				return this._BrandDescription;
+			}
+			set
+			{
+				if ((this._BrandDescription != value))
+				{
+					this.OnBrandDescriptionChanging(value);
+					this.SendPropertyChanging();
+					this._BrandDescription = value;
+					this.SendPropertyChanged("BrandDescription");
+					this.OnBrandDescriptionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BrandCategoryDescription", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
+		public string BrandCategoryDescription
+		{
+			get
+			{
+				return this._BrandCategoryDescription;
+			}
+			set
+			{
+				if ((this._BrandCategoryDescription != value))
+				{
+					this.OnBrandCategoryDescriptionChanging(value);
+					this.SendPropertyChanging();
+					this._BrandCategoryDescription = value;
+					this.SendPropertyChanged("BrandCategoryDescription");
+					this.OnBrandCategoryDescriptionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SystemBrand", DbType="Bit NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public bool SystemBrand
+		{
+			get
+			{
+				return this._SystemBrand;
+			}
+			set
+			{
+				if ((this._SystemBrand != value))
+				{
+					this.OnSystemBrandChanging(value);
+					this.SendPropertyChanging();
+					this._SystemBrand = value;
+					this.SendPropertyChanged("SystemBrand");
+					this.OnSystemBrandChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Available", DbType="Bit NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public bool Available
+		{
+			get
+			{
+				return this._Available;
+			}
+			set
+			{
+				if ((this._Available != value))
+				{
+					this.OnAvailableChanging(value);
+					this.SendPropertyChanging();
+					this._Available = value;
+					this.SendPropertyChanged("Available");
+					this.OnAvailableChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Version", AutoSync=AutoSync.Always, DbType="rowversion NOT NULL", CanBeNull=false, IsDbGenerated=true, IsVersion=true, UpdateCheck=UpdateCheck.Never)]
+		public System.Data.Linq.Binary Version
+		{
+			get
+			{
+				return this._Version;
+			}
+			set
+			{
+				if ((this._Version != value))
+				{
+					this.OnVersionChanging(value);
+					this.SendPropertyChanging();
+					this._Version = value;
+					this.SendPropertyChanged("Version");
+					this.OnVersionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreateDate", DbType="DateTime NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public System.DateTime CreateDate
+		{
+			get
+			{
+				return this._CreateDate;
+			}
+			set
+			{
+				if ((this._CreateDate != value))
+				{
+					this.OnCreateDateChanging(value);
+					this.SendPropertyChanging();
+					this._CreateDate = value;
+					this.SendPropertyChanged("CreateDate");
+					this.OnCreateDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastUpdate", DbType="DateTime NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public System.DateTime LastUpdate
+		{
+			get
+			{
+				return this._LastUpdate;
+			}
+			set
+			{
+				if ((this._LastUpdate != value))
+				{
+					this.OnLastUpdateChanging(value);
+					this.SendPropertyChanging();
+					this._LastUpdate = value;
+					this.SendPropertyChanged("LastUpdate");
+					this.OnLastUpdateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastUpdateBy", DbType="Int NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public int LastUpdateBy
+		{
+			get
+			{
+				return this._LastUpdateBy;
+			}
+			set
+			{
+				if ((this._LastUpdateBy != value))
+				{
+					this.OnLastUpdateByChanging(value);
+					this.SendPropertyChanging();
+					this._LastUpdateBy = value;
+					this.SendPropertyChanged("LastUpdateBy");
+					this.OnLastUpdateByChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastUpdateByType", DbType="Int NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public int LastUpdateByType
+		{
+			get
+			{
+				return this._LastUpdateByType;
+			}
+			set
+			{
+				if ((this._LastUpdateByType != value))
+				{
+					this.OnLastUpdateByTypeChanging(value);
+					this.SendPropertyChanging();
+					this._LastUpdateByType = value;
+					this.SendPropertyChanged("LastUpdateByType");
+					this.OnLastUpdateByTypeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Brand_BrandY", Storage="_Brandies", ThisKey="Id", OtherKey="BrandId")]
+		public EntitySet<BrandY> Brandies
+		{
+			get
+			{
+				return this._Brandies;
+			}
+			set
+			{
+				this._Brandies.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CategoryBrand_Brand", Storage="_CategoryBrand", ThisKey="Id", OtherKey="BrandId", IsForeignKey=true)]
+		public CategoryBrand CategoryBrand
+		{
+			get
+			{
+				return this._CategoryBrand.Entity;
+			}
+			set
+			{
+				CategoryBrand previousValue = this._CategoryBrand.Entity;
+				if (((previousValue != value) 
+							|| (this._CategoryBrand.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._CategoryBrand.Entity = null;
+						previousValue.Brands.Remove(this);
+					}
+					this._CategoryBrand.Entity = value;
+					if ((value != null))
+					{
+						value.Brands.Add(this);
+						this._Id = value.BrandId;
+					}
+					else
+					{
+						this._Id = default(int);
+					}
+					this.SendPropertyChanged("CategoryBrand");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CompanyBrand_Brand", Storage="_CompanyBrand", ThisKey="Id", OtherKey="BrandId", IsForeignKey=true)]
+		public CompanyBrand CompanyBrand
+		{
+			get
+			{
+				return this._CompanyBrand.Entity;
+			}
+			set
+			{
+				CompanyBrand previousValue = this._CompanyBrand.Entity;
+				if (((previousValue != value) 
+							|| (this._CompanyBrand.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._CompanyBrand.Entity = null;
+						previousValue.Brands.Remove(this);
+					}
+					this._CompanyBrand.Entity = value;
+					if ((value != null))
+					{
+						value.Brands.Add(this);
+						this._Id = value.BrandId;
+					}
+					else
+					{
+						this._Id = default(int);
+					}
+					this.SendPropertyChanged("CompanyBrand");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Brandies(BrandY entity)
+		{
+			this.SendPropertyChanging();
+			entity.Brand = this;
+		}
+		
+		private void detach_Brandies(BrandY entity)
+		{
+			this.SendPropertyChanging();
+			entity.Brand = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.BrandY")]
+	public partial class BrandY : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private int _BrandId;
+		
+		private int _SystemLanguageId;
+		
+		private string _BrandName;
+		
+		private string _BrandDescription;
+		
+		private string _BrandCategoryDescription;
+		
+		private System.Data.Linq.Binary _Version;
+		
+		private System.DateTime _CreateDate;
+		
+		private System.DateTime _LastUpdate;
+		
+		private int _LastUpdateBy;
+		
+		private int _LastUpdateByType;
+		
+		private EntityRef<Brand> _Brand;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnBrandIdChanging(int value);
+    partial void OnBrandIdChanged();
+    partial void OnSystemLanguageIdChanging(int value);
+    partial void OnSystemLanguageIdChanged();
+    partial void OnBrandNameChanging(string value);
+    partial void OnBrandNameChanged();
+    partial void OnBrandDescriptionChanging(string value);
+    partial void OnBrandDescriptionChanged();
+    partial void OnBrandCategoryDescriptionChanging(string value);
+    partial void OnBrandCategoryDescriptionChanged();
+    partial void OnVersionChanging(System.Data.Linq.Binary value);
+    partial void OnVersionChanged();
+    partial void OnCreateDateChanging(System.DateTime value);
+    partial void OnCreateDateChanged();
+    partial void OnLastUpdateChanging(System.DateTime value);
+    partial void OnLastUpdateChanged();
+    partial void OnLastUpdateByChanging(int value);
+    partial void OnLastUpdateByChanged();
+    partial void OnLastUpdateByTypeChanging(int value);
+    partial void OnLastUpdateByTypeChanged();
+    #endregion
+		
+		public BrandY()
+		{
+			this._Brand = default(EntityRef<Brand>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true, UpdateCheck=UpdateCheck.Never)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BrandId", DbType="Int NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public int BrandId
+		{
+			get
+			{
+				return this._BrandId;
+			}
+			set
+			{
+				if ((this._BrandId != value))
+				{
+					if (this._Brand.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnBrandIdChanging(value);
+					this.SendPropertyChanging();
+					this._BrandId = value;
+					this.SendPropertyChanged("BrandId");
+					this.OnBrandIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SystemLanguageId", DbType="Int NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public int SystemLanguageId
+		{
+			get
+			{
+				return this._SystemLanguageId;
+			}
+			set
+			{
+				if ((this._SystemLanguageId != value))
+				{
+					this.OnSystemLanguageIdChanging(value);
+					this.SendPropertyChanging();
+					this._SystemLanguageId = value;
+					this.SendPropertyChanged("SystemLanguageId");
+					this.OnSystemLanguageIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BrandName", DbType="NVarChar(256) NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
+		public string BrandName
+		{
+			get
+			{
+				return this._BrandName;
+			}
+			set
+			{
+				if ((this._BrandName != value))
+				{
+					this.OnBrandNameChanging(value);
+					this.SendPropertyChanging();
+					this._BrandName = value;
+					this.SendPropertyChanged("BrandName");
+					this.OnBrandNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BrandDescription", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
+		public string BrandDescription
+		{
+			get
+			{
+				return this._BrandDescription;
+			}
+			set
+			{
+				if ((this._BrandDescription != value))
+				{
+					this.OnBrandDescriptionChanging(value);
+					this.SendPropertyChanging();
+					this._BrandDescription = value;
+					this.SendPropertyChanged("BrandDescription");
+					this.OnBrandDescriptionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BrandCategoryDescription", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
+		public string BrandCategoryDescription
+		{
+			get
+			{
+				return this._BrandCategoryDescription;
+			}
+			set
+			{
+				if ((this._BrandCategoryDescription != value))
+				{
+					this.OnBrandCategoryDescriptionChanging(value);
+					this.SendPropertyChanging();
+					this._BrandCategoryDescription = value;
+					this.SendPropertyChanged("BrandCategoryDescription");
+					this.OnBrandCategoryDescriptionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Version", AutoSync=AutoSync.Always, DbType="rowversion NOT NULL", CanBeNull=false, IsDbGenerated=true, IsVersion=true, UpdateCheck=UpdateCheck.Never)]
+		public System.Data.Linq.Binary Version
+		{
+			get
+			{
+				return this._Version;
+			}
+			set
+			{
+				if ((this._Version != value))
+				{
+					this.OnVersionChanging(value);
+					this.SendPropertyChanging();
+					this._Version = value;
+					this.SendPropertyChanged("Version");
+					this.OnVersionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreateDate", DbType="DateTime NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public System.DateTime CreateDate
+		{
+			get
+			{
+				return this._CreateDate;
+			}
+			set
+			{
+				if ((this._CreateDate != value))
+				{
+					this.OnCreateDateChanging(value);
+					this.SendPropertyChanging();
+					this._CreateDate = value;
+					this.SendPropertyChanged("CreateDate");
+					this.OnCreateDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastUpdate", DbType="DateTime NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public System.DateTime LastUpdate
+		{
+			get
+			{
+				return this._LastUpdate;
+			}
+			set
+			{
+				if ((this._LastUpdate != value))
+				{
+					this.OnLastUpdateChanging(value);
+					this.SendPropertyChanging();
+					this._LastUpdate = value;
+					this.SendPropertyChanged("LastUpdate");
+					this.OnLastUpdateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastUpdateBy", DbType="Int NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public int LastUpdateBy
+		{
+			get
+			{
+				return this._LastUpdateBy;
+			}
+			set
+			{
+				if ((this._LastUpdateBy != value))
+				{
+					this.OnLastUpdateByChanging(value);
+					this.SendPropertyChanging();
+					this._LastUpdateBy = value;
+					this.SendPropertyChanged("LastUpdateBy");
+					this.OnLastUpdateByChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastUpdateByType", DbType="Int NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public int LastUpdateByType
+		{
+			get
+			{
+				return this._LastUpdateByType;
+			}
+			set
+			{
+				if ((this._LastUpdateByType != value))
+				{
+					this.OnLastUpdateByTypeChanging(value);
+					this.SendPropertyChanging();
+					this._LastUpdateByType = value;
+					this.SendPropertyChanged("LastUpdateByType");
+					this.OnLastUpdateByTypeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Brand_BrandY", Storage="_Brand", ThisKey="BrandId", OtherKey="Id", IsForeignKey=true)]
+		public Brand Brand
+		{
+			get
+			{
+				return this._Brand.Entity;
+			}
+			set
+			{
+				Brand previousValue = this._Brand.Entity;
+				if (((previousValue != value) 
+							|| (this._Brand.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Brand.Entity = null;
+						previousValue.Brandies.Remove(this);
+					}
+					this._Brand.Entity = value;
+					if ((value != null))
+					{
+						value.Brandies.Add(this);
+						this._BrandId = value.Id;
+					}
+					else
+					{
+						this._BrandId = default(int);
+					}
+					this.SendPropertyChanged("Brand");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Category")]
+	public partial class Category : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private int _ParentCategoryId;
+		
+		private int _Level;
+		
+		private string _Name;
+		
+		private string _OrderCode;
+		
+		private bool _Available;
+		
+		private bool _SystemCategory;
+		
+		private System.Data.Linq.Binary _Version;
+		
+		private System.DateTime _CreateDate;
+		
+		private System.DateTime _LastUpdate;
+		
+		private int _LastUpdateBy;
+		
+		private int _LastUpdateByType;
+		
+		private EntitySet<CategoryY> _CategoryYs;
+		
+		private EntityRef<CategoryBrand> _CategoryBrand;
+		
+		private EntityRef<CompanyCategory> _CompanyCategory;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnParentCategoryIdChanging(int value);
+    partial void OnParentCategoryIdChanged();
+    partial void OnLevelChanging(int value);
+    partial void OnLevelChanged();
+    partial void OnNameChanging(string value);
+    partial void OnNameChanged();
+    partial void OnOrderCodeChanging(string value);
+    partial void OnOrderCodeChanged();
+    partial void OnAvailableChanging(bool value);
+    partial void OnAvailableChanged();
+    partial void OnSystemCategoryChanging(bool value);
+    partial void OnSystemCategoryChanged();
+    partial void OnVersionChanging(System.Data.Linq.Binary value);
+    partial void OnVersionChanged();
+    partial void OnCreateDateChanging(System.DateTime value);
+    partial void OnCreateDateChanged();
+    partial void OnLastUpdateChanging(System.DateTime value);
+    partial void OnLastUpdateChanged();
+    partial void OnLastUpdateByChanging(int value);
+    partial void OnLastUpdateByChanged();
+    partial void OnLastUpdateByTypeChanging(int value);
+    partial void OnLastUpdateByTypeChanged();
+    #endregion
+		
+		public Category()
+		{
+			this._CategoryYs = new EntitySet<CategoryY>(new Action<CategoryY>(this.attach_CategoryYs), new Action<CategoryY>(this.detach_CategoryYs));
+			this._CategoryBrand = default(EntityRef<CategoryBrand>);
+			this._CompanyCategory = default(EntityRef<CompanyCategory>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true, UpdateCheck=UpdateCheck.Never)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					if ((this._CategoryBrand.HasLoadedOrAssignedValue || this._CompanyCategory.HasLoadedOrAssignedValue))
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ParentCategoryId", DbType="Int NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public int ParentCategoryId
+		{
+			get
+			{
+				return this._ParentCategoryId;
+			}
+			set
+			{
+				if ((this._ParentCategoryId != value))
+				{
+					this.OnParentCategoryIdChanging(value);
+					this.SendPropertyChanging();
+					this._ParentCategoryId = value;
+					this.SendPropertyChanged("ParentCategoryId");
+					this.OnParentCategoryIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Level]", Storage="_Level", DbType="Int NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public int Level
+		{
+			get
+			{
+				return this._Level;
+			}
+			set
+			{
+				if ((this._Level != value))
+				{
+					this.OnLevelChanging(value);
+					this.SendPropertyChanging();
+					this._Level = value;
+					this.SendPropertyChanged("Level");
+					this.OnLevelChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(128) NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+			set
+			{
+				if ((this._Name != value))
+				{
+					this.OnNameChanging(value);
+					this.SendPropertyChanging();
+					this._Name = value;
+					this.SendPropertyChanged("Name");
+					this.OnNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OrderCode", DbType="NVarChar(10) NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
+		public string OrderCode
+		{
+			get
+			{
+				return this._OrderCode;
+			}
+			set
+			{
+				if ((this._OrderCode != value))
+				{
+					this.OnOrderCodeChanging(value);
+					this.SendPropertyChanging();
+					this._OrderCode = value;
+					this.SendPropertyChanged("OrderCode");
+					this.OnOrderCodeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Available", DbType="Bit NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public bool Available
+		{
+			get
+			{
+				return this._Available;
+			}
+			set
+			{
+				if ((this._Available != value))
+				{
+					this.OnAvailableChanging(value);
+					this.SendPropertyChanging();
+					this._Available = value;
+					this.SendPropertyChanged("Available");
+					this.OnAvailableChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SystemCategory", DbType="Bit NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public bool SystemCategory
+		{
+			get
+			{
+				return this._SystemCategory;
+			}
+			set
+			{
+				if ((this._SystemCategory != value))
+				{
+					this.OnSystemCategoryChanging(value);
+					this.SendPropertyChanging();
+					this._SystemCategory = value;
+					this.SendPropertyChanged("SystemCategory");
+					this.OnSystemCategoryChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Version", AutoSync=AutoSync.Always, DbType="rowversion NOT NULL", CanBeNull=false, IsDbGenerated=true, IsVersion=true, UpdateCheck=UpdateCheck.Never)]
+		public System.Data.Linq.Binary Version
+		{
+			get
+			{
+				return this._Version;
+			}
+			set
+			{
+				if ((this._Version != value))
+				{
+					this.OnVersionChanging(value);
+					this.SendPropertyChanging();
+					this._Version = value;
+					this.SendPropertyChanged("Version");
+					this.OnVersionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreateDate", DbType="DateTime NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public System.DateTime CreateDate
+		{
+			get
+			{
+				return this._CreateDate;
+			}
+			set
+			{
+				if ((this._CreateDate != value))
+				{
+					this.OnCreateDateChanging(value);
+					this.SendPropertyChanging();
+					this._CreateDate = value;
+					this.SendPropertyChanged("CreateDate");
+					this.OnCreateDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastUpdate", DbType="DateTime NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public System.DateTime LastUpdate
+		{
+			get
+			{
+				return this._LastUpdate;
+			}
+			set
+			{
+				if ((this._LastUpdate != value))
+				{
+					this.OnLastUpdateChanging(value);
+					this.SendPropertyChanging();
+					this._LastUpdate = value;
+					this.SendPropertyChanged("LastUpdate");
+					this.OnLastUpdateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastUpdateBy", DbType="Int NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public int LastUpdateBy
+		{
+			get
+			{
+				return this._LastUpdateBy;
+			}
+			set
+			{
+				if ((this._LastUpdateBy != value))
+				{
+					this.OnLastUpdateByChanging(value);
+					this.SendPropertyChanging();
+					this._LastUpdateBy = value;
+					this.SendPropertyChanged("LastUpdateBy");
+					this.OnLastUpdateByChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastUpdateByType", DbType="Int NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public int LastUpdateByType
+		{
+			get
+			{
+				return this._LastUpdateByType;
+			}
+			set
+			{
+				if ((this._LastUpdateByType != value))
+				{
+					this.OnLastUpdateByTypeChanging(value);
+					this.SendPropertyChanging();
+					this._LastUpdateByType = value;
+					this.SendPropertyChanged("LastUpdateByType");
+					this.OnLastUpdateByTypeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Category_CategoryY", Storage="_CategoryYs", ThisKey="Id", OtherKey="CategoryId")]
+		public EntitySet<CategoryY> CategoryYs
+		{
+			get
+			{
+				return this._CategoryYs;
+			}
+			set
+			{
+				this._CategoryYs.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CategoryBrand_Category", Storage="_CategoryBrand", ThisKey="Id", OtherKey="CategoryId", IsForeignKey=true)]
+		public CategoryBrand CategoryBrand
+		{
+			get
+			{
+				return this._CategoryBrand.Entity;
+			}
+			set
+			{
+				CategoryBrand previousValue = this._CategoryBrand.Entity;
+				if (((previousValue != value) 
+							|| (this._CategoryBrand.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._CategoryBrand.Entity = null;
+						previousValue.Categories.Remove(this);
+					}
+					this._CategoryBrand.Entity = value;
+					if ((value != null))
+					{
+						value.Categories.Add(this);
+						this._Id = value.CategoryId;
+					}
+					else
+					{
+						this._Id = default(int);
+					}
+					this.SendPropertyChanged("CategoryBrand");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CompanyCategory_Category", Storage="_CompanyCategory", ThisKey="Id", OtherKey="CategoryId", IsForeignKey=true)]
+		public CompanyCategory CompanyCategory
+		{
+			get
+			{
+				return this._CompanyCategory.Entity;
+			}
+			set
+			{
+				CompanyCategory previousValue = this._CompanyCategory.Entity;
+				if (((previousValue != value) 
+							|| (this._CompanyCategory.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._CompanyCategory.Entity = null;
+						previousValue.Categories.Remove(this);
+					}
+					this._CompanyCategory.Entity = value;
+					if ((value != null))
+					{
+						value.Categories.Add(this);
+						this._Id = value.CategoryId;
+					}
+					else
+					{
+						this._Id = default(int);
+					}
+					this.SendPropertyChanged("CompanyCategory");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_CategoryYs(CategoryY entity)
+		{
+			this.SendPropertyChanging();
+			entity.Category = this;
+		}
+		
+		private void detach_CategoryYs(CategoryY entity)
+		{
+			this.SendPropertyChanging();
+			entity.Category = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.CategoryBrand")]
+	public partial class CategoryBrand : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private int _CategoryId;
+		
+		private int _BrandId;
+		
+		private bool _Available;
+		
+		private System.Data.Linq.Binary _Version;
+		
+		private System.DateTime _CreateDate;
+		
+		private System.DateTime _LastUpdate;
+		
+		private int _LastUpdateBy;
+		
+		private int _LastUpdateByType;
+		
+		private EntitySet<Brand> _Brands;
+		
+		private EntitySet<Category> _Categories;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnCategoryIdChanging(int value);
+    partial void OnCategoryIdChanged();
+    partial void OnBrandIdChanging(int value);
+    partial void OnBrandIdChanged();
+    partial void OnAvailableChanging(bool value);
+    partial void OnAvailableChanged();
+    partial void OnVersionChanging(System.Data.Linq.Binary value);
+    partial void OnVersionChanged();
+    partial void OnCreateDateChanging(System.DateTime value);
+    partial void OnCreateDateChanged();
+    partial void OnLastUpdateChanging(System.DateTime value);
+    partial void OnLastUpdateChanged();
+    partial void OnLastUpdateByChanging(int value);
+    partial void OnLastUpdateByChanged();
+    partial void OnLastUpdateByTypeChanging(int value);
+    partial void OnLastUpdateByTypeChanged();
+    #endregion
+		
+		public CategoryBrand()
+		{
+			this._Brands = new EntitySet<Brand>(new Action<Brand>(this.attach_Brands), new Action<Brand>(this.detach_Brands));
+			this._Categories = new EntitySet<Category>(new Action<Category>(this.attach_Categories), new Action<Category>(this.detach_Categories));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true, UpdateCheck=UpdateCheck.Never)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CategoryId", DbType="Int NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public int CategoryId
+		{
+			get
+			{
+				return this._CategoryId;
+			}
+			set
+			{
+				if ((this._CategoryId != value))
+				{
+					this.OnCategoryIdChanging(value);
+					this.SendPropertyChanging();
+					this._CategoryId = value;
+					this.SendPropertyChanged("CategoryId");
+					this.OnCategoryIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BrandId", DbType="Int NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public int BrandId
+		{
+			get
+			{
+				return this._BrandId;
+			}
+			set
+			{
+				if ((this._BrandId != value))
+				{
+					this.OnBrandIdChanging(value);
+					this.SendPropertyChanging();
+					this._BrandId = value;
+					this.SendPropertyChanged("BrandId");
+					this.OnBrandIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Available", DbType="Bit NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public bool Available
+		{
+			get
+			{
+				return this._Available;
+			}
+			set
+			{
+				if ((this._Available != value))
+				{
+					this.OnAvailableChanging(value);
+					this.SendPropertyChanging();
+					this._Available = value;
+					this.SendPropertyChanged("Available");
+					this.OnAvailableChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Version", AutoSync=AutoSync.Always, DbType="rowversion NOT NULL", CanBeNull=false, IsDbGenerated=true, IsVersion=true, UpdateCheck=UpdateCheck.Never)]
+		public System.Data.Linq.Binary Version
+		{
+			get
+			{
+				return this._Version;
+			}
+			set
+			{
+				if ((this._Version != value))
+				{
+					this.OnVersionChanging(value);
+					this.SendPropertyChanging();
+					this._Version = value;
+					this.SendPropertyChanged("Version");
+					this.OnVersionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreateDate", DbType="DateTime NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public System.DateTime CreateDate
+		{
+			get
+			{
+				return this._CreateDate;
+			}
+			set
+			{
+				if ((this._CreateDate != value))
+				{
+					this.OnCreateDateChanging(value);
+					this.SendPropertyChanging();
+					this._CreateDate = value;
+					this.SendPropertyChanged("CreateDate");
+					this.OnCreateDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastUpdate", DbType="DateTime NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public System.DateTime LastUpdate
+		{
+			get
+			{
+				return this._LastUpdate;
+			}
+			set
+			{
+				if ((this._LastUpdate != value))
+				{
+					this.OnLastUpdateChanging(value);
+					this.SendPropertyChanging();
+					this._LastUpdate = value;
+					this.SendPropertyChanged("LastUpdate");
+					this.OnLastUpdateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastUpdateBy", DbType="Int NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public int LastUpdateBy
+		{
+			get
+			{
+				return this._LastUpdateBy;
+			}
+			set
+			{
+				if ((this._LastUpdateBy != value))
+				{
+					this.OnLastUpdateByChanging(value);
+					this.SendPropertyChanging();
+					this._LastUpdateBy = value;
+					this.SendPropertyChanged("LastUpdateBy");
+					this.OnLastUpdateByChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastUpdateByType", DbType="Int NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public int LastUpdateByType
+		{
+			get
+			{
+				return this._LastUpdateByType;
+			}
+			set
+			{
+				if ((this._LastUpdateByType != value))
+				{
+					this.OnLastUpdateByTypeChanging(value);
+					this.SendPropertyChanging();
+					this._LastUpdateByType = value;
+					this.SendPropertyChanged("LastUpdateByType");
+					this.OnLastUpdateByTypeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CategoryBrand_Brand", Storage="_Brands", ThisKey="BrandId", OtherKey="Id")]
+		public EntitySet<Brand> Brands
+		{
+			get
+			{
+				return this._Brands;
+			}
+			set
+			{
+				this._Brands.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CategoryBrand_Category", Storage="_Categories", ThisKey="CategoryId", OtherKey="Id")]
+		public EntitySet<Category> Categories
+		{
+			get
+			{
+				return this._Categories;
+			}
+			set
+			{
+				this._Categories.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Brands(Brand entity)
+		{
+			this.SendPropertyChanging();
+			entity.CategoryBrand = this;
+		}
+		
+		private void detach_Brands(Brand entity)
+		{
+			this.SendPropertyChanging();
+			entity.CategoryBrand = null;
+		}
+		
+		private void attach_Categories(Category entity)
+		{
+			this.SendPropertyChanging();
+			entity.CategoryBrand = this;
+		}
+		
+		private void detach_Categories(Category entity)
+		{
+			this.SendPropertyChanging();
+			entity.CategoryBrand = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.CategoryY")]
+	public partial class CategoryY : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private int _CategoryId;
+		
+		private int _SystemLanguageId;
+		
+		private string _Name;
+		
+		private System.Data.Linq.Binary _Version;
+		
+		private System.DateTime _CreateDate;
+		
+		private System.DateTime _LastUpdate;
+		
+		private int _LastUpdateBy;
+		
+		private int _LastUpdateByType;
+		
+		private EntityRef<Category> _Category;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnCategoryIdChanging(int value);
+    partial void OnCategoryIdChanged();
+    partial void OnSystemLanguageIdChanging(int value);
+    partial void OnSystemLanguageIdChanged();
+    partial void OnNameChanging(string value);
+    partial void OnNameChanged();
+    partial void OnVersionChanging(System.Data.Linq.Binary value);
+    partial void OnVersionChanged();
+    partial void OnCreateDateChanging(System.DateTime value);
+    partial void OnCreateDateChanged();
+    partial void OnLastUpdateChanging(System.DateTime value);
+    partial void OnLastUpdateChanged();
+    partial void OnLastUpdateByChanging(int value);
+    partial void OnLastUpdateByChanged();
+    partial void OnLastUpdateByTypeChanging(int value);
+    partial void OnLastUpdateByTypeChanged();
+    #endregion
+		
+		public CategoryY()
+		{
+			this._Category = default(EntityRef<Category>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true, UpdateCheck=UpdateCheck.Never)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CategoryId", DbType="Int NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public int CategoryId
+		{
+			get
+			{
+				return this._CategoryId;
+			}
+			set
+			{
+				if ((this._CategoryId != value))
+				{
+					if (this._Category.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnCategoryIdChanging(value);
+					this.SendPropertyChanging();
+					this._CategoryId = value;
+					this.SendPropertyChanged("CategoryId");
+					this.OnCategoryIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SystemLanguageId", DbType="Int NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public int SystemLanguageId
+		{
+			get
+			{
+				return this._SystemLanguageId;
+			}
+			set
+			{
+				if ((this._SystemLanguageId != value))
+				{
+					this.OnSystemLanguageIdChanging(value);
+					this.SendPropertyChanging();
+					this._SystemLanguageId = value;
+					this.SendPropertyChanged("SystemLanguageId");
+					this.OnSystemLanguageIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(128) NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+			set
+			{
+				if ((this._Name != value))
+				{
+					this.OnNameChanging(value);
+					this.SendPropertyChanging();
+					this._Name = value;
+					this.SendPropertyChanged("Name");
+					this.OnNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Version", AutoSync=AutoSync.Always, DbType="rowversion NOT NULL", CanBeNull=false, IsDbGenerated=true, IsVersion=true, UpdateCheck=UpdateCheck.Never)]
+		public System.Data.Linq.Binary Version
+		{
+			get
+			{
+				return this._Version;
+			}
+			set
+			{
+				if ((this._Version != value))
+				{
+					this.OnVersionChanging(value);
+					this.SendPropertyChanging();
+					this._Version = value;
+					this.SendPropertyChanged("Version");
+					this.OnVersionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreateDate", DbType="DateTime NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public System.DateTime CreateDate
+		{
+			get
+			{
+				return this._CreateDate;
+			}
+			set
+			{
+				if ((this._CreateDate != value))
+				{
+					this.OnCreateDateChanging(value);
+					this.SendPropertyChanging();
+					this._CreateDate = value;
+					this.SendPropertyChanged("CreateDate");
+					this.OnCreateDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastUpdate", DbType="DateTime NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public System.DateTime LastUpdate
+		{
+			get
+			{
+				return this._LastUpdate;
+			}
+			set
+			{
+				if ((this._LastUpdate != value))
+				{
+					this.OnLastUpdateChanging(value);
+					this.SendPropertyChanging();
+					this._LastUpdate = value;
+					this.SendPropertyChanged("LastUpdate");
+					this.OnLastUpdateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastUpdateBy", DbType="Int NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public int LastUpdateBy
+		{
+			get
+			{
+				return this._LastUpdateBy;
+			}
+			set
+			{
+				if ((this._LastUpdateBy != value))
+				{
+					this.OnLastUpdateByChanging(value);
+					this.SendPropertyChanging();
+					this._LastUpdateBy = value;
+					this.SendPropertyChanged("LastUpdateBy");
+					this.OnLastUpdateByChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastUpdateByType", DbType="Int NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public int LastUpdateByType
+		{
+			get
+			{
+				return this._LastUpdateByType;
+			}
+			set
+			{
+				if ((this._LastUpdateByType != value))
+				{
+					this.OnLastUpdateByTypeChanging(value);
+					this.SendPropertyChanging();
+					this._LastUpdateByType = value;
+					this.SendPropertyChanged("LastUpdateByType");
+					this.OnLastUpdateByTypeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Category_CategoryY", Storage="_Category", ThisKey="CategoryId", OtherKey="Id", IsForeignKey=true)]
+		public Category Category
+		{
+			get
+			{
+				return this._Category.Entity;
+			}
+			set
+			{
+				Category previousValue = this._Category.Entity;
+				if (((previousValue != value) 
+							|| (this._Category.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Category.Entity = null;
+						previousValue.CategoryYs.Remove(this);
+					}
+					this._Category.Entity = value;
+					if ((value != null))
+					{
+						value.CategoryYs.Add(this);
+						this._CategoryId = value.Id;
+					}
+					else
+					{
+						this._CategoryId = default(int);
+					}
+					this.SendPropertyChanged("Category");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.CodeList")]
+	public partial class CodeList : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private string _Category;
+		
+		private int _CodeId;
+		
+		private string _CodeShort;
+		
+		private string _CodeLong;
+		
+		private string _SortOrder;
+		
+		private bool _Available;
+		
+		private System.Data.Linq.Binary _Version;
+		
+		private System.DateTime _CreateDate;
+		
+		private System.DateTime _LastUpdate;
+		
+		private EntitySet<CodeListY> _CodeListies;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnCategoryChanging(string value);
+    partial void OnCategoryChanged();
+    partial void OnCodeIdChanging(int value);
+    partial void OnCodeIdChanged();
+    partial void OnCodeShortChanging(string value);
+    partial void OnCodeShortChanged();
+    partial void OnCodeLongChanging(string value);
+    partial void OnCodeLongChanged();
+    partial void OnSortOrderChanging(string value);
+    partial void OnSortOrderChanged();
+    partial void OnAvailableChanging(bool value);
+    partial void OnAvailableChanged();
+    partial void OnVersionChanging(System.Data.Linq.Binary value);
+    partial void OnVersionChanged();
+    partial void OnCreateDateChanging(System.DateTime value);
+    partial void OnCreateDateChanged();
+    partial void OnLastUpdateChanging(System.DateTime value);
+    partial void OnLastUpdateChanged();
+    #endregion
+		
+		public CodeList()
+		{
+			this._CodeListies = new EntitySet<CodeListY>(new Action<CodeListY>(this.attach_CodeListies), new Action<CodeListY>(this.detach_CodeListies));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true, UpdateCheck=UpdateCheck.Never)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Category", DbType="NVarChar(128) NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
+		public string Category
+		{
+			get
+			{
+				return this._Category;
+			}
+			set
+			{
+				if ((this._Category != value))
+				{
+					this.OnCategoryChanging(value);
+					this.SendPropertyChanging();
+					this._Category = value;
+					this.SendPropertyChanged("Category");
+					this.OnCategoryChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodeId", DbType="Int NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public int CodeId
+		{
+			get
+			{
+				return this._CodeId;
+			}
+			set
+			{
+				if ((this._CodeId != value))
+				{
+					this.OnCodeIdChanging(value);
+					this.SendPropertyChanging();
+					this._CodeId = value;
+					this.SendPropertyChanged("CodeId");
+					this.OnCodeIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodeShort", DbType="NVarChar(1024) NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
+		public string CodeShort
+		{
+			get
+			{
+				return this._CodeShort;
+			}
+			set
+			{
+				if ((this._CodeShort != value))
+				{
+					this.OnCodeShortChanging(value);
+					this.SendPropertyChanging();
+					this._CodeShort = value;
+					this.SendPropertyChanged("CodeShort");
+					this.OnCodeShortChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodeLong", DbType="NVarChar(1024) NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
+		public string CodeLong
+		{
+			get
+			{
+				return this._CodeLong;
+			}
+			set
+			{
+				if ((this._CodeLong != value))
+				{
+					this.OnCodeLongChanging(value);
+					this.SendPropertyChanging();
+					this._CodeLong = value;
+					this.SendPropertyChanged("CodeLong");
+					this.OnCodeLongChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SortOrder", DbType="VarChar(8) NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
+		public string SortOrder
+		{
+			get
+			{
+				return this._SortOrder;
+			}
+			set
+			{
+				if ((this._SortOrder != value))
+				{
+					this.OnSortOrderChanging(value);
+					this.SendPropertyChanging();
+					this._SortOrder = value;
+					this.SendPropertyChanged("SortOrder");
+					this.OnSortOrderChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Available", DbType="Bit NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public bool Available
+		{
+			get
+			{
+				return this._Available;
+			}
+			set
+			{
+				if ((this._Available != value))
+				{
+					this.OnAvailableChanging(value);
+					this.SendPropertyChanging();
+					this._Available = value;
+					this.SendPropertyChanged("Available");
+					this.OnAvailableChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Version", AutoSync=AutoSync.Always, DbType="rowversion NOT NULL", CanBeNull=false, IsDbGenerated=true, IsVersion=true, UpdateCheck=UpdateCheck.Never)]
+		public System.Data.Linq.Binary Version
+		{
+			get
+			{
+				return this._Version;
+			}
+			set
+			{
+				if ((this._Version != value))
+				{
+					this.OnVersionChanging(value);
+					this.SendPropertyChanging();
+					this._Version = value;
+					this.SendPropertyChanged("Version");
+					this.OnVersionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreateDate", DbType="DateTime NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public System.DateTime CreateDate
+		{
+			get
+			{
+				return this._CreateDate;
+			}
+			set
+			{
+				if ((this._CreateDate != value))
+				{
+					this.OnCreateDateChanging(value);
+					this.SendPropertyChanging();
+					this._CreateDate = value;
+					this.SendPropertyChanged("CreateDate");
+					this.OnCreateDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastUpdate", DbType="DateTime NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public System.DateTime LastUpdate
+		{
+			get
+			{
+				return this._LastUpdate;
+			}
+			set
+			{
+				if ((this._LastUpdate != value))
+				{
+					this.OnLastUpdateChanging(value);
+					this.SendPropertyChanging();
+					this._LastUpdate = value;
+					this.SendPropertyChanged("LastUpdate");
+					this.OnLastUpdateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CodeList_CodeListY", Storage="_CodeListies", ThisKey="Id", OtherKey="CodeListId")]
+		public EntitySet<CodeListY> CodeListies
+		{
+			get
+			{
+				return this._CodeListies;
+			}
+			set
+			{
+				this._CodeListies.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_CodeListies(CodeListY entity)
+		{
+			this.SendPropertyChanging();
+			entity.CodeList = this;
+		}
+		
+		private void detach_CodeListies(CodeListY entity)
+		{
+			this.SendPropertyChanging();
+			entity.CodeList = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.CodeListY")]
+	public partial class CodeListY : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private int _CodeListId;
+		
+		private int _SystemLanguageId;
+		
+		private string _CodeShort;
+		
+		private string _CodeLong;
+		
+		private System.DateTime _CreateDate;
+		
+		private EntityRef<CodeList> _CodeList;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnCodeListIdChanging(int value);
+    partial void OnCodeListIdChanged();
+    partial void OnSystemLanguageIdChanging(int value);
+    partial void OnSystemLanguageIdChanged();
+    partial void OnCodeShortChanging(string value);
+    partial void OnCodeShortChanged();
+    partial void OnCodeLongChanging(string value);
+    partial void OnCodeLongChanged();
+    partial void OnCreateDateChanging(System.DateTime value);
+    partial void OnCreateDateChanged();
+    #endregion
+		
+		public CodeListY()
+		{
+			this._CodeList = default(EntityRef<CodeList>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodeListId", DbType="Int NOT NULL")]
+		public int CodeListId
+		{
+			get
+			{
+				return this._CodeListId;
+			}
+			set
+			{
+				if ((this._CodeListId != value))
+				{
+					if (this._CodeList.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnCodeListIdChanging(value);
+					this.SendPropertyChanging();
+					this._CodeListId = value;
+					this.SendPropertyChanged("CodeListId");
+					this.OnCodeListIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SystemLanguageId", DbType="Int NOT NULL")]
+		public int SystemLanguageId
+		{
+			get
+			{
+				return this._SystemLanguageId;
+			}
+			set
+			{
+				if ((this._SystemLanguageId != value))
+				{
+					this.OnSystemLanguageIdChanging(value);
+					this.SendPropertyChanging();
+					this._SystemLanguageId = value;
+					this.SendPropertyChanged("SystemLanguageId");
+					this.OnSystemLanguageIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodeShort", DbType="NVarChar(1024) NOT NULL", CanBeNull=false)]
+		public string CodeShort
+		{
+			get
+			{
+				return this._CodeShort;
+			}
+			set
+			{
+				if ((this._CodeShort != value))
+				{
+					this.OnCodeShortChanging(value);
+					this.SendPropertyChanging();
+					this._CodeShort = value;
+					this.SendPropertyChanged("CodeShort");
+					this.OnCodeShortChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodeLong", DbType="NVarChar(1024) NOT NULL", CanBeNull=false)]
+		public string CodeLong
+		{
+			get
+			{
+				return this._CodeLong;
+			}
+			set
+			{
+				if ((this._CodeLong != value))
+				{
+					this.OnCodeLongChanging(value);
+					this.SendPropertyChanging();
+					this._CodeLong = value;
+					this.SendPropertyChanged("CodeLong");
+					this.OnCodeLongChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreateDate", DbType="DateTime NOT NULL")]
+		public System.DateTime CreateDate
+		{
+			get
+			{
+				return this._CreateDate;
+			}
+			set
+			{
+				if ((this._CreateDate != value))
+				{
+					this.OnCreateDateChanging(value);
+					this.SendPropertyChanging();
+					this._CreateDate = value;
+					this.SendPropertyChanged("CreateDate");
+					this.OnCreateDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CodeList_CodeListY", Storage="_CodeList", ThisKey="CodeListId", OtherKey="Id", IsForeignKey=true)]
+		public CodeList CodeList
+		{
+			get
+			{
+				return this._CodeList.Entity;
+			}
+			set
+			{
+				CodeList previousValue = this._CodeList.Entity;
+				if (((previousValue != value) 
+							|| (this._CodeList.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._CodeList.Entity = null;
+						previousValue.CodeListies.Remove(this);
+					}
+					this._CodeList.Entity = value;
+					if ((value != null))
+					{
+						value.CodeListies.Add(this);
+						this._CodeListId = value.Id;
+					}
+					else
+					{
+						this._CodeListId = default(int);
+					}
+					this.SendPropertyChanged("CodeList");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.CompanyBrand")]
+	public partial class CompanyBrand : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private int _BrandId;
+		
+		private int _CompanyId;
+		
+		private bool _Available;
+		
+		private System.Data.Linq.Binary _Version;
+		
+		private System.DateTime _CreateDate;
+		
+		private System.DateTime _LastUpdate;
+		
+		private int _LastUpdateBy;
+		
+		private int _LastUpdateByType;
+		
+		private EntitySet<Brand> _Brands;
+		
+		private EntitySet<Company> _Companies;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnBrandIdChanging(int value);
+    partial void OnBrandIdChanged();
+    partial void OnCompanyIdChanging(int value);
+    partial void OnCompanyIdChanged();
+    partial void OnAvailableChanging(bool value);
+    partial void OnAvailableChanged();
+    partial void OnVersionChanging(System.Data.Linq.Binary value);
+    partial void OnVersionChanged();
+    partial void OnCreateDateChanging(System.DateTime value);
+    partial void OnCreateDateChanged();
+    partial void OnLastUpdateChanging(System.DateTime value);
+    partial void OnLastUpdateChanged();
+    partial void OnLastUpdateByChanging(int value);
+    partial void OnLastUpdateByChanged();
+    partial void OnLastUpdateByTypeChanging(int value);
+    partial void OnLastUpdateByTypeChanged();
+    #endregion
+		
+		public CompanyBrand()
+		{
+			this._Brands = new EntitySet<Brand>(new Action<Brand>(this.attach_Brands), new Action<Brand>(this.detach_Brands));
+			this._Companies = new EntitySet<Company>(new Action<Company>(this.attach_Companies), new Action<Company>(this.detach_Companies));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true, UpdateCheck=UpdateCheck.Never)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BrandId", DbType="Int NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public int BrandId
+		{
+			get
+			{
+				return this._BrandId;
+			}
+			set
+			{
+				if ((this._BrandId != value))
+				{
+					this.OnBrandIdChanging(value);
+					this.SendPropertyChanging();
+					this._BrandId = value;
+					this.SendPropertyChanged("BrandId");
+					this.OnBrandIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CompanyId", DbType="Int NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public int CompanyId
+		{
+			get
+			{
+				return this._CompanyId;
+			}
+			set
+			{
+				if ((this._CompanyId != value))
+				{
+					this.OnCompanyIdChanging(value);
+					this.SendPropertyChanging();
+					this._CompanyId = value;
+					this.SendPropertyChanged("CompanyId");
+					this.OnCompanyIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Available", DbType="Bit NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public bool Available
+		{
+			get
+			{
+				return this._Available;
+			}
+			set
+			{
+				if ((this._Available != value))
+				{
+					this.OnAvailableChanging(value);
+					this.SendPropertyChanging();
+					this._Available = value;
+					this.SendPropertyChanged("Available");
+					this.OnAvailableChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Version", AutoSync=AutoSync.Always, DbType="rowversion NOT NULL", CanBeNull=false, IsDbGenerated=true, IsVersion=true, UpdateCheck=UpdateCheck.Never)]
+		public System.Data.Linq.Binary Version
+		{
+			get
+			{
+				return this._Version;
+			}
+			set
+			{
+				if ((this._Version != value))
+				{
+					this.OnVersionChanging(value);
+					this.SendPropertyChanging();
+					this._Version = value;
+					this.SendPropertyChanged("Version");
+					this.OnVersionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreateDate", DbType="DateTime NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public System.DateTime CreateDate
+		{
+			get
+			{
+				return this._CreateDate;
+			}
+			set
+			{
+				if ((this._CreateDate != value))
+				{
+					this.OnCreateDateChanging(value);
+					this.SendPropertyChanging();
+					this._CreateDate = value;
+					this.SendPropertyChanged("CreateDate");
+					this.OnCreateDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastUpdate", DbType="DateTime NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public System.DateTime LastUpdate
+		{
+			get
+			{
+				return this._LastUpdate;
+			}
+			set
+			{
+				if ((this._LastUpdate != value))
+				{
+					this.OnLastUpdateChanging(value);
+					this.SendPropertyChanging();
+					this._LastUpdate = value;
+					this.SendPropertyChanged("LastUpdate");
+					this.OnLastUpdateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastUpdateBy", DbType="Int NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public int LastUpdateBy
+		{
+			get
+			{
+				return this._LastUpdateBy;
+			}
+			set
+			{
+				if ((this._LastUpdateBy != value))
+				{
+					this.OnLastUpdateByChanging(value);
+					this.SendPropertyChanging();
+					this._LastUpdateBy = value;
+					this.SendPropertyChanged("LastUpdateBy");
+					this.OnLastUpdateByChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastUpdateByType", DbType="Int NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public int LastUpdateByType
+		{
+			get
+			{
+				return this._LastUpdateByType;
+			}
+			set
+			{
+				if ((this._LastUpdateByType != value))
+				{
+					this.OnLastUpdateByTypeChanging(value);
+					this.SendPropertyChanging();
+					this._LastUpdateByType = value;
+					this.SendPropertyChanged("LastUpdateByType");
+					this.OnLastUpdateByTypeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CompanyBrand_Brand", Storage="_Brands", ThisKey="BrandId", OtherKey="Id")]
+		public EntitySet<Brand> Brands
+		{
+			get
+			{
+				return this._Brands;
+			}
+			set
+			{
+				this._Brands.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CompanyBrand_Company", Storage="_Companies", ThisKey="CompanyId", OtherKey="Id")]
+		public EntitySet<Company> Companies
+		{
+			get
+			{
+				return this._Companies;
+			}
+			set
+			{
+				this._Companies.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Brands(Brand entity)
+		{
+			this.SendPropertyChanging();
+			entity.CompanyBrand = this;
+		}
+		
+		private void detach_Brands(Brand entity)
+		{
+			this.SendPropertyChanging();
+			entity.CompanyBrand = null;
+		}
+		
+		private void attach_Companies(Company entity)
+		{
+			this.SendPropertyChanging();
+			entity.CompanyBrand = this;
+		}
+		
+		private void detach_Companies(Company entity)
+		{
+			this.SendPropertyChanging();
+			entity.CompanyBrand = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.CompanyCategory")]
+	public partial class CompanyCategory : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private int _CategoryId;
+		
+		private int _CompanyId;
+		
+		private bool _Available;
+		
+		private System.Data.Linq.Binary _Version;
+		
+		private System.DateTime _CreateDate;
+		
+		private System.DateTime _LastUpdate;
+		
+		private int _LastUpdateBy;
+		
+		private int _LastUpdateByType;
+		
+		private EntitySet<Category> _Categories;
+		
+		private EntitySet<Company> _Companies;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnCategoryIdChanging(int value);
+    partial void OnCategoryIdChanged();
+    partial void OnCompanyIdChanging(int value);
+    partial void OnCompanyIdChanged();
+    partial void OnAvailableChanging(bool value);
+    partial void OnAvailableChanged();
+    partial void OnVersionChanging(System.Data.Linq.Binary value);
+    partial void OnVersionChanged();
+    partial void OnCreateDateChanging(System.DateTime value);
+    partial void OnCreateDateChanged();
+    partial void OnLastUpdateChanging(System.DateTime value);
+    partial void OnLastUpdateChanged();
+    partial void OnLastUpdateByChanging(int value);
+    partial void OnLastUpdateByChanged();
+    partial void OnLastUpdateByTypeChanging(int value);
+    partial void OnLastUpdateByTypeChanged();
+    #endregion
+		
+		public CompanyCategory()
+		{
+			this._Categories = new EntitySet<Category>(new Action<Category>(this.attach_Categories), new Action<Category>(this.detach_Categories));
+			this._Companies = new EntitySet<Company>(new Action<Company>(this.attach_Companies), new Action<Company>(this.detach_Companies));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true, UpdateCheck=UpdateCheck.Never)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CategoryId", DbType="Int NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public int CategoryId
+		{
+			get
+			{
+				return this._CategoryId;
+			}
+			set
+			{
+				if ((this._CategoryId != value))
+				{
+					this.OnCategoryIdChanging(value);
+					this.SendPropertyChanging();
+					this._CategoryId = value;
+					this.SendPropertyChanged("CategoryId");
+					this.OnCategoryIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CompanyId", DbType="Int NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public int CompanyId
+		{
+			get
+			{
+				return this._CompanyId;
+			}
+			set
+			{
+				if ((this._CompanyId != value))
+				{
+					this.OnCompanyIdChanging(value);
+					this.SendPropertyChanging();
+					this._CompanyId = value;
+					this.SendPropertyChanged("CompanyId");
+					this.OnCompanyIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Available", DbType="Bit NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public bool Available
+		{
+			get
+			{
+				return this._Available;
+			}
+			set
+			{
+				if ((this._Available != value))
+				{
+					this.OnAvailableChanging(value);
+					this.SendPropertyChanging();
+					this._Available = value;
+					this.SendPropertyChanged("Available");
+					this.OnAvailableChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Version", AutoSync=AutoSync.Always, DbType="rowversion NOT NULL", CanBeNull=false, IsDbGenerated=true, IsVersion=true, UpdateCheck=UpdateCheck.Never)]
+		public System.Data.Linq.Binary Version
+		{
+			get
+			{
+				return this._Version;
+			}
+			set
+			{
+				if ((this._Version != value))
+				{
+					this.OnVersionChanging(value);
+					this.SendPropertyChanging();
+					this._Version = value;
+					this.SendPropertyChanged("Version");
+					this.OnVersionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreateDate", DbType="DateTime NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public System.DateTime CreateDate
+		{
+			get
+			{
+				return this._CreateDate;
+			}
+			set
+			{
+				if ((this._CreateDate != value))
+				{
+					this.OnCreateDateChanging(value);
+					this.SendPropertyChanging();
+					this._CreateDate = value;
+					this.SendPropertyChanged("CreateDate");
+					this.OnCreateDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastUpdate", DbType="DateTime NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public System.DateTime LastUpdate
+		{
+			get
+			{
+				return this._LastUpdate;
+			}
+			set
+			{
+				if ((this._LastUpdate != value))
+				{
+					this.OnLastUpdateChanging(value);
+					this.SendPropertyChanging();
+					this._LastUpdate = value;
+					this.SendPropertyChanged("LastUpdate");
+					this.OnLastUpdateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastUpdateBy", DbType="Int NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public int LastUpdateBy
+		{
+			get
+			{
+				return this._LastUpdateBy;
+			}
+			set
+			{
+				if ((this._LastUpdateBy != value))
+				{
+					this.OnLastUpdateByChanging(value);
+					this.SendPropertyChanging();
+					this._LastUpdateBy = value;
+					this.SendPropertyChanged("LastUpdateBy");
+					this.OnLastUpdateByChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastUpdateByType", DbType="Int NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public int LastUpdateByType
+		{
+			get
+			{
+				return this._LastUpdateByType;
+			}
+			set
+			{
+				if ((this._LastUpdateByType != value))
+				{
+					this.OnLastUpdateByTypeChanging(value);
+					this.SendPropertyChanging();
+					this._LastUpdateByType = value;
+					this.SendPropertyChanged("LastUpdateByType");
+					this.OnLastUpdateByTypeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CompanyCategory_Category", Storage="_Categories", ThisKey="CategoryId", OtherKey="Id")]
+		public EntitySet<Category> Categories
+		{
+			get
+			{
+				return this._Categories;
+			}
+			set
+			{
+				this._Categories.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CompanyCategory_Company", Storage="_Companies", ThisKey="CompanyId", OtherKey="Id")]
+		public EntitySet<Company> Companies
+		{
+			get
+			{
+				return this._Companies;
+			}
+			set
+			{
+				this._Companies.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Categories(Category entity)
+		{
+			this.SendPropertyChanging();
+			entity.CompanyCategory = this;
+		}
+		
+		private void detach_Categories(Category entity)
+		{
+			this.SendPropertyChanging();
+			entity.CompanyCategory = null;
+		}
+		
+		private void attach_Companies(Company entity)
+		{
+			this.SendPropertyChanging();
+			entity.CompanyCategory = this;
+		}
+		
+		private void detach_Companies(Company entity)
+		{
+			this.SendPropertyChanging();
+			entity.CompanyCategory = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Company")]
+	public partial class Company : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private string _CompanyName;
+		
+		private string _CompanyCode;
+		
+		private bool _Active;
+		
+		private string _ContactFirstName;
+		
+		private string _ContactLastName;
+		
+		private int _AddressId;
+		
+		private string _PhoneNumberId;
+		
+		private string _PhoneNumberId2;
+		
+		private string _Fax;
+		
+		private string _Email;
+		
+		private System.Data.Linq.Binary _Version;
+		
+		private System.DateTime _CreateDate;
+		
+		private System.DateTime _LastUpdate;
+		
+		private int _LastUpdateBy;
+		
+		private short _LastUpdateByType;
+		
+		private EntityRef<CompanyBrand> _CompanyBrand;
+		
+		private EntityRef<CompanyCategory> _CompanyCategory;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnCompanyNameChanging(string value);
+    partial void OnCompanyNameChanged();
+    partial void OnCompanyCodeChanging(string value);
+    partial void OnCompanyCodeChanged();
+    partial void OnActiveChanging(bool value);
+    partial void OnActiveChanged();
+    partial void OnContactFirstNameChanging(string value);
+    partial void OnContactFirstNameChanged();
+    partial void OnContactLastNameChanging(string value);
+    partial void OnContactLastNameChanged();
+    partial void OnAddressIdChanging(int value);
+    partial void OnAddressIdChanged();
+    partial void OnPhoneNumberIdChanging(string value);
+    partial void OnPhoneNumberIdChanged();
+    partial void OnPhoneNumberId2Changing(string value);
+    partial void OnPhoneNumberId2Changed();
+    partial void OnFaxChanging(string value);
+    partial void OnFaxChanged();
+    partial void OnEmailChanging(string value);
+    partial void OnEmailChanged();
+    partial void OnVersionChanging(System.Data.Linq.Binary value);
+    partial void OnVersionChanged();
+    partial void OnCreateDateChanging(System.DateTime value);
+    partial void OnCreateDateChanged();
+    partial void OnLastUpdateChanging(System.DateTime value);
+    partial void OnLastUpdateChanged();
+    partial void OnLastUpdateByChanging(int value);
+    partial void OnLastUpdateByChanged();
+    partial void OnLastUpdateByTypeChanging(short value);
+    partial void OnLastUpdateByTypeChanged();
+    #endregion
+		
+		public Company()
+		{
+			this._CompanyBrand = default(EntityRef<CompanyBrand>);
+			this._CompanyCategory = default(EntityRef<CompanyCategory>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true, UpdateCheck=UpdateCheck.Never)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					if ((this._CompanyBrand.HasLoadedOrAssignedValue || this._CompanyCategory.HasLoadedOrAssignedValue))
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CompanyName", DbType="NVarChar(256) NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
+		public string CompanyName
+		{
+			get
+			{
+				return this._CompanyName;
+			}
+			set
+			{
+				if ((this._CompanyName != value))
+				{
+					this.OnCompanyNameChanging(value);
+					this.SendPropertyChanging();
+					this._CompanyName = value;
+					this.SendPropertyChanged("CompanyName");
+					this.OnCompanyNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CompanyCode", DbType="NVarChar(64) NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
+		public string CompanyCode
+		{
+			get
+			{
+				return this._CompanyCode;
+			}
+			set
+			{
+				if ((this._CompanyCode != value))
+				{
+					this.OnCompanyCodeChanging(value);
+					this.SendPropertyChanging();
+					this._CompanyCode = value;
+					this.SendPropertyChanged("CompanyCode");
+					this.OnCompanyCodeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Active", DbType="Bit NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public bool Active
+		{
+			get
+			{
+				return this._Active;
+			}
+			set
+			{
+				if ((this._Active != value))
+				{
+					this.OnActiveChanging(value);
+					this.SendPropertyChanging();
+					this._Active = value;
+					this.SendPropertyChanged("Active");
+					this.OnActiveChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ContactFirstName", DbType="NVarChar(256) NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
+		public string ContactFirstName
+		{
+			get
+			{
+				return this._ContactFirstName;
+			}
+			set
+			{
+				if ((this._ContactFirstName != value))
+				{
+					this.OnContactFirstNameChanging(value);
+					this.SendPropertyChanging();
+					this._ContactFirstName = value;
+					this.SendPropertyChanged("ContactFirstName");
+					this.OnContactFirstNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ContactLastName", DbType="NVarChar(256) NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
+		public string ContactLastName
+		{
+			get
+			{
+				return this._ContactLastName;
+			}
+			set
+			{
+				if ((this._ContactLastName != value))
+				{
+					this.OnContactLastNameChanging(value);
+					this.SendPropertyChanging();
+					this._ContactLastName = value;
+					this.SendPropertyChanged("ContactLastName");
+					this.OnContactLastNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AddressId", DbType="Int NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public int AddressId
+		{
+			get
+			{
+				return this._AddressId;
+			}
+			set
+			{
+				if ((this._AddressId != value))
+				{
+					this.OnAddressIdChanging(value);
+					this.SendPropertyChanging();
+					this._AddressId = value;
+					this.SendPropertyChanged("AddressId");
+					this.OnAddressIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PhoneNumberId", DbType="VarChar(32) NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
+		public string PhoneNumberId
+		{
+			get
+			{
+				return this._PhoneNumberId;
+			}
+			set
+			{
+				if ((this._PhoneNumberId != value))
+				{
+					this.OnPhoneNumberIdChanging(value);
+					this.SendPropertyChanging();
+					this._PhoneNumberId = value;
+					this.SendPropertyChanged("PhoneNumberId");
+					this.OnPhoneNumberIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PhoneNumberId2", DbType="VarChar(32)", UpdateCheck=UpdateCheck.Never)]
+		public string PhoneNumberId2
+		{
+			get
+			{
+				return this._PhoneNumberId2;
+			}
+			set
+			{
+				if ((this._PhoneNumberId2 != value))
+				{
+					this.OnPhoneNumberId2Changing(value);
+					this.SendPropertyChanging();
+					this._PhoneNumberId2 = value;
+					this.SendPropertyChanged("PhoneNumberId2");
+					this.OnPhoneNumberId2Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Fax", DbType="VarChar(32)", UpdateCheck=UpdateCheck.Never)]
+		public string Fax
+		{
+			get
+			{
+				return this._Fax;
+			}
+			set
+			{
+				if ((this._Fax != value))
+				{
+					this.OnFaxChanging(value);
+					this.SendPropertyChanging();
+					this._Fax = value;
+					this.SendPropertyChanged("Fax");
+					this.OnFaxChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Email", DbType="NVarChar(256)", UpdateCheck=UpdateCheck.Never)]
+		public string Email
+		{
+			get
+			{
+				return this._Email;
+			}
+			set
+			{
+				if ((this._Email != value))
+				{
+					this.OnEmailChanging(value);
+					this.SendPropertyChanging();
+					this._Email = value;
+					this.SendPropertyChanged("Email");
+					this.OnEmailChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Version", AutoSync=AutoSync.Always, DbType="rowversion NOT NULL", CanBeNull=false, IsDbGenerated=true, IsVersion=true, UpdateCheck=UpdateCheck.Never)]
+		public System.Data.Linq.Binary Version
+		{
+			get
+			{
+				return this._Version;
+			}
+			set
+			{
+				if ((this._Version != value))
+				{
+					this.OnVersionChanging(value);
+					this.SendPropertyChanging();
+					this._Version = value;
+					this.SendPropertyChanged("Version");
+					this.OnVersionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreateDate", DbType="DateTime NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public System.DateTime CreateDate
+		{
+			get
+			{
+				return this._CreateDate;
+			}
+			set
+			{
+				if ((this._CreateDate != value))
+				{
+					this.OnCreateDateChanging(value);
+					this.SendPropertyChanging();
+					this._CreateDate = value;
+					this.SendPropertyChanged("CreateDate");
+					this.OnCreateDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastUpdate", DbType="DateTime NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public System.DateTime LastUpdate
+		{
+			get
+			{
+				return this._LastUpdate;
+			}
+			set
+			{
+				if ((this._LastUpdate != value))
+				{
+					this.OnLastUpdateChanging(value);
+					this.SendPropertyChanging();
+					this._LastUpdate = value;
+					this.SendPropertyChanged("LastUpdate");
+					this.OnLastUpdateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastUpdateBy", DbType="Int NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public int LastUpdateBy
+		{
+			get
+			{
+				return this._LastUpdateBy;
+			}
+			set
+			{
+				if ((this._LastUpdateBy != value))
+				{
+					this.OnLastUpdateByChanging(value);
+					this.SendPropertyChanging();
+					this._LastUpdateBy = value;
+					this.SendPropertyChanged("LastUpdateBy");
+					this.OnLastUpdateByChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastUpdateByType", DbType="SmallInt NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public short LastUpdateByType
+		{
+			get
+			{
+				return this._LastUpdateByType;
+			}
+			set
+			{
+				if ((this._LastUpdateByType != value))
+				{
+					this.OnLastUpdateByTypeChanging(value);
+					this.SendPropertyChanging();
+					this._LastUpdateByType = value;
+					this.SendPropertyChanged("LastUpdateByType");
+					this.OnLastUpdateByTypeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CompanyBrand_Company", Storage="_CompanyBrand", ThisKey="Id", OtherKey="CompanyId", IsForeignKey=true)]
+		public CompanyBrand CompanyBrand
+		{
+			get
+			{
+				return this._CompanyBrand.Entity;
+			}
+			set
+			{
+				CompanyBrand previousValue = this._CompanyBrand.Entity;
+				if (((previousValue != value) 
+							|| (this._CompanyBrand.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._CompanyBrand.Entity = null;
+						previousValue.Companies.Remove(this);
+					}
+					this._CompanyBrand.Entity = value;
+					if ((value != null))
+					{
+						value.Companies.Add(this);
+						this._Id = value.CompanyId;
+					}
+					else
+					{
+						this._Id = default(int);
+					}
+					this.SendPropertyChanged("CompanyBrand");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CompanyCategory_Company", Storage="_CompanyCategory", ThisKey="Id", OtherKey="CompanyId", IsForeignKey=true)]
+		public CompanyCategory CompanyCategory
+		{
+			get
+			{
+				return this._CompanyCategory.Entity;
+			}
+			set
+			{
+				CompanyCategory previousValue = this._CompanyCategory.Entity;
+				if (((previousValue != value) 
+							|| (this._CompanyCategory.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._CompanyCategory.Entity = null;
+						previousValue.Companies.Remove(this);
+					}
+					this._CompanyCategory.Entity = value;
+					if ((value != null))
+					{
+						value.Companies.Add(this);
+						this._Id = value.CompanyId;
+					}
+					else
+					{
+						this._Id = default(int);
+					}
+					this.SendPropertyChanged("CompanyCategory");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Country")]
+	public partial class Country : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private string _CountryName;
+		
+		private string _ISOCode;
+		
+		private string _Abbreviation;
+		
+		private string _RegionCode;
+		
+		private bool _Available;
+		
+		private System.Data.Linq.Binary _Version;
+		
+		private System.DateTime _CreateDate;
+		
+		private System.DateTime _LastUpdate;
+		
+		private int _LastUpdateBy;
+		
+		private int _LastUpdateByType;
+		
+		private EntitySet<CountryY> _CountryYs;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnCountryNameChanging(string value);
+    partial void OnCountryNameChanged();
+    partial void OnISOCodeChanging(string value);
+    partial void OnISOCodeChanged();
+    partial void OnAbbreviationChanging(string value);
+    partial void OnAbbreviationChanged();
+    partial void OnRegionCodeChanging(string value);
+    partial void OnRegionCodeChanged();
+    partial void OnAvailableChanging(bool value);
+    partial void OnAvailableChanged();
+    partial void OnVersionChanging(System.Data.Linq.Binary value);
+    partial void OnVersionChanged();
+    partial void OnCreateDateChanging(System.DateTime value);
+    partial void OnCreateDateChanged();
+    partial void OnLastUpdateChanging(System.DateTime value);
+    partial void OnLastUpdateChanged();
+    partial void OnLastUpdateByChanging(int value);
+    partial void OnLastUpdateByChanged();
+    partial void OnLastUpdateByTypeChanging(int value);
+    partial void OnLastUpdateByTypeChanged();
+    #endregion
+		
+		public Country()
+		{
+			this._CountryYs = new EntitySet<CountryY>(new Action<CountryY>(this.attach_CountryYs), new Action<CountryY>(this.detach_CountryYs));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true, UpdateCheck=UpdateCheck.Never)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CountryName", DbType="NVarChar(128) NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
+		public string CountryName
+		{
+			get
+			{
+				return this._CountryName;
+			}
+			set
+			{
+				if ((this._CountryName != value))
+				{
+					this.OnCountryNameChanging(value);
+					this.SendPropertyChanging();
+					this._CountryName = value;
+					this.SendPropertyChanged("CountryName");
+					this.OnCountryNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ISOCode", DbType="NVarChar(64) NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
+		public string ISOCode
+		{
+			get
+			{
+				return this._ISOCode;
+			}
+			set
+			{
+				if ((this._ISOCode != value))
+				{
+					this.OnISOCodeChanging(value);
+					this.SendPropertyChanging();
+					this._ISOCode = value;
+					this.SendPropertyChanged("ISOCode");
+					this.OnISOCodeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Abbreviation", DbType="NVarChar(64) NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
+		public string Abbreviation
+		{
+			get
+			{
+				return this._Abbreviation;
+			}
+			set
+			{
+				if ((this._Abbreviation != value))
+				{
+					this.OnAbbreviationChanging(value);
+					this.SendPropertyChanging();
+					this._Abbreviation = value;
+					this.SendPropertyChanged("Abbreviation");
+					this.OnAbbreviationChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RegionCode", DbType="NVarChar(64) NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
+		public string RegionCode
+		{
+			get
+			{
+				return this._RegionCode;
+			}
+			set
+			{
+				if ((this._RegionCode != value))
+				{
+					this.OnRegionCodeChanging(value);
+					this.SendPropertyChanging();
+					this._RegionCode = value;
+					this.SendPropertyChanged("RegionCode");
+					this.OnRegionCodeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Available", DbType="Bit NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public bool Available
+		{
+			get
+			{
+				return this._Available;
+			}
+			set
+			{
+				if ((this._Available != value))
+				{
+					this.OnAvailableChanging(value);
+					this.SendPropertyChanging();
+					this._Available = value;
+					this.SendPropertyChanged("Available");
+					this.OnAvailableChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Version", AutoSync=AutoSync.Always, DbType="rowversion NOT NULL", CanBeNull=false, IsDbGenerated=true, IsVersion=true, UpdateCheck=UpdateCheck.Never)]
+		public System.Data.Linq.Binary Version
+		{
+			get
+			{
+				return this._Version;
+			}
+			set
+			{
+				if ((this._Version != value))
+				{
+					this.OnVersionChanging(value);
+					this.SendPropertyChanging();
+					this._Version = value;
+					this.SendPropertyChanged("Version");
+					this.OnVersionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreateDate", DbType="DateTime NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public System.DateTime CreateDate
+		{
+			get
+			{
+				return this._CreateDate;
+			}
+			set
+			{
+				if ((this._CreateDate != value))
+				{
+					this.OnCreateDateChanging(value);
+					this.SendPropertyChanging();
+					this._CreateDate = value;
+					this.SendPropertyChanged("CreateDate");
+					this.OnCreateDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastUpdate", DbType="DateTime NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public System.DateTime LastUpdate
+		{
+			get
+			{
+				return this._LastUpdate;
+			}
+			set
+			{
+				if ((this._LastUpdate != value))
+				{
+					this.OnLastUpdateChanging(value);
+					this.SendPropertyChanging();
+					this._LastUpdate = value;
+					this.SendPropertyChanged("LastUpdate");
+					this.OnLastUpdateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastUpdateBy", DbType="Int NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public int LastUpdateBy
+		{
+			get
+			{
+				return this._LastUpdateBy;
+			}
+			set
+			{
+				if ((this._LastUpdateBy != value))
+				{
+					this.OnLastUpdateByChanging(value);
+					this.SendPropertyChanging();
+					this._LastUpdateBy = value;
+					this.SendPropertyChanged("LastUpdateBy");
+					this.OnLastUpdateByChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastUpdateByType", DbType="Int NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public int LastUpdateByType
+		{
+			get
+			{
+				return this._LastUpdateByType;
+			}
+			set
+			{
+				if ((this._LastUpdateByType != value))
+				{
+					this.OnLastUpdateByTypeChanging(value);
+					this.SendPropertyChanging();
+					this._LastUpdateByType = value;
+					this.SendPropertyChanged("LastUpdateByType");
+					this.OnLastUpdateByTypeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Country_CountryY", Storage="_CountryYs", ThisKey="Id", OtherKey="CountryId")]
+		public EntitySet<CountryY> CountryYs
+		{
+			get
+			{
+				return this._CountryYs;
+			}
+			set
+			{
+				this._CountryYs.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_CountryYs(CountryY entity)
+		{
+			this.SendPropertyChanging();
+			entity.Country = this;
+		}
+		
+		private void detach_CountryYs(CountryY entity)
+		{
+			this.SendPropertyChanging();
+			entity.Country = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.CountryY")]
+	public partial class CountryY : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private int _CountryId;
+		
+		private string _CountryYName;
+		
+		private int _SystemLanguageId;
+		
+		private bool _Available;
+		
+		private System.Data.Linq.Binary _Version;
+		
+		private System.DateTime _CreateDate;
+		
+		private System.DateTime _LastUpdate;
+		
+		private int _LastUpdateBy;
+		
+		private int _LastUpdateByType;
+		
+		private EntityRef<Country> _Country;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnCountryIdChanging(int value);
+    partial void OnCountryIdChanged();
+    partial void OnCountryYNameChanging(string value);
+    partial void OnCountryYNameChanged();
+    partial void OnSystemLanguageIdChanging(int value);
+    partial void OnSystemLanguageIdChanged();
+    partial void OnAvailableChanging(bool value);
+    partial void OnAvailableChanged();
+    partial void OnVersionChanging(System.Data.Linq.Binary value);
+    partial void OnVersionChanged();
+    partial void OnCreateDateChanging(System.DateTime value);
+    partial void OnCreateDateChanged();
+    partial void OnLastUpdateChanging(System.DateTime value);
+    partial void OnLastUpdateChanged();
+    partial void OnLastUpdateByChanging(int value);
+    partial void OnLastUpdateByChanged();
+    partial void OnLastUpdateByTypeChanging(int value);
+    partial void OnLastUpdateByTypeChanged();
+    #endregion
+		
+		public CountryY()
+		{
+			this._Country = default(EntityRef<Country>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true, UpdateCheck=UpdateCheck.Never)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CountryId", DbType="Int NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public int CountryId
+		{
+			get
+			{
+				return this._CountryId;
+			}
+			set
+			{
+				if ((this._CountryId != value))
+				{
+					if (this._Country.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnCountryIdChanging(value);
+					this.SendPropertyChanging();
+					this._CountryId = value;
+					this.SendPropertyChanged("CountryId");
+					this.OnCountryIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CountryYName", DbType="NVarChar(128) NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
+		public string CountryYName
+		{
+			get
+			{
+				return this._CountryYName;
+			}
+			set
+			{
+				if ((this._CountryYName != value))
+				{
+					this.OnCountryYNameChanging(value);
+					this.SendPropertyChanging();
+					this._CountryYName = value;
+					this.SendPropertyChanged("CountryYName");
+					this.OnCountryYNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SystemLanguageId", DbType="Int NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public int SystemLanguageId
+		{
+			get
+			{
+				return this._SystemLanguageId;
+			}
+			set
+			{
+				if ((this._SystemLanguageId != value))
+				{
+					this.OnSystemLanguageIdChanging(value);
+					this.SendPropertyChanging();
+					this._SystemLanguageId = value;
+					this.SendPropertyChanged("SystemLanguageId");
+					this.OnSystemLanguageIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Available", DbType="Bit NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public bool Available
+		{
+			get
+			{
+				return this._Available;
+			}
+			set
+			{
+				if ((this._Available != value))
+				{
+					this.OnAvailableChanging(value);
+					this.SendPropertyChanging();
+					this._Available = value;
+					this.SendPropertyChanged("Available");
+					this.OnAvailableChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Version", AutoSync=AutoSync.Always, DbType="rowversion NOT NULL", CanBeNull=false, IsDbGenerated=true, IsVersion=true, UpdateCheck=UpdateCheck.Never)]
+		public System.Data.Linq.Binary Version
+		{
+			get
+			{
+				return this._Version;
+			}
+			set
+			{
+				if ((this._Version != value))
+				{
+					this.OnVersionChanging(value);
+					this.SendPropertyChanging();
+					this._Version = value;
+					this.SendPropertyChanged("Version");
+					this.OnVersionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreateDate", DbType="DateTime NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public System.DateTime CreateDate
+		{
+			get
+			{
+				return this._CreateDate;
+			}
+			set
+			{
+				if ((this._CreateDate != value))
+				{
+					this.OnCreateDateChanging(value);
+					this.SendPropertyChanging();
+					this._CreateDate = value;
+					this.SendPropertyChanged("CreateDate");
+					this.OnCreateDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastUpdate", DbType="DateTime NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public System.DateTime LastUpdate
+		{
+			get
+			{
+				return this._LastUpdate;
+			}
+			set
+			{
+				if ((this._LastUpdate != value))
+				{
+					this.OnLastUpdateChanging(value);
+					this.SendPropertyChanging();
+					this._LastUpdate = value;
+					this.SendPropertyChanged("LastUpdate");
+					this.OnLastUpdateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastUpdateBy", DbType="Int NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public int LastUpdateBy
+		{
+			get
+			{
+				return this._LastUpdateBy;
+			}
+			set
+			{
+				if ((this._LastUpdateBy != value))
+				{
+					this.OnLastUpdateByChanging(value);
+					this.SendPropertyChanging();
+					this._LastUpdateBy = value;
+					this.SendPropertyChanged("LastUpdateBy");
+					this.OnLastUpdateByChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastUpdateByType", DbType="Int NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public int LastUpdateByType
+		{
+			get
+			{
+				return this._LastUpdateByType;
+			}
+			set
+			{
+				if ((this._LastUpdateByType != value))
+				{
+					this.OnLastUpdateByTypeChanging(value);
+					this.SendPropertyChanging();
+					this._LastUpdateByType = value;
+					this.SendPropertyChanged("LastUpdateByType");
+					this.OnLastUpdateByTypeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Country_CountryY", Storage="_Country", ThisKey="CountryId", OtherKey="Id", IsForeignKey=true)]
+		public Country Country
+		{
+			get
+			{
+				return this._Country.Entity;
+			}
+			set
+			{
+				Country previousValue = this._Country.Entity;
+				if (((previousValue != value) 
+							|| (this._Country.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Country.Entity = null;
+						previousValue.CountryYs.Remove(this);
+					}
+					this._Country.Entity = value;
+					if ((value != null))
+					{
+						value.CountryYs.Add(this);
+						this._CountryId = value.Id;
+					}
+					else
+					{
+						this._CountryId = default(int);
+					}
+					this.SendPropertyChanged("Country");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.SystemLanguage")]
+	public partial class SystemLanguage : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private string _EnglishName;
+		
+		private string _DisplayName;
+		
+		private bool _Available;
+		
+		private System.Data.Linq.Binary _Version;
+		
+		private System.DateTime _CreateDate;
+		
+		private System.DateTime _LastUpdate;
+		
+		private int _LastUpdateBy;
+		
+		private int _LastUpdateByType;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnEnglishNameChanging(string value);
+    partial void OnEnglishNameChanged();
+    partial void OnDisplayNameChanging(string value);
+    partial void OnDisplayNameChanged();
+    partial void OnAvailableChanging(bool value);
+    partial void OnAvailableChanged();
+    partial void OnVersionChanging(System.Data.Linq.Binary value);
+    partial void OnVersionChanged();
+    partial void OnCreateDateChanging(System.DateTime value);
+    partial void OnCreateDateChanged();
+    partial void OnLastUpdateChanging(System.DateTime value);
+    partial void OnLastUpdateChanged();
+    partial void OnLastUpdateByChanging(int value);
+    partial void OnLastUpdateByChanged();
+    partial void OnLastUpdateByTypeChanging(int value);
+    partial void OnLastUpdateByTypeChanged();
+    #endregion
+		
+		public SystemLanguage()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true, UpdateCheck=UpdateCheck.Never)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EnglishName", DbType="NVarChar(256) NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
+		public string EnglishName
+		{
+			get
+			{
+				return this._EnglishName;
+			}
+			set
+			{
+				if ((this._EnglishName != value))
+				{
+					this.OnEnglishNameChanging(value);
+					this.SendPropertyChanging();
+					this._EnglishName = value;
+					this.SendPropertyChanged("EnglishName");
+					this.OnEnglishNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DisplayName", DbType="NVarChar(256) NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
+		public string DisplayName
+		{
+			get
+			{
+				return this._DisplayName;
+			}
+			set
+			{
+				if ((this._DisplayName != value))
+				{
+					this.OnDisplayNameChanging(value);
+					this.SendPropertyChanging();
+					this._DisplayName = value;
+					this.SendPropertyChanged("DisplayName");
+					this.OnDisplayNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Available", DbType="Bit NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public bool Available
+		{
+			get
+			{
+				return this._Available;
+			}
+			set
+			{
+				if ((this._Available != value))
+				{
+					this.OnAvailableChanging(value);
+					this.SendPropertyChanging();
+					this._Available = value;
+					this.SendPropertyChanged("Available");
+					this.OnAvailableChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Version", AutoSync=AutoSync.Always, DbType="rowversion NOT NULL", CanBeNull=false, IsDbGenerated=true, IsVersion=true, UpdateCheck=UpdateCheck.Never)]
+		public System.Data.Linq.Binary Version
+		{
+			get
+			{
+				return this._Version;
+			}
+			set
+			{
+				if ((this._Version != value))
+				{
+					this.OnVersionChanging(value);
+					this.SendPropertyChanging();
+					this._Version = value;
+					this.SendPropertyChanged("Version");
+					this.OnVersionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreateDate", DbType="DateTime NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public System.DateTime CreateDate
+		{
+			get
+			{
+				return this._CreateDate;
+			}
+			set
+			{
+				if ((this._CreateDate != value))
+				{
+					this.OnCreateDateChanging(value);
+					this.SendPropertyChanging();
+					this._CreateDate = value;
+					this.SendPropertyChanged("CreateDate");
+					this.OnCreateDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastUpdate", DbType="DateTime NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public System.DateTime LastUpdate
+		{
+			get
+			{
+				return this._LastUpdate;
+			}
+			set
+			{
+				if ((this._LastUpdate != value))
+				{
+					this.OnLastUpdateChanging(value);
+					this.SendPropertyChanging();
+					this._LastUpdate = value;
+					this.SendPropertyChanged("LastUpdate");
+					this.OnLastUpdateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastUpdateBy", DbType="Int NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public int LastUpdateBy
+		{
+			get
+			{
+				return this._LastUpdateBy;
+			}
+			set
+			{
+				if ((this._LastUpdateBy != value))
+				{
+					this.OnLastUpdateByChanging(value);
+					this.SendPropertyChanging();
+					this._LastUpdateBy = value;
+					this.SendPropertyChanged("LastUpdateBy");
+					this.OnLastUpdateByChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastUpdateByType", DbType="Int NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public int LastUpdateByType
+		{
+			get
+			{
+				return this._LastUpdateByType;
+			}
+			set
+			{
+				if ((this._LastUpdateByType != value))
+				{
+					this.OnLastUpdateByTypeChanging(value);
+					this.SendPropertyChanging();
+					this._LastUpdateByType = value;
+					this.SendPropertyChanged("LastUpdateByType");
+					this.OnLastUpdateByTypeChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.LockManager")]
+	public partial class LockManager : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private string _LockName;
+		
+		private string _Description;
+		
+		private bool _Locked;
+		
+		private bool _Change;
+		
+		private System.Data.Linq.Binary _Version;
+		
+		private System.DateTime _CreateDate;
+		
+		private System.DateTime _LastUpdate;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnLockNameChanging(string value);
+    partial void OnLockNameChanged();
+    partial void OnDescriptionChanging(string value);
+    partial void OnDescriptionChanged();
+    partial void OnLockedChanging(bool value);
+    partial void OnLockedChanged();
+    partial void OnChangeChanging(bool value);
+    partial void OnChangeChanged();
+    partial void OnVersionChanging(System.Data.Linq.Binary value);
+    partial void OnVersionChanged();
+    partial void OnCreateDateChanging(System.DateTime value);
+    partial void OnCreateDateChanged();
+    partial void OnLastUpdateChanging(System.DateTime value);
+    partial void OnLastUpdateChanged();
+    #endregion
+		
+		public LockManager()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true, UpdateCheck=UpdateCheck.Never)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LockName", DbType="NVarChar(128) NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
+		public string LockName
+		{
+			get
+			{
+				return this._LockName;
+			}
+			set
+			{
+				if ((this._LockName != value))
+				{
+					this.OnLockNameChanging(value);
+					this.SendPropertyChanging();
+					this._LockName = value;
+					this.SendPropertyChanged("LockName");
+					this.OnLockNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="NVarChar(256) NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
+		public string Description
+		{
+			get
+			{
+				return this._Description;
+			}
+			set
+			{
+				if ((this._Description != value))
+				{
+					this.OnDescriptionChanging(value);
+					this.SendPropertyChanging();
+					this._Description = value;
+					this.SendPropertyChanged("Description");
+					this.OnDescriptionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Locked", DbType="Bit NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public bool Locked
+		{
+			get
+			{
+				return this._Locked;
+			}
+			set
+			{
+				if ((this._Locked != value))
+				{
+					this.OnLockedChanging(value);
+					this.SendPropertyChanging();
+					this._Locked = value;
+					this.SendPropertyChanged("Locked");
+					this.OnLockedChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Change", DbType="Bit NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public bool Change
+		{
+			get
+			{
+				return this._Change;
+			}
+			set
+			{
+				if ((this._Change != value))
+				{
+					this.OnChangeChanging(value);
+					this.SendPropertyChanging();
+					this._Change = value;
+					this.SendPropertyChanged("Change");
+					this.OnChangeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Version", AutoSync=AutoSync.Always, DbType="rowversion NOT NULL", CanBeNull=false, IsDbGenerated=true, IsVersion=true, UpdateCheck=UpdateCheck.Never)]
+		public System.Data.Linq.Binary Version
+		{
+			get
+			{
+				return this._Version;
+			}
+			set
+			{
+				if ((this._Version != value))
+				{
+					this.OnVersionChanging(value);
+					this.SendPropertyChanging();
+					this._Version = value;
+					this.SendPropertyChanged("Version");
+					this.OnVersionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreateDate", DbType="DateTime NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public System.DateTime CreateDate
+		{
+			get
+			{
+				return this._CreateDate;
+			}
+			set
+			{
+				if ((this._CreateDate != value))
+				{
+					this.OnCreateDateChanging(value);
+					this.SendPropertyChanging();
+					this._CreateDate = value;
+					this.SendPropertyChanged("CreateDate");
+					this.OnCreateDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastUpdate", DbType="DateTime NOT NULL", UpdateCheck=UpdateCheck.Never)]
+		public System.DateTime LastUpdate
+		{
+			get
+			{
+				return this._LastUpdate;
+			}
+			set
+			{
+				if ((this._LastUpdate != value))
+				{
+					this.OnLastUpdateChanging(value);
+					this.SendPropertyChanging();
+					this._LastUpdate = value;
+					this.SendPropertyChanged("LastUpdate");
+					this.OnLastUpdateChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ErrorLog")]
+	public partial class ErrorLog : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private string _Type;
+		
+		private string _Detail;
+		
+		private System.DateTime _CreateDate;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnTypeChanging(string value);
+    partial void OnTypeChanged();
+    partial void OnDetailChanging(string value);
+    partial void OnDetailChanged();
+    partial void OnCreateDateChanging(System.DateTime value);
+    partial void OnCreateDateChanged();
+    #endregion
+		
+		public ErrorLog()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Type", DbType="NVarChar(16) NOT NULL", CanBeNull=false)]
+		public string Type
+		{
+			get
+			{
+				return this._Type;
+			}
+			set
+			{
+				if ((this._Type != value))
+				{
+					this.OnTypeChanging(value);
+					this.SendPropertyChanging();
+					this._Type = value;
+					this.SendPropertyChanged("Type");
+					this.OnTypeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Detail", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string Detail
+		{
+			get
+			{
+				return this._Detail;
+			}
+			set
+			{
+				if ((this._Detail != value))
+				{
+					this.OnDetailChanging(value);
+					this.SendPropertyChanging();
+					this._Detail = value;
+					this.SendPropertyChanged("Detail");
+					this.OnDetailChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreateDate", DbType="DateTime NOT NULL")]
+		public System.DateTime CreateDate
+		{
+			get
+			{
+				return this._CreateDate;
+			}
+			set
+			{
+				if ((this._CreateDate != value))
+				{
+					this.OnCreateDateChanging(value);
+					this.SendPropertyChanging();
+					this._CreateDate = value;
+					this.SendPropertyChanged("CreateDate");
+					this.OnCreateDateChanged();
 				}
 			}
 		}
@@ -1171,6 +8138,19538 @@ namespace ANTOTOLib
 				if ((this._RoleId != value))
 				{
 					this._RoleId = value;
+				}
+			}
+		}
+	}
+	
+	public partial class tfnCompanyBrandListGetResult
+	{
+		
+		private int _ParentBrandId;
+		
+		private int _BrandId;
+		
+		private string _BrandName;
+		
+		private string _BrandDescription;
+		
+		private string _BrandCategoryDescription;
+		
+		public tfnCompanyBrandListGetResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ParentBrandId", DbType="Int NOT NULL")]
+		public int ParentBrandId
+		{
+			get
+			{
+				return this._ParentBrandId;
+			}
+			set
+			{
+				if ((this._ParentBrandId != value))
+				{
+					this._ParentBrandId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BrandId", DbType="Int NOT NULL")]
+		public int BrandId
+		{
+			get
+			{
+				return this._BrandId;
+			}
+			set
+			{
+				if ((this._BrandId != value))
+				{
+					this._BrandId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BrandName", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string BrandName
+		{
+			get
+			{
+				return this._BrandName;
+			}
+			set
+			{
+				if ((this._BrandName != value))
+				{
+					this._BrandName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BrandDescription", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string BrandDescription
+		{
+			get
+			{
+				return this._BrandDescription;
+			}
+			set
+			{
+				if ((this._BrandDescription != value))
+				{
+					this._BrandDescription = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BrandCategoryDescription", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string BrandCategoryDescription
+		{
+			get
+			{
+				return this._BrandCategoryDescription;
+			}
+			set
+			{
+				if ((this._BrandCategoryDescription != value))
+				{
+					this._BrandCategoryDescription = value;
+				}
+			}
+		}
+	}
+	
+	public partial class tfnCompanyCategoryBrandRelationListGetResult
+	{
+		
+		private int _CategoryBrandId;
+		
+		private int _CategoryId;
+		
+		private int _Level;
+		
+		private string _Name;
+		
+		private string _OrderCode;
+		
+		private int _BrandId;
+		
+		private string _BrandName;
+		
+		private string _BrandDescription;
+		
+		private string _BrandCategoryDescription;
+		
+		public tfnCompanyCategoryBrandRelationListGetResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CategoryBrandId", DbType="Int NOT NULL")]
+		public int CategoryBrandId
+		{
+			get
+			{
+				return this._CategoryBrandId;
+			}
+			set
+			{
+				if ((this._CategoryBrandId != value))
+				{
+					this._CategoryBrandId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CategoryId", DbType="Int NOT NULL")]
+		public int CategoryId
+		{
+			get
+			{
+				return this._CategoryId;
+			}
+			set
+			{
+				if ((this._CategoryId != value))
+				{
+					this._CategoryId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Level]", Storage="_Level", DbType="Int NOT NULL")]
+		public int Level
+		{
+			get
+			{
+				return this._Level;
+			}
+			set
+			{
+				if ((this._Level != value))
+				{
+					this._Level = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(128) NOT NULL", CanBeNull=false)]
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+			set
+			{
+				if ((this._Name != value))
+				{
+					this._Name = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OrderCode", DbType="NVarChar(10) NOT NULL", CanBeNull=false)]
+		public string OrderCode
+		{
+			get
+			{
+				return this._OrderCode;
+			}
+			set
+			{
+				if ((this._OrderCode != value))
+				{
+					this._OrderCode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BrandId", DbType="Int NOT NULL")]
+		public int BrandId
+		{
+			get
+			{
+				return this._BrandId;
+			}
+			set
+			{
+				if ((this._BrandId != value))
+				{
+					this._BrandId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BrandName", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string BrandName
+		{
+			get
+			{
+				return this._BrandName;
+			}
+			set
+			{
+				if ((this._BrandName != value))
+				{
+					this._BrandName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BrandDescription", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string BrandDescription
+		{
+			get
+			{
+				return this._BrandDescription;
+			}
+			set
+			{
+				if ((this._BrandDescription != value))
+				{
+					this._BrandDescription = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BrandCategoryDescription", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string BrandCategoryDescription
+		{
+			get
+			{
+				return this._BrandCategoryDescription;
+			}
+			set
+			{
+				if ((this._BrandCategoryDescription != value))
+				{
+					this._BrandCategoryDescription = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_User_SearchResult
+	{
+		
+		private int _Id;
+		
+		private string _FirstName;
+		
+		private string _LastName;
+		
+		private string _Email;
+		
+		private string _LoginName;
+		
+		private System.Nullable<long> _RowNumber;
+		
+		public sp_User_SearchResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", DbType="Int NOT NULL")]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this._Id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FirstName", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string FirstName
+		{
+			get
+			{
+				return this._FirstName;
+			}
+			set
+			{
+				if ((this._FirstName != value))
+				{
+					this._FirstName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastName", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string LastName
+		{
+			get
+			{
+				return this._LastName;
+			}
+			set
+			{
+				if ((this._LastName != value))
+				{
+					this._LastName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Email", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string Email
+		{
+			get
+			{
+				return this._Email;
+			}
+			set
+			{
+				if ((this._Email != value))
+				{
+					this._Email = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LoginName", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string LoginName
+		{
+			get
+			{
+				return this._LoginName;
+			}
+			set
+			{
+				if ((this._LoginName != value))
+				{
+					this._LoginName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RowNumber", DbType="BigInt")]
+		public System.Nullable<long> RowNumber
+		{
+			get
+			{
+				return this._RowNumber;
+			}
+			set
+			{
+				if ((this._RowNumber != value))
+				{
+					this._RowNumber = value;
+				}
+			}
+		}
+	}
+	
+	public partial class tfnCountryListGetResult
+	{
+		
+		private int _CountryId;
+		
+		private string _CountryName;
+		
+		private string _Abbreviation;
+		
+		private bool _Available;
+		
+		private string _ISOCode;
+		
+		private string _RegionCode;
+		
+		public tfnCountryListGetResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CountryId", DbType="Int NOT NULL")]
+		public int CountryId
+		{
+			get
+			{
+				return this._CountryId;
+			}
+			set
+			{
+				if ((this._CountryId != value))
+				{
+					this._CountryId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CountryName", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string CountryName
+		{
+			get
+			{
+				return this._CountryName;
+			}
+			set
+			{
+				if ((this._CountryName != value))
+				{
+					this._CountryName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Abbreviation", DbType="NVarChar(64) NOT NULL", CanBeNull=false)]
+		public string Abbreviation
+		{
+			get
+			{
+				return this._Abbreviation;
+			}
+			set
+			{
+				if ((this._Abbreviation != value))
+				{
+					this._Abbreviation = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Available", DbType="Bit NOT NULL")]
+		public bool Available
+		{
+			get
+			{
+				return this._Available;
+			}
+			set
+			{
+				if ((this._Available != value))
+				{
+					this._Available = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ISOCode", DbType="NVarChar(64) NOT NULL", CanBeNull=false)]
+		public string ISOCode
+		{
+			get
+			{
+				return this._ISOCode;
+			}
+			set
+			{
+				if ((this._ISOCode != value))
+				{
+					this._ISOCode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RegionCode", DbType="NVarChar(64) NOT NULL", CanBeNull=false)]
+		public string RegionCode
+		{
+			get
+			{
+				return this._RegionCode;
+			}
+			set
+			{
+				if ((this._RegionCode != value))
+				{
+					this._RegionCode = value;
+				}
+			}
+		}
+	}
+	
+	public partial class tfnSystemLanguageListGetResult
+	{
+		
+		private System.Nullable<int> _SystemLanguageId;
+		
+		private string _LanguageEnglishName;
+		
+		private string _LanguageDisplayName;
+		
+		private System.Nullable<bool> _Available;
+		
+		public tfnSystemLanguageListGetResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SystemLanguageId", DbType="Int")]
+		public System.Nullable<int> SystemLanguageId
+		{
+			get
+			{
+				return this._SystemLanguageId;
+			}
+			set
+			{
+				if ((this._SystemLanguageId != value))
+				{
+					this._SystemLanguageId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LanguageEnglishName", DbType="NVarChar(256)")]
+		public string LanguageEnglishName
+		{
+			get
+			{
+				return this._LanguageEnglishName;
+			}
+			set
+			{
+				if ((this._LanguageEnglishName != value))
+				{
+					this._LanguageEnglishName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LanguageDisplayName", DbType="NVarChar(256)")]
+		public string LanguageDisplayName
+		{
+			get
+			{
+				return this._LanguageDisplayName;
+			}
+			set
+			{
+				if ((this._LanguageDisplayName != value))
+				{
+					this._LanguageDisplayName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Available", DbType="Bit")]
+		public System.Nullable<bool> Available
+		{
+			get
+			{
+				return this._Available;
+			}
+			set
+			{
+				if ((this._Available != value))
+				{
+					this._Available = value;
+				}
+			}
+		}
+	}
+	
+	public partial class tfnCompanyCategoryListGetResult
+	{
+		
+		private int _CategoryId;
+		
+		private int _ParentCategoryId;
+		
+		private int _Level;
+		
+		private string _Name;
+		
+		private string _OrderCode;
+		
+		private bool _Available;
+		
+		private bool _SystemCategory;
+		
+		private bool _FinalLevel;
+		
+		public tfnCompanyCategoryListGetResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CategoryId", DbType="Int NOT NULL")]
+		public int CategoryId
+		{
+			get
+			{
+				return this._CategoryId;
+			}
+			set
+			{
+				if ((this._CategoryId != value))
+				{
+					this._CategoryId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ParentCategoryId", DbType="Int NOT NULL")]
+		public int ParentCategoryId
+		{
+			get
+			{
+				return this._ParentCategoryId;
+			}
+			set
+			{
+				if ((this._ParentCategoryId != value))
+				{
+					this._ParentCategoryId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Level]", Storage="_Level", DbType="Int NOT NULL")]
+		public int Level
+		{
+			get
+			{
+				return this._Level;
+			}
+			set
+			{
+				if ((this._Level != value))
+				{
+					this._Level = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(128) NOT NULL", CanBeNull=false)]
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+			set
+			{
+				if ((this._Name != value))
+				{
+					this._Name = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OrderCode", DbType="NVarChar(10) NOT NULL", CanBeNull=false)]
+		public string OrderCode
+		{
+			get
+			{
+				return this._OrderCode;
+			}
+			set
+			{
+				if ((this._OrderCode != value))
+				{
+					this._OrderCode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Available", DbType="Bit NOT NULL")]
+		public bool Available
+		{
+			get
+			{
+				return this._Available;
+			}
+			set
+			{
+				if ((this._Available != value))
+				{
+					this._Available = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SystemCategory", DbType="Bit NOT NULL")]
+		public bool SystemCategory
+		{
+			get
+			{
+				return this._SystemCategory;
+			}
+			set
+			{
+				if ((this._SystemCategory != value))
+				{
+					this._SystemCategory = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FinalLevel", DbType="Bit NOT NULL")]
+		public bool FinalLevel
+		{
+			get
+			{
+				return this._FinalLevel;
+			}
+			set
+			{
+				if ((this._FinalLevel != value))
+				{
+					this._FinalLevel = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_WizardSessionStepElementInputDetailGetResult
+	{
+		
+		private int _WizardMasterStepElementInputId;
+		
+		private int _WizardMasterStepElementId;
+		
+		private string _InputName;
+		
+		private string _InputDisplayName;
+		
+		private int _InputTypeCodeId;
+		
+		private bool _AllowList;
+		
+		private bool _Required;
+		
+		private string _InputDiscription;
+		
+		private string _ValidationCode;
+		
+		private string _ValidationFailMessage;
+		
+		private System.Nullable<int> _WizardInputListId;
+		
+		private bool _Available;
+		
+		public sp_WizardSessionStepElementInputDetailGetResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WizardMasterStepElementInputId", DbType="Int NOT NULL")]
+		public int WizardMasterStepElementInputId
+		{
+			get
+			{
+				return this._WizardMasterStepElementInputId;
+			}
+			set
+			{
+				if ((this._WizardMasterStepElementInputId != value))
+				{
+					this._WizardMasterStepElementInputId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WizardMasterStepElementId", DbType="Int NOT NULL")]
+		public int WizardMasterStepElementId
+		{
+			get
+			{
+				return this._WizardMasterStepElementId;
+			}
+			set
+			{
+				if ((this._WizardMasterStepElementId != value))
+				{
+					this._WizardMasterStepElementId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_InputName", DbType="NVarChar(64) NOT NULL", CanBeNull=false)]
+		public string InputName
+		{
+			get
+			{
+				return this._InputName;
+			}
+			set
+			{
+				if ((this._InputName != value))
+				{
+					this._InputName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_InputDisplayName", DbType="NVarChar(64) NOT NULL", CanBeNull=false)]
+		public string InputDisplayName
+		{
+			get
+			{
+				return this._InputDisplayName;
+			}
+			set
+			{
+				if ((this._InputDisplayName != value))
+				{
+					this._InputDisplayName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_InputTypeCodeId", DbType="Int NOT NULL")]
+		public int InputTypeCodeId
+		{
+			get
+			{
+				return this._InputTypeCodeId;
+			}
+			set
+			{
+				if ((this._InputTypeCodeId != value))
+				{
+					this._InputTypeCodeId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AllowList", DbType="Bit NOT NULL")]
+		public bool AllowList
+		{
+			get
+			{
+				return this._AllowList;
+			}
+			set
+			{
+				if ((this._AllowList != value))
+				{
+					this._AllowList = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Required", DbType="Bit NOT NULL")]
+		public bool Required
+		{
+			get
+			{
+				return this._Required;
+			}
+			set
+			{
+				if ((this._Required != value))
+				{
+					this._Required = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_InputDiscription", DbType="NVarChar(512) NOT NULL", CanBeNull=false)]
+		public string InputDiscription
+		{
+			get
+			{
+				return this._InputDiscription;
+			}
+			set
+			{
+				if ((this._InputDiscription != value))
+				{
+					this._InputDiscription = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ValidationCode", DbType="NVarChar(128)")]
+		public string ValidationCode
+		{
+			get
+			{
+				return this._ValidationCode;
+			}
+			set
+			{
+				if ((this._ValidationCode != value))
+				{
+					this._ValidationCode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ValidationFailMessage", DbType="NVarChar(256)")]
+		public string ValidationFailMessage
+		{
+			get
+			{
+				return this._ValidationFailMessage;
+			}
+			set
+			{
+				if ((this._ValidationFailMessage != value))
+				{
+					this._ValidationFailMessage = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WizardInputListId", DbType="Int")]
+		public System.Nullable<int> WizardInputListId
+		{
+			get
+			{
+				return this._WizardInputListId;
+			}
+			set
+			{
+				if ((this._WizardInputListId != value))
+				{
+					this._WizardInputListId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Available", DbType="Bit NOT NULL")]
+		public bool Available
+		{
+			get
+			{
+				return this._Available;
+			}
+			set
+			{
+				if ((this._Available != value))
+				{
+					this._Available = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_WizardSessionStepElementInputValueGetResult
+	{
+		
+		private int _WizardSessionId;
+		
+		private int _WizardMasterStepElementInputId;
+		
+		private string _StepCode;
+		
+		private int _InputOrder;
+		
+		private string _StepValue;
+		
+		private System.Nullable<int> _StepIntValue;
+		
+		private System.Nullable<int> _StepSourceId;
+		
+		private string _StepSourceTable;
+		
+		public sp_WizardSessionStepElementInputValueGetResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WizardSessionId", DbType="Int NOT NULL")]
+		public int WizardSessionId
+		{
+			get
+			{
+				return this._WizardSessionId;
+			}
+			set
+			{
+				if ((this._WizardSessionId != value))
+				{
+					this._WizardSessionId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WizardMasterStepElementInputId", DbType="Int NOT NULL")]
+		public int WizardMasterStepElementInputId
+		{
+			get
+			{
+				return this._WizardMasterStepElementInputId;
+			}
+			set
+			{
+				if ((this._WizardMasterStepElementInputId != value))
+				{
+					this._WizardMasterStepElementInputId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StepCode", DbType="NVarChar(64) NOT NULL", CanBeNull=false)]
+		public string StepCode
+		{
+			get
+			{
+				return this._StepCode;
+			}
+			set
+			{
+				if ((this._StepCode != value))
+				{
+					this._StepCode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_InputOrder", DbType="Int NOT NULL")]
+		public int InputOrder
+		{
+			get
+			{
+				return this._InputOrder;
+			}
+			set
+			{
+				if ((this._InputOrder != value))
+				{
+					this._InputOrder = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StepValue", DbType="NVarChar(512) NOT NULL", CanBeNull=false)]
+		public string StepValue
+		{
+			get
+			{
+				return this._StepValue;
+			}
+			set
+			{
+				if ((this._StepValue != value))
+				{
+					this._StepValue = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StepIntValue", DbType="Int")]
+		public System.Nullable<int> StepIntValue
+		{
+			get
+			{
+				return this._StepIntValue;
+			}
+			set
+			{
+				if ((this._StepIntValue != value))
+				{
+					this._StepIntValue = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StepSourceId", DbType="Int")]
+		public System.Nullable<int> StepSourceId
+		{
+			get
+			{
+				return this._StepSourceId;
+			}
+			set
+			{
+				if ((this._StepSourceId != value))
+				{
+					this._StepSourceId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StepSourceTable", DbType="NVarChar(64)")]
+		public string StepSourceTable
+		{
+			get
+			{
+				return this._StepSourceTable;
+			}
+			set
+			{
+				if ((this._StepSourceTable != value))
+				{
+					this._StepSourceTable = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_WizardSessionStepElementListGetResult
+	{
+		
+		private int _WizardMasterStepId;
+		
+		private int _WizardMasterStepElementId;
+		
+		private int _WizardMasterStepElementTypeCodeId;
+		
+		private int _Level;
+		
+		private string _Order;
+		
+		private decimal _Weight;
+		
+		public sp_WizardSessionStepElementListGetResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WizardMasterStepId", DbType="Int NOT NULL")]
+		public int WizardMasterStepId
+		{
+			get
+			{
+				return this._WizardMasterStepId;
+			}
+			set
+			{
+				if ((this._WizardMasterStepId != value))
+				{
+					this._WizardMasterStepId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WizardMasterStepElementId", DbType="Int NOT NULL")]
+		public int WizardMasterStepElementId
+		{
+			get
+			{
+				return this._WizardMasterStepElementId;
+			}
+			set
+			{
+				if ((this._WizardMasterStepElementId != value))
+				{
+					this._WizardMasterStepElementId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WizardMasterStepElementTypeCodeId", DbType="Int NOT NULL")]
+		public int WizardMasterStepElementTypeCodeId
+		{
+			get
+			{
+				return this._WizardMasterStepElementTypeCodeId;
+			}
+			set
+			{
+				if ((this._WizardMasterStepElementTypeCodeId != value))
+				{
+					this._WizardMasterStepElementTypeCodeId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Level]", Storage="_Level", DbType="Int NOT NULL")]
+		public int Level
+		{
+			get
+			{
+				return this._Level;
+			}
+			set
+			{
+				if ((this._Level != value))
+				{
+					this._Level = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Order]", Storage="_Order", DbType="NVarChar(8) NOT NULL", CanBeNull=false)]
+		public string Order
+		{
+			get
+			{
+				return this._Order;
+			}
+			set
+			{
+				if ((this._Order != value))
+				{
+					this._Order = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Weight", DbType="Decimal(10,2) NOT NULL")]
+		public decimal Weight
+		{
+			get
+			{
+				return this._Weight;
+			}
+			set
+			{
+				if ((this._Weight != value))
+				{
+					this._Weight = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_WizardSessionStepElementPromptDetailGetResult
+	{
+		
+		private int _WizardMasterStepElementPropmtId;
+		
+		private int _WizardMasterStepElementId;
+		
+		private string _DisplayText;
+		
+		private bool _Available;
+		
+		public sp_WizardSessionStepElementPromptDetailGetResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WizardMasterStepElementPropmtId", DbType="Int NOT NULL")]
+		public int WizardMasterStepElementPropmtId
+		{
+			get
+			{
+				return this._WizardMasterStepElementPropmtId;
+			}
+			set
+			{
+				if ((this._WizardMasterStepElementPropmtId != value))
+				{
+					this._WizardMasterStepElementPropmtId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WizardMasterStepElementId", DbType="Int NOT NULL")]
+		public int WizardMasterStepElementId
+		{
+			get
+			{
+				return this._WizardMasterStepElementId;
+			}
+			set
+			{
+				if ((this._WizardMasterStepElementId != value))
+				{
+					this._WizardMasterStepElementId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DisplayText", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string DisplayText
+		{
+			get
+			{
+				return this._DisplayText;
+			}
+			set
+			{
+				if ((this._DisplayText != value))
+				{
+					this._DisplayText = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Available", DbType="Bit NOT NULL")]
+		public bool Available
+		{
+			get
+			{
+				return this._Available;
+			}
+			set
+			{
+				if ((this._Available != value))
+				{
+					this._Available = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_WizardSessionStepListGetResult
+	{
+		
+		private int _WizardSessionId;
+		
+		private int _WizardMasterId;
+		
+		private string _WizardMasterStepCode;
+		
+		private string _WizardMasterStepTitle;
+		
+		private string _Order;
+		
+		public sp_WizardSessionStepListGetResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WizardSessionId", DbType="Int NOT NULL")]
+		public int WizardSessionId
+		{
+			get
+			{
+				return this._WizardSessionId;
+			}
+			set
+			{
+				if ((this._WizardSessionId != value))
+				{
+					this._WizardSessionId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WizardMasterId", DbType="Int NOT NULL")]
+		public int WizardMasterId
+		{
+			get
+			{
+				return this._WizardMasterId;
+			}
+			set
+			{
+				if ((this._WizardMasterId != value))
+				{
+					this._WizardMasterId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WizardMasterStepCode", DbType="NVarChar(64) NOT NULL", CanBeNull=false)]
+		public string WizardMasterStepCode
+		{
+			get
+			{
+				return this._WizardMasterStepCode;
+			}
+			set
+			{
+				if ((this._WizardMasterStepCode != value))
+				{
+					this._WizardMasterStepCode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WizardMasterStepTitle", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string WizardMasterStepTitle
+		{
+			get
+			{
+				return this._WizardMasterStepTitle;
+			}
+			set
+			{
+				if ((this._WizardMasterStepTitle != value))
+				{
+					this._WizardMasterStepTitle = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Order]", Storage="_Order", DbType="NVarChar(64) NOT NULL", CanBeNull=false)]
+		public string Order
+		{
+			get
+			{
+				return this._Order;
+			}
+			set
+			{
+				if ((this._Order != value))
+				{
+					this._Order = value;
+				}
+			}
+		}
+	}
+	
+	public partial class tfnWizardListDetailGetResult
+	{
+		
+		private string _Value;
+		
+		private string _Content;
+		
+		private string _Order;
+		
+		public tfnWizardListDetailGetResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Value", DbType="NVarChar(64) NOT NULL", CanBeNull=false)]
+		public string Value
+		{
+			get
+			{
+				return this._Value;
+			}
+			set
+			{
+				if ((this._Value != value))
+				{
+					this._Value = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Content", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string Content
+		{
+			get
+			{
+				return this._Content;
+			}
+			set
+			{
+				if ((this._Content != value))
+				{
+					this._Content = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Order]", Storage="_Order", DbType="NVarChar(5) NOT NULL", CanBeNull=false)]
+		public string Order
+		{
+			get
+			{
+				return this._Order;
+			}
+			set
+			{
+				if ((this._Order != value))
+				{
+					this._Order = value;
+				}
+			}
+		}
+	}
+	
+	public partial class tfnCodeListResult
+	{
+		
+		private int _CodeId;
+		
+		private string _CodeShort;
+		
+		private string _CodeLong;
+		
+		private string _SortOrder;
+		
+		private int _SystemLanguageId;
+		
+		private bool _Available;
+		
+		public tfnCodeListResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodeId", DbType="Int NOT NULL")]
+		public int CodeId
+		{
+			get
+			{
+				return this._CodeId;
+			}
+			set
+			{
+				if ((this._CodeId != value))
+				{
+					this._CodeId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodeShort", DbType="NVarChar(1024) NOT NULL", CanBeNull=false)]
+		public string CodeShort
+		{
+			get
+			{
+				return this._CodeShort;
+			}
+			set
+			{
+				if ((this._CodeShort != value))
+				{
+					this._CodeShort = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodeLong", DbType="NVarChar(1024) NOT NULL", CanBeNull=false)]
+		public string CodeLong
+		{
+			get
+			{
+				return this._CodeLong;
+			}
+			set
+			{
+				if ((this._CodeLong != value))
+				{
+					this._CodeLong = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SortOrder", DbType="VarChar(8) NOT NULL", CanBeNull=false)]
+		public string SortOrder
+		{
+			get
+			{
+				return this._SortOrder;
+			}
+			set
+			{
+				if ((this._SortOrder != value))
+				{
+					this._SortOrder = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SystemLanguageId", DbType="Int NOT NULL")]
+		public int SystemLanguageId
+		{
+			get
+			{
+				return this._SystemLanguageId;
+			}
+			set
+			{
+				if ((this._SystemLanguageId != value))
+				{
+					this._SystemLanguageId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Available", DbType="Bit NOT NULL")]
+		public bool Available
+		{
+			get
+			{
+				return this._Available;
+			}
+			set
+			{
+				if ((this._Available != value))
+				{
+					this._Available = value;
+				}
+			}
+		}
+	}
+	
+	public partial class tfnCompanyCategoryListGetByNameResult
+	{
+		
+		private string _Name;
+		
+		public tfnCompanyCategoryListGetByNameResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(128) NOT NULL", CanBeNull=false)]
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+			set
+			{
+				if ((this._Name != value))
+				{
+					this._Name = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_Item_SearchResult
+	{
+		
+		private int _ItemId;
+		
+		private int _WizardSessionId;
+		
+		private string _ItemName;
+		
+		private int _CategoryId;
+		
+		private string _Category;
+		
+		private int _BrandId;
+		
+		private string _Brand;
+		
+		private int _ItemStatusCodeId;
+		
+		private string _ItemStatusCode;
+		
+		private System.Nullable<int> _MainImageFileId;
+		
+		private string _SKU;
+		
+		private string _ProductCode;
+		
+		private string _ProductDescription;
+		
+		private string _SupplierSKU;
+		
+		private string _ModelNumber;
+		
+		private System.Nullable<long> _RowNumber;
+		
+		public sp_Item_SearchResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ItemId", DbType="Int NOT NULL")]
+		public int ItemId
+		{
+			get
+			{
+				return this._ItemId;
+			}
+			set
+			{
+				if ((this._ItemId != value))
+				{
+					this._ItemId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WizardSessionId", DbType="Int NOT NULL")]
+		public int WizardSessionId
+		{
+			get
+			{
+				return this._WizardSessionId;
+			}
+			set
+			{
+				if ((this._WizardSessionId != value))
+				{
+					this._WizardSessionId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ItemName", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string ItemName
+		{
+			get
+			{
+				return this._ItemName;
+			}
+			set
+			{
+				if ((this._ItemName != value))
+				{
+					this._ItemName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CategoryId", DbType="Int NOT NULL")]
+		public int CategoryId
+		{
+			get
+			{
+				return this._CategoryId;
+			}
+			set
+			{
+				if ((this._CategoryId != value))
+				{
+					this._CategoryId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Category", DbType="NVarChar(128) NOT NULL", CanBeNull=false)]
+		public string Category
+		{
+			get
+			{
+				return this._Category;
+			}
+			set
+			{
+				if ((this._Category != value))
+				{
+					this._Category = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BrandId", DbType="Int NOT NULL")]
+		public int BrandId
+		{
+			get
+			{
+				return this._BrandId;
+			}
+			set
+			{
+				if ((this._BrandId != value))
+				{
+					this._BrandId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Brand", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string Brand
+		{
+			get
+			{
+				return this._Brand;
+			}
+			set
+			{
+				if ((this._Brand != value))
+				{
+					this._Brand = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ItemStatusCodeId", DbType="Int NOT NULL")]
+		public int ItemStatusCodeId
+		{
+			get
+			{
+				return this._ItemStatusCodeId;
+			}
+			set
+			{
+				if ((this._ItemStatusCodeId != value))
+				{
+					this._ItemStatusCodeId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ItemStatusCode", DbType="NVarChar(1024)")]
+		public string ItemStatusCode
+		{
+			get
+			{
+				return this._ItemStatusCode;
+			}
+			set
+			{
+				if ((this._ItemStatusCode != value))
+				{
+					this._ItemStatusCode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MainImageFileId", DbType="Int")]
+		public System.Nullable<int> MainImageFileId
+		{
+			get
+			{
+				return this._MainImageFileId;
+			}
+			set
+			{
+				if ((this._MainImageFileId != value))
+				{
+					this._MainImageFileId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SKU", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string SKU
+		{
+			get
+			{
+				return this._SKU;
+			}
+			set
+			{
+				if ((this._SKU != value))
+				{
+					this._SKU = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProductCode", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string ProductCode
+		{
+			get
+			{
+				return this._ProductCode;
+			}
+			set
+			{
+				if ((this._ProductCode != value))
+				{
+					this._ProductCode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProductDescription", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string ProductDescription
+		{
+			get
+			{
+				return this._ProductDescription;
+			}
+			set
+			{
+				if ((this._ProductDescription != value))
+				{
+					this._ProductDescription = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SupplierSKU", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string SupplierSKU
+		{
+			get
+			{
+				return this._SupplierSKU;
+			}
+			set
+			{
+				if ((this._SupplierSKU != value))
+				{
+					this._SupplierSKU = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ModelNumber", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string ModelNumber
+		{
+			get
+			{
+				return this._ModelNumber;
+			}
+			set
+			{
+				if ((this._ModelNumber != value))
+				{
+					this._ModelNumber = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RowNumber", DbType="BigInt")]
+		public System.Nullable<long> RowNumber
+		{
+			get
+			{
+				return this._RowNumber;
+			}
+			set
+			{
+				if ((this._RowNumber != value))
+				{
+					this._RowNumber = value;
+				}
+			}
+		}
+	}
+	
+	public partial class tfnFileGetResult
+	{
+		
+		private string _FileName;
+		
+		private string _FileExt;
+		
+		private int _FileStoreTypeCodeId;
+		
+		private string _FilePath;
+		
+		private string _FilePublicUrl;
+		
+		private string _MFilePublicUrl;
+		
+		private string _SFilePublicUrl;
+		
+		private string _Para1;
+		
+		private string _Para2;
+		
+		private string _Para3;
+		
+		private string _Para4;
+		
+		public tfnFileGetResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FileName", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string FileName
+		{
+			get
+			{
+				return this._FileName;
+			}
+			set
+			{
+				if ((this._FileName != value))
+				{
+					this._FileName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FileExt", DbType="NVarChar(64) NOT NULL", CanBeNull=false)]
+		public string FileExt
+		{
+			get
+			{
+				return this._FileExt;
+			}
+			set
+			{
+				if ((this._FileExt != value))
+				{
+					this._FileExt = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FileStoreTypeCodeId", DbType="Int NOT NULL")]
+		public int FileStoreTypeCodeId
+		{
+			get
+			{
+				return this._FileStoreTypeCodeId;
+			}
+			set
+			{
+				if ((this._FileStoreTypeCodeId != value))
+				{
+					this._FileStoreTypeCodeId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FilePath", DbType="NVarChar(512) NOT NULL", CanBeNull=false)]
+		public string FilePath
+		{
+			get
+			{
+				return this._FilePath;
+			}
+			set
+			{
+				if ((this._FilePath != value))
+				{
+					this._FilePath = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FilePublicUrl", DbType="NVarChar(512) NOT NULL", CanBeNull=false)]
+		public string FilePublicUrl
+		{
+			get
+			{
+				return this._FilePublicUrl;
+			}
+			set
+			{
+				if ((this._FilePublicUrl != value))
+				{
+					this._FilePublicUrl = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MFilePublicUrl", DbType="NVarChar(512) NOT NULL", CanBeNull=false)]
+		public string MFilePublicUrl
+		{
+			get
+			{
+				return this._MFilePublicUrl;
+			}
+			set
+			{
+				if ((this._MFilePublicUrl != value))
+				{
+					this._MFilePublicUrl = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SFilePublicUrl", DbType="NVarChar(512) NOT NULL", CanBeNull=false)]
+		public string SFilePublicUrl
+		{
+			get
+			{
+				return this._SFilePublicUrl;
+			}
+			set
+			{
+				if ((this._SFilePublicUrl != value))
+				{
+					this._SFilePublicUrl = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Para1", DbType="NVarChar(256)")]
+		public string Para1
+		{
+			get
+			{
+				return this._Para1;
+			}
+			set
+			{
+				if ((this._Para1 != value))
+				{
+					this._Para1 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Para2", DbType="NVarChar(256)")]
+		public string Para2
+		{
+			get
+			{
+				return this._Para2;
+			}
+			set
+			{
+				if ((this._Para2 != value))
+				{
+					this._Para2 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Para3", DbType="NVarChar(256)")]
+		public string Para3
+		{
+			get
+			{
+				return this._Para3;
+			}
+			set
+			{
+				if ((this._Para3 != value))
+				{
+					this._Para3 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Para4", DbType="NVarChar(256)")]
+		public string Para4
+		{
+			get
+			{
+				return this._Para4;
+			}
+			set
+			{
+				if ((this._Para4 != value))
+				{
+					this._Para4 = value;
+				}
+			}
+		}
+	}
+	
+	public partial class tfnCurrencyListGetResult
+	{
+		
+		private int _Id;
+		
+		private int _CurrencyId;
+		
+		private string _CurrencyCode;
+		
+		private string _CurrencyName;
+		
+		private string _CurrencySymbol;
+		
+		public tfnCurrencyListGetResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.Always, DbType="Int NOT NULL IDENTITY", IsDbGenerated=true)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this._Id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CurrencyId", DbType="Int NOT NULL")]
+		public int CurrencyId
+		{
+			get
+			{
+				return this._CurrencyId;
+			}
+			set
+			{
+				if ((this._CurrencyId != value))
+				{
+					this._CurrencyId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CurrencyCode", DbType="NVarChar(10) NOT NULL", CanBeNull=false)]
+		public string CurrencyCode
+		{
+			get
+			{
+				return this._CurrencyCode;
+			}
+			set
+			{
+				if ((this._CurrencyCode != value))
+				{
+					this._CurrencyCode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CurrencyName", DbType="NVarChar(64) NOT NULL", CanBeNull=false)]
+		public string CurrencyName
+		{
+			get
+			{
+				return this._CurrencyName;
+			}
+			set
+			{
+				if ((this._CurrencyName != value))
+				{
+					this._CurrencyName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CurrencySymbol", DbType="NVarChar(8) NOT NULL", CanBeNull=false)]
+		public string CurrencySymbol
+		{
+			get
+			{
+				return this._CurrencySymbol;
+			}
+			set
+			{
+				if ((this._CurrencySymbol != value))
+				{
+					this._CurrencySymbol = value;
+				}
+			}
+		}
+	}
+	
+	public partial class tfnSupplierPlaceInfoGetResult
+	{
+		
+		private int _SupplierPlaceInfoId;
+		
+		private string _SupplierName;
+		
+		private string _SupplierLocation;
+		
+		private string _PriceInfo;
+		
+		private int _CurrencyId;
+		
+		private string _Description;
+		
+		public tfnSupplierPlaceInfoGetResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SupplierPlaceInfoId", DbType="Int NOT NULL")]
+		public int SupplierPlaceInfoId
+		{
+			get
+			{
+				return this._SupplierPlaceInfoId;
+			}
+			set
+			{
+				if ((this._SupplierPlaceInfoId != value))
+				{
+					this._SupplierPlaceInfoId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SupplierName", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string SupplierName
+		{
+			get
+			{
+				return this._SupplierName;
+			}
+			set
+			{
+				if ((this._SupplierName != value))
+				{
+					this._SupplierName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SupplierLocation", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string SupplierLocation
+		{
+			get
+			{
+				return this._SupplierLocation;
+			}
+			set
+			{
+				if ((this._SupplierLocation != value))
+				{
+					this._SupplierLocation = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PriceInfo", DbType="NVarChar(128) NOT NULL", CanBeNull=false)]
+		public string PriceInfo
+		{
+			get
+			{
+				return this._PriceInfo;
+			}
+			set
+			{
+				if ((this._PriceInfo != value))
+				{
+					this._PriceInfo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CurrencyId", DbType="Int NOT NULL")]
+		public int CurrencyId
+		{
+			get
+			{
+				return this._CurrencyId;
+			}
+			set
+			{
+				if ((this._CurrencyId != value))
+				{
+					this._CurrencyId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string Description
+		{
+			get
+			{
+				return this._Description;
+			}
+			set
+			{
+				if ((this._Description != value))
+				{
+					this._Description = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_CategorySearchResult
+	{
+		
+		private int _Id;
+		
+		private string _Name;
+		
+		private System.Nullable<long> _RowNumber;
+		
+		public sp_CategorySearchResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", DbType="Int NOT NULL")]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this._Id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(128) NOT NULL", CanBeNull=false)]
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+			set
+			{
+				if ((this._Name != value))
+				{
+					this._Name = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RowNumber", DbType="BigInt")]
+		public System.Nullable<long> RowNumber
+		{
+			get
+			{
+				return this._RowNumber;
+			}
+			set
+			{
+				if ((this._RowNumber != value))
+				{
+					this._RowNumber = value;
+				}
+			}
+		}
+	}
+	
+	public partial class tfnCompanyCategoryListGetByCategoryIdResult
+	{
+		
+		private int _CategoryId;
+		
+		private int _ParentCategoryId;
+		
+		private int _Level;
+		
+		private string _Name;
+		
+		private string _OrderCode;
+		
+		private bool _Available;
+		
+		private bool _SystemCategory;
+		
+		private bool _FinalLevel;
+		
+		private bool _Selected;
+		
+		public tfnCompanyCategoryListGetByCategoryIdResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CategoryId", DbType="Int NOT NULL")]
+		public int CategoryId
+		{
+			get
+			{
+				return this._CategoryId;
+			}
+			set
+			{
+				if ((this._CategoryId != value))
+				{
+					this._CategoryId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ParentCategoryId", DbType="Int NOT NULL")]
+		public int ParentCategoryId
+		{
+			get
+			{
+				return this._ParentCategoryId;
+			}
+			set
+			{
+				if ((this._ParentCategoryId != value))
+				{
+					this._ParentCategoryId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Level]", Storage="_Level", DbType="Int NOT NULL")]
+		public int Level
+		{
+			get
+			{
+				return this._Level;
+			}
+			set
+			{
+				if ((this._Level != value))
+				{
+					this._Level = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(128) NOT NULL", CanBeNull=false)]
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+			set
+			{
+				if ((this._Name != value))
+				{
+					this._Name = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OrderCode", DbType="NVarChar(10) NOT NULL", CanBeNull=false)]
+		public string OrderCode
+		{
+			get
+			{
+				return this._OrderCode;
+			}
+			set
+			{
+				if ((this._OrderCode != value))
+				{
+					this._OrderCode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Available", DbType="Bit NOT NULL")]
+		public bool Available
+		{
+			get
+			{
+				return this._Available;
+			}
+			set
+			{
+				if ((this._Available != value))
+				{
+					this._Available = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SystemCategory", DbType="Bit NOT NULL")]
+		public bool SystemCategory
+		{
+			get
+			{
+				return this._SystemCategory;
+			}
+			set
+			{
+				if ((this._SystemCategory != value))
+				{
+					this._SystemCategory = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FinalLevel", DbType="Bit NOT NULL")]
+		public bool FinalLevel
+		{
+			get
+			{
+				return this._FinalLevel;
+			}
+			set
+			{
+				if ((this._FinalLevel != value))
+				{
+					this._FinalLevel = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Selected", DbType="Bit NOT NULL")]
+		public bool Selected
+		{
+			get
+			{
+				return this._Selected;
+			}
+			set
+			{
+				if ((this._Selected != value))
+				{
+					this._Selected = value;
+				}
+			}
+		}
+	}
+	
+	public partial class tfnItemRelatedUPCInfoGetResult
+	{
+		
+		private int _ItemRelatedUPCInfoId;
+		
+		private string _UPC;
+		
+		private string _Description;
+		
+		private string _SaleTag;
+		
+		private bool _Available;
+		
+		public tfnItemRelatedUPCInfoGetResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ItemRelatedUPCInfoId", DbType="Int NOT NULL")]
+		public int ItemRelatedUPCInfoId
+		{
+			get
+			{
+				return this._ItemRelatedUPCInfoId;
+			}
+			set
+			{
+				if ((this._ItemRelatedUPCInfoId != value))
+				{
+					this._ItemRelatedUPCInfoId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UPC", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string UPC
+		{
+			get
+			{
+				return this._UPC;
+			}
+			set
+			{
+				if ((this._UPC != value))
+				{
+					this._UPC = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string Description
+		{
+			get
+			{
+				return this._Description;
+			}
+			set
+			{
+				if ((this._Description != value))
+				{
+					this._Description = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SaleTag", DbType="NVarChar(128)")]
+		public string SaleTag
+		{
+			get
+			{
+				return this._SaleTag;
+			}
+			set
+			{
+				if ((this._SaleTag != value))
+				{
+					this._SaleTag = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Available", DbType="Bit NOT NULL")]
+		public bool Available
+		{
+			get
+			{
+				return this._Available;
+			}
+			set
+			{
+				if ((this._Available != value))
+				{
+					this._Available = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_BrandSearchResult
+	{
+		
+		private int _Id;
+		
+		private string _BrandName;
+		
+		private string _BrandDescription;
+		
+		private bool _SystemBrand;
+		
+		private int _CategoryId;
+		
+		private string _CategoryName;
+		
+		private System.Nullable<long> _RowNumber;
+		
+		public sp_BrandSearchResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", DbType="Int NOT NULL")]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this._Id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BrandName", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string BrandName
+		{
+			get
+			{
+				return this._BrandName;
+			}
+			set
+			{
+				if ((this._BrandName != value))
+				{
+					this._BrandName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BrandDescription", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string BrandDescription
+		{
+			get
+			{
+				return this._BrandDescription;
+			}
+			set
+			{
+				if ((this._BrandDescription != value))
+				{
+					this._BrandDescription = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SystemBrand", DbType="Bit NOT NULL")]
+		public bool SystemBrand
+		{
+			get
+			{
+				return this._SystemBrand;
+			}
+			set
+			{
+				if ((this._SystemBrand != value))
+				{
+					this._SystemBrand = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CategoryId", DbType="Int NOT NULL")]
+		public int CategoryId
+		{
+			get
+			{
+				return this._CategoryId;
+			}
+			set
+			{
+				if ((this._CategoryId != value))
+				{
+					this._CategoryId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CategoryName", DbType="NVarChar(128) NOT NULL", CanBeNull=false)]
+		public string CategoryName
+		{
+			get
+			{
+				return this._CategoryName;
+			}
+			set
+			{
+				if ((this._CategoryName != value))
+				{
+					this._CategoryName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RowNumber", DbType="BigInt")]
+		public System.Nullable<long> RowNumber
+		{
+			get
+			{
+				return this._RowNumber;
+			}
+			set
+			{
+				if ((this._RowNumber != value))
+				{
+					this._RowNumber = value;
+				}
+			}
+		}
+	}
+	
+	public partial class tfnItemVariationInfoGetResult
+	{
+		
+		private string _VariationTitle;
+		
+		private System.Nullable<int> _VariationReasonCodeId;
+		
+		public tfnItemVariationInfoGetResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VariationTitle", DbType="NVarChar(256)")]
+		public string VariationTitle
+		{
+			get
+			{
+				return this._VariationTitle;
+			}
+			set
+			{
+				if ((this._VariationTitle != value))
+				{
+					this._VariationTitle = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VariationReasonCodeId", DbType="Int")]
+		public System.Nullable<int> VariationReasonCodeId
+		{
+			get
+			{
+				return this._VariationReasonCodeId;
+			}
+			set
+			{
+				if ((this._VariationReasonCodeId != value))
+				{
+					this._VariationReasonCodeId = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_Item_GetFromWizardSessionIdResult
+	{
+		
+		private int _ItemId;
+		
+		private int _WizardSessionId;
+		
+		private string _ItemName;
+		
+		private int _CategoryId;
+		
+		private string _Category;
+		
+		private int _BrandId;
+		
+		private string _Brand;
+		
+		private int _ItemStatusCodeId;
+		
+		private string _ItemStatusCode;
+		
+		private System.Nullable<int> _MainImageFileId;
+		
+		private string _SKU;
+		
+		private string _ProductCode;
+		
+		private string _ProductDescription;
+		
+		private string _SupplierSKU;
+		
+		private string _ModelNumber;
+		
+		private System.Nullable<long> _RowNumber;
+		
+		public sp_Item_GetFromWizardSessionIdResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ItemId", DbType="Int NOT NULL")]
+		public int ItemId
+		{
+			get
+			{
+				return this._ItemId;
+			}
+			set
+			{
+				if ((this._ItemId != value))
+				{
+					this._ItemId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WizardSessionId", DbType="Int NOT NULL")]
+		public int WizardSessionId
+		{
+			get
+			{
+				return this._WizardSessionId;
+			}
+			set
+			{
+				if ((this._WizardSessionId != value))
+				{
+					this._WizardSessionId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ItemName", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string ItemName
+		{
+			get
+			{
+				return this._ItemName;
+			}
+			set
+			{
+				if ((this._ItemName != value))
+				{
+					this._ItemName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CategoryId", DbType="Int NOT NULL")]
+		public int CategoryId
+		{
+			get
+			{
+				return this._CategoryId;
+			}
+			set
+			{
+				if ((this._CategoryId != value))
+				{
+					this._CategoryId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Category", DbType="NVarChar(128) NOT NULL", CanBeNull=false)]
+		public string Category
+		{
+			get
+			{
+				return this._Category;
+			}
+			set
+			{
+				if ((this._Category != value))
+				{
+					this._Category = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BrandId", DbType="Int NOT NULL")]
+		public int BrandId
+		{
+			get
+			{
+				return this._BrandId;
+			}
+			set
+			{
+				if ((this._BrandId != value))
+				{
+					this._BrandId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Brand", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string Brand
+		{
+			get
+			{
+				return this._Brand;
+			}
+			set
+			{
+				if ((this._Brand != value))
+				{
+					this._Brand = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ItemStatusCodeId", DbType="Int NOT NULL")]
+		public int ItemStatusCodeId
+		{
+			get
+			{
+				return this._ItemStatusCodeId;
+			}
+			set
+			{
+				if ((this._ItemStatusCodeId != value))
+				{
+					this._ItemStatusCodeId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ItemStatusCode", DbType="NVarChar(1024)")]
+		public string ItemStatusCode
+		{
+			get
+			{
+				return this._ItemStatusCode;
+			}
+			set
+			{
+				if ((this._ItemStatusCode != value))
+				{
+					this._ItemStatusCode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MainImageFileId", DbType="Int")]
+		public System.Nullable<int> MainImageFileId
+		{
+			get
+			{
+				return this._MainImageFileId;
+			}
+			set
+			{
+				if ((this._MainImageFileId != value))
+				{
+					this._MainImageFileId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SKU", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string SKU
+		{
+			get
+			{
+				return this._SKU;
+			}
+			set
+			{
+				if ((this._SKU != value))
+				{
+					this._SKU = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProductCode", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string ProductCode
+		{
+			get
+			{
+				return this._ProductCode;
+			}
+			set
+			{
+				if ((this._ProductCode != value))
+				{
+					this._ProductCode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProductDescription", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string ProductDescription
+		{
+			get
+			{
+				return this._ProductDescription;
+			}
+			set
+			{
+				if ((this._ProductDescription != value))
+				{
+					this._ProductDescription = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SupplierSKU", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string SupplierSKU
+		{
+			get
+			{
+				return this._SupplierSKU;
+			}
+			set
+			{
+				if ((this._SupplierSKU != value))
+				{
+					this._SupplierSKU = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ModelNumber", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string ModelNumber
+		{
+			get
+			{
+				return this._ModelNumber;
+			}
+			set
+			{
+				if ((this._ModelNumber != value))
+				{
+					this._ModelNumber = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RowNumber", DbType="BigInt")]
+		public System.Nullable<long> RowNumber
+		{
+			get
+			{
+				return this._RowNumber;
+			}
+			set
+			{
+				if ((this._RowNumber != value))
+				{
+					this._RowNumber = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_ItemRelatedListGetResult
+	{
+		
+		private int _ItemId;
+		
+		private int _WizardSessionId;
+		
+		private string _ItemName;
+		
+		private int _CategoryId;
+		
+		private string _VariationTitle;
+		
+		private System.Nullable<int> _VariationReasonCodeId;
+		
+		private string _Category;
+		
+		private int _BrandId;
+		
+		private string _Brand;
+		
+		private int _ItemStatusCodeId;
+		
+		private string _ItemStatusCode;
+		
+		private System.Nullable<int> _MainImageFileId;
+		
+		private string _SKU;
+		
+		private string _ProductCode;
+		
+		private string _ProductDescription;
+		
+		private string _SupplierSKU;
+		
+		private string _ModelNumber;
+		
+		private string _Selected;
+		
+		public sp_ItemRelatedListGetResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ItemId", DbType="Int NOT NULL")]
+		public int ItemId
+		{
+			get
+			{
+				return this._ItemId;
+			}
+			set
+			{
+				if ((this._ItemId != value))
+				{
+					this._ItemId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WizardSessionId", DbType="Int NOT NULL")]
+		public int WizardSessionId
+		{
+			get
+			{
+				return this._WizardSessionId;
+			}
+			set
+			{
+				if ((this._WizardSessionId != value))
+				{
+					this._WizardSessionId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ItemName", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string ItemName
+		{
+			get
+			{
+				return this._ItemName;
+			}
+			set
+			{
+				if ((this._ItemName != value))
+				{
+					this._ItemName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CategoryId", DbType="Int NOT NULL")]
+		public int CategoryId
+		{
+			get
+			{
+				return this._CategoryId;
+			}
+			set
+			{
+				if ((this._CategoryId != value))
+				{
+					this._CategoryId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VariationTitle", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string VariationTitle
+		{
+			get
+			{
+				return this._VariationTitle;
+			}
+			set
+			{
+				if ((this._VariationTitle != value))
+				{
+					this._VariationTitle = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VariationReasonCodeId", DbType="Int")]
+		public System.Nullable<int> VariationReasonCodeId
+		{
+			get
+			{
+				return this._VariationReasonCodeId;
+			}
+			set
+			{
+				if ((this._VariationReasonCodeId != value))
+				{
+					this._VariationReasonCodeId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Category", DbType="NVarChar(128) NOT NULL", CanBeNull=false)]
+		public string Category
+		{
+			get
+			{
+				return this._Category;
+			}
+			set
+			{
+				if ((this._Category != value))
+				{
+					this._Category = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BrandId", DbType="Int NOT NULL")]
+		public int BrandId
+		{
+			get
+			{
+				return this._BrandId;
+			}
+			set
+			{
+				if ((this._BrandId != value))
+				{
+					this._BrandId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Brand", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string Brand
+		{
+			get
+			{
+				return this._Brand;
+			}
+			set
+			{
+				if ((this._Brand != value))
+				{
+					this._Brand = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ItemStatusCodeId", DbType="Int NOT NULL")]
+		public int ItemStatusCodeId
+		{
+			get
+			{
+				return this._ItemStatusCodeId;
+			}
+			set
+			{
+				if ((this._ItemStatusCodeId != value))
+				{
+					this._ItemStatusCodeId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ItemStatusCode", DbType="NVarChar(1024)")]
+		public string ItemStatusCode
+		{
+			get
+			{
+				return this._ItemStatusCode;
+			}
+			set
+			{
+				if ((this._ItemStatusCode != value))
+				{
+					this._ItemStatusCode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MainImageFileId", DbType="Int")]
+		public System.Nullable<int> MainImageFileId
+		{
+			get
+			{
+				return this._MainImageFileId;
+			}
+			set
+			{
+				if ((this._MainImageFileId != value))
+				{
+					this._MainImageFileId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SKU", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string SKU
+		{
+			get
+			{
+				return this._SKU;
+			}
+			set
+			{
+				if ((this._SKU != value))
+				{
+					this._SKU = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProductCode", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string ProductCode
+		{
+			get
+			{
+				return this._ProductCode;
+			}
+			set
+			{
+				if ((this._ProductCode != value))
+				{
+					this._ProductCode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProductDescription", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string ProductDescription
+		{
+			get
+			{
+				return this._ProductDescription;
+			}
+			set
+			{
+				if ((this._ProductDescription != value))
+				{
+					this._ProductDescription = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SupplierSKU", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string SupplierSKU
+		{
+			get
+			{
+				return this._SupplierSKU;
+			}
+			set
+			{
+				if ((this._SupplierSKU != value))
+				{
+					this._SupplierSKU = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ModelNumber", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string ModelNumber
+		{
+			get
+			{
+				return this._ModelNumber;
+			}
+			set
+			{
+				if ((this._ModelNumber != value))
+				{
+					this._ModelNumber = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Selected", DbType="VarChar(1) NOT NULL", CanBeNull=false)]
+		public string Selected
+		{
+			get
+			{
+				return this._Selected;
+			}
+			set
+			{
+				if ((this._Selected != value))
+				{
+					this._Selected = value;
+				}
+			}
+		}
+	}
+	
+	public partial class tfnItemGetByUPCResult
+	{
+		
+		private System.Nullable<int> _ItemId;
+		
+		private System.Nullable<int> _WizardSessionId;
+		
+		public tfnItemGetByUPCResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ItemId", DbType="Int")]
+		public System.Nullable<int> ItemId
+		{
+			get
+			{
+				return this._ItemId;
+			}
+			set
+			{
+				if ((this._ItemId != value))
+				{
+					this._ItemId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WizardSessionId", DbType="Int")]
+		public System.Nullable<int> WizardSessionId
+		{
+			get
+			{
+				return this._WizardSessionId;
+			}
+			set
+			{
+				if ((this._WizardSessionId != value))
+				{
+					this._WizardSessionId = value;
+				}
+			}
+		}
+	}
+	
+	public partial class tfnItemPackageResourceListGetResult
+	{
+		
+		private string _SourceTable;
+		
+		private int _SourceId;
+		
+		private int _ResourceTypeCodeId;
+		
+		private int _FileId;
+		
+		private string _Description_1;
+		
+		private string _Description_2;
+		
+		private bool _Available;
+		
+		public tfnItemPackageResourceListGetResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SourceTable", DbType="NVarChar(64) NOT NULL", CanBeNull=false)]
+		public string SourceTable
+		{
+			get
+			{
+				return this._SourceTable;
+			}
+			set
+			{
+				if ((this._SourceTable != value))
+				{
+					this._SourceTable = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SourceId", DbType="Int NOT NULL")]
+		public int SourceId
+		{
+			get
+			{
+				return this._SourceId;
+			}
+			set
+			{
+				if ((this._SourceId != value))
+				{
+					this._SourceId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ResourceTypeCodeId", DbType="Int NOT NULL")]
+		public int ResourceTypeCodeId
+		{
+			get
+			{
+				return this._ResourceTypeCodeId;
+			}
+			set
+			{
+				if ((this._ResourceTypeCodeId != value))
+				{
+					this._ResourceTypeCodeId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FileId", DbType="Int NOT NULL")]
+		public int FileId
+		{
+			get
+			{
+				return this._FileId;
+			}
+			set
+			{
+				if ((this._FileId != value))
+				{
+					this._FileId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description_1", DbType="NVarChar(MAX)")]
+		public string Description_1
+		{
+			get
+			{
+				return this._Description_1;
+			}
+			set
+			{
+				if ((this._Description_1 != value))
+				{
+					this._Description_1 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description_2", DbType="NVarChar(MAX)")]
+		public string Description_2
+		{
+			get
+			{
+				return this._Description_2;
+			}
+			set
+			{
+				if ((this._Description_2 != value))
+				{
+					this._Description_2 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Available", DbType="Bit NOT NULL")]
+		public bool Available
+		{
+			get
+			{
+				return this._Available;
+			}
+			set
+			{
+				if ((this._Available != value))
+				{
+					this._Available = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_ItemOnSaleRequestTempBufferGetResult
+	{
+		
+		private int _ItemOnSaleRequestTempBufferId;
+		
+		private int _ItemId;
+		
+		private string _SourceTable;
+		
+		private int _SourceId;
+		
+		private int _ItemOnSaleRequestTempBufferStatusCodeId;
+		
+		private string _Price;
+		
+		private System.Nullable<int> _CurrencyId;
+		
+		private string _Description;
+		
+		private System.DateTime _CreateDate;
+		
+		private System.Nullable<long> _RowNumber;
+		
+		public sp_ItemOnSaleRequestTempBufferGetResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ItemOnSaleRequestTempBufferId", DbType="Int NOT NULL")]
+		public int ItemOnSaleRequestTempBufferId
+		{
+			get
+			{
+				return this._ItemOnSaleRequestTempBufferId;
+			}
+			set
+			{
+				if ((this._ItemOnSaleRequestTempBufferId != value))
+				{
+					this._ItemOnSaleRequestTempBufferId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ItemId", DbType="Int NOT NULL")]
+		public int ItemId
+		{
+			get
+			{
+				return this._ItemId;
+			}
+			set
+			{
+				if ((this._ItemId != value))
+				{
+					this._ItemId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SourceTable", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string SourceTable
+		{
+			get
+			{
+				return this._SourceTable;
+			}
+			set
+			{
+				if ((this._SourceTable != value))
+				{
+					this._SourceTable = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SourceId", DbType="Int NOT NULL")]
+		public int SourceId
+		{
+			get
+			{
+				return this._SourceId;
+			}
+			set
+			{
+				if ((this._SourceId != value))
+				{
+					this._SourceId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ItemOnSaleRequestTempBufferStatusCodeId", DbType="Int NOT NULL")]
+		public int ItemOnSaleRequestTempBufferStatusCodeId
+		{
+			get
+			{
+				return this._ItemOnSaleRequestTempBufferStatusCodeId;
+			}
+			set
+			{
+				if ((this._ItemOnSaleRequestTempBufferStatusCodeId != value))
+				{
+					this._ItemOnSaleRequestTempBufferStatusCodeId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Price", DbType="NVarChar(256)")]
+		public string Price
+		{
+			get
+			{
+				return this._Price;
+			}
+			set
+			{
+				if ((this._Price != value))
+				{
+					this._Price = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CurrencyId", DbType="Int")]
+		public System.Nullable<int> CurrencyId
+		{
+			get
+			{
+				return this._CurrencyId;
+			}
+			set
+			{
+				if ((this._CurrencyId != value))
+				{
+					this._CurrencyId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string Description
+		{
+			get
+			{
+				return this._Description;
+			}
+			set
+			{
+				if ((this._Description != value))
+				{
+					this._Description = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreateDate", DbType="DateTime NOT NULL")]
+		public System.DateTime CreateDate
+		{
+			get
+			{
+				return this._CreateDate;
+			}
+			set
+			{
+				if ((this._CreateDate != value))
+				{
+					this._CreateDate = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RowNumber", DbType="BigInt")]
+		public System.Nullable<long> RowNumber
+		{
+			get
+			{
+				return this._RowNumber;
+			}
+			set
+			{
+				if ((this._RowNumber != value))
+				{
+					this._RowNumber = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_Item_GetFromItemIdResult
+	{
+		
+		private int _ItemId;
+		
+		private int _WizardSessionId;
+		
+		private string _ItemName;
+		
+		private int _CategoryId;
+		
+		private string _Category;
+		
+		private int _BrandId;
+		
+		private string _Brand;
+		
+		private int _ItemStatusCodeId;
+		
+		private string _ItemStatusCode;
+		
+		private System.Nullable<int> _MainImageFileId;
+		
+		private string _SKU;
+		
+		private string _ProductCode;
+		
+		private string _ProductDescription;
+		
+		private string _SupplierSKU;
+		
+		private string _ModelNumber;
+		
+		private System.Nullable<long> _RowNumber;
+		
+		public sp_Item_GetFromItemIdResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ItemId", DbType="Int NOT NULL")]
+		public int ItemId
+		{
+			get
+			{
+				return this._ItemId;
+			}
+			set
+			{
+				if ((this._ItemId != value))
+				{
+					this._ItemId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WizardSessionId", DbType="Int NOT NULL")]
+		public int WizardSessionId
+		{
+			get
+			{
+				return this._WizardSessionId;
+			}
+			set
+			{
+				if ((this._WizardSessionId != value))
+				{
+					this._WizardSessionId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ItemName", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string ItemName
+		{
+			get
+			{
+				return this._ItemName;
+			}
+			set
+			{
+				if ((this._ItemName != value))
+				{
+					this._ItemName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CategoryId", DbType="Int NOT NULL")]
+		public int CategoryId
+		{
+			get
+			{
+				return this._CategoryId;
+			}
+			set
+			{
+				if ((this._CategoryId != value))
+				{
+					this._CategoryId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Category", DbType="NVarChar(128) NOT NULL", CanBeNull=false)]
+		public string Category
+		{
+			get
+			{
+				return this._Category;
+			}
+			set
+			{
+				if ((this._Category != value))
+				{
+					this._Category = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BrandId", DbType="Int NOT NULL")]
+		public int BrandId
+		{
+			get
+			{
+				return this._BrandId;
+			}
+			set
+			{
+				if ((this._BrandId != value))
+				{
+					this._BrandId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Brand", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string Brand
+		{
+			get
+			{
+				return this._Brand;
+			}
+			set
+			{
+				if ((this._Brand != value))
+				{
+					this._Brand = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ItemStatusCodeId", DbType="Int NOT NULL")]
+		public int ItemStatusCodeId
+		{
+			get
+			{
+				return this._ItemStatusCodeId;
+			}
+			set
+			{
+				if ((this._ItemStatusCodeId != value))
+				{
+					this._ItemStatusCodeId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ItemStatusCode", DbType="NVarChar(1024)")]
+		public string ItemStatusCode
+		{
+			get
+			{
+				return this._ItemStatusCode;
+			}
+			set
+			{
+				if ((this._ItemStatusCode != value))
+				{
+					this._ItemStatusCode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MainImageFileId", DbType="Int")]
+		public System.Nullable<int> MainImageFileId
+		{
+			get
+			{
+				return this._MainImageFileId;
+			}
+			set
+			{
+				if ((this._MainImageFileId != value))
+				{
+					this._MainImageFileId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SKU", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string SKU
+		{
+			get
+			{
+				return this._SKU;
+			}
+			set
+			{
+				if ((this._SKU != value))
+				{
+					this._SKU = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProductCode", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string ProductCode
+		{
+			get
+			{
+				return this._ProductCode;
+			}
+			set
+			{
+				if ((this._ProductCode != value))
+				{
+					this._ProductCode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProductDescription", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string ProductDescription
+		{
+			get
+			{
+				return this._ProductDescription;
+			}
+			set
+			{
+				if ((this._ProductDescription != value))
+				{
+					this._ProductDescription = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SupplierSKU", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string SupplierSKU
+		{
+			get
+			{
+				return this._SupplierSKU;
+			}
+			set
+			{
+				if ((this._SupplierSKU != value))
+				{
+					this._SupplierSKU = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ModelNumber", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string ModelNumber
+		{
+			get
+			{
+				return this._ModelNumber;
+			}
+			set
+			{
+				if ((this._ModelNumber != value))
+				{
+					this._ModelNumber = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RowNumber", DbType="BigInt")]
+		public System.Nullable<long> RowNumber
+		{
+			get
+			{
+				return this._RowNumber;
+			}
+			set
+			{
+				if ((this._RowNumber != value))
+				{
+					this._RowNumber = value;
+				}
+			}
+		}
+	}
+	
+	public partial class tfnItemOnSalePlatformListGetResult
+	{
+		
+		private int _ItemOnSaleRequestPlatformInfoId;
+		
+		private string _PlatformName;
+		
+		public tfnItemOnSalePlatformListGetResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ItemOnSaleRequestPlatformInfoId", DbType="Int NOT NULL")]
+		public int ItemOnSaleRequestPlatformInfoId
+		{
+			get
+			{
+				return this._ItemOnSaleRequestPlatformInfoId;
+			}
+			set
+			{
+				if ((this._ItemOnSaleRequestPlatformInfoId != value))
+				{
+					this._ItemOnSaleRequestPlatformInfoId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PlatformName", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string PlatformName
+		{
+			get
+			{
+				return this._PlatformName;
+			}
+			set
+			{
+				if ((this._PlatformName != value))
+				{
+					this._PlatformName = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_ItemOnSaleRequestGetResult
+	{
+		
+		private int _ItemOnSaleRequestId;
+		
+		private int _ItemId;
+		
+		private System.Nullable<int> _ItemOnSaleRequestTempBufferId;
+		
+		private string _Description;
+		
+		private string _UpdatedPrice;
+		
+		private int _UpdatedCurrencyId;
+		
+		private string _UpdatedCurrency;
+		
+		private int _ItemOnSaleRequestStatusCodeId;
+		
+		private System.DateTime _CreateDate;
+		
+		private System.Nullable<long> _RowNumber;
+		
+		public sp_ItemOnSaleRequestGetResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ItemOnSaleRequestId", DbType="Int NOT NULL")]
+		public int ItemOnSaleRequestId
+		{
+			get
+			{
+				return this._ItemOnSaleRequestId;
+			}
+			set
+			{
+				if ((this._ItemOnSaleRequestId != value))
+				{
+					this._ItemOnSaleRequestId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ItemId", DbType="Int NOT NULL")]
+		public int ItemId
+		{
+			get
+			{
+				return this._ItemId;
+			}
+			set
+			{
+				if ((this._ItemId != value))
+				{
+					this._ItemId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ItemOnSaleRequestTempBufferId", DbType="Int")]
+		public System.Nullable<int> ItemOnSaleRequestTempBufferId
+		{
+			get
+			{
+				return this._ItemOnSaleRequestTempBufferId;
+			}
+			set
+			{
+				if ((this._ItemOnSaleRequestTempBufferId != value))
+				{
+					this._ItemOnSaleRequestTempBufferId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string Description
+		{
+			get
+			{
+				return this._Description;
+			}
+			set
+			{
+				if ((this._Description != value))
+				{
+					this._Description = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UpdatedPrice", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string UpdatedPrice
+		{
+			get
+			{
+				return this._UpdatedPrice;
+			}
+			set
+			{
+				if ((this._UpdatedPrice != value))
+				{
+					this._UpdatedPrice = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UpdatedCurrencyId", DbType="Int NOT NULL")]
+		public int UpdatedCurrencyId
+		{
+			get
+			{
+				return this._UpdatedCurrencyId;
+			}
+			set
+			{
+				if ((this._UpdatedCurrencyId != value))
+				{
+					this._UpdatedCurrencyId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UpdatedCurrency", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string UpdatedCurrency
+		{
+			get
+			{
+				return this._UpdatedCurrency;
+			}
+			set
+			{
+				if ((this._UpdatedCurrency != value))
+				{
+					this._UpdatedCurrency = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ItemOnSaleRequestStatusCodeId", DbType="Int NOT NULL")]
+		public int ItemOnSaleRequestStatusCodeId
+		{
+			get
+			{
+				return this._ItemOnSaleRequestStatusCodeId;
+			}
+			set
+			{
+				if ((this._ItemOnSaleRequestStatusCodeId != value))
+				{
+					this._ItemOnSaleRequestStatusCodeId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreateDate", DbType="DateTime NOT NULL")]
+		public System.DateTime CreateDate
+		{
+			get
+			{
+				return this._CreateDate;
+			}
+			set
+			{
+				if ((this._CreateDate != value))
+				{
+					this._CreateDate = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RowNumber", DbType="BigInt")]
+		public System.Nullable<long> RowNumber
+		{
+			get
+			{
+				return this._RowNumber;
+			}
+			set
+			{
+				if ((this._RowNumber != value))
+				{
+					this._RowNumber = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_ItemOnSaleRequestGetByIdResult
+	{
+		
+		private int _ItemOnSaleRequestId;
+		
+		private int _ItemId;
+		
+		private System.Nullable<int> _ItemOnSaleRequestTempBufferId;
+		
+		private string _Description;
+		
+		private string _UpdatedPrice;
+		
+		private int _UpdatedCurrencyId;
+		
+		private string _UpdatedCurrency;
+		
+		private int _ItemOnSaleRequestStatusCodeId;
+		
+		private System.DateTime _CreateDate;
+		
+		public sp_ItemOnSaleRequestGetByIdResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ItemOnSaleRequestId", DbType="Int NOT NULL")]
+		public int ItemOnSaleRequestId
+		{
+			get
+			{
+				return this._ItemOnSaleRequestId;
+			}
+			set
+			{
+				if ((this._ItemOnSaleRequestId != value))
+				{
+					this._ItemOnSaleRequestId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ItemId", DbType="Int NOT NULL")]
+		public int ItemId
+		{
+			get
+			{
+				return this._ItemId;
+			}
+			set
+			{
+				if ((this._ItemId != value))
+				{
+					this._ItemId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ItemOnSaleRequestTempBufferId", DbType="Int")]
+		public System.Nullable<int> ItemOnSaleRequestTempBufferId
+		{
+			get
+			{
+				return this._ItemOnSaleRequestTempBufferId;
+			}
+			set
+			{
+				if ((this._ItemOnSaleRequestTempBufferId != value))
+				{
+					this._ItemOnSaleRequestTempBufferId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string Description
+		{
+			get
+			{
+				return this._Description;
+			}
+			set
+			{
+				if ((this._Description != value))
+				{
+					this._Description = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UpdatedPrice", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string UpdatedPrice
+		{
+			get
+			{
+				return this._UpdatedPrice;
+			}
+			set
+			{
+				if ((this._UpdatedPrice != value))
+				{
+					this._UpdatedPrice = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UpdatedCurrencyId", DbType="Int NOT NULL")]
+		public int UpdatedCurrencyId
+		{
+			get
+			{
+				return this._UpdatedCurrencyId;
+			}
+			set
+			{
+				if ((this._UpdatedCurrencyId != value))
+				{
+					this._UpdatedCurrencyId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UpdatedCurrency", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string UpdatedCurrency
+		{
+			get
+			{
+				return this._UpdatedCurrency;
+			}
+			set
+			{
+				if ((this._UpdatedCurrency != value))
+				{
+					this._UpdatedCurrency = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ItemOnSaleRequestStatusCodeId", DbType="Int NOT NULL")]
+		public int ItemOnSaleRequestStatusCodeId
+		{
+			get
+			{
+				return this._ItemOnSaleRequestStatusCodeId;
+			}
+			set
+			{
+				if ((this._ItemOnSaleRequestStatusCodeId != value))
+				{
+					this._ItemOnSaleRequestStatusCodeId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreateDate", DbType="DateTime NOT NULL")]
+		public System.DateTime CreateDate
+		{
+			get
+			{
+				return this._CreateDate;
+			}
+			set
+			{
+				if ((this._CreateDate != value))
+				{
+					this._CreateDate = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_ItemPackageGetByManagerResult
+	{
+		
+		private int _SourceId;
+		
+		private string _SourceTable;
+		
+		private string _UPC;
+		
+		private string _ProductName;
+		
+		private string _Price;
+		
+		private int _CurrencyId;
+		
+		private string _Currency;
+		
+		private string _Weight;
+		
+		private string _SaleTitle;
+		
+		private string _SalePlace;
+		
+		private string _DiscountDescription;
+		
+		private string _SizeRange;
+		
+		private string _ColorRange;
+		
+		private int _UserId;
+		
+		private string _UserEmail;
+		
+		private int _CompanyId;
+		
+		private int _ItemPackageStatusCodeId;
+		
+		private string _ItemPackageStatus;
+		
+		private System.DateTime _CreateDate;
+		
+		private System.Nullable<int> _ItemId;
+		
+		private System.Nullable<int> _WizardSessionId;
+		
+		private System.Nullable<long> _RowNumber;
+		
+		public sp_ItemPackageGetByManagerResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SourceId", DbType="Int NOT NULL")]
+		public int SourceId
+		{
+			get
+			{
+				return this._SourceId;
+			}
+			set
+			{
+				if ((this._SourceId != value))
+				{
+					this._SourceId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SourceTable", DbType="NVarChar(64) NOT NULL", CanBeNull=false)]
+		public string SourceTable
+		{
+			get
+			{
+				return this._SourceTable;
+			}
+			set
+			{
+				if ((this._SourceTable != value))
+				{
+					this._SourceTable = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UPC", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string UPC
+		{
+			get
+			{
+				return this._UPC;
+			}
+			set
+			{
+				if ((this._UPC != value))
+				{
+					this._UPC = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProductName", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string ProductName
+		{
+			get
+			{
+				return this._ProductName;
+			}
+			set
+			{
+				if ((this._ProductName != value))
+				{
+					this._ProductName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Price", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string Price
+		{
+			get
+			{
+				return this._Price;
+			}
+			set
+			{
+				if ((this._Price != value))
+				{
+					this._Price = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CurrencyId", DbType="Int NOT NULL")]
+		public int CurrencyId
+		{
+			get
+			{
+				return this._CurrencyId;
+			}
+			set
+			{
+				if ((this._CurrencyId != value))
+				{
+					this._CurrencyId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Currency", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string Currency
+		{
+			get
+			{
+				return this._Currency;
+			}
+			set
+			{
+				if ((this._Currency != value))
+				{
+					this._Currency = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Weight", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string Weight
+		{
+			get
+			{
+				return this._Weight;
+			}
+			set
+			{
+				if ((this._Weight != value))
+				{
+					this._Weight = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SaleTitle", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string SaleTitle
+		{
+			get
+			{
+				return this._SaleTitle;
+			}
+			set
+			{
+				if ((this._SaleTitle != value))
+				{
+					this._SaleTitle = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SalePlace", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string SalePlace
+		{
+			get
+			{
+				return this._SalePlace;
+			}
+			set
+			{
+				if ((this._SalePlace != value))
+				{
+					this._SalePlace = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DiscountDescription", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string DiscountDescription
+		{
+			get
+			{
+				return this._DiscountDescription;
+			}
+			set
+			{
+				if ((this._DiscountDescription != value))
+				{
+					this._DiscountDescription = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SizeRange", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string SizeRange
+		{
+			get
+			{
+				return this._SizeRange;
+			}
+			set
+			{
+				if ((this._SizeRange != value))
+				{
+					this._SizeRange = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ColorRange", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string ColorRange
+		{
+			get
+			{
+				return this._ColorRange;
+			}
+			set
+			{
+				if ((this._ColorRange != value))
+				{
+					this._ColorRange = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserId", DbType="Int NOT NULL")]
+		public int UserId
+		{
+			get
+			{
+				return this._UserId;
+			}
+			set
+			{
+				if ((this._UserId != value))
+				{
+					this._UserId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserEmail", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string UserEmail
+		{
+			get
+			{
+				return this._UserEmail;
+			}
+			set
+			{
+				if ((this._UserEmail != value))
+				{
+					this._UserEmail = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CompanyId", DbType="Int NOT NULL")]
+		public int CompanyId
+		{
+			get
+			{
+				return this._CompanyId;
+			}
+			set
+			{
+				if ((this._CompanyId != value))
+				{
+					this._CompanyId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ItemPackageStatusCodeId", DbType="Int NOT NULL")]
+		public int ItemPackageStatusCodeId
+		{
+			get
+			{
+				return this._ItemPackageStatusCodeId;
+			}
+			set
+			{
+				if ((this._ItemPackageStatusCodeId != value))
+				{
+					this._ItemPackageStatusCodeId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ItemPackageStatus", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string ItemPackageStatus
+		{
+			get
+			{
+				return this._ItemPackageStatus;
+			}
+			set
+			{
+				if ((this._ItemPackageStatus != value))
+				{
+					this._ItemPackageStatus = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreateDate", DbType="DateTime NOT NULL")]
+		public System.DateTime CreateDate
+		{
+			get
+			{
+				return this._CreateDate;
+			}
+			set
+			{
+				if ((this._CreateDate != value))
+				{
+					this._CreateDate = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ItemId", DbType="Int")]
+		public System.Nullable<int> ItemId
+		{
+			get
+			{
+				return this._ItemId;
+			}
+			set
+			{
+				if ((this._ItemId != value))
+				{
+					this._ItemId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WizardSessionId", DbType="Int")]
+		public System.Nullable<int> WizardSessionId
+		{
+			get
+			{
+				return this._WizardSessionId;
+			}
+			set
+			{
+				if ((this._WizardSessionId != value))
+				{
+					this._WizardSessionId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RowNumber", DbType="BigInt")]
+		public System.Nullable<long> RowNumber
+		{
+			get
+			{
+				return this._RowNumber;
+			}
+			set
+			{
+				if ((this._RowNumber != value))
+				{
+					this._RowNumber = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_ItemPackageGetBySourceIdResult
+	{
+		
+		private int _SourceId;
+		
+		private string _SourceTable;
+		
+		private string _UPC;
+		
+		private string _ProductName;
+		
+		private string _Price;
+		
+		private int _CurrencyId;
+		
+		private string _Currency;
+		
+		private string _Weight;
+		
+		private string _SaleTitle;
+		
+		private string _SalePlace;
+		
+		private string _DiscountDescription;
+		
+		private string _SizeRange;
+		
+		private string _ColorRange;
+		
+		private int _UserId;
+		
+		private int _CompanyId;
+		
+		private int _ItemPackageStatusCodeId;
+		
+		private string _ItemPackageStatus;
+		
+		private System.DateTime _CreateDate;
+		
+		private System.Nullable<int> _ItemId;
+		
+		private System.Nullable<int> _WizardSessionId;
+		
+		public sp_ItemPackageGetBySourceIdResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SourceId", DbType="Int NOT NULL")]
+		public int SourceId
+		{
+			get
+			{
+				return this._SourceId;
+			}
+			set
+			{
+				if ((this._SourceId != value))
+				{
+					this._SourceId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SourceTable", DbType="NVarChar(64) NOT NULL", CanBeNull=false)]
+		public string SourceTable
+		{
+			get
+			{
+				return this._SourceTable;
+			}
+			set
+			{
+				if ((this._SourceTable != value))
+				{
+					this._SourceTable = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UPC", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string UPC
+		{
+			get
+			{
+				return this._UPC;
+			}
+			set
+			{
+				if ((this._UPC != value))
+				{
+					this._UPC = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProductName", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string ProductName
+		{
+			get
+			{
+				return this._ProductName;
+			}
+			set
+			{
+				if ((this._ProductName != value))
+				{
+					this._ProductName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Price", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string Price
+		{
+			get
+			{
+				return this._Price;
+			}
+			set
+			{
+				if ((this._Price != value))
+				{
+					this._Price = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CurrencyId", DbType="Int NOT NULL")]
+		public int CurrencyId
+		{
+			get
+			{
+				return this._CurrencyId;
+			}
+			set
+			{
+				if ((this._CurrencyId != value))
+				{
+					this._CurrencyId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Currency", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string Currency
+		{
+			get
+			{
+				return this._Currency;
+			}
+			set
+			{
+				if ((this._Currency != value))
+				{
+					this._Currency = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Weight", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string Weight
+		{
+			get
+			{
+				return this._Weight;
+			}
+			set
+			{
+				if ((this._Weight != value))
+				{
+					this._Weight = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SaleTitle", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string SaleTitle
+		{
+			get
+			{
+				return this._SaleTitle;
+			}
+			set
+			{
+				if ((this._SaleTitle != value))
+				{
+					this._SaleTitle = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SalePlace", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string SalePlace
+		{
+			get
+			{
+				return this._SalePlace;
+			}
+			set
+			{
+				if ((this._SalePlace != value))
+				{
+					this._SalePlace = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DiscountDescription", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string DiscountDescription
+		{
+			get
+			{
+				return this._DiscountDescription;
+			}
+			set
+			{
+				if ((this._DiscountDescription != value))
+				{
+					this._DiscountDescription = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SizeRange", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string SizeRange
+		{
+			get
+			{
+				return this._SizeRange;
+			}
+			set
+			{
+				if ((this._SizeRange != value))
+				{
+					this._SizeRange = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ColorRange", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string ColorRange
+		{
+			get
+			{
+				return this._ColorRange;
+			}
+			set
+			{
+				if ((this._ColorRange != value))
+				{
+					this._ColorRange = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserId", DbType="Int NOT NULL")]
+		public int UserId
+		{
+			get
+			{
+				return this._UserId;
+			}
+			set
+			{
+				if ((this._UserId != value))
+				{
+					this._UserId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CompanyId", DbType="Int NOT NULL")]
+		public int CompanyId
+		{
+			get
+			{
+				return this._CompanyId;
+			}
+			set
+			{
+				if ((this._CompanyId != value))
+				{
+					this._CompanyId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ItemPackageStatusCodeId", DbType="Int NOT NULL")]
+		public int ItemPackageStatusCodeId
+		{
+			get
+			{
+				return this._ItemPackageStatusCodeId;
+			}
+			set
+			{
+				if ((this._ItemPackageStatusCodeId != value))
+				{
+					this._ItemPackageStatusCodeId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ItemPackageStatus", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string ItemPackageStatus
+		{
+			get
+			{
+				return this._ItemPackageStatus;
+			}
+			set
+			{
+				if ((this._ItemPackageStatus != value))
+				{
+					this._ItemPackageStatus = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreateDate", DbType="DateTime NOT NULL")]
+		public System.DateTime CreateDate
+		{
+			get
+			{
+				return this._CreateDate;
+			}
+			set
+			{
+				if ((this._CreateDate != value))
+				{
+					this._CreateDate = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ItemId", DbType="Int")]
+		public System.Nullable<int> ItemId
+		{
+			get
+			{
+				return this._ItemId;
+			}
+			set
+			{
+				if ((this._ItemId != value))
+				{
+					this._ItemId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WizardSessionId", DbType="Int")]
+		public System.Nullable<int> WizardSessionId
+		{
+			get
+			{
+				return this._WizardSessionId;
+			}
+			set
+			{
+				if ((this._WizardSessionId != value))
+				{
+					this._WizardSessionId = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_ItemPackageGetByUserIdResult
+	{
+		
+		private int _SourceId;
+		
+		private string _SourceTable;
+		
+		private string _UPC;
+		
+		private string _ProductName;
+		
+		private string _Price;
+		
+		private int _CurrencyId;
+		
+		private string _Currency;
+		
+		private string _Weight;
+		
+		private string _SaleTitle;
+		
+		private string _SalePlace;
+		
+		private string _DiscountDescription;
+		
+		private string _SizeRange;
+		
+		private string _ColorRange;
+		
+		private int _UserId;
+		
+		private int _CompanyId;
+		
+		private int _ItemPackageStatusCodeId;
+		
+		private string _ItemPackageStatus;
+		
+		private System.DateTime _CreateDate;
+		
+		private System.Nullable<int> _ItemId;
+		
+		private System.Nullable<int> _WizardSessionId;
+		
+		private System.Nullable<long> _RowNumber;
+		
+		public sp_ItemPackageGetByUserIdResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SourceId", DbType="Int NOT NULL")]
+		public int SourceId
+		{
+			get
+			{
+				return this._SourceId;
+			}
+			set
+			{
+				if ((this._SourceId != value))
+				{
+					this._SourceId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SourceTable", DbType="NVarChar(64) NOT NULL", CanBeNull=false)]
+		public string SourceTable
+		{
+			get
+			{
+				return this._SourceTable;
+			}
+			set
+			{
+				if ((this._SourceTable != value))
+				{
+					this._SourceTable = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UPC", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string UPC
+		{
+			get
+			{
+				return this._UPC;
+			}
+			set
+			{
+				if ((this._UPC != value))
+				{
+					this._UPC = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProductName", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string ProductName
+		{
+			get
+			{
+				return this._ProductName;
+			}
+			set
+			{
+				if ((this._ProductName != value))
+				{
+					this._ProductName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Price", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string Price
+		{
+			get
+			{
+				return this._Price;
+			}
+			set
+			{
+				if ((this._Price != value))
+				{
+					this._Price = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CurrencyId", DbType="Int NOT NULL")]
+		public int CurrencyId
+		{
+			get
+			{
+				return this._CurrencyId;
+			}
+			set
+			{
+				if ((this._CurrencyId != value))
+				{
+					this._CurrencyId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Currency", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string Currency
+		{
+			get
+			{
+				return this._Currency;
+			}
+			set
+			{
+				if ((this._Currency != value))
+				{
+					this._Currency = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Weight", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string Weight
+		{
+			get
+			{
+				return this._Weight;
+			}
+			set
+			{
+				if ((this._Weight != value))
+				{
+					this._Weight = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SaleTitle", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string SaleTitle
+		{
+			get
+			{
+				return this._SaleTitle;
+			}
+			set
+			{
+				if ((this._SaleTitle != value))
+				{
+					this._SaleTitle = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SalePlace", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string SalePlace
+		{
+			get
+			{
+				return this._SalePlace;
+			}
+			set
+			{
+				if ((this._SalePlace != value))
+				{
+					this._SalePlace = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DiscountDescription", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string DiscountDescription
+		{
+			get
+			{
+				return this._DiscountDescription;
+			}
+			set
+			{
+				if ((this._DiscountDescription != value))
+				{
+					this._DiscountDescription = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SizeRange", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string SizeRange
+		{
+			get
+			{
+				return this._SizeRange;
+			}
+			set
+			{
+				if ((this._SizeRange != value))
+				{
+					this._SizeRange = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ColorRange", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string ColorRange
+		{
+			get
+			{
+				return this._ColorRange;
+			}
+			set
+			{
+				if ((this._ColorRange != value))
+				{
+					this._ColorRange = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserId", DbType="Int NOT NULL")]
+		public int UserId
+		{
+			get
+			{
+				return this._UserId;
+			}
+			set
+			{
+				if ((this._UserId != value))
+				{
+					this._UserId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CompanyId", DbType="Int NOT NULL")]
+		public int CompanyId
+		{
+			get
+			{
+				return this._CompanyId;
+			}
+			set
+			{
+				if ((this._CompanyId != value))
+				{
+					this._CompanyId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ItemPackageStatusCodeId", DbType="Int NOT NULL")]
+		public int ItemPackageStatusCodeId
+		{
+			get
+			{
+				return this._ItemPackageStatusCodeId;
+			}
+			set
+			{
+				if ((this._ItemPackageStatusCodeId != value))
+				{
+					this._ItemPackageStatusCodeId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ItemPackageStatus", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string ItemPackageStatus
+		{
+			get
+			{
+				return this._ItemPackageStatus;
+			}
+			set
+			{
+				if ((this._ItemPackageStatus != value))
+				{
+					this._ItemPackageStatus = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreateDate", DbType="DateTime NOT NULL")]
+		public System.DateTime CreateDate
+		{
+			get
+			{
+				return this._CreateDate;
+			}
+			set
+			{
+				if ((this._CreateDate != value))
+				{
+					this._CreateDate = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ItemId", DbType="Int")]
+		public System.Nullable<int> ItemId
+		{
+			get
+			{
+				return this._ItemId;
+			}
+			set
+			{
+				if ((this._ItemId != value))
+				{
+					this._ItemId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WizardSessionId", DbType="Int")]
+		public System.Nullable<int> WizardSessionId
+		{
+			get
+			{
+				return this._WizardSessionId;
+			}
+			set
+			{
+				if ((this._WizardSessionId != value))
+				{
+					this._WizardSessionId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RowNumber", DbType="BigInt")]
+		public System.Nullable<long> RowNumber
+		{
+			get
+			{
+				return this._RowNumber;
+			}
+			set
+			{
+				if ((this._RowNumber != value))
+				{
+					this._RowNumber = value;
+				}
+			}
+		}
+	}
+	
+	public partial class tfnItemOnSaleInfoGetResult
+	{
+		
+		private int _ItemId;
+		
+		private int _ItemOnSaleId;
+		
+		private string _Title;
+		
+		private string _Description;
+		
+		private string _VariationTitle;
+		
+		private decimal _Price;
+		
+		private int _CurrencyId;
+		
+		private bool _OnMarket;
+		
+		public tfnItemOnSaleInfoGetResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ItemId", DbType="Int NOT NULL")]
+		public int ItemId
+		{
+			get
+			{
+				return this._ItemId;
+			}
+			set
+			{
+				if ((this._ItemId != value))
+				{
+					this._ItemId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ItemOnSaleId", DbType="Int NOT NULL")]
+		public int ItemOnSaleId
+		{
+			get
+			{
+				return this._ItemOnSaleId;
+			}
+			set
+			{
+				if ((this._ItemOnSaleId != value))
+				{
+					this._ItemOnSaleId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Title", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string Title
+		{
+			get
+			{
+				return this._Title;
+			}
+			set
+			{
+				if ((this._Title != value))
+				{
+					this._Title = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string Description
+		{
+			get
+			{
+				return this._Description;
+			}
+			set
+			{
+				if ((this._Description != value))
+				{
+					this._Description = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VariationTitle", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string VariationTitle
+		{
+			get
+			{
+				return this._VariationTitle;
+			}
+			set
+			{
+				if ((this._VariationTitle != value))
+				{
+					this._VariationTitle = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Price", DbType="Decimal(10,2) NOT NULL")]
+		public decimal Price
+		{
+			get
+			{
+				return this._Price;
+			}
+			set
+			{
+				if ((this._Price != value))
+				{
+					this._Price = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CurrencyId", DbType="Int NOT NULL")]
+		public int CurrencyId
+		{
+			get
+			{
+				return this._CurrencyId;
+			}
+			set
+			{
+				if ((this._CurrencyId != value))
+				{
+					this._CurrencyId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OnMarket", DbType="Bit NOT NULL")]
+		public bool OnMarket
+		{
+			get
+			{
+				return this._OnMarket;
+			}
+			set
+			{
+				if ((this._OnMarket != value))
+				{
+					this._OnMarket = value;
+				}
+			}
+		}
+	}
+	
+	public partial class tfnItemOnSaleBulletPointInfoGetResult
+	{
+		
+		private int _ItemOnSaleId;
+		
+		private string _BulletPoint;
+		
+		private int _Order;
+		
+		private bool _Available;
+		
+		public tfnItemOnSaleBulletPointInfoGetResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ItemOnSaleId", DbType="Int NOT NULL")]
+		public int ItemOnSaleId
+		{
+			get
+			{
+				return this._ItemOnSaleId;
+			}
+			set
+			{
+				if ((this._ItemOnSaleId != value))
+				{
+					this._ItemOnSaleId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BulletPoint", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string BulletPoint
+		{
+			get
+			{
+				return this._BulletPoint;
+			}
+			set
+			{
+				if ((this._BulletPoint != value))
+				{
+					this._BulletPoint = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Order]", Storage="_Order", DbType="Int NOT NULL")]
+		public int Order
+		{
+			get
+			{
+				return this._Order;
+			}
+			set
+			{
+				if ((this._Order != value))
+				{
+					this._Order = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Available", DbType="Bit NOT NULL")]
+		public bool Available
+		{
+			get
+			{
+				return this._Available;
+			}
+			set
+			{
+				if ((this._Available != value))
+				{
+					this._Available = value;
+				}
+			}
+		}
+	}
+	
+	public partial class tfnItemOnSaleResourceInfoGetResult
+	{
+		
+		private int _ItemOnSaleId;
+		
+		private int _ResourceTypeCodeId;
+		
+		private int _FileId;
+		
+		private bool _isMain;
+		
+		private int _Order;
+		
+		private string _Description_1;
+		
+		private string _Description_2;
+		
+		private bool _Selected;
+		
+		private bool _Available;
+		
+		public tfnItemOnSaleResourceInfoGetResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ItemOnSaleId", DbType="Int NOT NULL")]
+		public int ItemOnSaleId
+		{
+			get
+			{
+				return this._ItemOnSaleId;
+			}
+			set
+			{
+				if ((this._ItemOnSaleId != value))
+				{
+					this._ItemOnSaleId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ResourceTypeCodeId", DbType="Int NOT NULL")]
+		public int ResourceTypeCodeId
+		{
+			get
+			{
+				return this._ResourceTypeCodeId;
+			}
+			set
+			{
+				if ((this._ResourceTypeCodeId != value))
+				{
+					this._ResourceTypeCodeId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FileId", DbType="Int NOT NULL")]
+		public int FileId
+		{
+			get
+			{
+				return this._FileId;
+			}
+			set
+			{
+				if ((this._FileId != value))
+				{
+					this._FileId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_isMain", DbType="Bit NOT NULL")]
+		public bool isMain
+		{
+			get
+			{
+				return this._isMain;
+			}
+			set
+			{
+				if ((this._isMain != value))
+				{
+					this._isMain = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Order]", Storage="_Order", DbType="Int NOT NULL")]
+		public int Order
+		{
+			get
+			{
+				return this._Order;
+			}
+			set
+			{
+				if ((this._Order != value))
+				{
+					this._Order = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description_1", DbType="NVarChar(MAX)")]
+		public string Description_1
+		{
+			get
+			{
+				return this._Description_1;
+			}
+			set
+			{
+				if ((this._Description_1 != value))
+				{
+					this._Description_1 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description_2", DbType="NVarChar(MAX)")]
+		public string Description_2
+		{
+			get
+			{
+				return this._Description_2;
+			}
+			set
+			{
+				if ((this._Description_2 != value))
+				{
+					this._Description_2 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Selected", DbType="Bit NOT NULL")]
+		public bool Selected
+		{
+			get
+			{
+				return this._Selected;
+			}
+			set
+			{
+				if ((this._Selected != value))
+				{
+					this._Selected = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Available", DbType="Bit NOT NULL")]
+		public bool Available
+		{
+			get
+			{
+				return this._Available;
+			}
+			set
+			{
+				if ((this._Available != value))
+				{
+					this._Available = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_CustomerGetResult
+	{
+		
+		private int _Id;
+		
+		private string _FirstName;
+		
+		private string _LastName;
+		
+		private string _NickName;
+		
+		private string _LoginName;
+		
+		private int _CountryId;
+		
+		private string _PhoneNumber;
+		
+		private string _Description;
+		
+		private string _AvatarUrl;
+		
+		private string _Gender;
+		
+		private System.Nullable<long> _RowNumber;
+		
+		public sp_CustomerGetResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", DbType="Int NOT NULL")]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this._Id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FirstName", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string FirstName
+		{
+			get
+			{
+				return this._FirstName;
+			}
+			set
+			{
+				if ((this._FirstName != value))
+				{
+					this._FirstName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastName", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string LastName
+		{
+			get
+			{
+				return this._LastName;
+			}
+			set
+			{
+				if ((this._LastName != value))
+				{
+					this._LastName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NickName", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string NickName
+		{
+			get
+			{
+				return this._NickName;
+			}
+			set
+			{
+				if ((this._NickName != value))
+				{
+					this._NickName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LoginName", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string LoginName
+		{
+			get
+			{
+				return this._LoginName;
+			}
+			set
+			{
+				if ((this._LoginName != value))
+				{
+					this._LoginName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CountryId", DbType="Int NOT NULL")]
+		public int CountryId
+		{
+			get
+			{
+				return this._CountryId;
+			}
+			set
+			{
+				if ((this._CountryId != value))
+				{
+					this._CountryId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PhoneNumber", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string PhoneNumber
+		{
+			get
+			{
+				return this._PhoneNumber;
+			}
+			set
+			{
+				if ((this._PhoneNumber != value))
+				{
+					this._PhoneNumber = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string Description
+		{
+			get
+			{
+				return this._Description;
+			}
+			set
+			{
+				if ((this._Description != value))
+				{
+					this._Description = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AvatarUrl", DbType="NVarChar(512) NOT NULL", CanBeNull=false)]
+		public string AvatarUrl
+		{
+			get
+			{
+				return this._AvatarUrl;
+			}
+			set
+			{
+				if ((this._AvatarUrl != value))
+				{
+					this._AvatarUrl = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Gender", DbType="NVarChar(64) NOT NULL", CanBeNull=false)]
+		public string Gender
+		{
+			get
+			{
+				return this._Gender;
+			}
+			set
+			{
+				if ((this._Gender != value))
+				{
+					this._Gender = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RowNumber", DbType="BigInt")]
+		public System.Nullable<long> RowNumber
+		{
+			get
+			{
+				return this._RowNumber;
+			}
+			set
+			{
+				if ((this._RowNumber != value))
+				{
+					this._RowNumber = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_CustomerSearchResult
+	{
+		
+		private int _Id;
+		
+		private string _FirstName;
+		
+		private string _LastName;
+		
+		private string _NickName;
+		
+		private string _LoginName;
+		
+		private int _CountryId;
+		
+		private string _PhoneNumber;
+		
+		private string _Description;
+		
+		private string _AvatarUrl;
+		
+		private string _Gender;
+		
+		private System.Nullable<long> _RowNumber;
+		
+		public sp_CustomerSearchResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", DbType="Int NOT NULL")]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this._Id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FirstName", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string FirstName
+		{
+			get
+			{
+				return this._FirstName;
+			}
+			set
+			{
+				if ((this._FirstName != value))
+				{
+					this._FirstName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastName", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string LastName
+		{
+			get
+			{
+				return this._LastName;
+			}
+			set
+			{
+				if ((this._LastName != value))
+				{
+					this._LastName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NickName", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string NickName
+		{
+			get
+			{
+				return this._NickName;
+			}
+			set
+			{
+				if ((this._NickName != value))
+				{
+					this._NickName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LoginName", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string LoginName
+		{
+			get
+			{
+				return this._LoginName;
+			}
+			set
+			{
+				if ((this._LoginName != value))
+				{
+					this._LoginName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CountryId", DbType="Int NOT NULL")]
+		public int CountryId
+		{
+			get
+			{
+				return this._CountryId;
+			}
+			set
+			{
+				if ((this._CountryId != value))
+				{
+					this._CountryId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PhoneNumber", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string PhoneNumber
+		{
+			get
+			{
+				return this._PhoneNumber;
+			}
+			set
+			{
+				if ((this._PhoneNumber != value))
+				{
+					this._PhoneNumber = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string Description
+		{
+			get
+			{
+				return this._Description;
+			}
+			set
+			{
+				if ((this._Description != value))
+				{
+					this._Description = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AvatarUrl", DbType="NVarChar(512) NOT NULL", CanBeNull=false)]
+		public string AvatarUrl
+		{
+			get
+			{
+				return this._AvatarUrl;
+			}
+			set
+			{
+				if ((this._AvatarUrl != value))
+				{
+					this._AvatarUrl = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Gender", DbType="NVarChar(64) NOT NULL", CanBeNull=false)]
+		public string Gender
+		{
+			get
+			{
+				return this._Gender;
+			}
+			set
+			{
+				if ((this._Gender != value))
+				{
+					this._Gender = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RowNumber", DbType="BigInt")]
+		public System.Nullable<long> RowNumber
+		{
+			get
+			{
+				return this._RowNumber;
+			}
+			set
+			{
+				if ((this._RowNumber != value))
+				{
+					this._RowNumber = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_CustomerCompanyListGetResult
+	{
+		
+		private System.Nullable<int> _CompanyId;
+		
+		private string _CompanyName;
+		
+		private string _CompanyCode;
+		
+		private System.Nullable<bool> _isDefault;
+		
+		public sp_CustomerCompanyListGetResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CompanyId", DbType="Int")]
+		public System.Nullable<int> CompanyId
+		{
+			get
+			{
+				return this._CompanyId;
+			}
+			set
+			{
+				if ((this._CompanyId != value))
+				{
+					this._CompanyId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CompanyName", DbType="NVarChar(256)")]
+		public string CompanyName
+		{
+			get
+			{
+				return this._CompanyName;
+			}
+			set
+			{
+				if ((this._CompanyName != value))
+				{
+					this._CompanyName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CompanyCode", DbType="NVarChar(256)")]
+		public string CompanyCode
+		{
+			get
+			{
+				return this._CompanyCode;
+			}
+			set
+			{
+				if ((this._CompanyCode != value))
+				{
+					this._CompanyCode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_isDefault", DbType="Bit")]
+		public System.Nullable<bool> isDefault
+		{
+			get
+			{
+				return this._isDefault;
+			}
+			set
+			{
+				if ((this._isDefault != value))
+				{
+					this._isDefault = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_CustomerSession_ValidateResult
+	{
+		
+		private int _CustomerId;
+		
+		private int _SystemLanguageId;
+		
+		private int _CompanyId;
+		
+		public sp_CustomerSession_ValidateResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CustomerId", DbType="Int NOT NULL")]
+		public int CustomerId
+		{
+			get
+			{
+				return this._CustomerId;
+			}
+			set
+			{
+				if ((this._CustomerId != value))
+				{
+					this._CustomerId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SystemLanguageId", DbType="Int NOT NULL")]
+		public int SystemLanguageId
+		{
+			get
+			{
+				return this._SystemLanguageId;
+			}
+			set
+			{
+				if ((this._SystemLanguageId != value))
+				{
+					this._SystemLanguageId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CompanyId", DbType="Int NOT NULL")]
+		public int CompanyId
+		{
+			get
+			{
+				return this._CompanyId;
+			}
+			set
+			{
+				if ((this._CompanyId != value))
+				{
+					this._CompanyId = value;
+				}
+			}
+		}
+	}
+	
+	public partial class tfnCustomerAddressResourceGetResult
+	{
+		
+		private int _Customer_AddressId;
+		
+		private int _FileId;
+		
+		public tfnCustomerAddressResourceGetResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Customer_AddressId", DbType="Int NOT NULL")]
+		public int Customer_AddressId
+		{
+			get
+			{
+				return this._Customer_AddressId;
+			}
+			set
+			{
+				if ((this._Customer_AddressId != value))
+				{
+					this._Customer_AddressId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FileId", DbType="Int NOT NULL")]
+		public int FileId
+		{
+			get
+			{
+				return this._FileId;
+			}
+			set
+			{
+				if ((this._FileId != value))
+				{
+					this._FileId = value;
+				}
+			}
+		}
+	}
+	
+	public partial class tfnCompanyGetByIdResult
+	{
+		
+		private System.Nullable<int> _CompanyId;
+		
+		private string _CompanyCode;
+		
+		private string _CompanyName;
+		
+		private string _CompanyDescription;
+		
+		public tfnCompanyGetByIdResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CompanyId", DbType="Int")]
+		public System.Nullable<int> CompanyId
+		{
+			get
+			{
+				return this._CompanyId;
+			}
+			set
+			{
+				if ((this._CompanyId != value))
+				{
+					this._CompanyId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CompanyCode", DbType="NVarChar(256)")]
+		public string CompanyCode
+		{
+			get
+			{
+				return this._CompanyCode;
+			}
+			set
+			{
+				if ((this._CompanyCode != value))
+				{
+					this._CompanyCode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CompanyName", DbType="NVarChar(256)")]
+		public string CompanyName
+		{
+			get
+			{
+				return this._CompanyName;
+			}
+			set
+			{
+				if ((this._CompanyName != value))
+				{
+					this._CompanyName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CompanyDescription", DbType="NVarChar(256)")]
+		public string CompanyDescription
+		{
+			get
+			{
+				return this._CompanyDescription;
+			}
+			set
+			{
+				if ((this._CompanyDescription != value))
+				{
+					this._CompanyDescription = value;
+				}
+			}
+		}
+	}
+	
+	public partial class tfnCompanyGetByCodeResult
+	{
+		
+		private System.Nullable<int> _CompanyId;
+		
+		private string _CompanyCode;
+		
+		private string _CompanyName;
+		
+		private string _CompanyDescription;
+		
+		public tfnCompanyGetByCodeResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CompanyId", DbType="Int")]
+		public System.Nullable<int> CompanyId
+		{
+			get
+			{
+				return this._CompanyId;
+			}
+			set
+			{
+				if ((this._CompanyId != value))
+				{
+					this._CompanyId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CompanyCode", DbType="NVarChar(256)")]
+		public string CompanyCode
+		{
+			get
+			{
+				return this._CompanyCode;
+			}
+			set
+			{
+				if ((this._CompanyCode != value))
+				{
+					this._CompanyCode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CompanyName", DbType="NVarChar(256)")]
+		public string CompanyName
+		{
+			get
+			{
+				return this._CompanyName;
+			}
+			set
+			{
+				if ((this._CompanyName != value))
+				{
+					this._CompanyName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CompanyDescription", DbType="NVarChar(256)")]
+		public string CompanyDescription
+		{
+			get
+			{
+				return this._CompanyDescription;
+			}
+			set
+			{
+				if ((this._CompanyDescription != value))
+				{
+					this._CompanyDescription = value;
+				}
+			}
+		}
+	}
+	
+	public partial class tfnCustomer_OrderPaymentGetResult
+	{
+		
+		private int _Customer_OrderId;
+		
+		private int _Customer_Order_PaymentMethodCodeId;
+		
+		private string _Customer_Order_PaymentMethodCode;
+		
+		private decimal _TotalAmount;
+		
+		private int _CurrencyId;
+		
+		private string _Detail;
+		
+		private System.DateTime _CreateDate;
+		
+		public tfnCustomer_OrderPaymentGetResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Customer_OrderId", DbType="Int NOT NULL")]
+		public int Customer_OrderId
+		{
+			get
+			{
+				return this._Customer_OrderId;
+			}
+			set
+			{
+				if ((this._Customer_OrderId != value))
+				{
+					this._Customer_OrderId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Customer_Order_PaymentMethodCodeId", DbType="Int NOT NULL")]
+		public int Customer_Order_PaymentMethodCodeId
+		{
+			get
+			{
+				return this._Customer_Order_PaymentMethodCodeId;
+			}
+			set
+			{
+				if ((this._Customer_Order_PaymentMethodCodeId != value))
+				{
+					this._Customer_Order_PaymentMethodCodeId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Customer_Order_PaymentMethodCode", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string Customer_Order_PaymentMethodCode
+		{
+			get
+			{
+				return this._Customer_Order_PaymentMethodCode;
+			}
+			set
+			{
+				if ((this._Customer_Order_PaymentMethodCode != value))
+				{
+					this._Customer_Order_PaymentMethodCode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TotalAmount", DbType="Decimal(10,2) NOT NULL")]
+		public decimal TotalAmount
+		{
+			get
+			{
+				return this._TotalAmount;
+			}
+			set
+			{
+				if ((this._TotalAmount != value))
+				{
+					this._TotalAmount = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CurrencyId", DbType="Int NOT NULL")]
+		public int CurrencyId
+		{
+			get
+			{
+				return this._CurrencyId;
+			}
+			set
+			{
+				if ((this._CurrencyId != value))
+				{
+					this._CurrencyId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Detail", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string Detail
+		{
+			get
+			{
+				return this._Detail;
+			}
+			set
+			{
+				if ((this._Detail != value))
+				{
+					this._Detail = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreateDate", DbType="DateTime NOT NULL")]
+		public System.DateTime CreateDate
+		{
+			get
+			{
+				return this._CreateDate;
+			}
+			set
+			{
+				if ((this._CreateDate != value))
+				{
+					this._CreateDate = value;
+				}
+			}
+		}
+	}
+	
+	public partial class tfnCustomer_OrderItemsGetResult
+	{
+		
+		private int _Customer_OrderId;
+		
+		private int _ItemId;
+		
+		private string _SaleTitle;
+		
+		private string _SaleDescription;
+		
+		private string _VariationTitle;
+		
+		private decimal _UnitAmount;
+		
+		private int _Quantity;
+		
+		private decimal _TotalAmount;
+		
+		private int _CurrencyId;
+		
+		public tfnCustomer_OrderItemsGetResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Customer_OrderId", DbType="Int NOT NULL")]
+		public int Customer_OrderId
+		{
+			get
+			{
+				return this._Customer_OrderId;
+			}
+			set
+			{
+				if ((this._Customer_OrderId != value))
+				{
+					this._Customer_OrderId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ItemId", DbType="Int NOT NULL")]
+		public int ItemId
+		{
+			get
+			{
+				return this._ItemId;
+			}
+			set
+			{
+				if ((this._ItemId != value))
+				{
+					this._ItemId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SaleTitle", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string SaleTitle
+		{
+			get
+			{
+				return this._SaleTitle;
+			}
+			set
+			{
+				if ((this._SaleTitle != value))
+				{
+					this._SaleTitle = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SaleDescription", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string SaleDescription
+		{
+			get
+			{
+				return this._SaleDescription;
+			}
+			set
+			{
+				if ((this._SaleDescription != value))
+				{
+					this._SaleDescription = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VariationTitle", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string VariationTitle
+		{
+			get
+			{
+				return this._VariationTitle;
+			}
+			set
+			{
+				if ((this._VariationTitle != value))
+				{
+					this._VariationTitle = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UnitAmount", DbType="Decimal(10,2) NOT NULL")]
+		public decimal UnitAmount
+		{
+			get
+			{
+				return this._UnitAmount;
+			}
+			set
+			{
+				if ((this._UnitAmount != value))
+				{
+					this._UnitAmount = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Quantity", DbType="Int NOT NULL")]
+		public int Quantity
+		{
+			get
+			{
+				return this._Quantity;
+			}
+			set
+			{
+				if ((this._Quantity != value))
+				{
+					this._Quantity = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TotalAmount", DbType="Decimal(10,2) NOT NULL")]
+		public decimal TotalAmount
+		{
+			get
+			{
+				return this._TotalAmount;
+			}
+			set
+			{
+				if ((this._TotalAmount != value))
+				{
+					this._TotalAmount = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CurrencyId", DbType="Int NOT NULL")]
+		public int CurrencyId
+		{
+			get
+			{
+				return this._CurrencyId;
+			}
+			set
+			{
+				if ((this._CurrencyId != value))
+				{
+					this._CurrencyId = value;
+				}
+			}
+		}
+	}
+	
+	public partial class tfnCustomer_OrderGetResult
+	{
+		
+		private int _Customer_OrderId;
+		
+		private string _OrderCode;
+		
+		private int _CustomerId;
+		
+		private int _CustomerOrderStatusCodeId;
+		
+		private string _CustomerOrderStatus;
+		
+		private int _CustomerAddressId;
+		
+		private System.DateTime _Date_Placed;
+		
+		private System.Nullable<System.DateTime> _Date_Paid;
+		
+		private System.Nullable<int> _OrderDiscountId;
+		
+		private decimal _TotalPriceAmount;
+		
+		private int _CurrencyId;
+		
+		private System.Nullable<int> _SourceId;
+		
+		private string _SourceTable;
+		
+		public tfnCustomer_OrderGetResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Customer_OrderId", DbType="Int NOT NULL")]
+		public int Customer_OrderId
+		{
+			get
+			{
+				return this._Customer_OrderId;
+			}
+			set
+			{
+				if ((this._Customer_OrderId != value))
+				{
+					this._Customer_OrderId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OrderCode", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string OrderCode
+		{
+			get
+			{
+				return this._OrderCode;
+			}
+			set
+			{
+				if ((this._OrderCode != value))
+				{
+					this._OrderCode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CustomerId", DbType="Int NOT NULL")]
+		public int CustomerId
+		{
+			get
+			{
+				return this._CustomerId;
+			}
+			set
+			{
+				if ((this._CustomerId != value))
+				{
+					this._CustomerId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CustomerOrderStatusCodeId", DbType="Int NOT NULL")]
+		public int CustomerOrderStatusCodeId
+		{
+			get
+			{
+				return this._CustomerOrderStatusCodeId;
+			}
+			set
+			{
+				if ((this._CustomerOrderStatusCodeId != value))
+				{
+					this._CustomerOrderStatusCodeId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CustomerOrderStatus", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string CustomerOrderStatus
+		{
+			get
+			{
+				return this._CustomerOrderStatus;
+			}
+			set
+			{
+				if ((this._CustomerOrderStatus != value))
+				{
+					this._CustomerOrderStatus = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CustomerAddressId", DbType="Int NOT NULL")]
+		public int CustomerAddressId
+		{
+			get
+			{
+				return this._CustomerAddressId;
+			}
+			set
+			{
+				if ((this._CustomerAddressId != value))
+				{
+					this._CustomerAddressId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Date_Placed", DbType="DateTime NOT NULL")]
+		public System.DateTime Date_Placed
+		{
+			get
+			{
+				return this._Date_Placed;
+			}
+			set
+			{
+				if ((this._Date_Placed != value))
+				{
+					this._Date_Placed = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Date_Paid", DbType="DateTime")]
+		public System.Nullable<System.DateTime> Date_Paid
+		{
+			get
+			{
+				return this._Date_Paid;
+			}
+			set
+			{
+				if ((this._Date_Paid != value))
+				{
+					this._Date_Paid = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OrderDiscountId", DbType="Int")]
+		public System.Nullable<int> OrderDiscountId
+		{
+			get
+			{
+				return this._OrderDiscountId;
+			}
+			set
+			{
+				if ((this._OrderDiscountId != value))
+				{
+					this._OrderDiscountId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TotalPriceAmount", DbType="Decimal(10,2) NOT NULL")]
+		public decimal TotalPriceAmount
+		{
+			get
+			{
+				return this._TotalPriceAmount;
+			}
+			set
+			{
+				if ((this._TotalPriceAmount != value))
+				{
+					this._TotalPriceAmount = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CurrencyId", DbType="Int NOT NULL")]
+		public int CurrencyId
+		{
+			get
+			{
+				return this._CurrencyId;
+			}
+			set
+			{
+				if ((this._CurrencyId != value))
+				{
+					this._CurrencyId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SourceId", DbType="Int")]
+		public System.Nullable<int> SourceId
+		{
+			get
+			{
+				return this._SourceId;
+			}
+			set
+			{
+				if ((this._SourceId != value))
+				{
+					this._SourceId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SourceTable", DbType="NVarChar(64)")]
+		public string SourceTable
+		{
+			get
+			{
+				return this._SourceTable;
+			}
+			set
+			{
+				if ((this._SourceTable != value))
+				{
+					this._SourceTable = value;
+				}
+			}
+		}
+	}
+	
+	public partial class tfnCustomerAddressGetByIdResult
+	{
+		
+		private int _Customer_AddressId;
+		
+		private int _CustomerId;
+		
+		private int _AddressId;
+		
+		private string _ContactPersonFirstName;
+		
+		private string _ContactPersonLastName;
+		
+		private string _ContactPersonPhoneNumber;
+		
+		private int _ContactPersonPhoneNumberCountryId;
+		
+		private string _IDNumber;
+		
+		private bool _DefaultShipping;
+		
+		private string _Address1;
+		
+		private string _Address2;
+		
+		private string _City;
+		
+		private string _District;
+		
+		private string _State;
+		
+		private string _Zip;
+		
+		private int _CountryId;
+		
+		public tfnCustomerAddressGetByIdResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Customer_AddressId", DbType="Int NOT NULL")]
+		public int Customer_AddressId
+		{
+			get
+			{
+				return this._Customer_AddressId;
+			}
+			set
+			{
+				if ((this._Customer_AddressId != value))
+				{
+					this._Customer_AddressId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CustomerId", DbType="Int NOT NULL")]
+		public int CustomerId
+		{
+			get
+			{
+				return this._CustomerId;
+			}
+			set
+			{
+				if ((this._CustomerId != value))
+				{
+					this._CustomerId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AddressId", DbType="Int NOT NULL")]
+		public int AddressId
+		{
+			get
+			{
+				return this._AddressId;
+			}
+			set
+			{
+				if ((this._AddressId != value))
+				{
+					this._AddressId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ContactPersonFirstName", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string ContactPersonFirstName
+		{
+			get
+			{
+				return this._ContactPersonFirstName;
+			}
+			set
+			{
+				if ((this._ContactPersonFirstName != value))
+				{
+					this._ContactPersonFirstName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ContactPersonLastName", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string ContactPersonLastName
+		{
+			get
+			{
+				return this._ContactPersonLastName;
+			}
+			set
+			{
+				if ((this._ContactPersonLastName != value))
+				{
+					this._ContactPersonLastName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ContactPersonPhoneNumber", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string ContactPersonPhoneNumber
+		{
+			get
+			{
+				return this._ContactPersonPhoneNumber;
+			}
+			set
+			{
+				if ((this._ContactPersonPhoneNumber != value))
+				{
+					this._ContactPersonPhoneNumber = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ContactPersonPhoneNumberCountryId", DbType="Int NOT NULL")]
+		public int ContactPersonPhoneNumberCountryId
+		{
+			get
+			{
+				return this._ContactPersonPhoneNumberCountryId;
+			}
+			set
+			{
+				if ((this._ContactPersonPhoneNumberCountryId != value))
+				{
+					this._ContactPersonPhoneNumberCountryId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDNumber", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string IDNumber
+		{
+			get
+			{
+				return this._IDNumber;
+			}
+			set
+			{
+				if ((this._IDNumber != value))
+				{
+					this._IDNumber = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DefaultShipping", DbType="Bit NOT NULL")]
+		public bool DefaultShipping
+		{
+			get
+			{
+				return this._DefaultShipping;
+			}
+			set
+			{
+				if ((this._DefaultShipping != value))
+				{
+					this._DefaultShipping = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Address1", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string Address1
+		{
+			get
+			{
+				return this._Address1;
+			}
+			set
+			{
+				if ((this._Address1 != value))
+				{
+					this._Address1 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Address2", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string Address2
+		{
+			get
+			{
+				return this._Address2;
+			}
+			set
+			{
+				if ((this._Address2 != value))
+				{
+					this._Address2 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_City", DbType="NVarChar(128) NOT NULL", CanBeNull=false)]
+		public string City
+		{
+			get
+			{
+				return this._City;
+			}
+			set
+			{
+				if ((this._City != value))
+				{
+					this._City = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_District", DbType="NVarChar(128)")]
+		public string District
+		{
+			get
+			{
+				return this._District;
+			}
+			set
+			{
+				if ((this._District != value))
+				{
+					this._District = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_State", DbType="NVarChar(128) NOT NULL", CanBeNull=false)]
+		public string State
+		{
+			get
+			{
+				return this._State;
+			}
+			set
+			{
+				if ((this._State != value))
+				{
+					this._State = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Zip", DbType="NVarChar(32) NOT NULL", CanBeNull=false)]
+		public string Zip
+		{
+			get
+			{
+				return this._Zip;
+			}
+			set
+			{
+				if ((this._Zip != value))
+				{
+					this._Zip = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CountryId", DbType="Int NOT NULL")]
+		public int CountryId
+		{
+			get
+			{
+				return this._CountryId;
+			}
+			set
+			{
+				if ((this._CountryId != value))
+				{
+					this._CountryId = value;
+				}
+			}
+		}
+	}
+	
+	public partial class tfnCustomerAddressGetResult
+	{
+		
+		private int _Customer_AddressId;
+		
+		private int _CustomerId;
+		
+		private int _AddressId;
+		
+		private string _ContactPersonFirstName;
+		
+		private string _ContactPersonLastName;
+		
+		private string _ContactPersonPhoneNumber;
+		
+		private int _ContactPersonPhoneNumberCountryId;
+		
+		private string _IDNumber;
+		
+		private bool _DefaultShipping;
+		
+		private string _Address1;
+		
+		private string _Address2;
+		
+		private string _City;
+		
+		private string _District;
+		
+		private string _State;
+		
+		private string _Zip;
+		
+		private int _CountryId;
+		
+		public tfnCustomerAddressGetResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Customer_AddressId", DbType="Int NOT NULL")]
+		public int Customer_AddressId
+		{
+			get
+			{
+				return this._Customer_AddressId;
+			}
+			set
+			{
+				if ((this._Customer_AddressId != value))
+				{
+					this._Customer_AddressId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CustomerId", DbType="Int NOT NULL")]
+		public int CustomerId
+		{
+			get
+			{
+				return this._CustomerId;
+			}
+			set
+			{
+				if ((this._CustomerId != value))
+				{
+					this._CustomerId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AddressId", DbType="Int NOT NULL")]
+		public int AddressId
+		{
+			get
+			{
+				return this._AddressId;
+			}
+			set
+			{
+				if ((this._AddressId != value))
+				{
+					this._AddressId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ContactPersonFirstName", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string ContactPersonFirstName
+		{
+			get
+			{
+				return this._ContactPersonFirstName;
+			}
+			set
+			{
+				if ((this._ContactPersonFirstName != value))
+				{
+					this._ContactPersonFirstName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ContactPersonLastName", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string ContactPersonLastName
+		{
+			get
+			{
+				return this._ContactPersonLastName;
+			}
+			set
+			{
+				if ((this._ContactPersonLastName != value))
+				{
+					this._ContactPersonLastName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ContactPersonPhoneNumber", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string ContactPersonPhoneNumber
+		{
+			get
+			{
+				return this._ContactPersonPhoneNumber;
+			}
+			set
+			{
+				if ((this._ContactPersonPhoneNumber != value))
+				{
+					this._ContactPersonPhoneNumber = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ContactPersonPhoneNumberCountryId", DbType="Int NOT NULL")]
+		public int ContactPersonPhoneNumberCountryId
+		{
+			get
+			{
+				return this._ContactPersonPhoneNumberCountryId;
+			}
+			set
+			{
+				if ((this._ContactPersonPhoneNumberCountryId != value))
+				{
+					this._ContactPersonPhoneNumberCountryId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDNumber", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string IDNumber
+		{
+			get
+			{
+				return this._IDNumber;
+			}
+			set
+			{
+				if ((this._IDNumber != value))
+				{
+					this._IDNumber = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DefaultShipping", DbType="Bit NOT NULL")]
+		public bool DefaultShipping
+		{
+			get
+			{
+				return this._DefaultShipping;
+			}
+			set
+			{
+				if ((this._DefaultShipping != value))
+				{
+					this._DefaultShipping = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Address1", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string Address1
+		{
+			get
+			{
+				return this._Address1;
+			}
+			set
+			{
+				if ((this._Address1 != value))
+				{
+					this._Address1 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Address2", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string Address2
+		{
+			get
+			{
+				return this._Address2;
+			}
+			set
+			{
+				if ((this._Address2 != value))
+				{
+					this._Address2 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_City", DbType="NVarChar(128) NOT NULL", CanBeNull=false)]
+		public string City
+		{
+			get
+			{
+				return this._City;
+			}
+			set
+			{
+				if ((this._City != value))
+				{
+					this._City = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_District", DbType="NVarChar(128)")]
+		public string District
+		{
+			get
+			{
+				return this._District;
+			}
+			set
+			{
+				if ((this._District != value))
+				{
+					this._District = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_State", DbType="NVarChar(128) NOT NULL", CanBeNull=false)]
+		public string State
+		{
+			get
+			{
+				return this._State;
+			}
+			set
+			{
+				if ((this._State != value))
+				{
+					this._State = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Zip", DbType="NVarChar(32) NOT NULL", CanBeNull=false)]
+		public string Zip
+		{
+			get
+			{
+				return this._Zip;
+			}
+			set
+			{
+				if ((this._Zip != value))
+				{
+					this._Zip = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CountryId", DbType="Int NOT NULL")]
+		public int CountryId
+		{
+			get
+			{
+				return this._CountryId;
+			}
+			set
+			{
+				if ((this._CountryId != value))
+				{
+					this._CountryId = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_Customer_OrderSearchResult
+	{
+		
+		private int _Customer_OrderId;
+		
+		private string _OrderCode;
+		
+		private int _CustomerId;
+		
+		private int _CustomerOrderStatusCodeId;
+		
+		private string _CustomerOrderStatusCode;
+		
+		private int _Customer_AddressId;
+		
+		private System.DateTime _Date_Placed;
+		
+		private System.Nullable<System.DateTime> _Date_Paid;
+		
+		private System.Nullable<int> _OrderDiscountId;
+		
+		private decimal _TotalPriceAmount;
+		
+		private int _CurrencyId;
+		
+		private System.Nullable<int> _SourceId;
+		
+		private string _SourceTable;
+		
+		private System.Nullable<long> _RowNumber;
+		
+		public sp_Customer_OrderSearchResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Customer_OrderId", DbType="Int NOT NULL")]
+		public int Customer_OrderId
+		{
+			get
+			{
+				return this._Customer_OrderId;
+			}
+			set
+			{
+				if ((this._Customer_OrderId != value))
+				{
+					this._Customer_OrderId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OrderCode", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string OrderCode
+		{
+			get
+			{
+				return this._OrderCode;
+			}
+			set
+			{
+				if ((this._OrderCode != value))
+				{
+					this._OrderCode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CustomerId", DbType="Int NOT NULL")]
+		public int CustomerId
+		{
+			get
+			{
+				return this._CustomerId;
+			}
+			set
+			{
+				if ((this._CustomerId != value))
+				{
+					this._CustomerId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CustomerOrderStatusCodeId", DbType="Int NOT NULL")]
+		public int CustomerOrderStatusCodeId
+		{
+			get
+			{
+				return this._CustomerOrderStatusCodeId;
+			}
+			set
+			{
+				if ((this._CustomerOrderStatusCodeId != value))
+				{
+					this._CustomerOrderStatusCodeId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CustomerOrderStatusCode", DbType="NVarChar(1024) NOT NULL", CanBeNull=false)]
+		public string CustomerOrderStatusCode
+		{
+			get
+			{
+				return this._CustomerOrderStatusCode;
+			}
+			set
+			{
+				if ((this._CustomerOrderStatusCode != value))
+				{
+					this._CustomerOrderStatusCode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Customer_AddressId", DbType="Int NOT NULL")]
+		public int Customer_AddressId
+		{
+			get
+			{
+				return this._Customer_AddressId;
+			}
+			set
+			{
+				if ((this._Customer_AddressId != value))
+				{
+					this._Customer_AddressId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Date_Placed", DbType="DateTime NOT NULL")]
+		public System.DateTime Date_Placed
+		{
+			get
+			{
+				return this._Date_Placed;
+			}
+			set
+			{
+				if ((this._Date_Placed != value))
+				{
+					this._Date_Placed = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Date_Paid", DbType="DateTime")]
+		public System.Nullable<System.DateTime> Date_Paid
+		{
+			get
+			{
+				return this._Date_Paid;
+			}
+			set
+			{
+				if ((this._Date_Paid != value))
+				{
+					this._Date_Paid = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OrderDiscountId", DbType="Int")]
+		public System.Nullable<int> OrderDiscountId
+		{
+			get
+			{
+				return this._OrderDiscountId;
+			}
+			set
+			{
+				if ((this._OrderDiscountId != value))
+				{
+					this._OrderDiscountId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TotalPriceAmount", DbType="Decimal(10,2) NOT NULL")]
+		public decimal TotalPriceAmount
+		{
+			get
+			{
+				return this._TotalPriceAmount;
+			}
+			set
+			{
+				if ((this._TotalPriceAmount != value))
+				{
+					this._TotalPriceAmount = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CurrencyId", DbType="Int NOT NULL")]
+		public int CurrencyId
+		{
+			get
+			{
+				return this._CurrencyId;
+			}
+			set
+			{
+				if ((this._CurrencyId != value))
+				{
+					this._CurrencyId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SourceId", DbType="Int")]
+		public System.Nullable<int> SourceId
+		{
+			get
+			{
+				return this._SourceId;
+			}
+			set
+			{
+				if ((this._SourceId != value))
+				{
+					this._SourceId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SourceTable", DbType="NVarChar(64)")]
+		public string SourceTable
+		{
+			get
+			{
+				return this._SourceTable;
+			}
+			set
+			{
+				if ((this._SourceTable != value))
+				{
+					this._SourceTable = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RowNumber", DbType="BigInt")]
+		public System.Nullable<long> RowNumber
+		{
+			get
+			{
+				return this._RowNumber;
+			}
+			set
+			{
+				if ((this._RowNumber != value))
+				{
+					this._RowNumber = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_Customer_ItemOnSaleSearchResult
+	{
+		
+		private int _ItemId;
+		
+		private int _ItemOnSaleId;
+		
+		private string _Title;
+		
+		private string _Description;
+		
+		private string _VariationTitle;
+		
+		private decimal _Price;
+		
+		private int _CurrencyId;
+		
+		private int _OnMarket;
+		
+		private System.Nullable<long> _RowNumber;
+		
+		public sp_Customer_ItemOnSaleSearchResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ItemId", DbType="Int NOT NULL")]
+		public int ItemId
+		{
+			get
+			{
+				return this._ItemId;
+			}
+			set
+			{
+				if ((this._ItemId != value))
+				{
+					this._ItemId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ItemOnSaleId", DbType="Int NOT NULL")]
+		public int ItemOnSaleId
+		{
+			get
+			{
+				return this._ItemOnSaleId;
+			}
+			set
+			{
+				if ((this._ItemOnSaleId != value))
+				{
+					this._ItemOnSaleId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Title", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string Title
+		{
+			get
+			{
+				return this._Title;
+			}
+			set
+			{
+				if ((this._Title != value))
+				{
+					this._Title = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string Description
+		{
+			get
+			{
+				return this._Description;
+			}
+			set
+			{
+				if ((this._Description != value))
+				{
+					this._Description = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VariationTitle", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string VariationTitle
+		{
+			get
+			{
+				return this._VariationTitle;
+			}
+			set
+			{
+				if ((this._VariationTitle != value))
+				{
+					this._VariationTitle = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Price", DbType="Decimal(10,2) NOT NULL")]
+		public decimal Price
+		{
+			get
+			{
+				return this._Price;
+			}
+			set
+			{
+				if ((this._Price != value))
+				{
+					this._Price = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CurrencyId", DbType="Int NOT NULL")]
+		public int CurrencyId
+		{
+			get
+			{
+				return this._CurrencyId;
+			}
+			set
+			{
+				if ((this._CurrencyId != value))
+				{
+					this._CurrencyId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OnMarket", DbType="Int NOT NULL")]
+		public int OnMarket
+		{
+			get
+			{
+				return this._OnMarket;
+			}
+			set
+			{
+				if ((this._OnMarket != value))
+				{
+					this._OnMarket = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RowNumber", DbType="BigInt")]
+		public System.Nullable<long> RowNumber
+		{
+			get
+			{
+				return this._RowNumber;
+			}
+			set
+			{
+				if ((this._RowNumber != value))
+				{
+					this._RowNumber = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_Customer_OrderSearchByCustomerResult
+	{
+		
+		private int _Customer_OrderId;
+		
+		private string _OrderCode;
+		
+		private int _CustomerId;
+		
+		private int _CustomerOrderStatusCodeId;
+		
+		private string _CustomerOrderStatusCode;
+		
+		private int _Customer_AddressId;
+		
+		private System.DateTime _Date_Placed;
+		
+		private System.Nullable<System.DateTime> _Date_Paid;
+		
+		private System.Nullable<int> _OrderDiscountId;
+		
+		private decimal _TotalPriceAmount;
+		
+		private int _CurrencyId;
+		
+		private System.Nullable<int> _SourceId;
+		
+		private string _SourceTable;
+		
+		private System.Nullable<long> _RowNumber;
+		
+		public sp_Customer_OrderSearchByCustomerResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Customer_OrderId", DbType="Int NOT NULL")]
+		public int Customer_OrderId
+		{
+			get
+			{
+				return this._Customer_OrderId;
+			}
+			set
+			{
+				if ((this._Customer_OrderId != value))
+				{
+					this._Customer_OrderId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OrderCode", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string OrderCode
+		{
+			get
+			{
+				return this._OrderCode;
+			}
+			set
+			{
+				if ((this._OrderCode != value))
+				{
+					this._OrderCode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CustomerId", DbType="Int NOT NULL")]
+		public int CustomerId
+		{
+			get
+			{
+				return this._CustomerId;
+			}
+			set
+			{
+				if ((this._CustomerId != value))
+				{
+					this._CustomerId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CustomerOrderStatusCodeId", DbType="Int NOT NULL")]
+		public int CustomerOrderStatusCodeId
+		{
+			get
+			{
+				return this._CustomerOrderStatusCodeId;
+			}
+			set
+			{
+				if ((this._CustomerOrderStatusCodeId != value))
+				{
+					this._CustomerOrderStatusCodeId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CustomerOrderStatusCode", DbType="NVarChar(1024) NOT NULL", CanBeNull=false)]
+		public string CustomerOrderStatusCode
+		{
+			get
+			{
+				return this._CustomerOrderStatusCode;
+			}
+			set
+			{
+				if ((this._CustomerOrderStatusCode != value))
+				{
+					this._CustomerOrderStatusCode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Customer_AddressId", DbType="Int NOT NULL")]
+		public int Customer_AddressId
+		{
+			get
+			{
+				return this._Customer_AddressId;
+			}
+			set
+			{
+				if ((this._Customer_AddressId != value))
+				{
+					this._Customer_AddressId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Date_Placed", DbType="DateTime NOT NULL")]
+		public System.DateTime Date_Placed
+		{
+			get
+			{
+				return this._Date_Placed;
+			}
+			set
+			{
+				if ((this._Date_Placed != value))
+				{
+					this._Date_Placed = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Date_Paid", DbType="DateTime")]
+		public System.Nullable<System.DateTime> Date_Paid
+		{
+			get
+			{
+				return this._Date_Paid;
+			}
+			set
+			{
+				if ((this._Date_Paid != value))
+				{
+					this._Date_Paid = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OrderDiscountId", DbType="Int")]
+		public System.Nullable<int> OrderDiscountId
+		{
+			get
+			{
+				return this._OrderDiscountId;
+			}
+			set
+			{
+				if ((this._OrderDiscountId != value))
+				{
+					this._OrderDiscountId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TotalPriceAmount", DbType="Decimal(10,2) NOT NULL")]
+		public decimal TotalPriceAmount
+		{
+			get
+			{
+				return this._TotalPriceAmount;
+			}
+			set
+			{
+				if ((this._TotalPriceAmount != value))
+				{
+					this._TotalPriceAmount = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CurrencyId", DbType="Int NOT NULL")]
+		public int CurrencyId
+		{
+			get
+			{
+				return this._CurrencyId;
+			}
+			set
+			{
+				if ((this._CurrencyId != value))
+				{
+					this._CurrencyId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SourceId", DbType="Int")]
+		public System.Nullable<int> SourceId
+		{
+			get
+			{
+				return this._SourceId;
+			}
+			set
+			{
+				if ((this._SourceId != value))
+				{
+					this._SourceId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SourceTable", DbType="NVarChar(64)")]
+		public string SourceTable
+		{
+			get
+			{
+				return this._SourceTable;
+			}
+			set
+			{
+				if ((this._SourceTable != value))
+				{
+					this._SourceTable = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RowNumber", DbType="BigInt")]
+		public System.Nullable<long> RowNumber
+		{
+			get
+			{
+				return this._RowNumber;
+			}
+			set
+			{
+				if ((this._RowNumber != value))
+				{
+					this._RowNumber = value;
+				}
+			}
+		}
+	}
+	
+	public partial class tfnCustomerShoppingCartContentGetResult
+	{
+		
+		private int _Customer_ShoppingCart_ItemsId;
+		
+		private int _CustomerId;
+		
+		private int _ItemId;
+		
+		private decimal _UnitAmount;
+		
+		private int _Quantity;
+		
+		private decimal _TotalAmount;
+		
+		private int _CurrencyId;
+		
+		public tfnCustomerShoppingCartContentGetResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Customer_ShoppingCart_ItemsId", DbType="Int NOT NULL")]
+		public int Customer_ShoppingCart_ItemsId
+		{
+			get
+			{
+				return this._Customer_ShoppingCart_ItemsId;
+			}
+			set
+			{
+				if ((this._Customer_ShoppingCart_ItemsId != value))
+				{
+					this._Customer_ShoppingCart_ItemsId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CustomerId", DbType="Int NOT NULL")]
+		public int CustomerId
+		{
+			get
+			{
+				return this._CustomerId;
+			}
+			set
+			{
+				if ((this._CustomerId != value))
+				{
+					this._CustomerId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ItemId", DbType="Int NOT NULL")]
+		public int ItemId
+		{
+			get
+			{
+				return this._ItemId;
+			}
+			set
+			{
+				if ((this._ItemId != value))
+				{
+					this._ItemId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UnitAmount", DbType="Decimal(10,2) NOT NULL")]
+		public decimal UnitAmount
+		{
+			get
+			{
+				return this._UnitAmount;
+			}
+			set
+			{
+				if ((this._UnitAmount != value))
+				{
+					this._UnitAmount = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Quantity", DbType="Int NOT NULL")]
+		public int Quantity
+		{
+			get
+			{
+				return this._Quantity;
+			}
+			set
+			{
+				if ((this._Quantity != value))
+				{
+					this._Quantity = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TotalAmount", DbType="Decimal(10,2) NOT NULL")]
+		public decimal TotalAmount
+		{
+			get
+			{
+				return this._TotalAmount;
+			}
+			set
+			{
+				if ((this._TotalAmount != value))
+				{
+					this._TotalAmount = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CurrencyId", DbType="Int NOT NULL")]
+		public int CurrencyId
+		{
+			get
+			{
+				return this._CurrencyId;
+			}
+			set
+			{
+				if ((this._CurrencyId != value))
+				{
+					this._CurrencyId = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_PurchasePoolTaskSearchResult
+	{
+		
+		private int _ItemPurchaseTaskId;
+		
+		private int _PurchasePoolItemId;
+		
+		private int _ItemId;
+		
+		private int _CurrencyId;
+		
+		private string _DiscountDetail;
+		
+		private string _ItemPurchaseStatus;
+		
+		private int _ItemPurchaseStatusCodeId;
+		
+		private string _PurchasePlace;
+		
+		private int _QuantityMarked;
+		
+		private int _UserId;
+		
+		private string _UserName;
+		
+		private System.Nullable<long> _RowNumber;
+		
+		public sp_PurchasePoolTaskSearchResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ItemPurchaseTaskId", DbType="Int NOT NULL")]
+		public int ItemPurchaseTaskId
+		{
+			get
+			{
+				return this._ItemPurchaseTaskId;
+			}
+			set
+			{
+				if ((this._ItemPurchaseTaskId != value))
+				{
+					this._ItemPurchaseTaskId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PurchasePoolItemId", DbType="Int NOT NULL")]
+		public int PurchasePoolItemId
+		{
+			get
+			{
+				return this._PurchasePoolItemId;
+			}
+			set
+			{
+				if ((this._PurchasePoolItemId != value))
+				{
+					this._PurchasePoolItemId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ItemId", DbType="Int NOT NULL")]
+		public int ItemId
+		{
+			get
+			{
+				return this._ItemId;
+			}
+			set
+			{
+				if ((this._ItemId != value))
+				{
+					this._ItemId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CurrencyId", DbType="Int NOT NULL")]
+		public int CurrencyId
+		{
+			get
+			{
+				return this._CurrencyId;
+			}
+			set
+			{
+				if ((this._CurrencyId != value))
+				{
+					this._CurrencyId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DiscountDetail", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string DiscountDetail
+		{
+			get
+			{
+				return this._DiscountDetail;
+			}
+			set
+			{
+				if ((this._DiscountDetail != value))
+				{
+					this._DiscountDetail = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ItemPurchaseStatus", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string ItemPurchaseStatus
+		{
+			get
+			{
+				return this._ItemPurchaseStatus;
+			}
+			set
+			{
+				if ((this._ItemPurchaseStatus != value))
+				{
+					this._ItemPurchaseStatus = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ItemPurchaseStatusCodeId", DbType="Int NOT NULL")]
+		public int ItemPurchaseStatusCodeId
+		{
+			get
+			{
+				return this._ItemPurchaseStatusCodeId;
+			}
+			set
+			{
+				if ((this._ItemPurchaseStatusCodeId != value))
+				{
+					this._ItemPurchaseStatusCodeId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PurchasePlace", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string PurchasePlace
+		{
+			get
+			{
+				return this._PurchasePlace;
+			}
+			set
+			{
+				if ((this._PurchasePlace != value))
+				{
+					this._PurchasePlace = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_QuantityMarked", DbType="Int NOT NULL")]
+		public int QuantityMarked
+		{
+			get
+			{
+				return this._QuantityMarked;
+			}
+			set
+			{
+				if ((this._QuantityMarked != value))
+				{
+					this._QuantityMarked = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserId", DbType="Int NOT NULL")]
+		public int UserId
+		{
+			get
+			{
+				return this._UserId;
+			}
+			set
+			{
+				if ((this._UserId != value))
+				{
+					this._UserId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserName", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string UserName
+		{
+			get
+			{
+				return this._UserName;
+			}
+			set
+			{
+				if ((this._UserName != value))
+				{
+					this._UserName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RowNumber", DbType="BigInt")]
+		public System.Nullable<long> RowNumber
+		{
+			get
+			{
+				return this._RowNumber;
+			}
+			set
+			{
+				if ((this._RowNumber != value))
+				{
+					this._RowNumber = value;
+				}
+			}
+		}
+	}
+	
+	public partial class tfnItemPurchaseTaskGetResult
+	{
+		
+		private int _ItemPurchaseTaskId;
+		
+		private int _ItemPurchasePoolId;
+		
+		private int _ItemId;
+		
+		private int _Quantity;
+		
+		private int _ItemPurchaseStatusCodeId;
+		
+		private string _ItemPurchaseStatus;
+		
+		private int _UpdateQuantity;
+		
+		private string _Reason;
+		
+		private string _DiscountDetail;
+		
+		private string _PurchasePlace;
+		
+		private System.Nullable<decimal> _FinalUnitPrice;
+		
+		private System.Nullable<decimal> _FinalTotalPrice;
+		
+		private int _CurrencyId;
+		
+		private int _UserId;
+		
+		private string _UserName;
+		
+		private System.DateTime _CreateDate;
+		
+		private System.DateTime _LastUpdate;
+		
+		private int _LastUpdateBy;
+		
+		private int _LastUpdateByType;
+		
+		public tfnItemPurchaseTaskGetResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ItemPurchaseTaskId", DbType="Int NOT NULL")]
+		public int ItemPurchaseTaskId
+		{
+			get
+			{
+				return this._ItemPurchaseTaskId;
+			}
+			set
+			{
+				if ((this._ItemPurchaseTaskId != value))
+				{
+					this._ItemPurchaseTaskId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ItemPurchasePoolId", DbType="Int NOT NULL")]
+		public int ItemPurchasePoolId
+		{
+			get
+			{
+				return this._ItemPurchasePoolId;
+			}
+			set
+			{
+				if ((this._ItemPurchasePoolId != value))
+				{
+					this._ItemPurchasePoolId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ItemId", DbType="Int NOT NULL")]
+		public int ItemId
+		{
+			get
+			{
+				return this._ItemId;
+			}
+			set
+			{
+				if ((this._ItemId != value))
+				{
+					this._ItemId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Quantity", DbType="Int NOT NULL")]
+		public int Quantity
+		{
+			get
+			{
+				return this._Quantity;
+			}
+			set
+			{
+				if ((this._Quantity != value))
+				{
+					this._Quantity = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ItemPurchaseStatusCodeId", DbType="Int NOT NULL")]
+		public int ItemPurchaseStatusCodeId
+		{
+			get
+			{
+				return this._ItemPurchaseStatusCodeId;
+			}
+			set
+			{
+				if ((this._ItemPurchaseStatusCodeId != value))
+				{
+					this._ItemPurchaseStatusCodeId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ItemPurchaseStatus", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string ItemPurchaseStatus
+		{
+			get
+			{
+				return this._ItemPurchaseStatus;
+			}
+			set
+			{
+				if ((this._ItemPurchaseStatus != value))
+				{
+					this._ItemPurchaseStatus = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UpdateQuantity", DbType="Int NOT NULL")]
+		public int UpdateQuantity
+		{
+			get
+			{
+				return this._UpdateQuantity;
+			}
+			set
+			{
+				if ((this._UpdateQuantity != value))
+				{
+					this._UpdateQuantity = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Reason", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string Reason
+		{
+			get
+			{
+				return this._Reason;
+			}
+			set
+			{
+				if ((this._Reason != value))
+				{
+					this._Reason = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DiscountDetail", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string DiscountDetail
+		{
+			get
+			{
+				return this._DiscountDetail;
+			}
+			set
+			{
+				if ((this._DiscountDetail != value))
+				{
+					this._DiscountDetail = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PurchasePlace", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string PurchasePlace
+		{
+			get
+			{
+				return this._PurchasePlace;
+			}
+			set
+			{
+				if ((this._PurchasePlace != value))
+				{
+					this._PurchasePlace = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FinalUnitPrice", DbType="Decimal(10,2)")]
+		public System.Nullable<decimal> FinalUnitPrice
+		{
+			get
+			{
+				return this._FinalUnitPrice;
+			}
+			set
+			{
+				if ((this._FinalUnitPrice != value))
+				{
+					this._FinalUnitPrice = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FinalTotalPrice", DbType="Decimal(10,2)")]
+		public System.Nullable<decimal> FinalTotalPrice
+		{
+			get
+			{
+				return this._FinalTotalPrice;
+			}
+			set
+			{
+				if ((this._FinalTotalPrice != value))
+				{
+					this._FinalTotalPrice = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CurrencyId", DbType="Int NOT NULL")]
+		public int CurrencyId
+		{
+			get
+			{
+				return this._CurrencyId;
+			}
+			set
+			{
+				if ((this._CurrencyId != value))
+				{
+					this._CurrencyId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserId", DbType="Int NOT NULL")]
+		public int UserId
+		{
+			get
+			{
+				return this._UserId;
+			}
+			set
+			{
+				if ((this._UserId != value))
+				{
+					this._UserId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserName", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string UserName
+		{
+			get
+			{
+				return this._UserName;
+			}
+			set
+			{
+				if ((this._UserName != value))
+				{
+					this._UserName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreateDate", DbType="DateTime NOT NULL")]
+		public System.DateTime CreateDate
+		{
+			get
+			{
+				return this._CreateDate;
+			}
+			set
+			{
+				if ((this._CreateDate != value))
+				{
+					this._CreateDate = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastUpdate", DbType="DateTime NOT NULL")]
+		public System.DateTime LastUpdate
+		{
+			get
+			{
+				return this._LastUpdate;
+			}
+			set
+			{
+				if ((this._LastUpdate != value))
+				{
+					this._LastUpdate = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastUpdateBy", DbType="Int NOT NULL")]
+		public int LastUpdateBy
+		{
+			get
+			{
+				return this._LastUpdateBy;
+			}
+			set
+			{
+				if ((this._LastUpdateBy != value))
+				{
+					this._LastUpdateBy = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastUpdateByType", DbType="Int NOT NULL")]
+		public int LastUpdateByType
+		{
+			get
+			{
+				return this._LastUpdateByType;
+			}
+			set
+			{
+				if ((this._LastUpdateByType != value))
+				{
+					this._LastUpdateByType = value;
+				}
+			}
+		}
+	}
+	
+	public partial class tfnItemPurchaseTaskResourceGetResult
+	{
+		
+		private int _ItemPurchaseTaskId;
+		
+		private int _ResourceTypeCodeId;
+		
+		private int _FileId;
+		
+		private string _Description_1;
+		
+		private string _Description_2;
+		
+		private bool _Available;
+		
+		public tfnItemPurchaseTaskResourceGetResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ItemPurchaseTaskId", DbType="Int NOT NULL")]
+		public int ItemPurchaseTaskId
+		{
+			get
+			{
+				return this._ItemPurchaseTaskId;
+			}
+			set
+			{
+				if ((this._ItemPurchaseTaskId != value))
+				{
+					this._ItemPurchaseTaskId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ResourceTypeCodeId", DbType="Int NOT NULL")]
+		public int ResourceTypeCodeId
+		{
+			get
+			{
+				return this._ResourceTypeCodeId;
+			}
+			set
+			{
+				if ((this._ResourceTypeCodeId != value))
+				{
+					this._ResourceTypeCodeId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FileId", DbType="Int NOT NULL")]
+		public int FileId
+		{
+			get
+			{
+				return this._FileId;
+			}
+			set
+			{
+				if ((this._FileId != value))
+				{
+					this._FileId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description_1", DbType="NVarChar(MAX)")]
+		public string Description_1
+		{
+			get
+			{
+				return this._Description_1;
+			}
+			set
+			{
+				if ((this._Description_1 != value))
+				{
+					this._Description_1 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description_2", DbType="NVarChar(MAX)")]
+		public string Description_2
+		{
+			get
+			{
+				return this._Description_2;
+			}
+			set
+			{
+				if ((this._Description_2 != value))
+				{
+					this._Description_2 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Available", DbType="Bit NOT NULL")]
+		public bool Available
+		{
+			get
+			{
+				return this._Available;
+			}
+			set
+			{
+				if ((this._Available != value))
+				{
+					this._Available = value;
+				}
+			}
+		}
+	}
+	
+	public partial class tfnWareHouseLevelListGetResult
+	{
+		
+		private int _WareHouseId;
+		
+		private int _WareHouseLevelId;
+		
+		private string _LevelCode;
+		
+		private string _LevelName;
+		
+		private bool _Available;
+		
+		public tfnWareHouseLevelListGetResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WareHouseId", DbType="Int NOT NULL")]
+		public int WareHouseId
+		{
+			get
+			{
+				return this._WareHouseId;
+			}
+			set
+			{
+				if ((this._WareHouseId != value))
+				{
+					this._WareHouseId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WareHouseLevelId", DbType="Int NOT NULL")]
+		public int WareHouseLevelId
+		{
+			get
+			{
+				return this._WareHouseLevelId;
+			}
+			set
+			{
+				if ((this._WareHouseLevelId != value))
+				{
+					this._WareHouseLevelId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LevelCode", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string LevelCode
+		{
+			get
+			{
+				return this._LevelCode;
+			}
+			set
+			{
+				if ((this._LevelCode != value))
+				{
+					this._LevelCode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LevelName", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string LevelName
+		{
+			get
+			{
+				return this._LevelName;
+			}
+			set
+			{
+				if ((this._LevelName != value))
+				{
+					this._LevelName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Available", DbType="Bit NOT NULL")]
+		public bool Available
+		{
+			get
+			{
+				return this._Available;
+			}
+			set
+			{
+				if ((this._Available != value))
+				{
+					this._Available = value;
+				}
+			}
+		}
+	}
+	
+	public partial class tfnWareHouseZoneListGetResult
+	{
+		
+		private int _WareHouseLevelId;
+		
+		private int _WareHouseZoneId;
+		
+		private string _ZoneCode;
+		
+		private string _ZoneName;
+		
+		private bool _Available;
+		
+		public tfnWareHouseZoneListGetResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WareHouseLevelId", DbType="Int NOT NULL")]
+		public int WareHouseLevelId
+		{
+			get
+			{
+				return this._WareHouseLevelId;
+			}
+			set
+			{
+				if ((this._WareHouseLevelId != value))
+				{
+					this._WareHouseLevelId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WareHouseZoneId", DbType="Int NOT NULL")]
+		public int WareHouseZoneId
+		{
+			get
+			{
+				return this._WareHouseZoneId;
+			}
+			set
+			{
+				if ((this._WareHouseZoneId != value))
+				{
+					this._WareHouseZoneId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ZoneCode", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string ZoneCode
+		{
+			get
+			{
+				return this._ZoneCode;
+			}
+			set
+			{
+				if ((this._ZoneCode != value))
+				{
+					this._ZoneCode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ZoneName", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string ZoneName
+		{
+			get
+			{
+				return this._ZoneName;
+			}
+			set
+			{
+				if ((this._ZoneName != value))
+				{
+					this._ZoneName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Available", DbType="Bit NOT NULL")]
+		public bool Available
+		{
+			get
+			{
+				return this._Available;
+			}
+			set
+			{
+				if ((this._Available != value))
+				{
+					this._Available = value;
+				}
+			}
+		}
+	}
+	
+	public partial class tfnWareHouseListGetResult
+	{
+		
+		private int _WareHouseId;
+		
+		private int _CompanyId;
+		
+		private int _AddressId;
+		
+		private string _Address1;
+		
+		private string _Address2;
+		
+		private string _City;
+		
+		private string _District;
+		
+		private string _State;
+		
+		private string _Zip;
+		
+		private int _CountryId;
+		
+		private string _ManagerName;
+		
+		private string _ContactNumber;
+		
+		private int _ContactNumberCountryId;
+		
+		private string _WareHouse_Code;
+		
+		private string _WareHouse_Name;
+		
+		private bool _Available;
+		
+		public tfnWareHouseListGetResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WareHouseId", DbType="Int NOT NULL")]
+		public int WareHouseId
+		{
+			get
+			{
+				return this._WareHouseId;
+			}
+			set
+			{
+				if ((this._WareHouseId != value))
+				{
+					this._WareHouseId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CompanyId", DbType="Int NOT NULL")]
+		public int CompanyId
+		{
+			get
+			{
+				return this._CompanyId;
+			}
+			set
+			{
+				if ((this._CompanyId != value))
+				{
+					this._CompanyId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AddressId", DbType="Int NOT NULL")]
+		public int AddressId
+		{
+			get
+			{
+				return this._AddressId;
+			}
+			set
+			{
+				if ((this._AddressId != value))
+				{
+					this._AddressId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Address1", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string Address1
+		{
+			get
+			{
+				return this._Address1;
+			}
+			set
+			{
+				if ((this._Address1 != value))
+				{
+					this._Address1 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Address2", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string Address2
+		{
+			get
+			{
+				return this._Address2;
+			}
+			set
+			{
+				if ((this._Address2 != value))
+				{
+					this._Address2 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_City", DbType="NVarChar(128) NOT NULL", CanBeNull=false)]
+		public string City
+		{
+			get
+			{
+				return this._City;
+			}
+			set
+			{
+				if ((this._City != value))
+				{
+					this._City = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_District", DbType="NVarChar(128)")]
+		public string District
+		{
+			get
+			{
+				return this._District;
+			}
+			set
+			{
+				if ((this._District != value))
+				{
+					this._District = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_State", DbType="NVarChar(128) NOT NULL", CanBeNull=false)]
+		public string State
+		{
+			get
+			{
+				return this._State;
+			}
+			set
+			{
+				if ((this._State != value))
+				{
+					this._State = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Zip", DbType="NVarChar(32) NOT NULL", CanBeNull=false)]
+		public string Zip
+		{
+			get
+			{
+				return this._Zip;
+			}
+			set
+			{
+				if ((this._Zip != value))
+				{
+					this._Zip = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CountryId", DbType="Int NOT NULL")]
+		public int CountryId
+		{
+			get
+			{
+				return this._CountryId;
+			}
+			set
+			{
+				if ((this._CountryId != value))
+				{
+					this._CountryId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ManagerName", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string ManagerName
+		{
+			get
+			{
+				return this._ManagerName;
+			}
+			set
+			{
+				if ((this._ManagerName != value))
+				{
+					this._ManagerName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ContactNumber", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string ContactNumber
+		{
+			get
+			{
+				return this._ContactNumber;
+			}
+			set
+			{
+				if ((this._ContactNumber != value))
+				{
+					this._ContactNumber = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ContactNumberCountryId", DbType="Int NOT NULL")]
+		public int ContactNumberCountryId
+		{
+			get
+			{
+				return this._ContactNumberCountryId;
+			}
+			set
+			{
+				if ((this._ContactNumberCountryId != value))
+				{
+					this._ContactNumberCountryId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WareHouse_Code", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string WareHouse_Code
+		{
+			get
+			{
+				return this._WareHouse_Code;
+			}
+			set
+			{
+				if ((this._WareHouse_Code != value))
+				{
+					this._WareHouse_Code = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WareHouse_Name", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string WareHouse_Name
+		{
+			get
+			{
+				return this._WareHouse_Name;
+			}
+			set
+			{
+				if ((this._WareHouse_Name != value))
+				{
+					this._WareHouse_Name = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Available", DbType="Bit NOT NULL")]
+		public bool Available
+		{
+			get
+			{
+				return this._Available;
+			}
+			set
+			{
+				if ((this._Available != value))
+				{
+					this._Available = value;
+				}
+			}
+		}
+	}
+	
+	public partial class tfnWareHouseRackLevelListGetResult
+	{
+		
+		private int _WareHouseRackId;
+		
+		private int _WareHouseRackLevelId;
+		
+		private string _RackLevelCode;
+		
+		private string _RackLevelName;
+		
+		private bool _Available;
+		
+		public tfnWareHouseRackLevelListGetResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WareHouseRackId", DbType="Int NOT NULL")]
+		public int WareHouseRackId
+		{
+			get
+			{
+				return this._WareHouseRackId;
+			}
+			set
+			{
+				if ((this._WareHouseRackId != value))
+				{
+					this._WareHouseRackId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WareHouseRackLevelId", DbType="Int NOT NULL")]
+		public int WareHouseRackLevelId
+		{
+			get
+			{
+				return this._WareHouseRackLevelId;
+			}
+			set
+			{
+				if ((this._WareHouseRackLevelId != value))
+				{
+					this._WareHouseRackLevelId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RackLevelCode", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string RackLevelCode
+		{
+			get
+			{
+				return this._RackLevelCode;
+			}
+			set
+			{
+				if ((this._RackLevelCode != value))
+				{
+					this._RackLevelCode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RackLevelName", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string RackLevelName
+		{
+			get
+			{
+				return this._RackLevelName;
+			}
+			set
+			{
+				if ((this._RackLevelName != value))
+				{
+					this._RackLevelName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Available", DbType="Bit NOT NULL")]
+		public bool Available
+		{
+			get
+			{
+				return this._Available;
+			}
+			set
+			{
+				if ((this._Available != value))
+				{
+					this._Available = value;
+				}
+			}
+		}
+	}
+	
+	public partial class tfnWareHouseRackListGetResult
+	{
+		
+		private int _WareHouseZoneId;
+		
+		private int _WareHouseRackId;
+		
+		private string _RackCode;
+		
+		private string _RackName;
+		
+		private bool _Available;
+		
+		public tfnWareHouseRackListGetResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WareHouseZoneId", DbType="Int NOT NULL")]
+		public int WareHouseZoneId
+		{
+			get
+			{
+				return this._WareHouseZoneId;
+			}
+			set
+			{
+				if ((this._WareHouseZoneId != value))
+				{
+					this._WareHouseZoneId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WareHouseRackId", DbType="Int NOT NULL")]
+		public int WareHouseRackId
+		{
+			get
+			{
+				return this._WareHouseRackId;
+			}
+			set
+			{
+				if ((this._WareHouseRackId != value))
+				{
+					this._WareHouseRackId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RackCode", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string RackCode
+		{
+			get
+			{
+				return this._RackCode;
+			}
+			set
+			{
+				if ((this._RackCode != value))
+				{
+					this._RackCode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RackName", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string RackName
+		{
+			get
+			{
+				return this._RackName;
+			}
+			set
+			{
+				if ((this._RackName != value))
+				{
+					this._RackName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Available", DbType="Bit NOT NULL")]
+		public bool Available
+		{
+			get
+			{
+				return this._Available;
+			}
+			set
+			{
+				if ((this._Available != value))
+				{
+					this._Available = value;
+				}
+			}
+		}
+	}
+	
+	public partial class tfnWareHouseGetResult
+	{
+		
+		private int _WareHouseId;
+		
+		private int _CompanyId;
+		
+		private int _AddressId;
+		
+		private string _Address1;
+		
+		private string _Address2;
+		
+		private string _City;
+		
+		private string _District;
+		
+		private string _State;
+		
+		private string _Zip;
+		
+		private int _CountryId;
+		
+		private string _ManagerName;
+		
+		private string _ContactNumber;
+		
+		private int _ContactNumberCountryId;
+		
+		private string _WareHouse_Code;
+		
+		private string _WareHouse_Name;
+		
+		private bool _Available;
+		
+		public tfnWareHouseGetResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WareHouseId", DbType="Int NOT NULL")]
+		public int WareHouseId
+		{
+			get
+			{
+				return this._WareHouseId;
+			}
+			set
+			{
+				if ((this._WareHouseId != value))
+				{
+					this._WareHouseId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CompanyId", DbType="Int NOT NULL")]
+		public int CompanyId
+		{
+			get
+			{
+				return this._CompanyId;
+			}
+			set
+			{
+				if ((this._CompanyId != value))
+				{
+					this._CompanyId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AddressId", DbType="Int NOT NULL")]
+		public int AddressId
+		{
+			get
+			{
+				return this._AddressId;
+			}
+			set
+			{
+				if ((this._AddressId != value))
+				{
+					this._AddressId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Address1", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string Address1
+		{
+			get
+			{
+				return this._Address1;
+			}
+			set
+			{
+				if ((this._Address1 != value))
+				{
+					this._Address1 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Address2", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string Address2
+		{
+			get
+			{
+				return this._Address2;
+			}
+			set
+			{
+				if ((this._Address2 != value))
+				{
+					this._Address2 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_City", DbType="NVarChar(128) NOT NULL", CanBeNull=false)]
+		public string City
+		{
+			get
+			{
+				return this._City;
+			}
+			set
+			{
+				if ((this._City != value))
+				{
+					this._City = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_District", DbType="NVarChar(128)")]
+		public string District
+		{
+			get
+			{
+				return this._District;
+			}
+			set
+			{
+				if ((this._District != value))
+				{
+					this._District = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_State", DbType="NVarChar(128) NOT NULL", CanBeNull=false)]
+		public string State
+		{
+			get
+			{
+				return this._State;
+			}
+			set
+			{
+				if ((this._State != value))
+				{
+					this._State = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Zip", DbType="NVarChar(32) NOT NULL", CanBeNull=false)]
+		public string Zip
+		{
+			get
+			{
+				return this._Zip;
+			}
+			set
+			{
+				if ((this._Zip != value))
+				{
+					this._Zip = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CountryId", DbType="Int NOT NULL")]
+		public int CountryId
+		{
+			get
+			{
+				return this._CountryId;
+			}
+			set
+			{
+				if ((this._CountryId != value))
+				{
+					this._CountryId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ManagerName", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string ManagerName
+		{
+			get
+			{
+				return this._ManagerName;
+			}
+			set
+			{
+				if ((this._ManagerName != value))
+				{
+					this._ManagerName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ContactNumber", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string ContactNumber
+		{
+			get
+			{
+				return this._ContactNumber;
+			}
+			set
+			{
+				if ((this._ContactNumber != value))
+				{
+					this._ContactNumber = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ContactNumberCountryId", DbType="Int NOT NULL")]
+		public int ContactNumberCountryId
+		{
+			get
+			{
+				return this._ContactNumberCountryId;
+			}
+			set
+			{
+				if ((this._ContactNumberCountryId != value))
+				{
+					this._ContactNumberCountryId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WareHouse_Code", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string WareHouse_Code
+		{
+			get
+			{
+				return this._WareHouse_Code;
+			}
+			set
+			{
+				if ((this._WareHouse_Code != value))
+				{
+					this._WareHouse_Code = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WareHouse_Name", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string WareHouse_Name
+		{
+			get
+			{
+				return this._WareHouse_Name;
+			}
+			set
+			{
+				if ((this._WareHouse_Name != value))
+				{
+					this._WareHouse_Name = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Available", DbType="Bit NOT NULL")]
+		public bool Available
+		{
+			get
+			{
+				return this._Available;
+			}
+			set
+			{
+				if ((this._Available != value))
+				{
+					this._Available = value;
+				}
+			}
+		}
+	}
+	
+	public partial class tfnWareHouseLevelGetResult
+	{
+		
+		private int _WareHouseId;
+		
+		private int _WareHouseLevelId;
+		
+		private string _LevelCode;
+		
+		private string _LevelName;
+		
+		private bool _Available;
+		
+		public tfnWareHouseLevelGetResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WareHouseId", DbType="Int NOT NULL")]
+		public int WareHouseId
+		{
+			get
+			{
+				return this._WareHouseId;
+			}
+			set
+			{
+				if ((this._WareHouseId != value))
+				{
+					this._WareHouseId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WareHouseLevelId", DbType="Int NOT NULL")]
+		public int WareHouseLevelId
+		{
+			get
+			{
+				return this._WareHouseLevelId;
+			}
+			set
+			{
+				if ((this._WareHouseLevelId != value))
+				{
+					this._WareHouseLevelId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LevelCode", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string LevelCode
+		{
+			get
+			{
+				return this._LevelCode;
+			}
+			set
+			{
+				if ((this._LevelCode != value))
+				{
+					this._LevelCode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LevelName", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string LevelName
+		{
+			get
+			{
+				return this._LevelName;
+			}
+			set
+			{
+				if ((this._LevelName != value))
+				{
+					this._LevelName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Available", DbType="Bit NOT NULL")]
+		public bool Available
+		{
+			get
+			{
+				return this._Available;
+			}
+			set
+			{
+				if ((this._Available != value))
+				{
+					this._Available = value;
+				}
+			}
+		}
+	}
+	
+	public partial class tfnWareHouseRackGetResult
+	{
+		
+		private int _WareHouseZoneId;
+		
+		private int _WareHouseRackId;
+		
+		private string _RackCode;
+		
+		private string _RackName;
+		
+		private bool _Available;
+		
+		public tfnWareHouseRackGetResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WareHouseZoneId", DbType="Int NOT NULL")]
+		public int WareHouseZoneId
+		{
+			get
+			{
+				return this._WareHouseZoneId;
+			}
+			set
+			{
+				if ((this._WareHouseZoneId != value))
+				{
+					this._WareHouseZoneId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WareHouseRackId", DbType="Int NOT NULL")]
+		public int WareHouseRackId
+		{
+			get
+			{
+				return this._WareHouseRackId;
+			}
+			set
+			{
+				if ((this._WareHouseRackId != value))
+				{
+					this._WareHouseRackId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RackCode", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string RackCode
+		{
+			get
+			{
+				return this._RackCode;
+			}
+			set
+			{
+				if ((this._RackCode != value))
+				{
+					this._RackCode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RackName", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string RackName
+		{
+			get
+			{
+				return this._RackName;
+			}
+			set
+			{
+				if ((this._RackName != value))
+				{
+					this._RackName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Available", DbType="Bit NOT NULL")]
+		public bool Available
+		{
+			get
+			{
+				return this._Available;
+			}
+			set
+			{
+				if ((this._Available != value))
+				{
+					this._Available = value;
+				}
+			}
+		}
+	}
+	
+	public partial class tfnWareHouseRackLevelGetResult
+	{
+		
+		private int _WareHouseRackId;
+		
+		private int _WareHouseRackLevelId;
+		
+		private string _RackLevelCode;
+		
+		private string _RackLevelName;
+		
+		private bool _Available;
+		
+		public tfnWareHouseRackLevelGetResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WareHouseRackId", DbType="Int NOT NULL")]
+		public int WareHouseRackId
+		{
+			get
+			{
+				return this._WareHouseRackId;
+			}
+			set
+			{
+				if ((this._WareHouseRackId != value))
+				{
+					this._WareHouseRackId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WareHouseRackLevelId", DbType="Int NOT NULL")]
+		public int WareHouseRackLevelId
+		{
+			get
+			{
+				return this._WareHouseRackLevelId;
+			}
+			set
+			{
+				if ((this._WareHouseRackLevelId != value))
+				{
+					this._WareHouseRackLevelId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RackLevelCode", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string RackLevelCode
+		{
+			get
+			{
+				return this._RackLevelCode;
+			}
+			set
+			{
+				if ((this._RackLevelCode != value))
+				{
+					this._RackLevelCode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RackLevelName", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string RackLevelName
+		{
+			get
+			{
+				return this._RackLevelName;
+			}
+			set
+			{
+				if ((this._RackLevelName != value))
+				{
+					this._RackLevelName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Available", DbType="Bit NOT NULL")]
+		public bool Available
+		{
+			get
+			{
+				return this._Available;
+			}
+			set
+			{
+				if ((this._Available != value))
+				{
+					this._Available = value;
+				}
+			}
+		}
+	}
+	
+	public partial class tfnWareHouseZoneGetResult
+	{
+		
+		private int _WareHouseLevelId;
+		
+		private int _WareHouseZoneId;
+		
+		private string _ZoneCode;
+		
+		private string _ZoneName;
+		
+		private bool _Available;
+		
+		public tfnWareHouseZoneGetResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WareHouseLevelId", DbType="Int NOT NULL")]
+		public int WareHouseLevelId
+		{
+			get
+			{
+				return this._WareHouseLevelId;
+			}
+			set
+			{
+				if ((this._WareHouseLevelId != value))
+				{
+					this._WareHouseLevelId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WareHouseZoneId", DbType="Int NOT NULL")]
+		public int WareHouseZoneId
+		{
+			get
+			{
+				return this._WareHouseZoneId;
+			}
+			set
+			{
+				if ((this._WareHouseZoneId != value))
+				{
+					this._WareHouseZoneId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ZoneCode", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string ZoneCode
+		{
+			get
+			{
+				return this._ZoneCode;
+			}
+			set
+			{
+				if ((this._ZoneCode != value))
+				{
+					this._ZoneCode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ZoneName", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string ZoneName
+		{
+			get
+			{
+				return this._ZoneName;
+			}
+			set
+			{
+				if ((this._ZoneName != value))
+				{
+					this._ZoneName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Available", DbType="Bit NOT NULL")]
+		public bool Available
+		{
+			get
+			{
+				return this._Available;
+			}
+			set
+			{
+				if ((this._Available != value))
+				{
+					this._Available = value;
+				}
+			}
+		}
+	}
+	
+	public partial class tfnWareHouseCartListGetResult
+	{
+		
+		private int _WareHouseId;
+		
+		private int _WareHouseCartId;
+		
+		private string _CartCode;
+		
+		private string _CartName;
+		
+		private bool _Available;
+		
+		public tfnWareHouseCartListGetResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WareHouseId", DbType="Int NOT NULL")]
+		public int WareHouseId
+		{
+			get
+			{
+				return this._WareHouseId;
+			}
+			set
+			{
+				if ((this._WareHouseId != value))
+				{
+					this._WareHouseId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WareHouseCartId", DbType="Int NOT NULL")]
+		public int WareHouseCartId
+		{
+			get
+			{
+				return this._WareHouseCartId;
+			}
+			set
+			{
+				if ((this._WareHouseCartId != value))
+				{
+					this._WareHouseCartId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CartCode", DbType="NVarChar(64) NOT NULL", CanBeNull=false)]
+		public string CartCode
+		{
+			get
+			{
+				return this._CartCode;
+			}
+			set
+			{
+				if ((this._CartCode != value))
+				{
+					this._CartCode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CartName", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string CartName
+		{
+			get
+			{
+				return this._CartName;
+			}
+			set
+			{
+				if ((this._CartName != value))
+				{
+					this._CartName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Available", DbType="Bit NOT NULL")]
+		public bool Available
+		{
+			get
+			{
+				return this._Available;
+			}
+			set
+			{
+				if ((this._Available != value))
+				{
+					this._Available = value;
+				}
+			}
+		}
+	}
+	
+	public partial class tfnWareHouseCartGetResult
+	{
+		
+		private int _WareHouseId;
+		
+		private int _WareHouseCartId;
+		
+		private string _CartCode;
+		
+		private string _CartName;
+		
+		private bool _Available;
+		
+		public tfnWareHouseCartGetResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WareHouseId", DbType="Int NOT NULL")]
+		public int WareHouseId
+		{
+			get
+			{
+				return this._WareHouseId;
+			}
+			set
+			{
+				if ((this._WareHouseId != value))
+				{
+					this._WareHouseId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WareHouseCartId", DbType="Int NOT NULL")]
+		public int WareHouseCartId
+		{
+			get
+			{
+				return this._WareHouseCartId;
+			}
+			set
+			{
+				if ((this._WareHouseCartId != value))
+				{
+					this._WareHouseCartId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CartCode", DbType="NVarChar(64) NOT NULL", CanBeNull=false)]
+		public string CartCode
+		{
+			get
+			{
+				return this._CartCode;
+			}
+			set
+			{
+				if ((this._CartCode != value))
+				{
+					this._CartCode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CartName", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string CartName
+		{
+			get
+			{
+				return this._CartName;
+			}
+			set
+			{
+				if ((this._CartName != value))
+				{
+					this._CartName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Available", DbType="Bit NOT NULL")]
+		public bool Available
+		{
+			get
+			{
+				return this._Available;
+			}
+			set
+			{
+				if ((this._Available != value))
+				{
+					this._Available = value;
+				}
+			}
+		}
+	}
+	
+	public partial class tfnPurchasePoolItemCompanyPurchasePlaceGetResult
+	{
+		
+		private int _ItemPurchasePoolCompanyId;
+		
+		private int _ItemPurchasePoolId;
+		
+		private int _ItemId;
+		
+		private int _Quantity;
+		
+		private int _AvailableQuantity;
+		
+		private decimal _PurchasePrice;
+		
+		private int _CurrencyId;
+		
+		private string _PurchasePlace;
+		
+		private string _PurchaseDetail;
+		
+		private System.DateTime _LastQueryDate;
+		
+		public tfnPurchasePoolItemCompanyPurchasePlaceGetResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ItemPurchasePoolCompanyId", DbType="Int NOT NULL")]
+		public int ItemPurchasePoolCompanyId
+		{
+			get
+			{
+				return this._ItemPurchasePoolCompanyId;
+			}
+			set
+			{
+				if ((this._ItemPurchasePoolCompanyId != value))
+				{
+					this._ItemPurchasePoolCompanyId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ItemPurchasePoolId", DbType="Int NOT NULL")]
+		public int ItemPurchasePoolId
+		{
+			get
+			{
+				return this._ItemPurchasePoolId;
+			}
+			set
+			{
+				if ((this._ItemPurchasePoolId != value))
+				{
+					this._ItemPurchasePoolId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ItemId", DbType="Int NOT NULL")]
+		public int ItemId
+		{
+			get
+			{
+				return this._ItemId;
+			}
+			set
+			{
+				if ((this._ItemId != value))
+				{
+					this._ItemId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Quantity", DbType="Int NOT NULL")]
+		public int Quantity
+		{
+			get
+			{
+				return this._Quantity;
+			}
+			set
+			{
+				if ((this._Quantity != value))
+				{
+					this._Quantity = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AvailableQuantity", DbType="Int NOT NULL")]
+		public int AvailableQuantity
+		{
+			get
+			{
+				return this._AvailableQuantity;
+			}
+			set
+			{
+				if ((this._AvailableQuantity != value))
+				{
+					this._AvailableQuantity = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PurchasePrice", DbType="Decimal(10,2) NOT NULL")]
+		public decimal PurchasePrice
+		{
+			get
+			{
+				return this._PurchasePrice;
+			}
+			set
+			{
+				if ((this._PurchasePrice != value))
+				{
+					this._PurchasePrice = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CurrencyId", DbType="Int NOT NULL")]
+		public int CurrencyId
+		{
+			get
+			{
+				return this._CurrencyId;
+			}
+			set
+			{
+				if ((this._CurrencyId != value))
+				{
+					this._CurrencyId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PurchasePlace", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string PurchasePlace
+		{
+			get
+			{
+				return this._PurchasePlace;
+			}
+			set
+			{
+				if ((this._PurchasePlace != value))
+				{
+					this._PurchasePlace = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PurchaseDetail", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string PurchaseDetail
+		{
+			get
+			{
+				return this._PurchaseDetail;
+			}
+			set
+			{
+				if ((this._PurchaseDetail != value))
+				{
+					this._PurchaseDetail = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastQueryDate", DbType="DateTime NOT NULL")]
+		public System.DateTime LastQueryDate
+		{
+			get
+			{
+				return this._LastQueryDate;
+			}
+			set
+			{
+				if ((this._LastQueryDate != value))
+				{
+					this._LastQueryDate = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_PurchasePoolTaskActiveSearchByUPCResult
+	{
+		
+		private int _ItemPurchaseTaskId;
+		
+		private int _PurchasePoolItemId;
+		
+		private int _ItemId;
+		
+		private int _CurrencyId;
+		
+		private string _DiscountDetail;
+		
+		private string _ItemPurchaseStatus;
+		
+		private int _ItemPurchaseStatusCodeId;
+		
+		private string _PurchasePlace;
+		
+		private int _QuantityMarked;
+		
+		private int _UpdateQuantity;
+		
+		private string _Reason;
+		
+		private int _UserId;
+		
+		private string _UserName;
+		
+		private System.Nullable<long> _RowNumber;
+		
+		public sp_PurchasePoolTaskActiveSearchByUPCResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ItemPurchaseTaskId", DbType="Int NOT NULL")]
+		public int ItemPurchaseTaskId
+		{
+			get
+			{
+				return this._ItemPurchaseTaskId;
+			}
+			set
+			{
+				if ((this._ItemPurchaseTaskId != value))
+				{
+					this._ItemPurchaseTaskId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PurchasePoolItemId", DbType="Int NOT NULL")]
+		public int PurchasePoolItemId
+		{
+			get
+			{
+				return this._PurchasePoolItemId;
+			}
+			set
+			{
+				if ((this._PurchasePoolItemId != value))
+				{
+					this._PurchasePoolItemId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ItemId", DbType="Int NOT NULL")]
+		public int ItemId
+		{
+			get
+			{
+				return this._ItemId;
+			}
+			set
+			{
+				if ((this._ItemId != value))
+				{
+					this._ItemId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CurrencyId", DbType="Int NOT NULL")]
+		public int CurrencyId
+		{
+			get
+			{
+				return this._CurrencyId;
+			}
+			set
+			{
+				if ((this._CurrencyId != value))
+				{
+					this._CurrencyId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DiscountDetail", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string DiscountDetail
+		{
+			get
+			{
+				return this._DiscountDetail;
+			}
+			set
+			{
+				if ((this._DiscountDetail != value))
+				{
+					this._DiscountDetail = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ItemPurchaseStatus", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string ItemPurchaseStatus
+		{
+			get
+			{
+				return this._ItemPurchaseStatus;
+			}
+			set
+			{
+				if ((this._ItemPurchaseStatus != value))
+				{
+					this._ItemPurchaseStatus = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ItemPurchaseStatusCodeId", DbType="Int NOT NULL")]
+		public int ItemPurchaseStatusCodeId
+		{
+			get
+			{
+				return this._ItemPurchaseStatusCodeId;
+			}
+			set
+			{
+				if ((this._ItemPurchaseStatusCodeId != value))
+				{
+					this._ItemPurchaseStatusCodeId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PurchasePlace", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string PurchasePlace
+		{
+			get
+			{
+				return this._PurchasePlace;
+			}
+			set
+			{
+				if ((this._PurchasePlace != value))
+				{
+					this._PurchasePlace = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_QuantityMarked", DbType="Int NOT NULL")]
+		public int QuantityMarked
+		{
+			get
+			{
+				return this._QuantityMarked;
+			}
+			set
+			{
+				if ((this._QuantityMarked != value))
+				{
+					this._QuantityMarked = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UpdateQuantity", DbType="Int NOT NULL")]
+		public int UpdateQuantity
+		{
+			get
+			{
+				return this._UpdateQuantity;
+			}
+			set
+			{
+				if ((this._UpdateQuantity != value))
+				{
+					this._UpdateQuantity = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Reason", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string Reason
+		{
+			get
+			{
+				return this._Reason;
+			}
+			set
+			{
+				if ((this._Reason != value))
+				{
+					this._Reason = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserId", DbType="Int NOT NULL")]
+		public int UserId
+		{
+			get
+			{
+				return this._UserId;
+			}
+			set
+			{
+				if ((this._UserId != value))
+				{
+					this._UserId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserName", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string UserName
+		{
+			get
+			{
+				return this._UserName;
+			}
+			set
+			{
+				if ((this._UserName != value))
+				{
+					this._UserName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RowNumber", DbType="BigInt")]
+		public System.Nullable<long> RowNumber
+		{
+			get
+			{
+				return this._RowNumber;
+			}
+			set
+			{
+				if ((this._RowNumber != value))
+				{
+					this._RowNumber = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_StockItemGroupGetResult
+	{
+		
+		private int _StockItemId;
+		
+		private int _ItemId;
+		
+		private string _StockCode;
+		
+		private int _StockItemStatusCodeId;
+		
+		private string _StockItemStatus;
+		
+		public sp_StockItemGroupGetResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StockItemId", DbType="Int NOT NULL")]
+		public int StockItemId
+		{
+			get
+			{
+				return this._StockItemId;
+			}
+			set
+			{
+				if ((this._StockItemId != value))
+				{
+					this._StockItemId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ItemId", DbType="Int NOT NULL")]
+		public int ItemId
+		{
+			get
+			{
+				return this._ItemId;
+			}
+			set
+			{
+				if ((this._ItemId != value))
+				{
+					this._ItemId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StockCode", DbType="NVarChar(64) NOT NULL", CanBeNull=false)]
+		public string StockCode
+		{
+			get
+			{
+				return this._StockCode;
+			}
+			set
+			{
+				if ((this._StockCode != value))
+				{
+					this._StockCode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StockItemStatusCodeId", DbType="Int NOT NULL")]
+		public int StockItemStatusCodeId
+		{
+			get
+			{
+				return this._StockItemStatusCodeId;
+			}
+			set
+			{
+				if ((this._StockItemStatusCodeId != value))
+				{
+					this._StockItemStatusCodeId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StockItemStatus", DbType="NVarChar(64) NOT NULL", CanBeNull=false)]
+		public string StockItemStatus
+		{
+			get
+			{
+				return this._StockItemStatus;
+			}
+			set
+			{
+				if ((this._StockItemStatus != value))
+				{
+					this._StockItemStatus = value;
+				}
+			}
+		}
+	}
+	
+	public partial class tfnShippingOrderItemsGetResult
+	{
+		
+		private int _ShippingOrderId;
+		
+		private int _ShippingOrderItemId;
+		
+		private System.Nullable<int> _ItemId;
+		
+		private System.Nullable<int> _StockItemId;
+		
+		private string _ItemName;
+		
+		private int _Quantity;
+		
+		private string _Unit;
+		
+		private decimal _Weight;
+		
+		private int _WeightUnit;
+		
+		private decimal _Price;
+		
+		private int _CurrencyId;
+		
+		private decimal _TaxPrice;
+		
+		private string _SourceArea;
+		
+		private string _GoodCode;
+		
+		private string _StateBarCode;
+		
+		private string _Brand;
+		
+		private string _Specifications;
+		
+		private System.DateTime _CreateDate;
+		
+		private System.DateTime _LastUpdate;
+		
+		private int _LastUpdateBy;
+		
+		private int _LastUpdateByType;
+		
+		public tfnShippingOrderItemsGetResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ShippingOrderId", DbType="Int NOT NULL")]
+		public int ShippingOrderId
+		{
+			get
+			{
+				return this._ShippingOrderId;
+			}
+			set
+			{
+				if ((this._ShippingOrderId != value))
+				{
+					this._ShippingOrderId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ShippingOrderItemId", DbType="Int NOT NULL")]
+		public int ShippingOrderItemId
+		{
+			get
+			{
+				return this._ShippingOrderItemId;
+			}
+			set
+			{
+				if ((this._ShippingOrderItemId != value))
+				{
+					this._ShippingOrderItemId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ItemId", DbType="Int")]
+		public System.Nullable<int> ItemId
+		{
+			get
+			{
+				return this._ItemId;
+			}
+			set
+			{
+				if ((this._ItemId != value))
+				{
+					this._ItemId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StockItemId", DbType="Int")]
+		public System.Nullable<int> StockItemId
+		{
+			get
+			{
+				return this._StockItemId;
+			}
+			set
+			{
+				if ((this._StockItemId != value))
+				{
+					this._StockItemId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ItemName", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string ItemName
+		{
+			get
+			{
+				return this._ItemName;
+			}
+			set
+			{
+				if ((this._ItemName != value))
+				{
+					this._ItemName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Quantity", DbType="Int NOT NULL")]
+		public int Quantity
+		{
+			get
+			{
+				return this._Quantity;
+			}
+			set
+			{
+				if ((this._Quantity != value))
+				{
+					this._Quantity = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Unit", DbType="NVarChar(64) NOT NULL", CanBeNull=false)]
+		public string Unit
+		{
+			get
+			{
+				return this._Unit;
+			}
+			set
+			{
+				if ((this._Unit != value))
+				{
+					this._Unit = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Weight", DbType="Decimal(10,2) NOT NULL")]
+		public decimal Weight
+		{
+			get
+			{
+				return this._Weight;
+			}
+			set
+			{
+				if ((this._Weight != value))
+				{
+					this._Weight = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WeightUnit", DbType="Int NOT NULL")]
+		public int WeightUnit
+		{
+			get
+			{
+				return this._WeightUnit;
+			}
+			set
+			{
+				if ((this._WeightUnit != value))
+				{
+					this._WeightUnit = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Price", DbType="Decimal(10,2) NOT NULL")]
+		public decimal Price
+		{
+			get
+			{
+				return this._Price;
+			}
+			set
+			{
+				if ((this._Price != value))
+				{
+					this._Price = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CurrencyId", DbType="Int NOT NULL")]
+		public int CurrencyId
+		{
+			get
+			{
+				return this._CurrencyId;
+			}
+			set
+			{
+				if ((this._CurrencyId != value))
+				{
+					this._CurrencyId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TaxPrice", DbType="Decimal(10,2) NOT NULL")]
+		public decimal TaxPrice
+		{
+			get
+			{
+				return this._TaxPrice;
+			}
+			set
+			{
+				if ((this._TaxPrice != value))
+				{
+					this._TaxPrice = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SourceArea", DbType="NVarChar(64) NOT NULL", CanBeNull=false)]
+		public string SourceArea
+		{
+			get
+			{
+				return this._SourceArea;
+			}
+			set
+			{
+				if ((this._SourceArea != value))
+				{
+					this._SourceArea = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GoodCode", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string GoodCode
+		{
+			get
+			{
+				return this._GoodCode;
+			}
+			set
+			{
+				if ((this._GoodCode != value))
+				{
+					this._GoodCode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StateBarCode", DbType="NVarChar(256)")]
+		public string StateBarCode
+		{
+			get
+			{
+				return this._StateBarCode;
+			}
+			set
+			{
+				if ((this._StateBarCode != value))
+				{
+					this._StateBarCode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Brand", DbType="NVarChar(256)")]
+		public string Brand
+		{
+			get
+			{
+				return this._Brand;
+			}
+			set
+			{
+				if ((this._Brand != value))
+				{
+					this._Brand = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Specifications", DbType="NVarChar(256)")]
+		public string Specifications
+		{
+			get
+			{
+				return this._Specifications;
+			}
+			set
+			{
+				if ((this._Specifications != value))
+				{
+					this._Specifications = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreateDate", DbType="DateTime NOT NULL")]
+		public System.DateTime CreateDate
+		{
+			get
+			{
+				return this._CreateDate;
+			}
+			set
+			{
+				if ((this._CreateDate != value))
+				{
+					this._CreateDate = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastUpdate", DbType="DateTime NOT NULL")]
+		public System.DateTime LastUpdate
+		{
+			get
+			{
+				return this._LastUpdate;
+			}
+			set
+			{
+				if ((this._LastUpdate != value))
+				{
+					this._LastUpdate = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastUpdateBy", DbType="Int NOT NULL")]
+		public int LastUpdateBy
+		{
+			get
+			{
+				return this._LastUpdateBy;
+			}
+			set
+			{
+				if ((this._LastUpdateBy != value))
+				{
+					this._LastUpdateBy = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastUpdateByType", DbType="Int NOT NULL")]
+		public int LastUpdateByType
+		{
+			get
+			{
+				return this._LastUpdateByType;
+			}
+			set
+			{
+				if ((this._LastUpdateByType != value))
+				{
+					this._LastUpdateByType = value;
+				}
+			}
+		}
+	}
+	
+	public partial class tfnShippingAddressGetByIdResult
+	{
+		
+		private int _ShippingAddressId;
+		
+		private int _AddressId;
+		
+		private string _ContactPersonFirstName;
+		
+		private string _ContactPersonLastName;
+		
+		private string _ContactPersonPhoneNumber;
+		
+		private int _ContactPersonPhoneNumberCountryId;
+		
+		private string _Address1;
+		
+		private string _Address2;
+		
+		private string _City;
+		
+		private string _District;
+		
+		private string _State;
+		
+		private string _Zip;
+		
+		private int _CountryId;
+		
+		public tfnShippingAddressGetByIdResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ShippingAddressId", DbType="Int NOT NULL")]
+		public int ShippingAddressId
+		{
+			get
+			{
+				return this._ShippingAddressId;
+			}
+			set
+			{
+				if ((this._ShippingAddressId != value))
+				{
+					this._ShippingAddressId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AddressId", DbType="Int NOT NULL")]
+		public int AddressId
+		{
+			get
+			{
+				return this._AddressId;
+			}
+			set
+			{
+				if ((this._AddressId != value))
+				{
+					this._AddressId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ContactPersonFirstName", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string ContactPersonFirstName
+		{
+			get
+			{
+				return this._ContactPersonFirstName;
+			}
+			set
+			{
+				if ((this._ContactPersonFirstName != value))
+				{
+					this._ContactPersonFirstName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ContactPersonLastName", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string ContactPersonLastName
+		{
+			get
+			{
+				return this._ContactPersonLastName;
+			}
+			set
+			{
+				if ((this._ContactPersonLastName != value))
+				{
+					this._ContactPersonLastName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ContactPersonPhoneNumber", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string ContactPersonPhoneNumber
+		{
+			get
+			{
+				return this._ContactPersonPhoneNumber;
+			}
+			set
+			{
+				if ((this._ContactPersonPhoneNumber != value))
+				{
+					this._ContactPersonPhoneNumber = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ContactPersonPhoneNumberCountryId", DbType="Int NOT NULL")]
+		public int ContactPersonPhoneNumberCountryId
+		{
+			get
+			{
+				return this._ContactPersonPhoneNumberCountryId;
+			}
+			set
+			{
+				if ((this._ContactPersonPhoneNumberCountryId != value))
+				{
+					this._ContactPersonPhoneNumberCountryId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Address1", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string Address1
+		{
+			get
+			{
+				return this._Address1;
+			}
+			set
+			{
+				if ((this._Address1 != value))
+				{
+					this._Address1 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Address2", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string Address2
+		{
+			get
+			{
+				return this._Address2;
+			}
+			set
+			{
+				if ((this._Address2 != value))
+				{
+					this._Address2 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_City", DbType="NVarChar(128) NOT NULL", CanBeNull=false)]
+		public string City
+		{
+			get
+			{
+				return this._City;
+			}
+			set
+			{
+				if ((this._City != value))
+				{
+					this._City = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_District", DbType="NVarChar(128)")]
+		public string District
+		{
+			get
+			{
+				return this._District;
+			}
+			set
+			{
+				if ((this._District != value))
+				{
+					this._District = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_State", DbType="NVarChar(128) NOT NULL", CanBeNull=false)]
+		public string State
+		{
+			get
+			{
+				return this._State;
+			}
+			set
+			{
+				if ((this._State != value))
+				{
+					this._State = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Zip", DbType="NVarChar(32) NOT NULL", CanBeNull=false)]
+		public string Zip
+		{
+			get
+			{
+				return this._Zip;
+			}
+			set
+			{
+				if ((this._Zip != value))
+				{
+					this._Zip = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CountryId", DbType="Int NOT NULL")]
+		public int CountryId
+		{
+			get
+			{
+				return this._CountryId;
+			}
+			set
+			{
+				if ((this._CountryId != value))
+				{
+					this._CountryId = value;
+				}
+			}
+		}
+	}
+	
+	public partial class tfnShippingOrderTaxPaymentGetResult
+	{
+		
+		private int _ShippingOrderTaxPaymentId;
+		
+		private int _ShippingOrderId;
+		
+		private int _TaxPaymentMethod;
+		
+		private decimal _TaxPrice;
+		
+		private int _CurrencyId;
+		
+		public tfnShippingOrderTaxPaymentGetResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ShippingOrderTaxPaymentId", DbType="Int NOT NULL")]
+		public int ShippingOrderTaxPaymentId
+		{
+			get
+			{
+				return this._ShippingOrderTaxPaymentId;
+			}
+			set
+			{
+				if ((this._ShippingOrderTaxPaymentId != value))
+				{
+					this._ShippingOrderTaxPaymentId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ShippingOrderId", DbType="Int NOT NULL")]
+		public int ShippingOrderId
+		{
+			get
+			{
+				return this._ShippingOrderId;
+			}
+			set
+			{
+				if ((this._ShippingOrderId != value))
+				{
+					this._ShippingOrderId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TaxPaymentMethod", DbType="Int NOT NULL")]
+		public int TaxPaymentMethod
+		{
+			get
+			{
+				return this._TaxPaymentMethod;
+			}
+			set
+			{
+				if ((this._TaxPaymentMethod != value))
+				{
+					this._TaxPaymentMethod = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TaxPrice", DbType="Decimal(10,2) NOT NULL")]
+		public decimal TaxPrice
+		{
+			get
+			{
+				return this._TaxPrice;
+			}
+			set
+			{
+				if ((this._TaxPrice != value))
+				{
+					this._TaxPrice = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CurrencyId", DbType="Int NOT NULL")]
+		public int CurrencyId
+		{
+			get
+			{
+				return this._CurrencyId;
+			}
+			set
+			{
+				if ((this._CurrencyId != value))
+				{
+					this._CurrencyId = value;
+				}
+			}
+		}
+	}
+	
+	public partial class tfnLogisticCompanyInfoGetResult
+	{
+		
+		private System.Nullable<int> _CompanyId;
+		
+		private System.Nullable<int> _UserId;
+		
+		private string _UserLoginName;
+		
+		private string _CompanyCode;
+		
+		private string _CompanyName;
+		
+		private string _Email;
+		
+		private string _PhoneNumber;
+		
+		private System.Nullable<int> _PhoneNumberCountryId;
+		
+		private string _ContactFirstName;
+		
+		private string _ContactLastName;
+		
+		private string _Address1;
+		
+		private string _Address2;
+		
+		private string _City;
+		
+		private string _District;
+		
+		private string _State;
+		
+		private string _Zip;
+		
+		private string _Fax;
+		
+		private System.Nullable<int> _CountryId;
+		
+		private System.Nullable<bool> _Available;
+		
+		public tfnLogisticCompanyInfoGetResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CompanyId", DbType="Int")]
+		public System.Nullable<int> CompanyId
+		{
+			get
+			{
+				return this._CompanyId;
+			}
+			set
+			{
+				if ((this._CompanyId != value))
+				{
+					this._CompanyId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserId", DbType="Int")]
+		public System.Nullable<int> UserId
+		{
+			get
+			{
+				return this._UserId;
+			}
+			set
+			{
+				if ((this._UserId != value))
+				{
+					this._UserId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserLoginName", DbType="NVarChar(256)")]
+		public string UserLoginName
+		{
+			get
+			{
+				return this._UserLoginName;
+			}
+			set
+			{
+				if ((this._UserLoginName != value))
+				{
+					this._UserLoginName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CompanyCode", DbType="NVarChar(256)")]
+		public string CompanyCode
+		{
+			get
+			{
+				return this._CompanyCode;
+			}
+			set
+			{
+				if ((this._CompanyCode != value))
+				{
+					this._CompanyCode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CompanyName", DbType="NVarChar(256)")]
+		public string CompanyName
+		{
+			get
+			{
+				return this._CompanyName;
+			}
+			set
+			{
+				if ((this._CompanyName != value))
+				{
+					this._CompanyName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Email", DbType="NVarChar(256)")]
+		public string Email
+		{
+			get
+			{
+				return this._Email;
+			}
+			set
+			{
+				if ((this._Email != value))
+				{
+					this._Email = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PhoneNumber", DbType="NVarChar(256)")]
+		public string PhoneNumber
+		{
+			get
+			{
+				return this._PhoneNumber;
+			}
+			set
+			{
+				if ((this._PhoneNumber != value))
+				{
+					this._PhoneNumber = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PhoneNumberCountryId", DbType="Int")]
+		public System.Nullable<int> PhoneNumberCountryId
+		{
+			get
+			{
+				return this._PhoneNumberCountryId;
+			}
+			set
+			{
+				if ((this._PhoneNumberCountryId != value))
+				{
+					this._PhoneNumberCountryId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ContactFirstName", DbType="NVarChar(256)")]
+		public string ContactFirstName
+		{
+			get
+			{
+				return this._ContactFirstName;
+			}
+			set
+			{
+				if ((this._ContactFirstName != value))
+				{
+					this._ContactFirstName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ContactLastName", DbType="NVarChar(256)")]
+		public string ContactLastName
+		{
+			get
+			{
+				return this._ContactLastName;
+			}
+			set
+			{
+				if ((this._ContactLastName != value))
+				{
+					this._ContactLastName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Address1", DbType="NVarChar(256)")]
+		public string Address1
+		{
+			get
+			{
+				return this._Address1;
+			}
+			set
+			{
+				if ((this._Address1 != value))
+				{
+					this._Address1 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Address2", DbType="NVarChar(256)")]
+		public string Address2
+		{
+			get
+			{
+				return this._Address2;
+			}
+			set
+			{
+				if ((this._Address2 != value))
+				{
+					this._Address2 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_City", DbType="NVarChar(256)")]
+		public string City
+		{
+			get
+			{
+				return this._City;
+			}
+			set
+			{
+				if ((this._City != value))
+				{
+					this._City = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_District", DbType="NVarChar(256)")]
+		public string District
+		{
+			get
+			{
+				return this._District;
+			}
+			set
+			{
+				if ((this._District != value))
+				{
+					this._District = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_State", DbType="NVarChar(256)")]
+		public string State
+		{
+			get
+			{
+				return this._State;
+			}
+			set
+			{
+				if ((this._State != value))
+				{
+					this._State = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Zip", DbType="NVarChar(64)")]
+		public string Zip
+		{
+			get
+			{
+				return this._Zip;
+			}
+			set
+			{
+				if ((this._Zip != value))
+				{
+					this._Zip = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Fax", DbType="NVarChar(256)")]
+		public string Fax
+		{
+			get
+			{
+				return this._Fax;
+			}
+			set
+			{
+				if ((this._Fax != value))
+				{
+					this._Fax = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CountryId", DbType="Int")]
+		public System.Nullable<int> CountryId
+		{
+			get
+			{
+				return this._CountryId;
+			}
+			set
+			{
+				if ((this._CountryId != value))
+				{
+					this._CountryId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Available", DbType="Bit")]
+		public System.Nullable<bool> Available
+		{
+			get
+			{
+				return this._Available;
+			}
+			set
+			{
+				if ((this._Available != value))
+				{
+					this._Available = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_CompanyLogisticCompanySearchResult
+	{
+		
+		private System.Nullable<int> _CompanyId;
+		
+		private System.Nullable<int> _UserId;
+		
+		private string _UserLoginName;
+		
+		private string _CompanyCode;
+		
+		private string _CompanyName;
+		
+		private string _Email;
+		
+		private string _PhoneNumber;
+		
+		private System.Nullable<int> _PhoneNumberCountryId;
+		
+		private string _ContactFirstName;
+		
+		private string _ContactLastName;
+		
+		private string _Address1;
+		
+		private string _Address2;
+		
+		private string _City;
+		
+		private string _District;
+		
+		private string _State;
+		
+		private string _Zip;
+		
+		private string _Fax;
+		
+		private System.Nullable<int> _CountryId;
+		
+		private System.Nullable<bool> _Available;
+		
+		private System.Nullable<long> _RowNumber;
+		
+		public sp_CompanyLogisticCompanySearchResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CompanyId", DbType="Int")]
+		public System.Nullable<int> CompanyId
+		{
+			get
+			{
+				return this._CompanyId;
+			}
+			set
+			{
+				if ((this._CompanyId != value))
+				{
+					this._CompanyId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserId", DbType="Int")]
+		public System.Nullable<int> UserId
+		{
+			get
+			{
+				return this._UserId;
+			}
+			set
+			{
+				if ((this._UserId != value))
+				{
+					this._UserId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserLoginName", DbType="NVarChar(256)")]
+		public string UserLoginName
+		{
+			get
+			{
+				return this._UserLoginName;
+			}
+			set
+			{
+				if ((this._UserLoginName != value))
+				{
+					this._UserLoginName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CompanyCode", DbType="NVarChar(256)")]
+		public string CompanyCode
+		{
+			get
+			{
+				return this._CompanyCode;
+			}
+			set
+			{
+				if ((this._CompanyCode != value))
+				{
+					this._CompanyCode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CompanyName", DbType="NVarChar(256)")]
+		public string CompanyName
+		{
+			get
+			{
+				return this._CompanyName;
+			}
+			set
+			{
+				if ((this._CompanyName != value))
+				{
+					this._CompanyName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Email", DbType="NVarChar(256)")]
+		public string Email
+		{
+			get
+			{
+				return this._Email;
+			}
+			set
+			{
+				if ((this._Email != value))
+				{
+					this._Email = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PhoneNumber", DbType="NVarChar(256)")]
+		public string PhoneNumber
+		{
+			get
+			{
+				return this._PhoneNumber;
+			}
+			set
+			{
+				if ((this._PhoneNumber != value))
+				{
+					this._PhoneNumber = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PhoneNumberCountryId", DbType="Int")]
+		public System.Nullable<int> PhoneNumberCountryId
+		{
+			get
+			{
+				return this._PhoneNumberCountryId;
+			}
+			set
+			{
+				if ((this._PhoneNumberCountryId != value))
+				{
+					this._PhoneNumberCountryId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ContactFirstName", DbType="NVarChar(256)")]
+		public string ContactFirstName
+		{
+			get
+			{
+				return this._ContactFirstName;
+			}
+			set
+			{
+				if ((this._ContactFirstName != value))
+				{
+					this._ContactFirstName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ContactLastName", DbType="NVarChar(256)")]
+		public string ContactLastName
+		{
+			get
+			{
+				return this._ContactLastName;
+			}
+			set
+			{
+				if ((this._ContactLastName != value))
+				{
+					this._ContactLastName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Address1", DbType="NVarChar(256)")]
+		public string Address1
+		{
+			get
+			{
+				return this._Address1;
+			}
+			set
+			{
+				if ((this._Address1 != value))
+				{
+					this._Address1 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Address2", DbType="NVarChar(256)")]
+		public string Address2
+		{
+			get
+			{
+				return this._Address2;
+			}
+			set
+			{
+				if ((this._Address2 != value))
+				{
+					this._Address2 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_City", DbType="NVarChar(256)")]
+		public string City
+		{
+			get
+			{
+				return this._City;
+			}
+			set
+			{
+				if ((this._City != value))
+				{
+					this._City = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_District", DbType="NVarChar(256)")]
+		public string District
+		{
+			get
+			{
+				return this._District;
+			}
+			set
+			{
+				if ((this._District != value))
+				{
+					this._District = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_State", DbType="NVarChar(256)")]
+		public string State
+		{
+			get
+			{
+				return this._State;
+			}
+			set
+			{
+				if ((this._State != value))
+				{
+					this._State = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Zip", DbType="NVarChar(64)")]
+		public string Zip
+		{
+			get
+			{
+				return this._Zip;
+			}
+			set
+			{
+				if ((this._Zip != value))
+				{
+					this._Zip = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Fax", DbType="NVarChar(256)")]
+		public string Fax
+		{
+			get
+			{
+				return this._Fax;
+			}
+			set
+			{
+				if ((this._Fax != value))
+				{
+					this._Fax = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CountryId", DbType="Int")]
+		public System.Nullable<int> CountryId
+		{
+			get
+			{
+				return this._CountryId;
+			}
+			set
+			{
+				if ((this._CountryId != value))
+				{
+					this._CountryId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Available", DbType="Bit")]
+		public System.Nullable<bool> Available
+		{
+			get
+			{
+				return this._Available;
+			}
+			set
+			{
+				if ((this._Available != value))
+				{
+					this._Available = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RowNumber", DbType="BigInt")]
+		public System.Nullable<long> RowNumber
+		{
+			get
+			{
+				return this._RowNumber;
+			}
+			set
+			{
+				if ((this._RowNumber != value))
+				{
+					this._RowNumber = value;
+				}
+			}
+		}
+	}
+	
+	public partial class tfnBatchHandlerRecordListGetResult
+	{
+		
+		private int _BatchHandlerRecordId;
+		
+		private int _BatchHandlerId;
+		
+		private string _RecordNumber;
+		
+		private int _BatchHandlerRecordStatusCodeId;
+		
+		private System.DateTime _CreateDate;
+		
+		private System.DateTime _LastUpdate;
+		
+		private int _LastUpdateBy;
+		
+		private short _LastUpdateByType;
+		
+		public tfnBatchHandlerRecordListGetResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BatchHandlerRecordId", DbType="Int NOT NULL")]
+		public int BatchHandlerRecordId
+		{
+			get
+			{
+				return this._BatchHandlerRecordId;
+			}
+			set
+			{
+				if ((this._BatchHandlerRecordId != value))
+				{
+					this._BatchHandlerRecordId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BatchHandlerId", DbType="Int NOT NULL")]
+		public int BatchHandlerId
+		{
+			get
+			{
+				return this._BatchHandlerId;
+			}
+			set
+			{
+				if ((this._BatchHandlerId != value))
+				{
+					this._BatchHandlerId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RecordNumber", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string RecordNumber
+		{
+			get
+			{
+				return this._RecordNumber;
+			}
+			set
+			{
+				if ((this._RecordNumber != value))
+				{
+					this._RecordNumber = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BatchHandlerRecordStatusCodeId", DbType="Int NOT NULL")]
+		public int BatchHandlerRecordStatusCodeId
+		{
+			get
+			{
+				return this._BatchHandlerRecordStatusCodeId;
+			}
+			set
+			{
+				if ((this._BatchHandlerRecordStatusCodeId != value))
+				{
+					this._BatchHandlerRecordStatusCodeId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreateDate", DbType="DateTime NOT NULL")]
+		public System.DateTime CreateDate
+		{
+			get
+			{
+				return this._CreateDate;
+			}
+			set
+			{
+				if ((this._CreateDate != value))
+				{
+					this._CreateDate = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastUpdate", DbType="DateTime NOT NULL")]
+		public System.DateTime LastUpdate
+		{
+			get
+			{
+				return this._LastUpdate;
+			}
+			set
+			{
+				if ((this._LastUpdate != value))
+				{
+					this._LastUpdate = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastUpdateBy", DbType="Int NOT NULL")]
+		public int LastUpdateBy
+		{
+			get
+			{
+				return this._LastUpdateBy;
+			}
+			set
+			{
+				if ((this._LastUpdateBy != value))
+				{
+					this._LastUpdateBy = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastUpdateByType", DbType="SmallInt NOT NULL")]
+		public short LastUpdateByType
+		{
+			get
+			{
+				return this._LastUpdateByType;
+			}
+			set
+			{
+				if ((this._LastUpdateByType != value))
+				{
+					this._LastUpdateByType = value;
+				}
+			}
+		}
+	}
+	
+	public partial class tfnBatchHandlerGetResult
+	{
+		
+		private int _BatchHandlerId;
+		
+		private string _BatchNumber;
+		
+		private int _BatchTemplateId;
+		
+		private int _UserId;
+		
+		private int _BatchStatusCodeId;
+		
+		public tfnBatchHandlerGetResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BatchHandlerId", DbType="Int NOT NULL")]
+		public int BatchHandlerId
+		{
+			get
+			{
+				return this._BatchHandlerId;
+			}
+			set
+			{
+				if ((this._BatchHandlerId != value))
+				{
+					this._BatchHandlerId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BatchNumber", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string BatchNumber
+		{
+			get
+			{
+				return this._BatchNumber;
+			}
+			set
+			{
+				if ((this._BatchNumber != value))
+				{
+					this._BatchNumber = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BatchTemplateId", DbType="Int NOT NULL")]
+		public int BatchTemplateId
+		{
+			get
+			{
+				return this._BatchTemplateId;
+			}
+			set
+			{
+				if ((this._BatchTemplateId != value))
+				{
+					this._BatchTemplateId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserId", DbType="Int NOT NULL")]
+		public int UserId
+		{
+			get
+			{
+				return this._UserId;
+			}
+			set
+			{
+				if ((this._UserId != value))
+				{
+					this._UserId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BatchStatusCodeId", DbType="Int NOT NULL")]
+		public int BatchStatusCodeId
+		{
+			get
+			{
+				return this._BatchStatusCodeId;
+			}
+			set
+			{
+				if ((this._BatchStatusCodeId != value))
+				{
+					this._BatchStatusCodeId = value;
+				}
+			}
+		}
+	}
+	
+	public partial class tfnBatchHandlerColumnListGetResult
+	{
+		
+		private int _BatchHandlerColumnId;
+		
+		private string _ColumnName;
+		
+		private int _ColumnTypeCodeId;
+		
+		private int _ColumnOrder;
+		
+		private bool _Required;
+		
+		public tfnBatchHandlerColumnListGetResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BatchHandlerColumnId", DbType="Int NOT NULL")]
+		public int BatchHandlerColumnId
+		{
+			get
+			{
+				return this._BatchHandlerColumnId;
+			}
+			set
+			{
+				if ((this._BatchHandlerColumnId != value))
+				{
+					this._BatchHandlerColumnId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ColumnName", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string ColumnName
+		{
+			get
+			{
+				return this._ColumnName;
+			}
+			set
+			{
+				if ((this._ColumnName != value))
+				{
+					this._ColumnName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ColumnTypeCodeId", DbType="Int NOT NULL")]
+		public int ColumnTypeCodeId
+		{
+			get
+			{
+				return this._ColumnTypeCodeId;
+			}
+			set
+			{
+				if ((this._ColumnTypeCodeId != value))
+				{
+					this._ColumnTypeCodeId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ColumnOrder", DbType="Int NOT NULL")]
+		public int ColumnOrder
+		{
+			get
+			{
+				return this._ColumnOrder;
+			}
+			set
+			{
+				if ((this._ColumnOrder != value))
+				{
+					this._ColumnOrder = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Required", DbType="Bit NOT NULL")]
+		public bool Required
+		{
+			get
+			{
+				return this._Required;
+			}
+			set
+			{
+				if ((this._Required != value))
+				{
+					this._Required = value;
+				}
+			}
+		}
+	}
+	
+	public partial class tfnBatchTemplateListGetResult
+	{
+		
+		private int _BatchTemplateId;
+		
+		private string _TemplateName;
+		
+		private string _TemplateCode;
+		
+		private bool _Available;
+		
+		private string _FilePath;
+		
+		private string _FilePublicUrl;
+		
+		public tfnBatchTemplateListGetResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BatchTemplateId", DbType="Int NOT NULL")]
+		public int BatchTemplateId
+		{
+			get
+			{
+				return this._BatchTemplateId;
+			}
+			set
+			{
+				if ((this._BatchTemplateId != value))
+				{
+					this._BatchTemplateId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TemplateName", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string TemplateName
+		{
+			get
+			{
+				return this._TemplateName;
+			}
+			set
+			{
+				if ((this._TemplateName != value))
+				{
+					this._TemplateName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TemplateCode", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string TemplateCode
+		{
+			get
+			{
+				return this._TemplateCode;
+			}
+			set
+			{
+				if ((this._TemplateCode != value))
+				{
+					this._TemplateCode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Available", DbType="Bit NOT NULL")]
+		public bool Available
+		{
+			get
+			{
+				return this._Available;
+			}
+			set
+			{
+				if ((this._Available != value))
+				{
+					this._Available = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FilePath", DbType="NVarChar(256)")]
+		public string FilePath
+		{
+			get
+			{
+				return this._FilePath;
+			}
+			set
+			{
+				if ((this._FilePath != value))
+				{
+					this._FilePath = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FilePublicUrl", DbType="NVarChar(256)")]
+		public string FilePublicUrl
+		{
+			get
+			{
+				return this._FilePublicUrl;
+			}
+			set
+			{
+				if ((this._FilePublicUrl != value))
+				{
+					this._FilePublicUrl = value;
+				}
+			}
+		}
+	}
+	
+	public partial class tfnBatchHandlerRecordDetailGetResult
+	{
+		
+		private int _BatchHandlerRecordDetailId;
+		
+		private int _BatchHandlerRecordId;
+		
+		private int _BatchHandlerColumnId;
+		
+		private string _Value;
+		
+		private string _ColumnName;
+		
+		private int _ColumnTypeCodeId;
+		
+		private int _ColumnOrder;
+		
+		private bool _HasError;
+		
+		private string _ErrorReason;
+		
+		public tfnBatchHandlerRecordDetailGetResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BatchHandlerRecordDetailId", DbType="Int NOT NULL")]
+		public int BatchHandlerRecordDetailId
+		{
+			get
+			{
+				return this._BatchHandlerRecordDetailId;
+			}
+			set
+			{
+				if ((this._BatchHandlerRecordDetailId != value))
+				{
+					this._BatchHandlerRecordDetailId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BatchHandlerRecordId", DbType="Int NOT NULL")]
+		public int BatchHandlerRecordId
+		{
+			get
+			{
+				return this._BatchHandlerRecordId;
+			}
+			set
+			{
+				if ((this._BatchHandlerRecordId != value))
+				{
+					this._BatchHandlerRecordId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BatchHandlerColumnId", DbType="Int NOT NULL")]
+		public int BatchHandlerColumnId
+		{
+			get
+			{
+				return this._BatchHandlerColumnId;
+			}
+			set
+			{
+				if ((this._BatchHandlerColumnId != value))
+				{
+					this._BatchHandlerColumnId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Value", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string Value
+		{
+			get
+			{
+				return this._Value;
+			}
+			set
+			{
+				if ((this._Value != value))
+				{
+					this._Value = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ColumnName", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string ColumnName
+		{
+			get
+			{
+				return this._ColumnName;
+			}
+			set
+			{
+				if ((this._ColumnName != value))
+				{
+					this._ColumnName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ColumnTypeCodeId", DbType="Int NOT NULL")]
+		public int ColumnTypeCodeId
+		{
+			get
+			{
+				return this._ColumnTypeCodeId;
+			}
+			set
+			{
+				if ((this._ColumnTypeCodeId != value))
+				{
+					this._ColumnTypeCodeId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ColumnOrder", DbType="Int NOT NULL")]
+		public int ColumnOrder
+		{
+			get
+			{
+				return this._ColumnOrder;
+			}
+			set
+			{
+				if ((this._ColumnOrder != value))
+				{
+					this._ColumnOrder = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HasError", DbType="Bit NOT NULL")]
+		public bool HasError
+		{
+			get
+			{
+				return this._HasError;
+			}
+			set
+			{
+				if ((this._HasError != value))
+				{
+					this._HasError = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ErrorReason", DbType="NVarChar(256)")]
+		public string ErrorReason
+		{
+			get
+			{
+				return this._ErrorReason;
+			}
+			set
+			{
+				if ((this._ErrorReason != value))
+				{
+					this._ErrorReason = value;
+				}
+			}
+		}
+	}
+	
+	public partial class tfnShippingChannelIncrementListGetResult
+	{
+		
+		private System.Nullable<int> _ShippingChannelId;
+		
+		private System.Nullable<int> _ShippingChannelIncrementServiceId;
+		
+		private string _ServiceName;
+		
+		private System.Nullable<decimal> _ServicePrice;
+		
+		private System.Nullable<int> _CurrencyId;
+		
+		private System.Nullable<bool> _Optional;
+		
+		private System.Nullable<bool> _Available;
+		
+		public tfnShippingChannelIncrementListGetResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ShippingChannelId", DbType="Int")]
+		public System.Nullable<int> ShippingChannelId
+		{
+			get
+			{
+				return this._ShippingChannelId;
+			}
+			set
+			{
+				if ((this._ShippingChannelId != value))
+				{
+					this._ShippingChannelId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ShippingChannelIncrementServiceId", DbType="Int")]
+		public System.Nullable<int> ShippingChannelIncrementServiceId
+		{
+			get
+			{
+				return this._ShippingChannelIncrementServiceId;
+			}
+			set
+			{
+				if ((this._ShippingChannelIncrementServiceId != value))
+				{
+					this._ShippingChannelIncrementServiceId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ServiceName", DbType="NVarChar(256)")]
+		public string ServiceName
+		{
+			get
+			{
+				return this._ServiceName;
+			}
+			set
+			{
+				if ((this._ServiceName != value))
+				{
+					this._ServiceName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ServicePrice", DbType="Decimal(10,2)")]
+		public System.Nullable<decimal> ServicePrice
+		{
+			get
+			{
+				return this._ServicePrice;
+			}
+			set
+			{
+				if ((this._ServicePrice != value))
+				{
+					this._ServicePrice = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CurrencyId", DbType="Int")]
+		public System.Nullable<int> CurrencyId
+		{
+			get
+			{
+				return this._CurrencyId;
+			}
+			set
+			{
+				if ((this._CurrencyId != value))
+				{
+					this._CurrencyId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Optional", DbType="Bit")]
+		public System.Nullable<bool> Optional
+		{
+			get
+			{
+				return this._Optional;
+			}
+			set
+			{
+				if ((this._Optional != value))
+				{
+					this._Optional = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Available", DbType="Bit")]
+		public System.Nullable<bool> Available
+		{
+			get
+			{
+				return this._Available;
+			}
+			set
+			{
+				if ((this._Available != value))
+				{
+					this._Available = value;
+				}
+			}
+		}
+	}
+	
+	public partial class tfnShippingOrderLabelListGetResult
+	{
+		
+		private int _ShippingOrderId;
+		
+		private int _ShippingOrderLabelId;
+		
+		private string _LabelName;
+		
+		private int _FileId;
+		
+		private int _Order;
+		
+		private bool _Available;
+		
+		public tfnShippingOrderLabelListGetResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ShippingOrderId", DbType="Int NOT NULL")]
+		public int ShippingOrderId
+		{
+			get
+			{
+				return this._ShippingOrderId;
+			}
+			set
+			{
+				if ((this._ShippingOrderId != value))
+				{
+					this._ShippingOrderId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ShippingOrderLabelId", DbType="Int NOT NULL")]
+		public int ShippingOrderLabelId
+		{
+			get
+			{
+				return this._ShippingOrderLabelId;
+			}
+			set
+			{
+				if ((this._ShippingOrderLabelId != value))
+				{
+					this._ShippingOrderLabelId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LabelName", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string LabelName
+		{
+			get
+			{
+				return this._LabelName;
+			}
+			set
+			{
+				if ((this._LabelName != value))
+				{
+					this._LabelName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FileId", DbType="Int NOT NULL")]
+		public int FileId
+		{
+			get
+			{
+				return this._FileId;
+			}
+			set
+			{
+				if ((this._FileId != value))
+				{
+					this._FileId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Order]", Storage="_Order", DbType="Int NOT NULL")]
+		public int Order
+		{
+			get
+			{
+				return this._Order;
+			}
+			set
+			{
+				if ((this._Order != value))
+				{
+					this._Order = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Available", DbType="Bit NOT NULL")]
+		public bool Available
+		{
+			get
+			{
+				return this._Available;
+			}
+			set
+			{
+				if ((this._Available != value))
+				{
+					this._Available = value;
+				}
+			}
+		}
+	}
+	
+	public partial class tfnShippingOrderGetResult
+	{
+		
+		private int _ShippingOrderId;
+		
+		private int _CustomerId;
+		
+		private System.Nullable<int> _CustomerOrderId;
+		
+		private string _ReferenceOrderCode;
+		
+		private int _FromShippingAddressId;
+		
+		private int _ToShippingAddressId;
+		
+		private System.Nullable<int> _ShippingChannelId;
+		
+		private decimal _Price;
+		
+		private int _CurrencyId;
+		
+		private decimal _TotalWeight;
+		
+		private int _WeightUnitId;
+		
+		private int _ShippingOrderStatusCodeId;
+		
+		private string _ShippingOrderCode;
+		
+		private int _SourceCompanyId;
+		
+		private int _HandlerCompanyId;
+		
+		private int _UserId;
+		
+		public tfnShippingOrderGetResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ShippingOrderId", DbType="Int NOT NULL")]
+		public int ShippingOrderId
+		{
+			get
+			{
+				return this._ShippingOrderId;
+			}
+			set
+			{
+				if ((this._ShippingOrderId != value))
+				{
+					this._ShippingOrderId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CustomerId", DbType="Int NOT NULL")]
+		public int CustomerId
+		{
+			get
+			{
+				return this._CustomerId;
+			}
+			set
+			{
+				if ((this._CustomerId != value))
+				{
+					this._CustomerId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CustomerOrderId", DbType="Int")]
+		public System.Nullable<int> CustomerOrderId
+		{
+			get
+			{
+				return this._CustomerOrderId;
+			}
+			set
+			{
+				if ((this._CustomerOrderId != value))
+				{
+					this._CustomerOrderId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ReferenceOrderCode", DbType="NVarChar(256)")]
+		public string ReferenceOrderCode
+		{
+			get
+			{
+				return this._ReferenceOrderCode;
+			}
+			set
+			{
+				if ((this._ReferenceOrderCode != value))
+				{
+					this._ReferenceOrderCode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FromShippingAddressId", DbType="Int NOT NULL")]
+		public int FromShippingAddressId
+		{
+			get
+			{
+				return this._FromShippingAddressId;
+			}
+			set
+			{
+				if ((this._FromShippingAddressId != value))
+				{
+					this._FromShippingAddressId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ToShippingAddressId", DbType="Int NOT NULL")]
+		public int ToShippingAddressId
+		{
+			get
+			{
+				return this._ToShippingAddressId;
+			}
+			set
+			{
+				if ((this._ToShippingAddressId != value))
+				{
+					this._ToShippingAddressId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ShippingChannelId", DbType="Int")]
+		public System.Nullable<int> ShippingChannelId
+		{
+			get
+			{
+				return this._ShippingChannelId;
+			}
+			set
+			{
+				if ((this._ShippingChannelId != value))
+				{
+					this._ShippingChannelId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Price", DbType="Decimal(10,2) NOT NULL")]
+		public decimal Price
+		{
+			get
+			{
+				return this._Price;
+			}
+			set
+			{
+				if ((this._Price != value))
+				{
+					this._Price = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CurrencyId", DbType="Int NOT NULL")]
+		public int CurrencyId
+		{
+			get
+			{
+				return this._CurrencyId;
+			}
+			set
+			{
+				if ((this._CurrencyId != value))
+				{
+					this._CurrencyId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TotalWeight", DbType="Decimal(18,0) NOT NULL")]
+		public decimal TotalWeight
+		{
+			get
+			{
+				return this._TotalWeight;
+			}
+			set
+			{
+				if ((this._TotalWeight != value))
+				{
+					this._TotalWeight = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WeightUnitId", DbType="Int NOT NULL")]
+		public int WeightUnitId
+		{
+			get
+			{
+				return this._WeightUnitId;
+			}
+			set
+			{
+				if ((this._WeightUnitId != value))
+				{
+					this._WeightUnitId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ShippingOrderStatusCodeId", DbType="Int NOT NULL")]
+		public int ShippingOrderStatusCodeId
+		{
+			get
+			{
+				return this._ShippingOrderStatusCodeId;
+			}
+			set
+			{
+				if ((this._ShippingOrderStatusCodeId != value))
+				{
+					this._ShippingOrderStatusCodeId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ShippingOrderCode", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string ShippingOrderCode
+		{
+			get
+			{
+				return this._ShippingOrderCode;
+			}
+			set
+			{
+				if ((this._ShippingOrderCode != value))
+				{
+					this._ShippingOrderCode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SourceCompanyId", DbType="Int NOT NULL")]
+		public int SourceCompanyId
+		{
+			get
+			{
+				return this._SourceCompanyId;
+			}
+			set
+			{
+				if ((this._SourceCompanyId != value))
+				{
+					this._SourceCompanyId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HandlerCompanyId", DbType="Int NOT NULL")]
+		public int HandlerCompanyId
+		{
+			get
+			{
+				return this._HandlerCompanyId;
+			}
+			set
+			{
+				if ((this._HandlerCompanyId != value))
+				{
+					this._HandlerCompanyId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserId", DbType="Int NOT NULL")]
+		public int UserId
+		{
+			get
+			{
+				return this._UserId;
+			}
+			set
+			{
+				if ((this._UserId != value))
+				{
+					this._UserId = value;
+				}
+			}
+		}
+	}
+	
+	public partial class tfnShippingOrderCompanyTransactionListGetResult
+	{
+		
+		private int _CompanyId;
+		
+		private string _CompanyName;
+		
+		private int _CompanyTransactionId;
+		
+		private int _TransactionTypeCodeId;
+		
+		private string _TransactionTypeCode;
+		
+		private decimal _Amount;
+		
+		private int _CurrencyId;
+		
+		private string _Currency;
+		
+		private string _Description;
+		
+		private int _UserId;
+		
+		private string _UserName;
+		
+		private bool _isSourceCompany;
+		
+		public tfnShippingOrderCompanyTransactionListGetResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CompanyId", DbType="Int NOT NULL")]
+		public int CompanyId
+		{
+			get
+			{
+				return this._CompanyId;
+			}
+			set
+			{
+				if ((this._CompanyId != value))
+				{
+					this._CompanyId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CompanyName", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string CompanyName
+		{
+			get
+			{
+				return this._CompanyName;
+			}
+			set
+			{
+				if ((this._CompanyName != value))
+				{
+					this._CompanyName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CompanyTransactionId", DbType="Int NOT NULL")]
+		public int CompanyTransactionId
+		{
+			get
+			{
+				return this._CompanyTransactionId;
+			}
+			set
+			{
+				if ((this._CompanyTransactionId != value))
+				{
+					this._CompanyTransactionId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TransactionTypeCodeId", DbType="Int NOT NULL")]
+		public int TransactionTypeCodeId
+		{
+			get
+			{
+				return this._TransactionTypeCodeId;
+			}
+			set
+			{
+				if ((this._TransactionTypeCodeId != value))
+				{
+					this._TransactionTypeCodeId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TransactionTypeCode", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string TransactionTypeCode
+		{
+			get
+			{
+				return this._TransactionTypeCode;
+			}
+			set
+			{
+				if ((this._TransactionTypeCode != value))
+				{
+					this._TransactionTypeCode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Amount", DbType="Decimal(10,2) NOT NULL")]
+		public decimal Amount
+		{
+			get
+			{
+				return this._Amount;
+			}
+			set
+			{
+				if ((this._Amount != value))
+				{
+					this._Amount = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CurrencyId", DbType="Int NOT NULL")]
+		public int CurrencyId
+		{
+			get
+			{
+				return this._CurrencyId;
+			}
+			set
+			{
+				if ((this._CurrencyId != value))
+				{
+					this._CurrencyId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Currency", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string Currency
+		{
+			get
+			{
+				return this._Currency;
+			}
+			set
+			{
+				if ((this._Currency != value))
+				{
+					this._Currency = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string Description
+		{
+			get
+			{
+				return this._Description;
+			}
+			set
+			{
+				if ((this._Description != value))
+				{
+					this._Description = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserId", DbType="Int NOT NULL")]
+		public int UserId
+		{
+			get
+			{
+				return this._UserId;
+			}
+			set
+			{
+				if ((this._UserId != value))
+				{
+					this._UserId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserName", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string UserName
+		{
+			get
+			{
+				return this._UserName;
+			}
+			set
+			{
+				if ((this._UserName != value))
+				{
+					this._UserName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_isSourceCompany", DbType="Bit NOT NULL")]
+		public bool isSourceCompany
+		{
+			get
+			{
+				return this._isSourceCompany;
+			}
+			set
+			{
+				if ((this._isSourceCompany != value))
+				{
+					this._isSourceCompany = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_CompanyTransactionSearchResult
+	{
+		
+		private System.Nullable<int> _CompanyTransactionId;
+		
+		private System.Nullable<int> _CompanyId;
+		
+		private string _CompanyName;
+		
+		private System.Nullable<decimal> _CurrentBalance;
+		
+		private System.Nullable<decimal> _Amount;
+		
+		private System.Nullable<int> _TransactionTypeCodeId;
+		
+		private string _TransactionType;
+		
+		private string _Description;
+		
+		private System.Nullable<int> _CurrencyId;
+		
+		private string _Currency;
+		
+		private System.Nullable<int> _UserId;
+		
+		private string _UserName;
+		
+		private System.Nullable<long> _RowNumber;
+		
+		public sp_CompanyTransactionSearchResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CompanyTransactionId", DbType="Int")]
+		public System.Nullable<int> CompanyTransactionId
+		{
+			get
+			{
+				return this._CompanyTransactionId;
+			}
+			set
+			{
+				if ((this._CompanyTransactionId != value))
+				{
+					this._CompanyTransactionId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CompanyId", DbType="Int")]
+		public System.Nullable<int> CompanyId
+		{
+			get
+			{
+				return this._CompanyId;
+			}
+			set
+			{
+				if ((this._CompanyId != value))
+				{
+					this._CompanyId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CompanyName", DbType="NVarChar(256)")]
+		public string CompanyName
+		{
+			get
+			{
+				return this._CompanyName;
+			}
+			set
+			{
+				if ((this._CompanyName != value))
+				{
+					this._CompanyName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CurrentBalance", DbType="Decimal(10,2)")]
+		public System.Nullable<decimal> CurrentBalance
+		{
+			get
+			{
+				return this._CurrentBalance;
+			}
+			set
+			{
+				if ((this._CurrentBalance != value))
+				{
+					this._CurrentBalance = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Amount", DbType="Decimal(10,2)")]
+		public System.Nullable<decimal> Amount
+		{
+			get
+			{
+				return this._Amount;
+			}
+			set
+			{
+				if ((this._Amount != value))
+				{
+					this._Amount = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TransactionTypeCodeId", DbType="Int")]
+		public System.Nullable<int> TransactionTypeCodeId
+		{
+			get
+			{
+				return this._TransactionTypeCodeId;
+			}
+			set
+			{
+				if ((this._TransactionTypeCodeId != value))
+				{
+					this._TransactionTypeCodeId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TransactionType", DbType="NVarChar(256)")]
+		public string TransactionType
+		{
+			get
+			{
+				return this._TransactionType;
+			}
+			set
+			{
+				if ((this._TransactionType != value))
+				{
+					this._TransactionType = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="NVarChar(256)")]
+		public string Description
+		{
+			get
+			{
+				return this._Description;
+			}
+			set
+			{
+				if ((this._Description != value))
+				{
+					this._Description = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CurrencyId", DbType="Int")]
+		public System.Nullable<int> CurrencyId
+		{
+			get
+			{
+				return this._CurrencyId;
+			}
+			set
+			{
+				if ((this._CurrencyId != value))
+				{
+					this._CurrencyId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Currency", DbType="NVarChar(256)")]
+		public string Currency
+		{
+			get
+			{
+				return this._Currency;
+			}
+			set
+			{
+				if ((this._Currency != value))
+				{
+					this._Currency = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserId", DbType="Int")]
+		public System.Nullable<int> UserId
+		{
+			get
+			{
+				return this._UserId;
+			}
+			set
+			{
+				if ((this._UserId != value))
+				{
+					this._UserId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserName", DbType="NVarChar(256)")]
+		public string UserName
+		{
+			get
+			{
+				return this._UserName;
+			}
+			set
+			{
+				if ((this._UserName != value))
+				{
+					this._UserName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RowNumber", DbType="BigInt")]
+		public System.Nullable<long> RowNumber
+		{
+			get
+			{
+				return this._RowNumber;
+			}
+			set
+			{
+				if ((this._RowNumber != value))
+				{
+					this._RowNumber = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_CompanyTransactionRequestSearchResult
+	{
+		
+		private System.Nullable<int> _CompanyTransactionRequestId;
+		
+		private System.Nullable<decimal> _Amount;
+		
+		private System.Nullable<int> _CurrencyId;
+		
+		private string _Currency;
+		
+		private System.Nullable<int> _SourceCompanyId;
+		
+		private string _SourceCompanyName;
+		
+		private System.Nullable<int> _HandlerCompanyId;
+		
+		private string _HandlerCompanyName;
+		
+		private System.Nullable<int> _CompanyTransactionRequestStatusCodeId;
+		
+		private string _CompanyTransactionRequestStatus;
+		
+		private System.Nullable<int> _UserId;
+		
+		private string _UserName;
+		
+		private System.Nullable<long> _RowNumber;
+		
+		public sp_CompanyTransactionRequestSearchResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CompanyTransactionRequestId", DbType="Int")]
+		public System.Nullable<int> CompanyTransactionRequestId
+		{
+			get
+			{
+				return this._CompanyTransactionRequestId;
+			}
+			set
+			{
+				if ((this._CompanyTransactionRequestId != value))
+				{
+					this._CompanyTransactionRequestId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Amount", DbType="Decimal(10,2)")]
+		public System.Nullable<decimal> Amount
+		{
+			get
+			{
+				return this._Amount;
+			}
+			set
+			{
+				if ((this._Amount != value))
+				{
+					this._Amount = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CurrencyId", DbType="Int")]
+		public System.Nullable<int> CurrencyId
+		{
+			get
+			{
+				return this._CurrencyId;
+			}
+			set
+			{
+				if ((this._CurrencyId != value))
+				{
+					this._CurrencyId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Currency", DbType="NVarChar(256)")]
+		public string Currency
+		{
+			get
+			{
+				return this._Currency;
+			}
+			set
+			{
+				if ((this._Currency != value))
+				{
+					this._Currency = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SourceCompanyId", DbType="Int")]
+		public System.Nullable<int> SourceCompanyId
+		{
+			get
+			{
+				return this._SourceCompanyId;
+			}
+			set
+			{
+				if ((this._SourceCompanyId != value))
+				{
+					this._SourceCompanyId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SourceCompanyName", DbType="NVarChar(256)")]
+		public string SourceCompanyName
+		{
+			get
+			{
+				return this._SourceCompanyName;
+			}
+			set
+			{
+				if ((this._SourceCompanyName != value))
+				{
+					this._SourceCompanyName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HandlerCompanyId", DbType="Int")]
+		public System.Nullable<int> HandlerCompanyId
+		{
+			get
+			{
+				return this._HandlerCompanyId;
+			}
+			set
+			{
+				if ((this._HandlerCompanyId != value))
+				{
+					this._HandlerCompanyId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HandlerCompanyName", DbType="NVarChar(256)")]
+		public string HandlerCompanyName
+		{
+			get
+			{
+				return this._HandlerCompanyName;
+			}
+			set
+			{
+				if ((this._HandlerCompanyName != value))
+				{
+					this._HandlerCompanyName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CompanyTransactionRequestStatusCodeId", DbType="Int")]
+		public System.Nullable<int> CompanyTransactionRequestStatusCodeId
+		{
+			get
+			{
+				return this._CompanyTransactionRequestStatusCodeId;
+			}
+			set
+			{
+				if ((this._CompanyTransactionRequestStatusCodeId != value))
+				{
+					this._CompanyTransactionRequestStatusCodeId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CompanyTransactionRequestStatus", DbType="NVarChar(256)")]
+		public string CompanyTransactionRequestStatus
+		{
+			get
+			{
+				return this._CompanyTransactionRequestStatus;
+			}
+			set
+			{
+				if ((this._CompanyTransactionRequestStatus != value))
+				{
+					this._CompanyTransactionRequestStatus = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserId", DbType="Int")]
+		public System.Nullable<int> UserId
+		{
+			get
+			{
+				return this._UserId;
+			}
+			set
+			{
+				if ((this._UserId != value))
+				{
+					this._UserId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserName", DbType="NVarChar(256)")]
+		public string UserName
+		{
+			get
+			{
+				return this._UserName;
+			}
+			set
+			{
+				if ((this._UserName != value))
+				{
+					this._UserName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RowNumber", DbType="BigInt")]
+		public System.Nullable<long> RowNumber
+		{
+			get
+			{
+				return this._RowNumber;
+			}
+			set
+			{
+				if ((this._RowNumber != value))
+				{
+					this._RowNumber = value;
+				}
+			}
+		}
+	}
+	
+	public partial class tfnCompanyTransactionRequestFileGetResult
+	{
+		
+		private int _CompanyTransactionRequestFileId;
+		
+		private int _CompanyTransactionRequestId;
+		
+		private int _FileId;
+		
+		private bool _Available;
+		
+		public tfnCompanyTransactionRequestFileGetResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CompanyTransactionRequestFileId", DbType="Int NOT NULL")]
+		public int CompanyTransactionRequestFileId
+		{
+			get
+			{
+				return this._CompanyTransactionRequestFileId;
+			}
+			set
+			{
+				if ((this._CompanyTransactionRequestFileId != value))
+				{
+					this._CompanyTransactionRequestFileId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CompanyTransactionRequestId", DbType="Int NOT NULL")]
+		public int CompanyTransactionRequestId
+		{
+			get
+			{
+				return this._CompanyTransactionRequestId;
+			}
+			set
+			{
+				if ((this._CompanyTransactionRequestId != value))
+				{
+					this._CompanyTransactionRequestId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FileId", DbType="Int NOT NULL")]
+		public int FileId
+		{
+			get
+			{
+				return this._FileId;
+			}
+			set
+			{
+				if ((this._FileId != value))
+				{
+					this._FileId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Available", DbType="Bit NOT NULL")]
+		public bool Available
+		{
+			get
+			{
+				return this._Available;
+			}
+			set
+			{
+				if ((this._Available != value))
+				{
+					this._Available = value;
+				}
+			}
+		}
+	}
+	
+	public partial class tfnCompanyTransactionRequestGetResult
+	{
+		
+		private System.Nullable<int> _CompanyTransactionRequestId;
+		
+		private System.Nullable<decimal> _Amount;
+		
+		private System.Nullable<int> _CurrencyId;
+		
+		private string _Currency;
+		
+		private System.Nullable<int> _SourceCompanyId;
+		
+		private string _SourceCompanyName;
+		
+		private System.Nullable<int> _HandlerCompanyId;
+		
+		private string _HandlerCompanyName;
+		
+		private System.Nullable<int> _CompanyTransactionRequestStatusCodeId;
+		
+		private string _CompanyTransactionRequestStatus;
+		
+		private System.Nullable<int> _UserId;
+		
+		private string _UserName;
+		
+		public tfnCompanyTransactionRequestGetResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CompanyTransactionRequestId", DbType="Int")]
+		public System.Nullable<int> CompanyTransactionRequestId
+		{
+			get
+			{
+				return this._CompanyTransactionRequestId;
+			}
+			set
+			{
+				if ((this._CompanyTransactionRequestId != value))
+				{
+					this._CompanyTransactionRequestId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Amount", DbType="Decimal(10,2)")]
+		public System.Nullable<decimal> Amount
+		{
+			get
+			{
+				return this._Amount;
+			}
+			set
+			{
+				if ((this._Amount != value))
+				{
+					this._Amount = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CurrencyId", DbType="Int")]
+		public System.Nullable<int> CurrencyId
+		{
+			get
+			{
+				return this._CurrencyId;
+			}
+			set
+			{
+				if ((this._CurrencyId != value))
+				{
+					this._CurrencyId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Currency", DbType="NVarChar(256)")]
+		public string Currency
+		{
+			get
+			{
+				return this._Currency;
+			}
+			set
+			{
+				if ((this._Currency != value))
+				{
+					this._Currency = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SourceCompanyId", DbType="Int")]
+		public System.Nullable<int> SourceCompanyId
+		{
+			get
+			{
+				return this._SourceCompanyId;
+			}
+			set
+			{
+				if ((this._SourceCompanyId != value))
+				{
+					this._SourceCompanyId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SourceCompanyName", DbType="NVarChar(256)")]
+		public string SourceCompanyName
+		{
+			get
+			{
+				return this._SourceCompanyName;
+			}
+			set
+			{
+				if ((this._SourceCompanyName != value))
+				{
+					this._SourceCompanyName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HandlerCompanyId", DbType="Int")]
+		public System.Nullable<int> HandlerCompanyId
+		{
+			get
+			{
+				return this._HandlerCompanyId;
+			}
+			set
+			{
+				if ((this._HandlerCompanyId != value))
+				{
+					this._HandlerCompanyId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HandlerCompanyName", DbType="NVarChar(256)")]
+		public string HandlerCompanyName
+		{
+			get
+			{
+				return this._HandlerCompanyName;
+			}
+			set
+			{
+				if ((this._HandlerCompanyName != value))
+				{
+					this._HandlerCompanyName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CompanyTransactionRequestStatusCodeId", DbType="Int")]
+		public System.Nullable<int> CompanyTransactionRequestStatusCodeId
+		{
+			get
+			{
+				return this._CompanyTransactionRequestStatusCodeId;
+			}
+			set
+			{
+				if ((this._CompanyTransactionRequestStatusCodeId != value))
+				{
+					this._CompanyTransactionRequestStatusCodeId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CompanyTransactionRequestStatus", DbType="NVarChar(256)")]
+		public string CompanyTransactionRequestStatus
+		{
+			get
+			{
+				return this._CompanyTransactionRequestStatus;
+			}
+			set
+			{
+				if ((this._CompanyTransactionRequestStatus != value))
+				{
+					this._CompanyTransactionRequestStatus = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserId", DbType="Int")]
+		public System.Nullable<int> UserId
+		{
+			get
+			{
+				return this._UserId;
+			}
+			set
+			{
+				if ((this._UserId != value))
+				{
+					this._UserId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserName", DbType="NVarChar(256)")]
+		public string UserName
+		{
+			get
+			{
+				return this._UserName;
+			}
+			set
+			{
+				if ((this._UserName != value))
+				{
+					this._UserName = value;
+				}
+			}
+		}
+	}
+	
+	public partial class tfnShippingOrderIdentityProfileFileGetResult
+	{
+		
+		private int _ShippingOrderIdentityProfileId;
+		
+		private int _FileId;
+		
+		private bool _Available;
+		
+		public tfnShippingOrderIdentityProfileFileGetResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ShippingOrderIdentityProfileId", DbType="Int NOT NULL")]
+		public int ShippingOrderIdentityProfileId
+		{
+			get
+			{
+				return this._ShippingOrderIdentityProfileId;
+			}
+			set
+			{
+				if ((this._ShippingOrderIdentityProfileId != value))
+				{
+					this._ShippingOrderIdentityProfileId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FileId", DbType="Int NOT NULL")]
+		public int FileId
+		{
+			get
+			{
+				return this._FileId;
+			}
+			set
+			{
+				if ((this._FileId != value))
+				{
+					this._FileId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Available", DbType="Bit NOT NULL")]
+		public bool Available
+		{
+			get
+			{
+				return this._Available;
+			}
+			set
+			{
+				if ((this._Available != value))
+				{
+					this._Available = value;
+				}
+			}
+		}
+	}
+	
+	public partial class tfnShippingOrderIdentityProfileGetResult
+	{
+		
+		private int _ShippingOrderId;
+		
+		private int _ShippingOrderIdentityProfileId;
+		
+		private string _IdentityNumber;
+		
+		private string _Name;
+		
+		private string _PhoneNumber;
+		
+		private bool _Available;
+		
+		public tfnShippingOrderIdentityProfileGetResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ShippingOrderId", DbType="Int NOT NULL")]
+		public int ShippingOrderId
+		{
+			get
+			{
+				return this._ShippingOrderId;
+			}
+			set
+			{
+				if ((this._ShippingOrderId != value))
+				{
+					this._ShippingOrderId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ShippingOrderIdentityProfileId", DbType="Int NOT NULL")]
+		public int ShippingOrderIdentityProfileId
+		{
+			get
+			{
+				return this._ShippingOrderIdentityProfileId;
+			}
+			set
+			{
+				if ((this._ShippingOrderIdentityProfileId != value))
+				{
+					this._ShippingOrderIdentityProfileId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdentityNumber", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string IdentityNumber
+		{
+			get
+			{
+				return this._IdentityNumber;
+			}
+			set
+			{
+				if ((this._IdentityNumber != value))
+				{
+					this._IdentityNumber = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+			set
+			{
+				if ((this._Name != value))
+				{
+					this._Name = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PhoneNumber", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string PhoneNumber
+		{
+			get
+			{
+				return this._PhoneNumber;
+			}
+			set
+			{
+				if ((this._PhoneNumber != value))
+				{
+					this._PhoneNumber = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Available", DbType="Bit NOT NULL")]
+		public bool Available
+		{
+			get
+			{
+				return this._Available;
+			}
+			set
+			{
+				if ((this._Available != value))
+				{
+					this._Available = value;
+				}
+			}
+		}
+	}
+	
+	public partial class tfnShippingOrderLabelGetResult
+	{
+		
+		private int _ShippingOrderId;
+		
+		private int _ShippingOrderLabelId;
+		
+		private string _LabelName;
+		
+		private string _LabelNumber;
+		
+		private int _FileId;
+		
+		private int _Order;
+		
+		private bool _Available;
+		
+		public tfnShippingOrderLabelGetResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ShippingOrderId", DbType="Int NOT NULL")]
+		public int ShippingOrderId
+		{
+			get
+			{
+				return this._ShippingOrderId;
+			}
+			set
+			{
+				if ((this._ShippingOrderId != value))
+				{
+					this._ShippingOrderId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ShippingOrderLabelId", DbType="Int NOT NULL")]
+		public int ShippingOrderLabelId
+		{
+			get
+			{
+				return this._ShippingOrderLabelId;
+			}
+			set
+			{
+				if ((this._ShippingOrderLabelId != value))
+				{
+					this._ShippingOrderLabelId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LabelName", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string LabelName
+		{
+			get
+			{
+				return this._LabelName;
+			}
+			set
+			{
+				if ((this._LabelName != value))
+				{
+					this._LabelName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LabelNumber", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string LabelNumber
+		{
+			get
+			{
+				return this._LabelNumber;
+			}
+			set
+			{
+				if ((this._LabelNumber != value))
+				{
+					this._LabelNumber = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FileId", DbType="Int NOT NULL")]
+		public int FileId
+		{
+			get
+			{
+				return this._FileId;
+			}
+			set
+			{
+				if ((this._FileId != value))
+				{
+					this._FileId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Order]", Storage="_Order", DbType="Int NOT NULL")]
+		public int Order
+		{
+			get
+			{
+				return this._Order;
+			}
+			set
+			{
+				if ((this._Order != value))
+				{
+					this._Order = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Available", DbType="Bit NOT NULL")]
+		public bool Available
+		{
+			get
+			{
+				return this._Available;
+			}
+			set
+			{
+				if ((this._Available != value))
+				{
+					this._Available = value;
+				}
+			}
+		}
+	}
+	
+	public partial class tfnShippingOrderSubOrderRoutingTransactionListGetResult
+	{
+		
+		private int _ShippingOrderSubOrderId;
+		
+		private int _ShippingOrderSubOrderRoutingTrackId;
+		
+		private string _AcceptedAddress;
+		
+		private string _OpCode;
+		
+		private string _RemarkDetail;
+		
+		private System.DateTime _AcceptTime;
+		
+		private int _SourceId;
+		
+		private string _SourceTable;
+		
+		private int _UserId;
+		
+		private string _UserName;
+		
+		private System.DateTime _CreateDate;
+		
+		public tfnShippingOrderSubOrderRoutingTransactionListGetResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ShippingOrderSubOrderId", DbType="Int NOT NULL")]
+		public int ShippingOrderSubOrderId
+		{
+			get
+			{
+				return this._ShippingOrderSubOrderId;
+			}
+			set
+			{
+				if ((this._ShippingOrderSubOrderId != value))
+				{
+					this._ShippingOrderSubOrderId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ShippingOrderSubOrderRoutingTrackId", DbType="Int NOT NULL")]
+		public int ShippingOrderSubOrderRoutingTrackId
+		{
+			get
+			{
+				return this._ShippingOrderSubOrderRoutingTrackId;
+			}
+			set
+			{
+				if ((this._ShippingOrderSubOrderRoutingTrackId != value))
+				{
+					this._ShippingOrderSubOrderRoutingTrackId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AcceptedAddress", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string AcceptedAddress
+		{
+			get
+			{
+				return this._AcceptedAddress;
+			}
+			set
+			{
+				if ((this._AcceptedAddress != value))
+				{
+					this._AcceptedAddress = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OpCode", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string OpCode
+		{
+			get
+			{
+				return this._OpCode;
+			}
+			set
+			{
+				if ((this._OpCode != value))
+				{
+					this._OpCode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RemarkDetail", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string RemarkDetail
+		{
+			get
+			{
+				return this._RemarkDetail;
+			}
+			set
+			{
+				if ((this._RemarkDetail != value))
+				{
+					this._RemarkDetail = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AcceptTime", DbType="DateTime NOT NULL")]
+		public System.DateTime AcceptTime
+		{
+			get
+			{
+				return this._AcceptTime;
+			}
+			set
+			{
+				if ((this._AcceptTime != value))
+				{
+					this._AcceptTime = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SourceId", DbType="Int NOT NULL")]
+		public int SourceId
+		{
+			get
+			{
+				return this._SourceId;
+			}
+			set
+			{
+				if ((this._SourceId != value))
+				{
+					this._SourceId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SourceTable", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string SourceTable
+		{
+			get
+			{
+				return this._SourceTable;
+			}
+			set
+			{
+				if ((this._SourceTable != value))
+				{
+					this._SourceTable = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserId", DbType="Int NOT NULL")]
+		public int UserId
+		{
+			get
+			{
+				return this._UserId;
+			}
+			set
+			{
+				if ((this._UserId != value))
+				{
+					this._UserId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserName", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string UserName
+		{
+			get
+			{
+				return this._UserName;
+			}
+			set
+			{
+				if ((this._UserName != value))
+				{
+					this._UserName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreateDate", DbType="DateTime NOT NULL")]
+		public System.DateTime CreateDate
+		{
+			get
+			{
+				return this._CreateDate;
+			}
+			set
+			{
+				if ((this._CreateDate != value))
+				{
+					this._CreateDate = value;
+				}
+			}
+		}
+	}
+	
+	public partial class tfnShippingOrderSubOrderGetResult
+	{
+		
+		private int _ShippingOrderId;
+		
+		private int _ShippingOrderSubOrderId;
+		
+		private int _SubOrderTypeCodeId;
+		
+		private string _SubOrderType;
+		
+		private string _SubOrderCode;
+		
+		private string _SubOrderStatus;
+		
+		private string _SubOrderDescription;
+		
+		private int _UserId;
+		
+		private string _UserName;
+		
+		public tfnShippingOrderSubOrderGetResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ShippingOrderId", DbType="Int NOT NULL")]
+		public int ShippingOrderId
+		{
+			get
+			{
+				return this._ShippingOrderId;
+			}
+			set
+			{
+				if ((this._ShippingOrderId != value))
+				{
+					this._ShippingOrderId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ShippingOrderSubOrderId", DbType="Int NOT NULL")]
+		public int ShippingOrderSubOrderId
+		{
+			get
+			{
+				return this._ShippingOrderSubOrderId;
+			}
+			set
+			{
+				if ((this._ShippingOrderSubOrderId != value))
+				{
+					this._ShippingOrderSubOrderId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SubOrderTypeCodeId", DbType="Int NOT NULL")]
+		public int SubOrderTypeCodeId
+		{
+			get
+			{
+				return this._SubOrderTypeCodeId;
+			}
+			set
+			{
+				if ((this._SubOrderTypeCodeId != value))
+				{
+					this._SubOrderTypeCodeId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SubOrderType", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string SubOrderType
+		{
+			get
+			{
+				return this._SubOrderType;
+			}
+			set
+			{
+				if ((this._SubOrderType != value))
+				{
+					this._SubOrderType = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SubOrderCode", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string SubOrderCode
+		{
+			get
+			{
+				return this._SubOrderCode;
+			}
+			set
+			{
+				if ((this._SubOrderCode != value))
+				{
+					this._SubOrderCode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SubOrderStatus", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string SubOrderStatus
+		{
+			get
+			{
+				return this._SubOrderStatus;
+			}
+			set
+			{
+				if ((this._SubOrderStatus != value))
+				{
+					this._SubOrderStatus = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SubOrderDescription", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string SubOrderDescription
+		{
+			get
+			{
+				return this._SubOrderDescription;
+			}
+			set
+			{
+				if ((this._SubOrderDescription != value))
+				{
+					this._SubOrderDescription = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserId", DbType="Int NOT NULL")]
+		public int UserId
+		{
+			get
+			{
+				return this._UserId;
+			}
+			set
+			{
+				if ((this._UserId != value))
+				{
+					this._UserId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserName", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string UserName
+		{
+			get
+			{
+				return this._UserName;
+			}
+			set
+			{
+				if ((this._UserName != value))
+				{
+					this._UserName = value;
+				}
+			}
+		}
+	}
+	
+	public partial class tfnShippingOrderSubOrderListGetResult
+	{
+		
+		private int _ShippingOrderId;
+		
+		private int _ShippingOrderSubOrderId;
+		
+		private int _SubOrderTypeCodeId;
+		
+		private string _SubOrderType;
+		
+		private string _SubOrderCode;
+		
+		private string _SubOrderStatus;
+		
+		private string _SubOrderDescription;
+		
+		private int _UserId;
+		
+		private string _UserName;
+		
+		public tfnShippingOrderSubOrderListGetResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ShippingOrderId", DbType="Int NOT NULL")]
+		public int ShippingOrderId
+		{
+			get
+			{
+				return this._ShippingOrderId;
+			}
+			set
+			{
+				if ((this._ShippingOrderId != value))
+				{
+					this._ShippingOrderId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ShippingOrderSubOrderId", DbType="Int NOT NULL")]
+		public int ShippingOrderSubOrderId
+		{
+			get
+			{
+				return this._ShippingOrderSubOrderId;
+			}
+			set
+			{
+				if ((this._ShippingOrderSubOrderId != value))
+				{
+					this._ShippingOrderSubOrderId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SubOrderTypeCodeId", DbType="Int NOT NULL")]
+		public int SubOrderTypeCodeId
+		{
+			get
+			{
+				return this._SubOrderTypeCodeId;
+			}
+			set
+			{
+				if ((this._SubOrderTypeCodeId != value))
+				{
+					this._SubOrderTypeCodeId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SubOrderType", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string SubOrderType
+		{
+			get
+			{
+				return this._SubOrderType;
+			}
+			set
+			{
+				if ((this._SubOrderType != value))
+				{
+					this._SubOrderType = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SubOrderCode", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string SubOrderCode
+		{
+			get
+			{
+				return this._SubOrderCode;
+			}
+			set
+			{
+				if ((this._SubOrderCode != value))
+				{
+					this._SubOrderCode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SubOrderStatus", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string SubOrderStatus
+		{
+			get
+			{
+				return this._SubOrderStatus;
+			}
+			set
+			{
+				if ((this._SubOrderStatus != value))
+				{
+					this._SubOrderStatus = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SubOrderDescription", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string SubOrderDescription
+		{
+			get
+			{
+				return this._SubOrderDescription;
+			}
+			set
+			{
+				if ((this._SubOrderDescription != value))
+				{
+					this._SubOrderDescription = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserId", DbType="Int NOT NULL")]
+		public int UserId
+		{
+			get
+			{
+				return this._UserId;
+			}
+			set
+			{
+				if ((this._UserId != value))
+				{
+					this._UserId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserName", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string UserName
+		{
+			get
+			{
+				return this._UserName;
+			}
+			set
+			{
+				if ((this._UserName != value))
+				{
+					this._UserName = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_ShippingOrderBatchHandlerSearchResult
+	{
+		
+		private int _ShippingOrderBatchHandlerId;
+		
+		private int _CompanyId;
+		
+		private int _ShippingChannelId;
+		
+		private string _ShippingChannelName;
+		
+		private string _BatchHandlerCode;
+		
+		private int _BatchHandlerStatusCodeId;
+		
+		private string _BatchHandlerStatus;
+		
+		private int _UserId;
+		
+		private string _UserName;
+		
+		private System.DateTime _CreateDate;
+		
+		private System.DateTime _LastUpdate;
+		
+		private System.Nullable<long> _RowNumber;
+		
+		public sp_ShippingOrderBatchHandlerSearchResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ShippingOrderBatchHandlerId", DbType="Int NOT NULL")]
+		public int ShippingOrderBatchHandlerId
+		{
+			get
+			{
+				return this._ShippingOrderBatchHandlerId;
+			}
+			set
+			{
+				if ((this._ShippingOrderBatchHandlerId != value))
+				{
+					this._ShippingOrderBatchHandlerId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CompanyId", DbType="Int NOT NULL")]
+		public int CompanyId
+		{
+			get
+			{
+				return this._CompanyId;
+			}
+			set
+			{
+				if ((this._CompanyId != value))
+				{
+					this._CompanyId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ShippingChannelId", DbType="Int NOT NULL")]
+		public int ShippingChannelId
+		{
+			get
+			{
+				return this._ShippingChannelId;
+			}
+			set
+			{
+				if ((this._ShippingChannelId != value))
+				{
+					this._ShippingChannelId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ShippingChannelName", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string ShippingChannelName
+		{
+			get
+			{
+				return this._ShippingChannelName;
+			}
+			set
+			{
+				if ((this._ShippingChannelName != value))
+				{
+					this._ShippingChannelName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BatchHandlerCode", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string BatchHandlerCode
+		{
+			get
+			{
+				return this._BatchHandlerCode;
+			}
+			set
+			{
+				if ((this._BatchHandlerCode != value))
+				{
+					this._BatchHandlerCode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BatchHandlerStatusCodeId", DbType="Int NOT NULL")]
+		public int BatchHandlerStatusCodeId
+		{
+			get
+			{
+				return this._BatchHandlerStatusCodeId;
+			}
+			set
+			{
+				if ((this._BatchHandlerStatusCodeId != value))
+				{
+					this._BatchHandlerStatusCodeId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BatchHandlerStatus", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string BatchHandlerStatus
+		{
+			get
+			{
+				return this._BatchHandlerStatus;
+			}
+			set
+			{
+				if ((this._BatchHandlerStatus != value))
+				{
+					this._BatchHandlerStatus = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserId", DbType="Int NOT NULL")]
+		public int UserId
+		{
+			get
+			{
+				return this._UserId;
+			}
+			set
+			{
+				if ((this._UserId != value))
+				{
+					this._UserId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserName", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string UserName
+		{
+			get
+			{
+				return this._UserName;
+			}
+			set
+			{
+				if ((this._UserName != value))
+				{
+					this._UserName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreateDate", DbType="DateTime NOT NULL")]
+		public System.DateTime CreateDate
+		{
+			get
+			{
+				return this._CreateDate;
+			}
+			set
+			{
+				if ((this._CreateDate != value))
+				{
+					this._CreateDate = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastUpdate", DbType="DateTime NOT NULL")]
+		public System.DateTime LastUpdate
+		{
+			get
+			{
+				return this._LastUpdate;
+			}
+			set
+			{
+				if ((this._LastUpdate != value))
+				{
+					this._LastUpdate = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RowNumber", DbType="BigInt")]
+		public System.Nullable<long> RowNumber
+		{
+			get
+			{
+				return this._RowNumber;
+			}
+			set
+			{
+				if ((this._RowNumber != value))
+				{
+					this._RowNumber = value;
+				}
+			}
+		}
+	}
+	
+	public partial class tfnShippingOrderBatchHandlerDetailListGetResult
+	{
+		
+		private System.Nullable<int> _ShippingOrderBatchHandlerId;
+		
+		private System.Nullable<int> _ShippingOrderBatchHandlerDetailId;
+		
+		private System.Nullable<int> _ShippingOrderId;
+		
+		private string _ShippingOrderCode;
+		
+		private System.Nullable<bool> _Available;
+		
+		public tfnShippingOrderBatchHandlerDetailListGetResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ShippingOrderBatchHandlerId", DbType="Int")]
+		public System.Nullable<int> ShippingOrderBatchHandlerId
+		{
+			get
+			{
+				return this._ShippingOrderBatchHandlerId;
+			}
+			set
+			{
+				if ((this._ShippingOrderBatchHandlerId != value))
+				{
+					this._ShippingOrderBatchHandlerId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ShippingOrderBatchHandlerDetailId", DbType="Int")]
+		public System.Nullable<int> ShippingOrderBatchHandlerDetailId
+		{
+			get
+			{
+				return this._ShippingOrderBatchHandlerDetailId;
+			}
+			set
+			{
+				if ((this._ShippingOrderBatchHandlerDetailId != value))
+				{
+					this._ShippingOrderBatchHandlerDetailId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ShippingOrderId", DbType="Int")]
+		public System.Nullable<int> ShippingOrderId
+		{
+			get
+			{
+				return this._ShippingOrderId;
+			}
+			set
+			{
+				if ((this._ShippingOrderId != value))
+				{
+					this._ShippingOrderId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ShippingOrderCode", DbType="NVarChar(256)")]
+		public string ShippingOrderCode
+		{
+			get
+			{
+				return this._ShippingOrderCode;
+			}
+			set
+			{
+				if ((this._ShippingOrderCode != value))
+				{
+					this._ShippingOrderCode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Available", DbType="Bit")]
+		public System.Nullable<bool> Available
+		{
+			get
+			{
+				return this._Available;
+			}
+			set
+			{
+				if ((this._Available != value))
+				{
+					this._Available = value;
+				}
+			}
+		}
+	}
+	
+	public partial class tfnShippingOrderBatchHandlerGetResult
+	{
+		
+		private int _ShippingOrderBatchHandlerId;
+		
+		private int _CompanyId;
+		
+		private int _ShippingOrderActionTypeCodeId;
+		
+		private string _ShippingOrderActionType;
+		
+		private int _ShippingChannelId;
+		
+		private string _ShippingChannelName;
+		
+		private string _BatchHandlerCode;
+		
+		private int _BatchHandlerStatusCodeId;
+		
+		private string _BatchHandlerStatus;
+		
+		private int _UserId;
+		
+		private string _UserName;
+		
+		private System.DateTime _CreateDate;
+		
+		private System.DateTime _LastUpdate;
+		
+		public tfnShippingOrderBatchHandlerGetResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ShippingOrderBatchHandlerId", DbType="Int NOT NULL")]
+		public int ShippingOrderBatchHandlerId
+		{
+			get
+			{
+				return this._ShippingOrderBatchHandlerId;
+			}
+			set
+			{
+				if ((this._ShippingOrderBatchHandlerId != value))
+				{
+					this._ShippingOrderBatchHandlerId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CompanyId", DbType="Int NOT NULL")]
+		public int CompanyId
+		{
+			get
+			{
+				return this._CompanyId;
+			}
+			set
+			{
+				if ((this._CompanyId != value))
+				{
+					this._CompanyId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ShippingOrderActionTypeCodeId", DbType="Int NOT NULL")]
+		public int ShippingOrderActionTypeCodeId
+		{
+			get
+			{
+				return this._ShippingOrderActionTypeCodeId;
+			}
+			set
+			{
+				if ((this._ShippingOrderActionTypeCodeId != value))
+				{
+					this._ShippingOrderActionTypeCodeId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ShippingOrderActionType", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string ShippingOrderActionType
+		{
+			get
+			{
+				return this._ShippingOrderActionType;
+			}
+			set
+			{
+				if ((this._ShippingOrderActionType != value))
+				{
+					this._ShippingOrderActionType = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ShippingChannelId", DbType="Int NOT NULL")]
+		public int ShippingChannelId
+		{
+			get
+			{
+				return this._ShippingChannelId;
+			}
+			set
+			{
+				if ((this._ShippingChannelId != value))
+				{
+					this._ShippingChannelId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ShippingChannelName", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string ShippingChannelName
+		{
+			get
+			{
+				return this._ShippingChannelName;
+			}
+			set
+			{
+				if ((this._ShippingChannelName != value))
+				{
+					this._ShippingChannelName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BatchHandlerCode", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string BatchHandlerCode
+		{
+			get
+			{
+				return this._BatchHandlerCode;
+			}
+			set
+			{
+				if ((this._BatchHandlerCode != value))
+				{
+					this._BatchHandlerCode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BatchHandlerStatusCodeId", DbType="Int NOT NULL")]
+		public int BatchHandlerStatusCodeId
+		{
+			get
+			{
+				return this._BatchHandlerStatusCodeId;
+			}
+			set
+			{
+				if ((this._BatchHandlerStatusCodeId != value))
+				{
+					this._BatchHandlerStatusCodeId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BatchHandlerStatus", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string BatchHandlerStatus
+		{
+			get
+			{
+				return this._BatchHandlerStatus;
+			}
+			set
+			{
+				if ((this._BatchHandlerStatus != value))
+				{
+					this._BatchHandlerStatus = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserId", DbType="Int NOT NULL")]
+		public int UserId
+		{
+			get
+			{
+				return this._UserId;
+			}
+			set
+			{
+				if ((this._UserId != value))
+				{
+					this._UserId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserName", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string UserName
+		{
+			get
+			{
+				return this._UserName;
+			}
+			set
+			{
+				if ((this._UserName != value))
+				{
+					this._UserName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreateDate", DbType="DateTime NOT NULL")]
+		public System.DateTime CreateDate
+		{
+			get
+			{
+				return this._CreateDate;
+			}
+			set
+			{
+				if ((this._CreateDate != value))
+				{
+					this._CreateDate = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastUpdate", DbType="DateTime NOT NULL")]
+		public System.DateTime LastUpdate
+		{
+			get
+			{
+				return this._LastUpdate;
+			}
+			set
+			{
+				if ((this._LastUpdate != value))
+				{
+					this._LastUpdate = value;
+				}
+			}
+		}
+	}
+	
+	public partial class tfnShippingOrderBatchHandlerActionGetResult
+	{
+		
+		private int _ShippingOrderBatchHandlerId;
+		
+		private System.Nullable<int> _SubOrderTypeCodeId;
+		
+		private string _SubOrderType;
+		
+		private string _SubOrderCode;
+		
+		private string _SubOrderDescription;
+		
+		private bool _Available;
+		
+		public tfnShippingOrderBatchHandlerActionGetResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ShippingOrderBatchHandlerId", DbType="Int NOT NULL")]
+		public int ShippingOrderBatchHandlerId
+		{
+			get
+			{
+				return this._ShippingOrderBatchHandlerId;
+			}
+			set
+			{
+				if ((this._ShippingOrderBatchHandlerId != value))
+				{
+					this._ShippingOrderBatchHandlerId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SubOrderTypeCodeId", DbType="Int")]
+		public System.Nullable<int> SubOrderTypeCodeId
+		{
+			get
+			{
+				return this._SubOrderTypeCodeId;
+			}
+			set
+			{
+				if ((this._SubOrderTypeCodeId != value))
+				{
+					this._SubOrderTypeCodeId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SubOrderType", DbType="NVarChar(256)")]
+		public string SubOrderType
+		{
+			get
+			{
+				return this._SubOrderType;
+			}
+			set
+			{
+				if ((this._SubOrderType != value))
+				{
+					this._SubOrderType = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SubOrderCode", DbType="NVarChar(256)")]
+		public string SubOrderCode
+		{
+			get
+			{
+				return this._SubOrderCode;
+			}
+			set
+			{
+				if ((this._SubOrderCode != value))
+				{
+					this._SubOrderCode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SubOrderDescription", DbType="NVarChar(MAX)")]
+		public string SubOrderDescription
+		{
+			get
+			{
+				return this._SubOrderDescription;
+			}
+			set
+			{
+				if ((this._SubOrderDescription != value))
+				{
+					this._SubOrderDescription = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Available", DbType="Bit NOT NULL")]
+		public bool Available
+		{
+			get
+			{
+				return this._Available;
+			}
+			set
+			{
+				if ((this._Available != value))
+				{
+					this._Available = value;
+				}
+			}
+		}
+	}
+	
+	public partial class tfnCompanyAddressGetByIdResult
+	{
+		
+		private int _CompanyFromAddressId;
+		
+		private int _CompanyId;
+		
+		private int _AddressId;
+		
+		private string _ContactPersonFirstName;
+		
+		private string _ContactPersonLastName;
+		
+		private string _ContactPersonPhoneNumber;
+		
+		private int _ContactPersonPhoneNumberCountryId;
+		
+		private string _Address1;
+		
+		private string _Address2;
+		
+		private string _City;
+		
+		private string _District;
+		
+		private string _State;
+		
+		private string _Zip;
+		
+		private int _CountryId;
+		
+		private bool _DefaultShipping;
+		
+		public tfnCompanyAddressGetByIdResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CompanyFromAddressId", DbType="Int NOT NULL")]
+		public int CompanyFromAddressId
+		{
+			get
+			{
+				return this._CompanyFromAddressId;
+			}
+			set
+			{
+				if ((this._CompanyFromAddressId != value))
+				{
+					this._CompanyFromAddressId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CompanyId", DbType="Int NOT NULL")]
+		public int CompanyId
+		{
+			get
+			{
+				return this._CompanyId;
+			}
+			set
+			{
+				if ((this._CompanyId != value))
+				{
+					this._CompanyId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AddressId", DbType="Int NOT NULL")]
+		public int AddressId
+		{
+			get
+			{
+				return this._AddressId;
+			}
+			set
+			{
+				if ((this._AddressId != value))
+				{
+					this._AddressId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ContactPersonFirstName", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string ContactPersonFirstName
+		{
+			get
+			{
+				return this._ContactPersonFirstName;
+			}
+			set
+			{
+				if ((this._ContactPersonFirstName != value))
+				{
+					this._ContactPersonFirstName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ContactPersonLastName", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string ContactPersonLastName
+		{
+			get
+			{
+				return this._ContactPersonLastName;
+			}
+			set
+			{
+				if ((this._ContactPersonLastName != value))
+				{
+					this._ContactPersonLastName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ContactPersonPhoneNumber", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string ContactPersonPhoneNumber
+		{
+			get
+			{
+				return this._ContactPersonPhoneNumber;
+			}
+			set
+			{
+				if ((this._ContactPersonPhoneNumber != value))
+				{
+					this._ContactPersonPhoneNumber = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ContactPersonPhoneNumberCountryId", DbType="Int NOT NULL")]
+		public int ContactPersonPhoneNumberCountryId
+		{
+			get
+			{
+				return this._ContactPersonPhoneNumberCountryId;
+			}
+			set
+			{
+				if ((this._ContactPersonPhoneNumberCountryId != value))
+				{
+					this._ContactPersonPhoneNumberCountryId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Address1", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string Address1
+		{
+			get
+			{
+				return this._Address1;
+			}
+			set
+			{
+				if ((this._Address1 != value))
+				{
+					this._Address1 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Address2", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string Address2
+		{
+			get
+			{
+				return this._Address2;
+			}
+			set
+			{
+				if ((this._Address2 != value))
+				{
+					this._Address2 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_City", DbType="NVarChar(128) NOT NULL", CanBeNull=false)]
+		public string City
+		{
+			get
+			{
+				return this._City;
+			}
+			set
+			{
+				if ((this._City != value))
+				{
+					this._City = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_District", DbType="NVarChar(128)")]
+		public string District
+		{
+			get
+			{
+				return this._District;
+			}
+			set
+			{
+				if ((this._District != value))
+				{
+					this._District = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_State", DbType="NVarChar(128) NOT NULL", CanBeNull=false)]
+		public string State
+		{
+			get
+			{
+				return this._State;
+			}
+			set
+			{
+				if ((this._State != value))
+				{
+					this._State = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Zip", DbType="NVarChar(32) NOT NULL", CanBeNull=false)]
+		public string Zip
+		{
+			get
+			{
+				return this._Zip;
+			}
+			set
+			{
+				if ((this._Zip != value))
+				{
+					this._Zip = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CountryId", DbType="Int NOT NULL")]
+		public int CountryId
+		{
+			get
+			{
+				return this._CountryId;
+			}
+			set
+			{
+				if ((this._CountryId != value))
+				{
+					this._CountryId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DefaultShipping", DbType="Bit NOT NULL")]
+		public bool DefaultShipping
+		{
+			get
+			{
+				return this._DefaultShipping;
+			}
+			set
+			{
+				if ((this._DefaultShipping != value))
+				{
+					this._DefaultShipping = value;
+				}
+			}
+		}
+	}
+	
+	public partial class tfnCompanyAddressGetResult
+	{
+		
+		private int _CompanyFromAddressId;
+		
+		private int _CompanyId;
+		
+		private int _AddressId;
+		
+		private string _ContactPersonFirstName;
+		
+		private string _ContactPersonLastName;
+		
+		private string _ContactPersonPhoneNumber;
+		
+		private int _ContactPersonPhoneNumberCountryId;
+		
+		private string _Address1;
+		
+		private string _Address2;
+		
+		private string _City;
+		
+		private string _District;
+		
+		private string _State;
+		
+		private string _Zip;
+		
+		private int _CountryId;
+		
+		private bool _DefaultShipping;
+		
+		public tfnCompanyAddressGetResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CompanyFromAddressId", DbType="Int NOT NULL")]
+		public int CompanyFromAddressId
+		{
+			get
+			{
+				return this._CompanyFromAddressId;
+			}
+			set
+			{
+				if ((this._CompanyFromAddressId != value))
+				{
+					this._CompanyFromAddressId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CompanyId", DbType="Int NOT NULL")]
+		public int CompanyId
+		{
+			get
+			{
+				return this._CompanyId;
+			}
+			set
+			{
+				if ((this._CompanyId != value))
+				{
+					this._CompanyId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AddressId", DbType="Int NOT NULL")]
+		public int AddressId
+		{
+			get
+			{
+				return this._AddressId;
+			}
+			set
+			{
+				if ((this._AddressId != value))
+				{
+					this._AddressId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ContactPersonFirstName", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string ContactPersonFirstName
+		{
+			get
+			{
+				return this._ContactPersonFirstName;
+			}
+			set
+			{
+				if ((this._ContactPersonFirstName != value))
+				{
+					this._ContactPersonFirstName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ContactPersonLastName", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string ContactPersonLastName
+		{
+			get
+			{
+				return this._ContactPersonLastName;
+			}
+			set
+			{
+				if ((this._ContactPersonLastName != value))
+				{
+					this._ContactPersonLastName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ContactPersonPhoneNumber", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string ContactPersonPhoneNumber
+		{
+			get
+			{
+				return this._ContactPersonPhoneNumber;
+			}
+			set
+			{
+				if ((this._ContactPersonPhoneNumber != value))
+				{
+					this._ContactPersonPhoneNumber = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ContactPersonPhoneNumberCountryId", DbType="Int NOT NULL")]
+		public int ContactPersonPhoneNumberCountryId
+		{
+			get
+			{
+				return this._ContactPersonPhoneNumberCountryId;
+			}
+			set
+			{
+				if ((this._ContactPersonPhoneNumberCountryId != value))
+				{
+					this._ContactPersonPhoneNumberCountryId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Address1", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string Address1
+		{
+			get
+			{
+				return this._Address1;
+			}
+			set
+			{
+				if ((this._Address1 != value))
+				{
+					this._Address1 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Address2", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string Address2
+		{
+			get
+			{
+				return this._Address2;
+			}
+			set
+			{
+				if ((this._Address2 != value))
+				{
+					this._Address2 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_City", DbType="NVarChar(128) NOT NULL", CanBeNull=false)]
+		public string City
+		{
+			get
+			{
+				return this._City;
+			}
+			set
+			{
+				if ((this._City != value))
+				{
+					this._City = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_District", DbType="NVarChar(128)")]
+		public string District
+		{
+			get
+			{
+				return this._District;
+			}
+			set
+			{
+				if ((this._District != value))
+				{
+					this._District = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_State", DbType="NVarChar(128) NOT NULL", CanBeNull=false)]
+		public string State
+		{
+			get
+			{
+				return this._State;
+			}
+			set
+			{
+				if ((this._State != value))
+				{
+					this._State = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Zip", DbType="NVarChar(32) NOT NULL", CanBeNull=false)]
+		public string Zip
+		{
+			get
+			{
+				return this._Zip;
+			}
+			set
+			{
+				if ((this._Zip != value))
+				{
+					this._Zip = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CountryId", DbType="Int NOT NULL")]
+		public int CountryId
+		{
+			get
+			{
+				return this._CountryId;
+			}
+			set
+			{
+				if ((this._CountryId != value))
+				{
+					this._CountryId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DefaultShipping", DbType="Bit NOT NULL")]
+		public bool DefaultShipping
+		{
+			get
+			{
+				return this._DefaultShipping;
+			}
+			set
+			{
+				if ((this._DefaultShipping != value))
+				{
+					this._DefaultShipping = value;
+				}
+			}
+		}
+	}
+	
+	public partial class tfnShippingOrderAdditionalInfoGetResult
+	{
+		
+		private int _ShippingOrderId;
+		
+		private decimal _Width;
+		
+		private decimal _Height;
+		
+		private decimal _Length;
+		
+		private int _PackageCount;
+		
+		private int _ShippingOrderTaxPaymentTypeCodeId;
+		
+		private string _ShippingOrderTaxPaymentType;
+		
+		public tfnShippingOrderAdditionalInfoGetResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ShippingOrderId", DbType="Int NOT NULL")]
+		public int ShippingOrderId
+		{
+			get
+			{
+				return this._ShippingOrderId;
+			}
+			set
+			{
+				if ((this._ShippingOrderId != value))
+				{
+					this._ShippingOrderId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Width", DbType="Decimal(10,2) NOT NULL")]
+		public decimal Width
+		{
+			get
+			{
+				return this._Width;
+			}
+			set
+			{
+				if ((this._Width != value))
+				{
+					this._Width = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Height", DbType="Decimal(10,2) NOT NULL")]
+		public decimal Height
+		{
+			get
+			{
+				return this._Height;
+			}
+			set
+			{
+				if ((this._Height != value))
+				{
+					this._Height = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Length", DbType="Decimal(10,2) NOT NULL")]
+		public decimal Length
+		{
+			get
+			{
+				return this._Length;
+			}
+			set
+			{
+				if ((this._Length != value))
+				{
+					this._Length = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PackageCount", DbType="Int NOT NULL")]
+		public int PackageCount
+		{
+			get
+			{
+				return this._PackageCount;
+			}
+			set
+			{
+				if ((this._PackageCount != value))
+				{
+					this._PackageCount = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ShippingOrderTaxPaymentTypeCodeId", DbType="Int NOT NULL")]
+		public int ShippingOrderTaxPaymentTypeCodeId
+		{
+			get
+			{
+				return this._ShippingOrderTaxPaymentTypeCodeId;
+			}
+			set
+			{
+				if ((this._ShippingOrderTaxPaymentTypeCodeId != value))
+				{
+					this._ShippingOrderTaxPaymentTypeCodeId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ShippingOrderTaxPaymentType", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string ShippingOrderTaxPaymentType
+		{
+			get
+			{
+				return this._ShippingOrderTaxPaymentType;
+			}
+			set
+			{
+				if ((this._ShippingOrderTaxPaymentType != value))
+				{
+					this._ShippingOrderTaxPaymentType = value;
+				}
+			}
+		}
+	}
+	
+	public partial class tfnChinaIdentityProfileGetResult
+	{
+		
+		private string _IdentityNumber;
+		
+		private string _Name;
+		
+		private string _PhoneNumber;
+		
+		private System.Nullable<int> _FrontFileId;
+		
+		private System.Nullable<int> _BackFileId;
+		
+		private System.Nullable<bool> _Available;
+		
+		public tfnChinaIdentityProfileGetResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdentityNumber", DbType="NVarChar(256)")]
+		public string IdentityNumber
+		{
+			get
+			{
+				return this._IdentityNumber;
+			}
+			set
+			{
+				if ((this._IdentityNumber != value))
+				{
+					this._IdentityNumber = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(256)")]
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+			set
+			{
+				if ((this._Name != value))
+				{
+					this._Name = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PhoneNumber", DbType="NVarChar(256)")]
+		public string PhoneNumber
+		{
+			get
+			{
+				return this._PhoneNumber;
+			}
+			set
+			{
+				if ((this._PhoneNumber != value))
+				{
+					this._PhoneNumber = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FrontFileId", DbType="Int")]
+		public System.Nullable<int> FrontFileId
+		{
+			get
+			{
+				return this._FrontFileId;
+			}
+			set
+			{
+				if ((this._FrontFileId != value))
+				{
+					this._FrontFileId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BackFileId", DbType="Int")]
+		public System.Nullable<int> BackFileId
+		{
+			get
+			{
+				return this._BackFileId;
+			}
+			set
+			{
+				if ((this._BackFileId != value))
+				{
+					this._BackFileId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Available", DbType="Bit")]
+		public System.Nullable<bool> Available
+		{
+			get
+			{
+				return this._Available;
+			}
+			set
+			{
+				if ((this._Available != value))
+				{
+					this._Available = value;
+				}
+			}
+		}
+	}
+	
+	public partial class tfnChinaIdentityProfileGetByIdentityNumberResult
+	{
+		
+		private string _IdentityNumber;
+		
+		private string _Name;
+		
+		private string _PhoneNumber;
+		
+		private System.Nullable<int> _FrontFileId;
+		
+		private System.Nullable<int> _BackFileId;
+		
+		private System.Nullable<bool> _Available;
+		
+		public tfnChinaIdentityProfileGetByIdentityNumberResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdentityNumber", DbType="NVarChar(256)")]
+		public string IdentityNumber
+		{
+			get
+			{
+				return this._IdentityNumber;
+			}
+			set
+			{
+				if ((this._IdentityNumber != value))
+				{
+					this._IdentityNumber = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(256)")]
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+			set
+			{
+				if ((this._Name != value))
+				{
+					this._Name = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PhoneNumber", DbType="NVarChar(256)")]
+		public string PhoneNumber
+		{
+			get
+			{
+				return this._PhoneNumber;
+			}
+			set
+			{
+				if ((this._PhoneNumber != value))
+				{
+					this._PhoneNumber = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FrontFileId", DbType="Int")]
+		public System.Nullable<int> FrontFileId
+		{
+			get
+			{
+				return this._FrontFileId;
+			}
+			set
+			{
+				if ((this._FrontFileId != value))
+				{
+					this._FrontFileId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BackFileId", DbType="Int")]
+		public System.Nullable<int> BackFileId
+		{
+			get
+			{
+				return this._BackFileId;
+			}
+			set
+			{
+				if ((this._BackFileId != value))
+				{
+					this._BackFileId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Available", DbType="Bit")]
+		public System.Nullable<bool> Available
+		{
+			get
+			{
+				return this._Available;
+			}
+			set
+			{
+				if ((this._Available != value))
+				{
+					this._Available = value;
+				}
+			}
+		}
+	}
+	
+	public partial class tfnSFShippingOrderNeedTrackResult
+	{
+		
+		private System.Nullable<int> _ShippingOrderId;
+		
+		private System.Nullable<int> _ShippingOrderSubOrderId;
+		
+		private string _SFBillWayNo;
+		
+		public tfnSFShippingOrderNeedTrackResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ShippingOrderId", DbType="Int")]
+		public System.Nullable<int> ShippingOrderId
+		{
+			get
+			{
+				return this._ShippingOrderId;
+			}
+			set
+			{
+				if ((this._ShippingOrderId != value))
+				{
+					this._ShippingOrderId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ShippingOrderSubOrderId", DbType="Int")]
+		public System.Nullable<int> ShippingOrderSubOrderId
+		{
+			get
+			{
+				return this._ShippingOrderSubOrderId;
+			}
+			set
+			{
+				if ((this._ShippingOrderSubOrderId != value))
+				{
+					this._ShippingOrderSubOrderId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SFBillWayNo", DbType="NVarChar(256)")]
+		public string SFBillWayNo
+		{
+			get
+			{
+				return this._SFBillWayNo;
+			}
+			set
+			{
+				if ((this._SFBillWayNo != value))
+				{
+					this._SFBillWayNo = value;
+				}
+			}
+		}
+	}
+	
+	public partial class tfnShippingOrderProfileNeedGenerateResult
+	{
+		
+		private System.Nullable<int> _ShippingOrderId;
+		
+		public tfnShippingOrderProfileNeedGenerateResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ShippingOrderId", DbType="Int")]
+		public System.Nullable<int> ShippingOrderId
+		{
+			get
+			{
+				return this._ShippingOrderId;
+			}
+			set
+			{
+				if ((this._ShippingOrderId != value))
+				{
+					this._ShippingOrderId = value;
+				}
+			}
+		}
+	}
+	
+	public partial class tfnShippingOrderProfileNeedSFValidateResult
+	{
+		
+		private System.Nullable<int> _ShippingOrderId;
+		
+		public tfnShippingOrderProfileNeedSFValidateResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ShippingOrderId", DbType="Int")]
+		public System.Nullable<int> ShippingOrderId
+		{
+			get
+			{
+				return this._ShippingOrderId;
+			}
+			set
+			{
+				if ((this._ShippingOrderId != value))
+				{
+					this._ShippingOrderId = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_ShippingOrderSearchResult
+	{
+		
+		private System.Nullable<int> _ShippingOrderId;
+		
+		private System.Nullable<int> _CustomerId;
+		
+		private System.Nullable<int> _CustomerOrderId;
+		
+		private int _SourceCompanyId;
+		
+		private int _HandlerCompanyId;
+		
+		private string _ReferenceOrderCode;
+		
+		private string _BatchHandlerNumber;
+		
+		private int _ShippingFromAddressId;
+		
+		private int _ShippingToAddressId;
+		
+		private System.Nullable<int> _ShippingChannelId;
+		
+		private System.Nullable<decimal> _Price;
+		
+		private System.Nullable<int> _CurrencyId;
+		
+		private System.Nullable<decimal> _TotalWeight;
+		
+		private System.Nullable<int> _WeightUnitId;
+		
+		private int _ShippingOrderStatusCodeId;
+		
+		private string _ShippingOrderStatus;
+		
+		private string _ShippingOrderCode;
+		
+		private int _UserId;
+		
+		private System.DateTime _CreateDate;
+		
+		private System.DateTime _LastUpdate;
+		
+		private System.Nullable<int> _ShippingOrderIdentityProfileId;
+		
+		private bool _LabelReady;
+		
+		private System.Nullable<long> _RowNumber;
+		
+		public sp_ShippingOrderSearchResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ShippingOrderId", DbType="Int")]
+		public System.Nullable<int> ShippingOrderId
+		{
+			get
+			{
+				return this._ShippingOrderId;
+			}
+			set
+			{
+				if ((this._ShippingOrderId != value))
+				{
+					this._ShippingOrderId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CustomerId", DbType="Int")]
+		public System.Nullable<int> CustomerId
+		{
+			get
+			{
+				return this._CustomerId;
+			}
+			set
+			{
+				if ((this._CustomerId != value))
+				{
+					this._CustomerId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CustomerOrderId", DbType="Int")]
+		public System.Nullable<int> CustomerOrderId
+		{
+			get
+			{
+				return this._CustomerOrderId;
+			}
+			set
+			{
+				if ((this._CustomerOrderId != value))
+				{
+					this._CustomerOrderId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SourceCompanyId", DbType="Int NOT NULL")]
+		public int SourceCompanyId
+		{
+			get
+			{
+				return this._SourceCompanyId;
+			}
+			set
+			{
+				if ((this._SourceCompanyId != value))
+				{
+					this._SourceCompanyId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HandlerCompanyId", DbType="Int NOT NULL")]
+		public int HandlerCompanyId
+		{
+			get
+			{
+				return this._HandlerCompanyId;
+			}
+			set
+			{
+				if ((this._HandlerCompanyId != value))
+				{
+					this._HandlerCompanyId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ReferenceOrderCode", DbType="NVarChar(256)")]
+		public string ReferenceOrderCode
+		{
+			get
+			{
+				return this._ReferenceOrderCode;
+			}
+			set
+			{
+				if ((this._ReferenceOrderCode != value))
+				{
+					this._ReferenceOrderCode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BatchHandlerNumber", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string BatchHandlerNumber
+		{
+			get
+			{
+				return this._BatchHandlerNumber;
+			}
+			set
+			{
+				if ((this._BatchHandlerNumber != value))
+				{
+					this._BatchHandlerNumber = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ShippingFromAddressId", DbType="Int NOT NULL")]
+		public int ShippingFromAddressId
+		{
+			get
+			{
+				return this._ShippingFromAddressId;
+			}
+			set
+			{
+				if ((this._ShippingFromAddressId != value))
+				{
+					this._ShippingFromAddressId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ShippingToAddressId", DbType="Int NOT NULL")]
+		public int ShippingToAddressId
+		{
+			get
+			{
+				return this._ShippingToAddressId;
+			}
+			set
+			{
+				if ((this._ShippingToAddressId != value))
+				{
+					this._ShippingToAddressId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ShippingChannelId", DbType="Int")]
+		public System.Nullable<int> ShippingChannelId
+		{
+			get
+			{
+				return this._ShippingChannelId;
+			}
+			set
+			{
+				if ((this._ShippingChannelId != value))
+				{
+					this._ShippingChannelId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Price", DbType="Decimal(10,2)")]
+		public System.Nullable<decimal> Price
+		{
+			get
+			{
+				return this._Price;
+			}
+			set
+			{
+				if ((this._Price != value))
+				{
+					this._Price = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CurrencyId", DbType="Int")]
+		public System.Nullable<int> CurrencyId
+		{
+			get
+			{
+				return this._CurrencyId;
+			}
+			set
+			{
+				if ((this._CurrencyId != value))
+				{
+					this._CurrencyId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TotalWeight", DbType="Decimal(10,2)")]
+		public System.Nullable<decimal> TotalWeight
+		{
+			get
+			{
+				return this._TotalWeight;
+			}
+			set
+			{
+				if ((this._TotalWeight != value))
+				{
+					this._TotalWeight = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WeightUnitId", DbType="Int")]
+		public System.Nullable<int> WeightUnitId
+		{
+			get
+			{
+				return this._WeightUnitId;
+			}
+			set
+			{
+				if ((this._WeightUnitId != value))
+				{
+					this._WeightUnitId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ShippingOrderStatusCodeId", DbType="Int NOT NULL")]
+		public int ShippingOrderStatusCodeId
+		{
+			get
+			{
+				return this._ShippingOrderStatusCodeId;
+			}
+			set
+			{
+				if ((this._ShippingOrderStatusCodeId != value))
+				{
+					this._ShippingOrderStatusCodeId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ShippingOrderStatus", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string ShippingOrderStatus
+		{
+			get
+			{
+				return this._ShippingOrderStatus;
+			}
+			set
+			{
+				if ((this._ShippingOrderStatus != value))
+				{
+					this._ShippingOrderStatus = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ShippingOrderCode", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string ShippingOrderCode
+		{
+			get
+			{
+				return this._ShippingOrderCode;
+			}
+			set
+			{
+				if ((this._ShippingOrderCode != value))
+				{
+					this._ShippingOrderCode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserId", DbType="Int NOT NULL")]
+		public int UserId
+		{
+			get
+			{
+				return this._UserId;
+			}
+			set
+			{
+				if ((this._UserId != value))
+				{
+					this._UserId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreateDate", DbType="DateTime NOT NULL")]
+		public System.DateTime CreateDate
+		{
+			get
+			{
+				return this._CreateDate;
+			}
+			set
+			{
+				if ((this._CreateDate != value))
+				{
+					this._CreateDate = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastUpdate", DbType="DateTime NOT NULL")]
+		public System.DateTime LastUpdate
+		{
+			get
+			{
+				return this._LastUpdate;
+			}
+			set
+			{
+				if ((this._LastUpdate != value))
+				{
+					this._LastUpdate = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ShippingOrderIdentityProfileId", DbType="Int")]
+		public System.Nullable<int> ShippingOrderIdentityProfileId
+		{
+			get
+			{
+				return this._ShippingOrderIdentityProfileId;
+			}
+			set
+			{
+				if ((this._ShippingOrderIdentityProfileId != value))
+				{
+					this._ShippingOrderIdentityProfileId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LabelReady", DbType="Bit NOT NULL")]
+		public bool LabelReady
+		{
+			get
+			{
+				return this._LabelReady;
+			}
+			set
+			{
+				if ((this._LabelReady != value))
+				{
+					this._LabelReady = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RowNumber", DbType="BigInt")]
+		public System.Nullable<long> RowNumber
+		{
+			get
+			{
+				return this._RowNumber;
+			}
+			set
+			{
+				if ((this._RowNumber != value))
+				{
+					this._RowNumber = value;
+				}
+			}
+		}
+	}
+	
+	public partial class tfnCompanyShippingChannelListGetResult
+	{
+		
+		private int _CompanyId;
+		
+		private int _ShippingChannelId;
+		
+		private System.Nullable<int> _ShippingChannelCompanyId;
+		
+		private string _ShippingChannelName;
+		
+		private string _ShippingChannelCode;
+		
+		private int _ShippingChannelTypeCodeId;
+		
+		private decimal _TaxRate;
+		
+		private decimal _PriceFirstRate;
+		
+		private decimal _PriceAdditionRate;
+		
+		private int _WeightUnit;
+		
+		private int _WeightFirst;
+		
+		private decimal _UnitPriceFirst;
+		
+		private decimal _UnitPriceAdditional;
+		
+		private bool _JumpToInt;
+		
+		private bool _TaxPaymentMethodAvailable;
+		
+		private bool _IDCheckBeforeShipping;
+		
+		private bool _IDCheckDuplicateBeforeShipping;
+		
+		private int _IDDuplicateNumberLimitation;
+		
+		private bool _Display;
+		
+		public tfnCompanyShippingChannelListGetResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CompanyId", DbType="Int NOT NULL")]
+		public int CompanyId
+		{
+			get
+			{
+				return this._CompanyId;
+			}
+			set
+			{
+				if ((this._CompanyId != value))
+				{
+					this._CompanyId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ShippingChannelId", DbType="Int NOT NULL")]
+		public int ShippingChannelId
+		{
+			get
+			{
+				return this._ShippingChannelId;
+			}
+			set
+			{
+				if ((this._ShippingChannelId != value))
+				{
+					this._ShippingChannelId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ShippingChannelCompanyId", DbType="Int")]
+		public System.Nullable<int> ShippingChannelCompanyId
+		{
+			get
+			{
+				return this._ShippingChannelCompanyId;
+			}
+			set
+			{
+				if ((this._ShippingChannelCompanyId != value))
+				{
+					this._ShippingChannelCompanyId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ShippingChannelName", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string ShippingChannelName
+		{
+			get
+			{
+				return this._ShippingChannelName;
+			}
+			set
+			{
+				if ((this._ShippingChannelName != value))
+				{
+					this._ShippingChannelName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ShippingChannelCode", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string ShippingChannelCode
+		{
+			get
+			{
+				return this._ShippingChannelCode;
+			}
+			set
+			{
+				if ((this._ShippingChannelCode != value))
+				{
+					this._ShippingChannelCode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ShippingChannelTypeCodeId", DbType="Int NOT NULL")]
+		public int ShippingChannelTypeCodeId
+		{
+			get
+			{
+				return this._ShippingChannelTypeCodeId;
+			}
+			set
+			{
+				if ((this._ShippingChannelTypeCodeId != value))
+				{
+					this._ShippingChannelTypeCodeId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TaxRate", DbType="Decimal(10,2) NOT NULL")]
+		public decimal TaxRate
+		{
+			get
+			{
+				return this._TaxRate;
+			}
+			set
+			{
+				if ((this._TaxRate != value))
+				{
+					this._TaxRate = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PriceFirstRate", DbType="Decimal(10,2) NOT NULL")]
+		public decimal PriceFirstRate
+		{
+			get
+			{
+				return this._PriceFirstRate;
+			}
+			set
+			{
+				if ((this._PriceFirstRate != value))
+				{
+					this._PriceFirstRate = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PriceAdditionRate", DbType="Decimal(10,2) NOT NULL")]
+		public decimal PriceAdditionRate
+		{
+			get
+			{
+				return this._PriceAdditionRate;
+			}
+			set
+			{
+				if ((this._PriceAdditionRate != value))
+				{
+					this._PriceAdditionRate = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WeightUnit", DbType="Int NOT NULL")]
+		public int WeightUnit
+		{
+			get
+			{
+				return this._WeightUnit;
+			}
+			set
+			{
+				if ((this._WeightUnit != value))
+				{
+					this._WeightUnit = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WeightFirst", DbType="Int NOT NULL")]
+		public int WeightFirst
+		{
+			get
+			{
+				return this._WeightFirst;
+			}
+			set
+			{
+				if ((this._WeightFirst != value))
+				{
+					this._WeightFirst = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UnitPriceFirst", DbType="Decimal(10,2) NOT NULL")]
+		public decimal UnitPriceFirst
+		{
+			get
+			{
+				return this._UnitPriceFirst;
+			}
+			set
+			{
+				if ((this._UnitPriceFirst != value))
+				{
+					this._UnitPriceFirst = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UnitPriceAdditional", DbType="Decimal(10,2) NOT NULL")]
+		public decimal UnitPriceAdditional
+		{
+			get
+			{
+				return this._UnitPriceAdditional;
+			}
+			set
+			{
+				if ((this._UnitPriceAdditional != value))
+				{
+					this._UnitPriceAdditional = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_JumpToInt", DbType="Bit NOT NULL")]
+		public bool JumpToInt
+		{
+			get
+			{
+				return this._JumpToInt;
+			}
+			set
+			{
+				if ((this._JumpToInt != value))
+				{
+					this._JumpToInt = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TaxPaymentMethodAvailable", DbType="Bit NOT NULL")]
+		public bool TaxPaymentMethodAvailable
+		{
+			get
+			{
+				return this._TaxPaymentMethodAvailable;
+			}
+			set
+			{
+				if ((this._TaxPaymentMethodAvailable != value))
+				{
+					this._TaxPaymentMethodAvailable = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDCheckBeforeShipping", DbType="Bit NOT NULL")]
+		public bool IDCheckBeforeShipping
+		{
+			get
+			{
+				return this._IDCheckBeforeShipping;
+			}
+			set
+			{
+				if ((this._IDCheckBeforeShipping != value))
+				{
+					this._IDCheckBeforeShipping = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDCheckDuplicateBeforeShipping", DbType="Bit NOT NULL")]
+		public bool IDCheckDuplicateBeforeShipping
+		{
+			get
+			{
+				return this._IDCheckDuplicateBeforeShipping;
+			}
+			set
+			{
+				if ((this._IDCheckDuplicateBeforeShipping != value))
+				{
+					this._IDCheckDuplicateBeforeShipping = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDDuplicateNumberLimitation", DbType="Int NOT NULL")]
+		public int IDDuplicateNumberLimitation
+		{
+			get
+			{
+				return this._IDDuplicateNumberLimitation;
+			}
+			set
+			{
+				if ((this._IDDuplicateNumberLimitation != value))
+				{
+					this._IDDuplicateNumberLimitation = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Display", DbType="Bit NOT NULL")]
+		public bool Display
+		{
+			get
+			{
+				return this._Display;
+			}
+			set
+			{
+				if ((this._Display != value))
+				{
+					this._Display = value;
+				}
+			}
+		}
+	}
+	
+	public partial class tfnCompanyShippingChannelListGetNewResult
+	{
+		
+		private int _CompanyId;
+		
+		private int _ShippingChannelId;
+		
+		private System.Nullable<int> _ShippingChannelCompanyId;
+		
+		private string _ShippingChannelName;
+		
+		private string _ShippingChannelCode;
+		
+		private int _ShippingChannelTypeCodeId;
+		
+		private decimal _TaxRate;
+		
+		private decimal _PriceFirstRate;
+		
+		private decimal _PriceAdditionRate;
+		
+		private int _WeightUnit;
+		
+		private int _WeightFirst;
+		
+		private decimal _UnitPriceFirst;
+		
+		private decimal _UnitPriceAdditional;
+		
+		private bool _JumpToInt;
+		
+		private bool _TaxPaymentMethodAvailable;
+		
+		private bool _IDCheckBeforeShipping;
+		
+		private bool _IDCheckDuplicateBeforeShipping;
+		
+		private int _IDDuplicateNumberLimitation;
+		
+		private bool _Granted;
+		
+		public tfnCompanyShippingChannelListGetNewResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CompanyId", DbType="Int NOT NULL")]
+		public int CompanyId
+		{
+			get
+			{
+				return this._CompanyId;
+			}
+			set
+			{
+				if ((this._CompanyId != value))
+				{
+					this._CompanyId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ShippingChannelId", DbType="Int NOT NULL")]
+		public int ShippingChannelId
+		{
+			get
+			{
+				return this._ShippingChannelId;
+			}
+			set
+			{
+				if ((this._ShippingChannelId != value))
+				{
+					this._ShippingChannelId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ShippingChannelCompanyId", DbType="Int")]
+		public System.Nullable<int> ShippingChannelCompanyId
+		{
+			get
+			{
+				return this._ShippingChannelCompanyId;
+			}
+			set
+			{
+				if ((this._ShippingChannelCompanyId != value))
+				{
+					this._ShippingChannelCompanyId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ShippingChannelName", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string ShippingChannelName
+		{
+			get
+			{
+				return this._ShippingChannelName;
+			}
+			set
+			{
+				if ((this._ShippingChannelName != value))
+				{
+					this._ShippingChannelName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ShippingChannelCode", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string ShippingChannelCode
+		{
+			get
+			{
+				return this._ShippingChannelCode;
+			}
+			set
+			{
+				if ((this._ShippingChannelCode != value))
+				{
+					this._ShippingChannelCode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ShippingChannelTypeCodeId", DbType="Int NOT NULL")]
+		public int ShippingChannelTypeCodeId
+		{
+			get
+			{
+				return this._ShippingChannelTypeCodeId;
+			}
+			set
+			{
+				if ((this._ShippingChannelTypeCodeId != value))
+				{
+					this._ShippingChannelTypeCodeId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TaxRate", DbType="Decimal(10,2) NOT NULL")]
+		public decimal TaxRate
+		{
+			get
+			{
+				return this._TaxRate;
+			}
+			set
+			{
+				if ((this._TaxRate != value))
+				{
+					this._TaxRate = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PriceFirstRate", DbType="Decimal(10,2) NOT NULL")]
+		public decimal PriceFirstRate
+		{
+			get
+			{
+				return this._PriceFirstRate;
+			}
+			set
+			{
+				if ((this._PriceFirstRate != value))
+				{
+					this._PriceFirstRate = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PriceAdditionRate", DbType="Decimal(10,2) NOT NULL")]
+		public decimal PriceAdditionRate
+		{
+			get
+			{
+				return this._PriceAdditionRate;
+			}
+			set
+			{
+				if ((this._PriceAdditionRate != value))
+				{
+					this._PriceAdditionRate = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WeightUnit", DbType="Int NOT NULL")]
+		public int WeightUnit
+		{
+			get
+			{
+				return this._WeightUnit;
+			}
+			set
+			{
+				if ((this._WeightUnit != value))
+				{
+					this._WeightUnit = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WeightFirst", DbType="Int NOT NULL")]
+		public int WeightFirst
+		{
+			get
+			{
+				return this._WeightFirst;
+			}
+			set
+			{
+				if ((this._WeightFirst != value))
+				{
+					this._WeightFirst = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UnitPriceFirst", DbType="Decimal(10,2) NOT NULL")]
+		public decimal UnitPriceFirst
+		{
+			get
+			{
+				return this._UnitPriceFirst;
+			}
+			set
+			{
+				if ((this._UnitPriceFirst != value))
+				{
+					this._UnitPriceFirst = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UnitPriceAdditional", DbType="Decimal(10,2) NOT NULL")]
+		public decimal UnitPriceAdditional
+		{
+			get
+			{
+				return this._UnitPriceAdditional;
+			}
+			set
+			{
+				if ((this._UnitPriceAdditional != value))
+				{
+					this._UnitPriceAdditional = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_JumpToInt", DbType="Bit NOT NULL")]
+		public bool JumpToInt
+		{
+			get
+			{
+				return this._JumpToInt;
+			}
+			set
+			{
+				if ((this._JumpToInt != value))
+				{
+					this._JumpToInt = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TaxPaymentMethodAvailable", DbType="Bit NOT NULL")]
+		public bool TaxPaymentMethodAvailable
+		{
+			get
+			{
+				return this._TaxPaymentMethodAvailable;
+			}
+			set
+			{
+				if ((this._TaxPaymentMethodAvailable != value))
+				{
+					this._TaxPaymentMethodAvailable = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDCheckBeforeShipping", DbType="Bit NOT NULL")]
+		public bool IDCheckBeforeShipping
+		{
+			get
+			{
+				return this._IDCheckBeforeShipping;
+			}
+			set
+			{
+				if ((this._IDCheckBeforeShipping != value))
+				{
+					this._IDCheckBeforeShipping = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDCheckDuplicateBeforeShipping", DbType="Bit NOT NULL")]
+		public bool IDCheckDuplicateBeforeShipping
+		{
+			get
+			{
+				return this._IDCheckDuplicateBeforeShipping;
+			}
+			set
+			{
+				if ((this._IDCheckDuplicateBeforeShipping != value))
+				{
+					this._IDCheckDuplicateBeforeShipping = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDDuplicateNumberLimitation", DbType="Int NOT NULL")]
+		public int IDDuplicateNumberLimitation
+		{
+			get
+			{
+				return this._IDDuplicateNumberLimitation;
+			}
+			set
+			{
+				if ((this._IDDuplicateNumberLimitation != value))
+				{
+					this._IDDuplicateNumberLimitation = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Granted", DbType="Bit NOT NULL")]
+		public bool Granted
+		{
+			get
+			{
+				return this._Granted;
+			}
+			set
+			{
+				if ((this._Granted != value))
+				{
+					this._Granted = value;
+				}
+			}
+		}
+	}
+	
+	public partial class tfnShippingChannelGetByIdResult
+	{
+		
+		private int _CompanyId;
+		
+		private int _ShippingChannelId;
+		
+		private int _ShippingChannelCompanyId;
+		
+		private string _ShippingChannelName;
+		
+		private string _ShippingChannelCode;
+		
+		private int _ShippingChannelTypeCodeId;
+		
+		private decimal _TaxRate;
+		
+		private decimal _PriceFirstRate;
+		
+		private decimal _PriceAdditionRate;
+		
+		private int _WeightUnit;
+		
+		private int _WeightFirst;
+		
+		private decimal _UnitPriceFirst;
+		
+		private decimal _UnitPriceAdditional;
+		
+		private bool _JumpToInt;
+		
+		private bool _TaxPaymentMethodAvailable;
+		
+		private bool _IDCheckBeforeShipping;
+		
+		private bool _IDCheckDuplicateBeforeShipping;
+		
+		private int _IDDuplicateNumberLimitation;
+		
+		private string _SFExpressType;
+		
+		public tfnShippingChannelGetByIdResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CompanyId", DbType="Int NOT NULL")]
+		public int CompanyId
+		{
+			get
+			{
+				return this._CompanyId;
+			}
+			set
+			{
+				if ((this._CompanyId != value))
+				{
+					this._CompanyId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ShippingChannelId", DbType="Int NOT NULL")]
+		public int ShippingChannelId
+		{
+			get
+			{
+				return this._ShippingChannelId;
+			}
+			set
+			{
+				if ((this._ShippingChannelId != value))
+				{
+					this._ShippingChannelId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ShippingChannelCompanyId", DbType="Int NOT NULL")]
+		public int ShippingChannelCompanyId
+		{
+			get
+			{
+				return this._ShippingChannelCompanyId;
+			}
+			set
+			{
+				if ((this._ShippingChannelCompanyId != value))
+				{
+					this._ShippingChannelCompanyId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ShippingChannelName", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string ShippingChannelName
+		{
+			get
+			{
+				return this._ShippingChannelName;
+			}
+			set
+			{
+				if ((this._ShippingChannelName != value))
+				{
+					this._ShippingChannelName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ShippingChannelCode", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string ShippingChannelCode
+		{
+			get
+			{
+				return this._ShippingChannelCode;
+			}
+			set
+			{
+				if ((this._ShippingChannelCode != value))
+				{
+					this._ShippingChannelCode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ShippingChannelTypeCodeId", DbType="Int NOT NULL")]
+		public int ShippingChannelTypeCodeId
+		{
+			get
+			{
+				return this._ShippingChannelTypeCodeId;
+			}
+			set
+			{
+				if ((this._ShippingChannelTypeCodeId != value))
+				{
+					this._ShippingChannelTypeCodeId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TaxRate", DbType="Decimal(10,2) NOT NULL")]
+		public decimal TaxRate
+		{
+			get
+			{
+				return this._TaxRate;
+			}
+			set
+			{
+				if ((this._TaxRate != value))
+				{
+					this._TaxRate = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PriceFirstRate", DbType="Decimal(10,2) NOT NULL")]
+		public decimal PriceFirstRate
+		{
+			get
+			{
+				return this._PriceFirstRate;
+			}
+			set
+			{
+				if ((this._PriceFirstRate != value))
+				{
+					this._PriceFirstRate = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PriceAdditionRate", DbType="Decimal(10,2) NOT NULL")]
+		public decimal PriceAdditionRate
+		{
+			get
+			{
+				return this._PriceAdditionRate;
+			}
+			set
+			{
+				if ((this._PriceAdditionRate != value))
+				{
+					this._PriceAdditionRate = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WeightUnit", DbType="Int NOT NULL")]
+		public int WeightUnit
+		{
+			get
+			{
+				return this._WeightUnit;
+			}
+			set
+			{
+				if ((this._WeightUnit != value))
+				{
+					this._WeightUnit = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WeightFirst", DbType="Int NOT NULL")]
+		public int WeightFirst
+		{
+			get
+			{
+				return this._WeightFirst;
+			}
+			set
+			{
+				if ((this._WeightFirst != value))
+				{
+					this._WeightFirst = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UnitPriceFirst", DbType="Decimal(10,2) NOT NULL")]
+		public decimal UnitPriceFirst
+		{
+			get
+			{
+				return this._UnitPriceFirst;
+			}
+			set
+			{
+				if ((this._UnitPriceFirst != value))
+				{
+					this._UnitPriceFirst = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UnitPriceAdditional", DbType="Decimal(10,2) NOT NULL")]
+		public decimal UnitPriceAdditional
+		{
+			get
+			{
+				return this._UnitPriceAdditional;
+			}
+			set
+			{
+				if ((this._UnitPriceAdditional != value))
+				{
+					this._UnitPriceAdditional = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_JumpToInt", DbType="Bit NOT NULL")]
+		public bool JumpToInt
+		{
+			get
+			{
+				return this._JumpToInt;
+			}
+			set
+			{
+				if ((this._JumpToInt != value))
+				{
+					this._JumpToInt = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TaxPaymentMethodAvailable", DbType="Bit NOT NULL")]
+		public bool TaxPaymentMethodAvailable
+		{
+			get
+			{
+				return this._TaxPaymentMethodAvailable;
+			}
+			set
+			{
+				if ((this._TaxPaymentMethodAvailable != value))
+				{
+					this._TaxPaymentMethodAvailable = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDCheckBeforeShipping", DbType="Bit NOT NULL")]
+		public bool IDCheckBeforeShipping
+		{
+			get
+			{
+				return this._IDCheckBeforeShipping;
+			}
+			set
+			{
+				if ((this._IDCheckBeforeShipping != value))
+				{
+					this._IDCheckBeforeShipping = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDCheckDuplicateBeforeShipping", DbType="Bit NOT NULL")]
+		public bool IDCheckDuplicateBeforeShipping
+		{
+			get
+			{
+				return this._IDCheckDuplicateBeforeShipping;
+			}
+			set
+			{
+				if ((this._IDCheckDuplicateBeforeShipping != value))
+				{
+					this._IDCheckDuplicateBeforeShipping = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDDuplicateNumberLimitation", DbType="Int NOT NULL")]
+		public int IDDuplicateNumberLimitation
+		{
+			get
+			{
+				return this._IDDuplicateNumberLimitation;
+			}
+			set
+			{
+				if ((this._IDDuplicateNumberLimitation != value))
+				{
+					this._IDDuplicateNumberLimitation = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SFExpressType", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string SFExpressType
+		{
+			get
+			{
+				return this._SFExpressType;
+			}
+			set
+			{
+				if ((this._SFExpressType != value))
+				{
+					this._SFExpressType = value;
+				}
+			}
+		}
+	}
+	
+	public partial class tfnShippingChannelPriceRangeListGetResult
+	{
+		
+		private int _CompanyId;
+		
+		private int _ShippingChannelCompanyId;
+		
+		private int _ShippingChannelId;
+		
+		private int _CurrencyId;
+		
+		private decimal _WeightMin;
+		
+		private decimal _WeightMax;
+		
+		private decimal _Price;
+		
+		private int _ShippingChannelPriceRangeId;
+		
+		private bool _Customized;
+		
+		public tfnShippingChannelPriceRangeListGetResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CompanyId", DbType="Int NOT NULL")]
+		public int CompanyId
+		{
+			get
+			{
+				return this._CompanyId;
+			}
+			set
+			{
+				if ((this._CompanyId != value))
+				{
+					this._CompanyId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ShippingChannelCompanyId", DbType="Int NOT NULL")]
+		public int ShippingChannelCompanyId
+		{
+			get
+			{
+				return this._ShippingChannelCompanyId;
+			}
+			set
+			{
+				if ((this._ShippingChannelCompanyId != value))
+				{
+					this._ShippingChannelCompanyId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ShippingChannelId", DbType="Int NOT NULL")]
+		public int ShippingChannelId
+		{
+			get
+			{
+				return this._ShippingChannelId;
+			}
+			set
+			{
+				if ((this._ShippingChannelId != value))
+				{
+					this._ShippingChannelId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CurrencyId", DbType="Int NOT NULL")]
+		public int CurrencyId
+		{
+			get
+			{
+				return this._CurrencyId;
+			}
+			set
+			{
+				if ((this._CurrencyId != value))
+				{
+					this._CurrencyId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WeightMin", DbType="Decimal(10,2) NOT NULL")]
+		public decimal WeightMin
+		{
+			get
+			{
+				return this._WeightMin;
+			}
+			set
+			{
+				if ((this._WeightMin != value))
+				{
+					this._WeightMin = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WeightMax", DbType="Decimal(10,2) NOT NULL")]
+		public decimal WeightMax
+		{
+			get
+			{
+				return this._WeightMax;
+			}
+			set
+			{
+				if ((this._WeightMax != value))
+				{
+					this._WeightMax = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Price", DbType="Decimal(10,2) NOT NULL")]
+		public decimal Price
+		{
+			get
+			{
+				return this._Price;
+			}
+			set
+			{
+				if ((this._Price != value))
+				{
+					this._Price = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ShippingChannelPriceRangeId", DbType="Int NOT NULL")]
+		public int ShippingChannelPriceRangeId
+		{
+			get
+			{
+				return this._ShippingChannelPriceRangeId;
+			}
+			set
+			{
+				if ((this._ShippingChannelPriceRangeId != value))
+				{
+					this._ShippingChannelPriceRangeId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Customized", DbType="Bit NOT NULL")]
+		public bool Customized
+		{
+			get
+			{
+				return this._Customized;
+			}
+			set
+			{
+				if ((this._Customized != value))
+				{
+					this._Customized = value;
+				}
+			}
+		}
+	}
+	
+	public partial class tfnShippingOrderLabelNeedGenerateResult
+	{
+		
+		private System.Nullable<int> _ShippingOrderId;
+		
+		public tfnShippingOrderLabelNeedGenerateResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ShippingOrderId", DbType="Int")]
+		public System.Nullable<int> ShippingOrderId
+		{
+			get
+			{
+				return this._ShippingOrderId;
+			}
+			set
+			{
+				if ((this._ShippingOrderId != value))
+				{
+					this._ShippingOrderId = value;
+				}
+			}
+		}
+	}
+	
+	public partial class tfnShippingOrderLabelNeedHtmlConvertPdfResult
+	{
+		
+		private System.Nullable<int> _ShippingOrderLabelId;
+		
+		private System.Nullable<int> _FileId;
+		
+		public tfnShippingOrderLabelNeedHtmlConvertPdfResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ShippingOrderLabelId", DbType="Int")]
+		public System.Nullable<int> ShippingOrderLabelId
+		{
+			get
+			{
+				return this._ShippingOrderLabelId;
+			}
+			set
+			{
+				if ((this._ShippingOrderLabelId != value))
+				{
+					this._ShippingOrderLabelId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FileId", DbType="Int")]
+		public System.Nullable<int> FileId
+		{
+			get
+			{
+				return this._FileId;
+			}
+			set
+			{
+				if ((this._FileId != value))
+				{
+					this._FileId = value;
 				}
 			}
 		}

@@ -34,6 +34,8 @@ UNION SELECT 'FK_SecurityManagement' as [FunctionKey]
 UNION SELECT 'FK_TransferManagement' as [FunctionKey]
 UNION SELECT 'FK_AgentManagement' as [FunctionKey]
 UNION SELECT 'FK_SubMerchantManagement' as [FunctionKey]
+UNION SELECT 'FK_EcommerceManagement' as [FunctionKey]
+UNION SELECT 'FK_StoreManagement' as [FunctionKey]
 ) a
 
 select * from SecFunction
@@ -58,6 +60,7 @@ from
 		cross join Company b (nolock)
 	where a.Available = 1 
 	and b.Active = 1
+	and b.CompanyId = 1074
 ) a
 left join [dbo].[SecFunctionCompany] z on a.SecFunctionId = z.SecFunctionId and a.CompanyId = z.CompanyId
 where z.Id is null

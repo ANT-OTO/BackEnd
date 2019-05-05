@@ -126,7 +126,7 @@ namespace ANTOTOLib
                         Function.Granted = item.Granted;
                         Function.ChildFunctionList = getChildFunctionList(item.SecFunctionId, FunctionList);
                         result.Add(Function);
-                    }
+                    } 
                 }
             }
 

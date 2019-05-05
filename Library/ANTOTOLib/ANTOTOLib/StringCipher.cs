@@ -11,7 +11,10 @@ namespace ANTOTOLib
     {
         public static string HashPassword(string pasword)
         {
-
+            if(pasword == null)
+            {
+                return "";
+            }
             byte[] arrbyte = new byte[pasword.Length];
 
             SHA256 hash = new SHA256CryptoServiceProvider();

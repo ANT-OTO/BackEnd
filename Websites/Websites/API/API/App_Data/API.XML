@@ -492,6 +492,863 @@
             </summary>
             <param name="documentPath">The physical path to XML document.</param>
         </member>
+        <member name="T:API.Controllers.CustomerRelationController">
+            <summary>
+            Client related functions
+            </summary>
+        </member>
+        <member name="M:API.Controllers.CustomerRelationController.CustomerListSearch(ANTOTOLib.ParaDataModel.ParaCustomerSearch)">
+            <summary>
+            CustomerListSearch
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.CustomerRelationController.CustomerListSearchByLogistic(ANTOTOLib.ParaDataModel.ParaCustomerSearch)">
+            <summary>
+            CustomerListSearchByLogistic
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.CustomerRelationController.CreateCustomer(ANTOTOLib.CustomerManager.Customer)">
+            <summary>
+            Create Customer 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.CustomerRelationController.UpdateCustomer(ANTOTOLib.CustomerManager.Customer)">
+            <summary>
+            Update Customer 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.CustomerRelationController.CustomerGet(ANTOTOLib.CustomerManager.Customer)">
+            <summary>
+            Get Customer's current status
+            CompanyCode will be give by webpage or wechat app
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.CustomerRelationController.CustomerAddressCreateUpdate(ANTOTOLib.CustomerManager.CustomerAddress)">
+            <summary>
+            CustomerAddressCreateUpdate
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.CustomerRelationController.CustomerAddressGet(ANTOTOLib.CustomerManager.CustomerAddress)">
+            <summary>
+            CustomerAddressCreateUpdate
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:API.Controllers.FileUploadController">
+            <summary>
+            FileUpload
+            </summary>
+        </member>
+        <member name="M:API.Controllers.FileUploadController.UploadFile(System.String)">
+            <summary>
+            upload greeting mp3 file 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.FileUploadController.UploadFileCustomer(System.String)">
+            <summary>
+            upload greeting mp3 file 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.FileUploadController.UploadExcelFile(System.String)">
+            <summary>
+            UploadExcelFile
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:API.Controllers.Customer_OrderController">
+            <summary>
+            Client related functions
+            </summary>
+        </member>
+        <member name="M:API.Controllers.Customer_OrderController.CustomerOrderCreate(ANTOTOLib.ParaDataModel.ParaOrderCreate)">
+            <summary>
+            Customer Order Checkout
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.Customer_OrderController.CustomerOrderSearch(ANTOTOLib.ParaDataModel.ParaCustomerOrderSearch)">
+            <summary>
+            CustomerOrderSearch
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:API.Controllers.CompanyTransactionController">
+            <summary>
+            Client related functions
+            </summary>
+        </member>
+        <member name="M:API.Controllers.CompanyTransactionController.CompanyTransactionSearch(ANTOTOLib.ParaDataModel.ParaCompanyTransactionSearch)">
+            <summary>
+            CompanyTransactionSearch 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.CompanyTransactionController.CompanyTransactionSearchByCustomer(ANTOTOLib.ParaDataModel.ParaCustomerCompanyTransactionSearch)">
+            <summary>
+            CompanyTransactionSearchByCustomer
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.CompanyTransactionController.CompanyTransactionActionForCustomer(ANTOTOLib.ParaDataModel.ParaCompanyTransactionSet)">
+            <summary>
+            CompanyTransactionActionForCustomer
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.CompanyTransactionController.CompanyTransactionRequestSearch(ANTOTOLib.ParaDataModel.ParaCompanyTransactionRequestSearch)">
+            <summary>
+            CompanyTransactionRequestSearch
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.CompanyTransactionController.CompanyTransactionRequestApprove(ANTOTOLib.DataModel.ResultCompanyTransactionRequest)">
+            <summary>
+            CompanyTransactionRequestApprove
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.CompanyTransactionController.CompanyTransactionRequestCancel(ANTOTOLib.DataModel.ResultCompanyTransactionRequest)">
+            <summary>
+            CompanyTransactionRequestCancel
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.CompanyTransactionController.CompanyTransactionRequestDeny(ANTOTOLib.DataModel.ResultCompanyTransactionRequest)">
+            <summary>
+            CompanyTransactionRequestDeny
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.CompanyTransactionController.CompanyTransactionRequestCreateByCustomer(ANTOTOLib.DataModel.ResultCompanyTransactionRequest)">
+            <summary>
+            CompanyTransactionRequestCreateByCustomer
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.CompanyTransactionController.CompanyTransactionRequestCreateByLogisticCompany(ANTOTOLib.DataModel.ResultCompanyTransactionRequest)">
+            <summary>
+            CompanyTransactionRequestCreateByLogisticCompany
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:API.Controllers.ShippingBatchActionController">
+            <summary>
+            Client related functions
+            </summary>
+        </member>
+        <member name="M:API.Controllers.ShippingBatchActionController.ShippingBatchAction(ANTOTOLib.ParaDataModel.ParaShippingOrderBatchUpdate)">
+            <summary>
+            ShippingBatchAction
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.ShippingBatchActionController.ShippingOrderBatchHandlerCreate(ANTOTOLib.ShippingOrderBatchAction.ShippingOrderBatchHandler)">
+            <summary>
+            ShippingOrderBatchHandlerCreate
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.ShippingBatchActionController.ShippingOrderAddToBatchHandler(ANTOTOLib.ShippingOrderBatchAction.ShippingOrderBatchHandlerDetail)">
+            <summary>
+            ShippingOrderAddToBatchHandler
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.ShippingBatchActionController.ShippingOrderRemoveBatchHandler(ANTOTOLib.ShippingOrderBatchAction.ShippingOrderBatchHandlerDetail)">
+            <summary>
+            ShippingOrderRemoveBatchHandler
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.ShippingBatchActionController.ShippingOrderBatchHandlerCancel(ANTOTOLib.ShippingOrderBatchAction.ShippingOrderBatchHandler)">
+            <summary>
+            ShippingOrderBatchHandlerCancel
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.ShippingBatchActionController.ShippingOrderBatchHandlerComplete(ANTOTOLib.ShippingOrderBatchAction.ShippingOrderBatchHandler)">
+            <summary>
+            ShippingOrderBatchHandlerComplete
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.ShippingBatchActionController.ShippingOrderBatchHandlerGet(ANTOTOLib.ShippingOrderBatchAction.ShippingOrderBatchHandler)">
+            <summary>
+            ShippingOrderBatchHandlerGet
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.ShippingBatchActionController.ShippingOrderBatchHandlerSearch(ANTOTOLib.ParaDataModel.ParaShippingOrderBatchHandlerSearch)">
+            <summary>
+            ShippingOrderBatchHandlerSearch
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.ShippingBatchActionController.ShippingOrderActionCodeListGet">
+            <summary>
+            CodeListGet
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:API.Controllers.ShippingActionController">
+            <summary>
+            Client related functions
+            </summary>
+        </member>
+        <member name="M:API.Controllers.ShippingActionController.ShippingOrderStartReview(ANTOTOLib.ParaDataModel.ParaShippingOrderReview)">
+            <summary>
+            ShippingOrderStartReview 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.ShippingActionController.ShippingOrderReviewComplete(ANTOTOLib.ParaDataModel.ParaShippingOrderReviewComplete)">
+            <summary>
+            ShippingOrderReviewComplete 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.ShippingActionController.ShippingOrderReviewCompleteAndChangeSFOrder(ANTOTOLib.ParaDataModel.ParaShippingOrderReviewComplete)">
+            <summary>
+            ShippingOrderReviewCompleteAndChangeSFOrder 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.ShippingActionController.ShippingOrderReviewCancel(ANTOTOLib.ParaDataModel.ParaShippingOrderReviewCancel)">
+            <summary>
+            ShippingOrderReviewCancel 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.ShippingActionController.ShippingOrderUpdate(ANTOTOLib.ShippingOrder.ANTOTOShippingOrder)">
+            <summary>
+            ShippingOrderUpdate
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.ShippingActionController.ShippingOrderGenerateANTLabel(ANTOTOLib.ParaDataModel.ParaShippingOrderPackage)">
+            <summary>
+            ShippingOrderGenerateANTLabel
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.ShippingActionController.ShippingOrderGenerateSFExpress(ANTOTOLib.ParaDataModel.ParaShippingOrderPackage)">
+            <summary>
+            ShippingOrderGenerateSFExpress
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.ShippingActionController.ShippingOrderTransactionListGet(ANTOTOLib.ShippingOrder.ANTOTOShippingOrder)">
+            <summary>
+            ShippingOrderTransactionListGet
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.ShippingActionController.ShippingOrderPriceCharge(ANTOTOLib.ParaDataModel.ParaShippingOrderPriceCharge)">
+            <summary>
+            ShippingOrderPriceCharge
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.ShippingActionController.ShippingOrderPriceCalculate(ANTOTOLib.ParaDataModel.ParaShippingOrderPriceCalculate)">
+            <summary>
+            ShippingOrderPriceCalculate
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.ShippingActionController.ShippingOrderCancel(ANTOTOLib.ParaDataModel.ParaShippingOrderCancel)">
+            <summary>
+            ShippingOrderCancel
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.ShippingActionController.ShippingOrderUploadIDProfile(ANTOTOLib.ParaDataModel.ParaShippingOrderIDUpload)">
+            <summary>
+            ShippingOrderUploadIDProfile
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.ShippingActionController.ShippingOrderIDProfileGet(ANTOTOLib.ParaDataModel.ParaShippingOrderIDUpload)">
+            <summary>
+            ShippingOrderIDProfileGet
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.ShippingActionController.ShippingOrderTrackingRecordsGet(ANTOTOLib.ParaDataModel.ParaShippingOrderPackage)">
+            <summary>
+            ShippingOrderTrackingRecordsGet
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.ShippingActionController.ShippingOrderSubOrderSet(ANTOTOLib.DataModel.ResultShippingOrderSubOrder)">
+            <summary>
+            ShippingOrderSubOrderSet
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.ShippingActionController.ShippingOrderSubOrderDelete(ANTOTOLib.DataModel.ResultShippingOrderSubOrder)">
+            <summary>
+            ShippingOrderSubOrderDelete
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.ShippingActionController.ShippingOrderSubOrderGet(ANTOTOLib.DataModel.ResultShippingOrderSubOrder)">
+            <summary>
+            ShippingOrderSubOrderGet
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.ShippingActionController.ShippingOrderTrackSet(ANTOTOLib.DataModel.ResultShippingOrderRoutingTransaction)">
+            <summary>
+            ShippingOrderTrackSet
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.ShippingActionController.ShippingOrderTrackDelete(ANTOTOLib.DataModel.ResultShippingOrderRoutingTransaction)">
+            <summary>
+            ShippingOrderTrackDelete
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.ShippingActionController.ShippingOrderSubOrderTypeListGet">
+            <summary>
+            ShippingOrderSubOrderTypeListGet
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.ShippingActionController.ShippingOrderPriceBatchChargeInfoGet(ANTOTOLib.ShippingOrderBatchAction.ParaShippingOrderPriceChargePackage)">
+            <summary>
+            ShippingOrderPriceBatchChargeInfoGet
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.ShippingActionController.ShippingOrderPriceBatchCharge(ANTOTOLib.ShippingOrderBatchAction.ParaShippingOrderPriceChargeStep)">
+            <summary>
+            ShippingOrderPriceBatchCharge
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:API.Controllers.ShippingController">
+            <summary>
+            Client related functions
+            </summary>
+        </member>
+        <member name="M:API.Controllers.ShippingController.CompanyFromAddressListGet">
+            <summary>
+            CompanyFromAddressListGet 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.ShippingController.CompanyFromAddressListGetByLogisticCompany(System.Nullable{System.Int32})">
+            <summary>
+            CompanyFromAddressListGetByLogisticCompany 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.ShippingController.CompanyFromAddressCreateUpdate(ANTOTOLib.Company.CompanyFromAddress)">
+            <summary>
+            CustomerAddressCreateUpdate
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.ShippingController.CreateShippingOrder(ANTOTOLib.ParaDataModel.ParaShippingOrder)">
+            <summary>
+            ShippingOrderCreate
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.ShippingController.ShippingOrderQuickCreate(ANTOTOLib.ParaDataModel.ParaShippingOrder)">
+            <summary>
+            ShippingOrderCreate
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.ShippingController.ShippingOrderQuickCreateByLogisticCompany(ANTOTOLib.ParaDataModel.ParaShippingQuickOrder)">
+            <summary>
+            ShippingOrderQuickCreateByLogisticCompany
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.ShippingController.HandlerCompanyListGet">
+            <summary>
+            HandlerCompanyListGet
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.ShippingController.ShippingChannelListGet">
+            <summary>
+            ShippingChannelListGet
+            </summary>
+            <returns></returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:API.Controllers.ShippingController.ShippingChannelListGetByCompanyId(System.Nullable{System.Int32})" -->
+        <member name="M:API.Controllers.ShippingController.ShippingChannelGrantCustomerCompany(ANTOTOLib.ParaDataModel.ParaShippingChannelRightGrant)">
+            <summary>
+            ShippingChannelGrantCustomerCompany
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.ShippingController.ShippingChannelSetLogistic(ANTOTOLib.ShippingOrder.ShippingChannel)">
+            <summary>
+            ShippingChannelSetLogistic
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.ShippingController.ShippingChannelLogisticPriceRangeAdd(ANTOTOLib.ShippingOrder.ShippingChannelPriceRange)">
+            <summary>
+            ShippingChannelSetLogistic
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.ShippingController.ShippingChannelLogisticPriceRangeEdit(ANTOTOLib.ShippingOrder.ShippingChannelPriceRange)">
+            <summary>
+            ShippingChannelLogisticPriceRangeEdit
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.ShippingController.ShippingChannelLogisticPriceRangeDelete(ANTOTOLib.ShippingOrder.ShippingChannelPriceRange)">
+            <summary>
+            ShippingChannelLogisticPriceRangeDelete
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.ShippingController.ShippingChannelPriceRangeEditCustomer(ANTOTOLib.ShippingOrder.ShippingChannelPriceRange)">
+            <summary>
+            ShippingChannelPriceRangeEditCustomer
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.ShippingController.ShippingChannelPriceRangeDeleteCustomer(ANTOTOLib.ShippingOrder.ShippingChannelPriceRange)">
+            <summary>
+            ShippingChannelPriceRangeDeleteCustomer
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.ShippingController.ShippingChannelSetCompany(ANTOTOLib.ShippingOrder.ShippingChannel)">
+            <summary>
+            ShippingChannelSetCompany
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.ShippingController.ShippingChannelGet(ANTOTOLib.ShippingOrder.ShippingChannel)">
+            <summary>
+            ShippingChannelGet
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.ShippingController.LogisticCompanyUserCreate(ANTOTOLib.ParaDataModel.ParaLogisticCompany)">
+            <summary>
+            Logistic Company User Create
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.ShippingController.LogisticCompanyUserUpdate(ANTOTOLib.ParaDataModel.ParaLogisticCompany)">
+            <summary>
+            LogisticCompanyUserUpdate
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.ShippingController.LogisticCompanyUserSearch(ANTOTOLib.ParaDataModel.ParaLogisticCompanySearch)">
+            <summary>
+            LogisticCompanyUserSearch
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.ShippingController.LogisticCompanyUserGet(ANTOTOLib.ParaDataModel.ParaLogisticCompanySearch)">
+            <summary>
+            LogisticCompanyUserGet
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.ShippingController.ShippingOrderBatchRequestCreate(ANTOTOLib.ParaDataModel.ParaBatchRequestSetup)">
+            <summary>
+            ShippingOrderBatchRequestCreate
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.ShippingController.ShippingOrderBatchRequestGet(ANTOTOLib.BatchHandler.BatchRequest)">
+            <summary>
+            ShippingOrderBatchRequestGet
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.ShippingController.ShippingOrderBatchRequestUpdate(ANTOTOLib.BatchHandler.BatchRequest)">
+            <summary>
+            ShippingOrderBatchRequestUpdate
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.ShippingController.ShippingOrderBatchRequestComplete(ANTOTOLib.BatchHandler.BatchRequest)">
+            <summary>
+            ShippingOrderBatchRequestComplete
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.ShippingController.ShippingOrderBatchRequestCancel(ANTOTOLib.BatchHandler.BatchRequest)">
+            <summary>
+            ShippingOrderBatchRequestCancel
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.ShippingController.BatchTemplateListGet">
+            <summary>
+            BatchTemplate List Get
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.ShippingController.ShippingOrderSearch(ANTOTOLib.ParaDataModel.ParaShippingOrderSearch)">
+            <summary>
+            ShippingOrderSearch
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.ShippingController.ShippingOrderSearchByCompanyCustomer(ANTOTOLib.ParaDataModel.ParaShippingOrderSearch)">
+            <summary>
+            ShippingOrderSearch
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.ShippingController.ShippingOrderSearchGet(System.Nullable{System.Int32})">
+            <summary>
+            ShippingOrderSearchGet
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:API.Controllers.WarehouseController">
+            <summary>
+            Client related functions
+            </summary>
+        </member>
+        <member name="M:API.Controllers.WarehouseController.WarehouseUpdate(ANTOTOLib.WareHouseManager.WareHouse)">
+            <summary>
+            WarehouseUpdate
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.WarehouseController.WarehouseListGet">
+            <summary>
+            Warehouse List Get
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.WarehouseController.WarehouseGet(ANTOTOLib.WareHouseManager.WareHouse)">
+            <summary>
+            Warehouse Get
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.WarehouseController.WarehouseCartUpdate(ANTOTOLib.WareHouseManager.WareHouseCart)">
+            <summary>
+            Warehouse Cart Update
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.WarehouseController.WarehouseCartList(ANTOTOLib.WareHouseManager.WareHouse)">
+            <summary>
+            Warehouse Cart List Get
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.WarehouseController.WarehouseCart(ANTOTOLib.WareHouseManager.WareHouseCart)">
+            <summary>
+            Warehouse Cart Get
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.WarehouseController.WarehouseLevelCreate(ANTOTOLib.WareHouseManager.WarehouseLevel)">
+            <summary>
+            Warehouse WarehouseLevel Create
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.WarehouseController.WarehouseLevelList(ANTOTOLib.WareHouseManager.WareHouse)">
+            <summary>
+            Warehouse WarehouseLevel List
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.WarehouseController.WarehouseLevel(ANTOTOLib.WareHouseManager.WarehouseLevel)">
+            <summary>
+            Warehouse WarehouseLevel
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.WarehouseController.WarehouseZoneCreate(ANTOTOLib.WareHouseManager.WarehouseZone)">
+            <summary>
+            Warehouse Zone Create
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.WarehouseController.WarehouseZone(ANTOTOLib.WareHouseManager.WarehouseZone)">
+            <summary>
+            Warehouse Zone
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.WarehouseController.WarehouseZoneList(ANTOTOLib.WareHouseManager.WarehouseLevel)">
+            <summary>
+            Warehouse Zone List Get
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.WarehouseController.WarehouseRackCreate(ANTOTOLib.WareHouseManager.WarehouseRack)">
+            <summary>
+            Warehouse Rack Create
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.WarehouseController.WarehouseRack(ANTOTOLib.WareHouseManager.WarehouseRack)">
+            <summary>
+            Warehouse Rack
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.WarehouseController.WarehouseRackList(ANTOTOLib.WareHouseManager.WarehouseZone)">
+            <summary>
+            Warehouse Rack List
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.WarehouseController.WarehouseRackLevelCreate(ANTOTOLib.WareHouseManager.WarehouseRackLevel)">
+            <summary>
+            Warehouse Rack Level Create
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.WarehouseController.WarehouseRackLevel(ANTOTOLib.WareHouseManager.WarehouseRackLevel)">
+            <summary>
+            Warehouse Rack Level
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.WarehouseController.WarehouseRackLevelList(ANTOTOLib.WareHouseManager.WarehouseRack)">
+            <summary>
+            Warehouse Rack Level List
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:API.Controllers.PurchaseManagementController">
+            <summary>
+            Client related functions
+            </summary>
+        </member>
+        <member name="M:API.Controllers.PurchaseManagementController.PurchaseListGet">
+            <summary>
+            PurchaseListGet
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.PurchaseManagementController.PurchaseListGenerate">
+            <summary>
+            PurchaseListGenerate
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.PurchaseManagementController.PurchaseTaskAccept(ANTOTOLib.ParaDataModel.ParaPurchaseTaskAccept)">
+            <summary>
+            PurchaseTaskAccept
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.PurchaseManagementController.PurchaseTaskChange(ANTOTOLib.ParaDataModel.ParaPurchaseTaskChange)">
+            <summary>
+            PurchaseTaskChange
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.PurchaseManagementController.PurchaseTaskCancel(ANTOTOLib.ParaDataModel.ParaPurchaseTaskDeny)">
+            <summary>
+            PurchaseTaskCancel
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.PurchaseManagementController.PurchaseTaskFinish(ANTOTOLib.ParaDataModel.ParaPurchaseTaskFinish)">
+            <summary>
+            PurchaseTaskFinish
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.PurchaseManagementController.PurchasePoolTaskDetailGet(System.Nullable{System.Int32})">
+            <summary>
+            PurchasePoolTaskDetailGet
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.PurchaseManagementController.PurchasePoolTaskUserGet(ANTOTOLib.ParaDataModel.ParaPurchasePoolTaskSearch)">
+            <summary>
+            PurchasePoolTaskUserGet
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.PurchaseManagementController.PurchasePoolTaskSearch(ANTOTOLib.ParaDataModel.ParaPurchasePoolTaskSearch)">
+            <summary>
+            PurchasePoolTaskSearch
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:API.Controllers.ProductLaunchController">
+            <summary>
+            Client related functions
+            </summary>
+        </member>
+        <member name="M:API.Controllers.ProductLaunchController.ProductLaunchRequestSearch(ANTOTOLib.ParaDataModel.ParaItemPackageSearch)">
+            <summary>
+            ProductLaunchRequestSearch
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.ProductLaunchController.ProductRequestSearchBySelf(ANTOTOLib.ParaDataModel.ParaItemPackageSearch)">
+            <summary>
+            ProductRequestSearchBySelf
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.ProductLaunchController.ProductUPCSearch(ANTOTOLib.ParaDataModel.ParaProductUPC)">
+            <summary>
+            ProductUPCSearch : nothing means no related product. Please create new request
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.ProductLaunchController.ProductLaunchRequestCreateNew(ANTOTOLib.ParaDataModel.ParaProductSubmitPackage)">
+            <summary>
+            ProductLaunchRequestCreateNew
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.ProductLaunchController.ProductLaunchRequestUpdateNew(ANTOTOLib.ParaDataModel.ParaProductUpdatePackage)">
+            <summary>
+            ProductLaunchRequestUpdateNew
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.ProductLaunchController.ProductLaunchRequestEditExisting(ANTOTOLib.DataModel.ResultItemPackage)">
+            <summary>
+            ProductLaunchRequestEditExisting
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.ProductLaunchController.ProductLaunchRequestCancel(ANTOTOLib.ParaDataModel.ParaItemPackage)">
+            <summary>
+            ProductLaunchRequestCancel Only used by User
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.ProductLaunchController.ProductLaunchRequestReject(ANTOTOLib.ParaDataModel.ParaItemPackage)">
+            <summary>
+            ProductLaunchRequestCancel Only used by User
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.ProductLaunchController.ProductLaunchRequestApprove(ANTOTOLib.ParaDataModel.ParaItemPackage)">
+            <summary>
+            ProductLaunchRequestApprove
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.ProductLaunchController.ProductOnSaleRequest(ANTOTOLib.ParaDataModel.ParaItemOnSaleRequest)">
+            <summary>
+            ProductOnSaleRequest
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.ProductLaunchController.ProductOnSaleRequestSearch(ANTOTOLib.ParaDataModel.ParaItemOnSaleSearch)">
+            <summary>
+            ProductOnSaleRequest
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.ProductLaunchController.ProductOnSaleRequestWorkOn(ANTOTOLib.DataModel.ResultItemOnSaleRequest)">
+            <summary>
+            ProductOnSaleRequestWorkOn
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.ProductLaunchController.ProductOnSaleRequestFinish(ANTOTOLib.DataModel.ResultItemOnSaleRequest)">
+            <summary>
+            ProductOnSaleRequestFinish
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.ProductLaunchController.ProductOnSaleRequestCancel(ANTOTOLib.DataModel.ResultItemOnSaleRequest)">
+            <summary>
+            ProductOnSaleRequestCancel
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.ProductLaunchController.ANTOTOMarketOnSaleItemGet(ANTOTOLib.DataModel.ItemOnSaleDetail)">
+            <summary>
+            ANTOTOMarketOnSaleItemGet
+            ItemId and ItemOnSaleId needed if on market.
+            ItemId needed if not on market.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.ProductLaunchController.ANTOTOMarketOnSaleItemCreateOrUpdate(ANTOTOLib.DataModel.ItemOnSaleDetail)">
+            <summary>
+            ANTOTOMarketOnSaleItemCreateOrUpdate
+            All needed.
+            Related item list needed if you want to publish other variation.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.ProductLaunchController.ANTOTOMarketOnSaleItemDisable(ANTOTOLib.DataModel.ItemOnSaleDetail)">
+            <summary>
+            ANTOTOMarketOnSaleItemDisable
+            All needed.
+            Related item list needed if you want to disable other variation.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:API.Controllers.ToolController">
+            <summary>
+            Client related functions
+            </summary>
+        </member>
+        <member name="M:API.Controllers.ToolController.CountryListGet(System.Int32)">
+            <summary>
+            Get Country List
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.ToolController.CurrencyList(System.Int32)">
+            <summary>
+            Get Country List
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.ToolController.SystemLanguageList">
+            <summary>
+            Get Country List
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.ToolController.GetCodeListList(System.String)">
+            <summary>
+            Return the list of Code.
+            
+            Supported Category: 
+            
+            ItemStatusCodeId
+            
+            </summary>
+            <param name="Category">Category</param>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.ToolController.GetCodeListEntity(System.String,System.Int32)">
+            <summary>
+            Get one entity object
+            </summary>
+            <param name="Category">Category</param>
+            <param name="CodeId">CodeId</param>
+            <returns></returns>
+        </member>
         <member name="T:API.Controllers.SecurityController">
             <summary>
             Client related functions
@@ -529,7 +1386,244 @@
         </member>
         <member name="M:API.Controllers.SecurityController.GrantFunctionToRole(ANTOTOLib.ParaDataModel.ParaRoleGrantFunction)">
             <summary>
-            GetList
+            GrantFunctionToRole
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.SecurityController.GetUserList(ANTOTOLib.DataModel.ParaUserSearch)">
+            <summary>
+            Get User List
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.SecurityController.GetCustomerList(ANTOTOLib.ParaDataModel.ParaCustomerSearch)">
+            <summary>
+            GetCustomerList
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.SecurityController.CreateUser(ANTOTOLib.ParaDataModel.ParaUserCreateUpdate)">
+            <summary>
+            CreateUser
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.SecurityController.CreateUpdateCustomer(ANTOTOLib.CustomerManager.Customer)">
+            <summary>
+            CreateCustomer
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.SecurityController.UpdateUser(ANTOTOLib.ParaDataModel.ParaUserCreateUpdate)">
+            <summary>
+            UpdateUser
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.SecurityController.GetUser(System.Int32)">
+            <summary>
+            UpdateUser
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.SecurityController.GetCustomerDetail(System.Int32)">
+            <summary>
+            GetCustomerDetail
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:API.Controllers.ProductController">
+            <summary>
+            Client related functions
+            </summary>
+        </member>
+        <member name="M:API.Controllers.ProductController.CategoryListGet(System.Int32)">
+            <summary>
+            Category List
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.ProductController.BrandListGetByCategoryId(System.Int32)">
+            <summary>
+            Brand List By Category
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.ProductController.CategoryListSearch(ANTOTOLib.ParaDataModel.ParaCategorySearch)">
+            <summary>
+            CategoryListSearch 
+            Return a list of category and trace
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.ProductController.BrandListSearch(ANTOTOLib.ParaDataModel.ParaBrandSearch)">
+            <summary>
+            BrandListSearch 
+            Return a list of Brand
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.ProductController.CategoryBrandPost(System.Collections.Generic.List{API.Controllers.ProductController.Item})">
+            <summary>
+            Brand List By Category
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.ProductController.ProductCreate(ANTOTOLib.ParaDataModel.ParaProductCreate)">
+            <summary>
+            ProductCreate
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.ProductController.ProductWizardUpdate(ANTOTOLib.WizardForm.WizardStep)">
+            <summary>
+            ProductCreate
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.ProductController.ProductWizardDetailGet(ANTOTOLib.DataModel.ResultProduct)">
+            <summary>
+            ProductDetailGet
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.ProductController.ProductWizardPublish(System.Int32)">
+            <summary>
+            ProductWizardPublish
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.ProductController.ProductDelete(System.Int32)">
+            <summary>
+            ProductDelete
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.ProductController.ProductSearch(ANTOTOLib.ParaDataModel.ParaProductSearch)">
+            <summary>
+            ProductWizardPublish
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.ProductController.ProductVariationInfoGetInCreate(ANTOTOLib.ParaDataModel.ParaWizardSessionItem)">
+            <summary>
+            API: Product Variation Info
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.ProductController.ProductVariationSet(ANTOTOLib.ParaDataModel.ParaVariationInfo)">
+            <summary>
+            ProductVariationSet
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.ProductController.ProductVariationAdd(ANTOTOLib.ParaDataModel.ParaVariationInfo)">
+            <summary>
+            ProductVariationAdd
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.ProductController.BrandCreate(ANTOTOLib.ParaDataModel.ParaBrandCreate)">
+            <summary>
+            BrandCreate
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.ProductController.BrandUpdate(ANTOTOLib.ParaDataModel.ParaBrandCreate)">
+            <summary>
+            BrandUpdate
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.ProductController.BrandDelete(ANTOTOLib.ParaDataModel.ParaBrandCreate)">
+            <summary>
+            BrandDelete
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:API.Controllers.CustomerController">
+            <summary>
+            Client related functions
+            </summary>
+        </member>
+        <member name="M:API.Controllers.CustomerController.Login(ANTOTOLib.ParaDataModel.ParaCustomerLogin)">
+            <summary>
+            Get Customer's current status
+            CompanyCode will be give by webpage or wechat app
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.CustomerController.CustomerGet">
+            <summary>
+            Get Customer's current status
+            CompanyCode will be give by webpage or wechat app
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.CustomerController.CustomerThirdPartyRegister(ANTOTOLib.CustomerManager.Customer,System.String)">
+            <summary>
+            CustomerThirdPartyRegister
+            CompanyCode will be given by webpage or wechat app
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.CustomerController.CustomerAddressCreateUpdate(ANTOTOLib.CustomerManager.CustomerAddress)">
+            <summary>
+            CustomerAddressCreateUpdate
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.CustomerController.CustomerOrderCreateFromShoppingCart(ANTOTOLib.ParaDataModel.ParaOrderCreate)">
+            <summary>
+            Customer Order Checkout
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.CustomerController.CustomerOrderGet(System.Nullable{System.Int32})">
+            <summary>
+            CustomerOrderGet
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.CustomerController.CustomerOrderSearch(ANTOTOLib.ParaDataModel.ParaCustomerOrderSearchByCustomer)">
+            <summary>
+            CustomerOrderSearch
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.CustomerController.CustomerOnSaleItemSearch(ANTOTOLib.ParaDataModel.ParaItemOnSaleCustomerSearch)">
+            <summary>
+            CustomerOnSaleItemSearch
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.CustomerController.CustomerOnSaleItemGet(System.Nullable{System.Int32})">
+            <summary>
+            CustomerOnSaleItemGet
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.CustomerController.CustomerOrderSearchByCustomer(ANTOTOLib.ParaDataModel.ParaCustomerOrderSearchByCustomer)">
+            <summary>
+            CustomerOrderSearchByCustomer
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.CustomerController.CustomerShoppingCartGet">
+            <summary>
+            CustomerShoppingCartGet
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.CustomerController.CustomerShoppingCartUpdateAdd(ANTOTOLib.CustomerManager.CustomerShoppingCartItem)">
+            <summary>
+            CustomerShoppingCartUpdateAdd
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.CustomerController.CustomerShoppingCartClear">
+            <summary>
+            CustomerShoppingCartClear
             </summary>
             <returns></returns>
         </member>

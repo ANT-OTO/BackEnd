@@ -1,4 +1,4 @@
-
+ 
 /****** Object:  Table [dbo].[ItemSizeInfo]    Script Date: 01/15/2015 21:55:07 ******/
 SET ANSI_NULLS ON
 GO
@@ -57,13 +57,10 @@ begin
 CREATE TABLE [dbo].[ItemSizeInfo](
 	[Id] [int] IDENTITY(1,1) NOT NULL,
 	[ItemId] int NOT NULL,
-	[Dimension_length_inch] decimal(10, 2) NOT NULL,
-	[Dimension_width_inch] decimal(10, 2) NOT NULL,
-	[Dimension_height_inch] decimal(10, 2) NOT NULL,
-	[Dimension_length_cm] decimal(10, 2) NOT NULL,
-	[Dimension_width_cm] decimal(10, 2) NOT NULL,
-	[Dimension_height_cm] decimal(10, 2) NOT NULL,
-	
+	[SizeName] nvarchar(128) NOT NULL,
+	[SizeDescription] nvarchar(max) NOT NULL,
+	[Available] bit NOT NULL,
+
 	[Version] [timestamp] NOT NULL,
 	[CreateDate] [datetime] NOT NULL,
 	[LastUpdate] [datetime] NOT NULL,
@@ -87,15 +84,7 @@ ALTER TABLE [dbo].[ItemSizeInfo] ADD  CONSTRAINT [DF_ItemSizeInfo_LastUpdate]  D
 -------------------------- Begin Primary Key Referenced by other tables ---------------------------------------------------------------
 
 
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[ItemSizeInfo]') AND type in (N'U'))
-	and EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[ItemSizeInfoY]') AND type in (N'U'))
-	and NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[FK_ItemSizeInfoY_ItemSizeInfo]') AND type in (N'F'))
-begin
-	ALTER TABLE [dbo].[ItemSizeInfoY]  WITH CHECK ADD  CONSTRAINT [FK_ItemSizeInfoY_ItemSizeInfo] FOREIGN KEY([ItemSizeInfoId])
-	REFERENCES [dbo].[ItemSizeInfo] ([Id])
 
-	ALTER TABLE [dbo].[ItemSizeInfoY] CHECK CONSTRAINT [FK_ItemSizeInfoY_ItemSizeInfo]
-end
 
 -------------------------- End Primary Key Referenced by other tables ---------------------------------------------------------------
 
@@ -126,12 +115,11 @@ GO
 
 
 /****** Object:  Index [IX_ItemSizeInfo_1]    Script Date: 2/2/2015 9:14:23 AM ******/
-CREATE UNIQUE NONCLUSTERED INDEX [IX_ItemSizeInfo_1] ON [dbo].[ItemSizeInfo]
+CREATE NONCLUSTERED INDEX [IX_ItemSizeInfo_1] ON [dbo].[ItemSizeInfo]
 (
 	[ItemId] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-
 
 
 

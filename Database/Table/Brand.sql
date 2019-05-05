@@ -56,13 +56,17 @@ begin
 
 CREATE TABLE [dbo].[Brand](
 	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[ParentBrandId] [int] NOT NULL,
 	[BrandName] nvarchar(256) NOT NULL,
 	[BrandDescription] nvarchar(max) NOT NULL,
 	[BrandCategoryDescription] nvarchar(max) NOT NULL,
-	
+	[SystemBrand] bit NOT NULL,
+	[Available] bit NOT NULL,
 	[Version] [timestamp] NOT NULL,
 	[CreateDate] [datetime] NOT NULL,
 	[LastUpdate] [datetime] NOT NULL,
+	[LastUpdateBy] int NOT NULL,
+	[LastUpdateByType] int NOT NULL,
  CONSTRAINT [PK_Brand] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
@@ -122,7 +126,7 @@ GO
 
 
 /****** Object:  Index [IX_Brand_1]    Script Date: 2/2/2015 9:14:23 AM ******/
-CREATE UNIQUE NONCLUSTERED INDEX [IX_Brand_1] ON [dbo].[Brand]
+CREATE NONCLUSTERED INDEX [IX_Brand_1] ON [dbo].[Brand]
 (
 	[BrandName] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]

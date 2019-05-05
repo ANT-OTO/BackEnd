@@ -311,7 +311,7 @@ namespace API.Controllers
         }
 
         /// <summary>
-        /// GetList
+        /// GrantFunctionToRole
         /// </summary>
         /// <returns></returns>
         [Route("Role/GrantFunctionToRole")]
@@ -365,6 +365,403 @@ namespace API.Controllers
             return Request.CreateResponse(HttpStatusCode.OK);
 
         }
+
+
+        /// <summary>
+        /// Get User List
+        /// </summary>
+        /// <returns></returns>
+        [Route("GetUserList")]
+        [HttpPost]
+        public DataModel.ResultPageResult GetUserList(DataModel.ParaUserSearch userSearch)
+        {
+
+            //#region SSL Requirement
+            //if (Request.RequestUri.Scheme != Uri.UriSchemeHttps)
+            //{
+            //    throw new HttpResponseException(Request.CreateResponse(HttpStatusCode.Forbidden, "Requires SSL"));
+            //}
+            //#endregion
+
+            int ErrId = 0;
+            string Error = string.Empty;
+            #region Token
+            UserSession UserSession = UserSession.Validate(HeaderProcessor.ReadValueFromHeader(Request, "ANTToken"));
+            if (UserSession == null)
+            {
+                Error = "Required Login";
+                throw new HttpResponseException(Request.CreateResponse(HttpStatusCode.Forbidden, Error));
+            }
+            #endregion
+
+            DataModel.ResultPageResult result = null;
+
+            try
+            {
+                result = ANTOTOLib.UserManager.getUserList(userSearch, UserSession.CompanyId);
+            
+            }
+            catch (Exception exp)
+            {
+                MethodBase a = MethodBase.GetCurrentMethod();
+                string ErrorInfo = "Class: " + a.DeclaringType.ToString() + "; " + a.ToString() + '\r' + '\n'
+                        + "Error Msg: " + exp.Message;
+                //ErrId = ErrorLog.Insert(ErrorInfo);
+
+                //APIError aeObj = new APIError(psObj.SystemLanguageId, "System Error");
+                //aeObj.Description = aeObj.Description + " " + ErrId.ToString();
+                throw new HttpResponseException(Request.CreateResponse(HttpStatusCode.BadRequest, "System Error"));
+            }
+
+            if (!String.IsNullOrEmpty(Error))
+            {
+                throw new HttpResponseException(Request.CreateResponse(HttpStatusCode.BadRequest, Error));
+            }
+
+            return result;
+        }
+
+
+        /// <summary>
+        /// GetCustomerList
+        /// </summary>
+        /// <returns></returns>
+        [Route("GetCustomerList")]
+        [HttpPost]
+        public DataModel.ResultPageResult GetCustomerList(ParaDataModel.ParaCustomerSearch customerSearch)
+        {
+
+            //#region SSL Requirement
+            //if (Request.RequestUri.Scheme != Uri.UriSchemeHttps)
+            //{
+            //    throw new HttpResponseException(Request.CreateResponse(HttpStatusCode.Forbidden, "Requires SSL"));
+            //}
+            //#endregion
+
+            int ErrId = 0;
+            string Error = string.Empty;
+            #region Token
+            UserSession UserSession = UserSession.Validate(HeaderProcessor.ReadValueFromHeader(Request, "ANTToken"));
+            if (UserSession == null)
+            {
+                Error = "Required Login";
+                throw new HttpResponseException(Request.CreateResponse(HttpStatusCode.Forbidden, Error));
+            }
+            #endregion
+
+            DataModel.ResultPageResult result = null;
+
+            try
+            {
+                result = ANTOTOLib.CustomerManager.getCustomerList(customerSearch, UserSession.CompanyId, UserSession.SystemLanguageId);
+
+            }
+            catch (Exception exp)
+            {
+                MethodBase a = MethodBase.GetCurrentMethod();
+                string ErrorInfo = "Class: " + a.DeclaringType.ToString() + "; " + a.ToString() + '\r' + '\n'
+                        + "Error Msg: " + exp.Message;
+                //ErrId = ErrorLog.Insert(ErrorInfo);
+
+                //APIError aeObj = new APIError(psObj.SystemLanguageId, "System Error");
+                //aeObj.Description = aeObj.Description + " " + ErrId.ToString();
+                throw new HttpResponseException(Request.CreateResponse(HttpStatusCode.BadRequest, "System Error"));
+            }
+
+            if (!String.IsNullOrEmpty(Error))
+            {
+                throw new HttpResponseException(Request.CreateResponse(HttpStatusCode.BadRequest, Error));
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// CreateUser
+        /// </summary>
+        /// <returns></returns>
+        [Route("CreateUser")]
+        [HttpPost]
+        public DataModel.User CreateUser(ParaDataModel.ParaUserCreateUpdate user)
+        {
+
+            //#region SSL Requirement
+            //if (Request.RequestUri.Scheme != Uri.UriSchemeHttps)
+            //{
+            //    throw new HttpResponseException(Request.CreateResponse(HttpStatusCode.Forbidden, "Requires SSL"));
+            //}
+            //#endregion
+
+
+            int ErrId = 0;
+            string Error = string.Empty;
+
+            #region Token
+            UserSession UserSession = UserSession.Validate(HeaderProcessor.ReadValueFromHeader(Request, "ANTToken"));
+            if (UserSession == null)
+            {
+                Error = "Required Login";
+                throw new HttpResponseException(Request.CreateResponse(HttpStatusCode.Forbidden, Error));
+            }
+            #endregion
+
+            DataModel.User result = null;
+
+            try
+            {
+                result = ANTOTOLib.UserManager.CreateUser(user, UserSession.UserId, UserSession.CompanyId, ref Error);
+            }
+            catch (Exception exp)
+            {
+                MethodBase a = MethodBase.GetCurrentMethod();
+                string ErrorInfo = "Class: " + a.DeclaringType.ToString() + "; " + a.ToString() + '\r' + '\n'
+                        + "Error Msg: " + exp.Message;
+                //ErrId = ErrorLog.Insert(ErrorInfo);
+
+                //APIError aeObj = new APIError(psObj.SystemLanguageId, "System Error");
+                //aeObj.Description = aeObj.Description + " " + ErrId.ToString();
+                throw new HttpResponseException(Request.CreateResponse(HttpStatusCode.BadRequest, ErrorInfo));
+            }
+
+            if (!String.IsNullOrEmpty(Error))
+            {
+                throw new HttpResponseException(Request.CreateResponse(HttpStatusCode.BadRequest, Error));
+            }
+
+            return result;
+
+        }
+
+
+        /// <summary>
+        /// CreateCustomer
+        /// </summary>
+        /// <returns></returns>
+        [Route("CreateUpdateCustomer")]
+        [HttpPost]
+        public CustomerManager.Customer CreateUpdateCustomer(CustomerManager.Customer Customer)
+        {
+
+            //#region SSL Requirement
+            //if (Request.RequestUri.Scheme != Uri.UriSchemeHttps)
+            //{
+            //    throw new HttpResponseException(Request.CreateResponse(HttpStatusCode.Forbidden, "Requires SSL"));
+            //}
+            //#endregion
+
+
+            int ErrId = 0;
+            string Error = string.Empty;
+
+            #region Token
+            UserSession UserSession = UserSession.Validate(HeaderProcessor.ReadValueFromHeader(Request, "ANTToken"));
+            if (UserSession == null)
+            {
+                Error = "Required Login";
+                throw new HttpResponseException(Request.CreateResponse(HttpStatusCode.Forbidden, Error));
+            }
+            #endregion
+
+            CustomerManager.Customer result = null;
+
+            try
+            {
+                result = CustomerManager.CreateCustomer(Customer, UserSession.CompanyId);
+            }
+            catch (Exception exp)
+            {
+                MethodBase a = MethodBase.GetCurrentMethod();
+                string ErrorInfo = "Class: " + a.DeclaringType.ToString() + "; " + a.ToString() + '\r' + '\n'
+                        + "Error Msg: " + exp.Message;
+                //ErrId = ErrorLog.Insert(ErrorInfo);
+
+                //APIError aeObj = new APIError(psObj.SystemLanguageId, "System Error");
+                //aeObj.Description = aeObj.Description + " " + ErrId.ToString();
+                throw new HttpResponseException(Request.CreateResponse(HttpStatusCode.BadRequest, ErrorInfo));
+            }
+
+            if (!String.IsNullOrEmpty(Error))
+            {
+                throw new HttpResponseException(Request.CreateResponse(HttpStatusCode.BadRequest, Error));
+            }
+
+            return result;
+
+        }
+
+        /// <summary>
+        /// UpdateUser
+        /// </summary>
+        /// <returns></returns>
+        [Route("UpdateUser")]
+        [HttpPost]
+        public DataModel.User UpdateUser(ParaDataModel.ParaUserCreateUpdate user)
+        {
+
+            //#region SSL Requirement
+            //if (Request.RequestUri.Scheme != Uri.UriSchemeHttps)
+            //{
+            //    throw new HttpResponseException(Request.CreateResponse(HttpStatusCode.Forbidden, "Requires SSL"));
+            //}
+            //#endregion
+
+
+            int ErrId = 0;
+            string Error = string.Empty;
+
+            #region Token
+            UserSession UserSession = UserSession.Validate(HeaderProcessor.ReadValueFromHeader(Request, "ANTToken"));
+            if (UserSession == null)
+            {
+                Error = "Required Login";
+                throw new HttpResponseException(Request.CreateResponse(HttpStatusCode.Forbidden, Error));
+            }
+            #endregion
+
+            DataModel.User result = null;
+
+            try
+            {
+                result = ANTOTOLib.UserManager.UpdateUser(user, UserSession.UserId, UserSession.CompanyId, ref Error);
+            }
+            catch (Exception exp)
+            {
+                MethodBase a = MethodBase.GetCurrentMethod();
+                string ErrorInfo = "Class: " + a.DeclaringType.ToString() + "; " + a.ToString() + '\r' + '\n'
+                        + "Error Msg: " + exp.Message;
+                //ErrId = ErrorLog.Insert(ErrorInfo);
+
+                //APIError aeObj = new APIError(psObj.SystemLanguageId, "System Error");
+                //aeObj.Description = aeObj.Description + " " + ErrId.ToString();
+                throw new HttpResponseException(Request.CreateResponse(HttpStatusCode.BadRequest, Error));
+            }
+
+            if (!String.IsNullOrEmpty(Error))
+            {
+                throw new HttpResponseException(Request.CreateResponse(HttpStatusCode.BadRequest, Error));
+            }
+
+            return result;
+
+        }
+
+        /// <summary>
+        /// UpdateUser
+        /// </summary>
+        /// <returns></returns>
+        [Route("GetUserDetail/{UserId}")]
+        [HttpGet]
+        public DataModel.User GetUser(int UserId)
+        {
+
+            //#region SSL Requirement
+            //if (Request.RequestUri.Scheme != Uri.UriSchemeHttps)
+            //{
+            //    throw new HttpResponseException(Request.CreateResponse(HttpStatusCode.Forbidden, "Requires SSL"));
+            //}
+            //#endregion
+
+
+            int ErrId = 0;
+            string Error = string.Empty;
+
+            #region Token
+            UserSession UserSession = UserSession.Validate(HeaderProcessor.ReadValueFromHeader(Request, "ANTToken"));
+            if (UserSession == null)
+            {
+                Error = "Required Login";
+                throw new HttpResponseException(Request.CreateResponse(HttpStatusCode.Forbidden, Error));
+            }
+            #endregion
+
+            DataModel.User result = null;
+
+            try
+            {
+                result = ANTOTOLib.UserManager.GetUserOnlyInCompany(UserId, UserSession.CompanyId);
+            }
+            catch (Exception exp)
+            {
+                MethodBase a = MethodBase.GetCurrentMethod();
+                string ErrorInfo = "Class: " + a.DeclaringType.ToString() + "; " + a.ToString() + '\r' + '\n'
+                        + "Error Msg: " + exp.Message;
+                //ErrId = ErrorLog.Insert(ErrorInfo);
+
+                //APIError aeObj = new APIError(psObj.SystemLanguageId, "System Error");
+                //aeObj.Description = aeObj.Description + " " + ErrId.ToString();
+                throw new HttpResponseException(Request.CreateResponse(HttpStatusCode.BadRequest, "System Error"));
+            }
+
+            if (!String.IsNullOrEmpty(Error))
+            {
+                throw new HttpResponseException(Request.CreateResponse(HttpStatusCode.BadRequest, Error));
+            }
+
+            return result;
+
+        }
+
+        /// <summary>
+        /// GetCustomerDetail
+        /// </summary>
+        /// <returns></returns>
+        [Route("GetCustomerDetail/{CustomerId}")]
+        [HttpGet]
+        public CustomerManager.Customer GetCustomerDetail(int CustomerId)
+        {
+
+            //#region SSL Requirement
+            //if (Request.RequestUri.Scheme != Uri.UriSchemeHttps)
+            //{
+            //    throw new HttpResponseException(Request.CreateResponse(HttpStatusCode.Forbidden, "Requires SSL"));
+            //}
+            //#endregion
+
+
+            int ErrId = 0;
+            string Error = string.Empty;
+
+            #region Token
+            UserSession UserSession = UserSession.Validate(HeaderProcessor.ReadValueFromHeader(Request, "ANTToken"));
+            if (UserSession == null)
+            {
+                Error = "Required Login";
+                throw new HttpResponseException(Request.CreateResponse(HttpStatusCode.Forbidden, Error));
+            }
+            #endregion
+
+            CustomerManager.Customer result = null;
+
+            try
+            {
+                result = ANTOTOLib.CustomerManager.getCustomerById(CustomerId);
+                if (result != null)
+                {
+                    result.CompanyList = null;
+                }
+            }
+            catch (Exception exp)
+            {
+                MethodBase a = MethodBase.GetCurrentMethod();
+                string ErrorInfo = "Class: " + a.DeclaringType.ToString() + "; " + a.ToString() + '\r' + '\n'
+                        + "Error Msg: " + exp.Message;
+                //ErrId = ErrorLog.Insert(ErrorInfo);
+
+                //APIError aeObj = new APIError(psObj.SystemLanguageId, "System Error");
+                //aeObj.Description = aeObj.Description + " " + ErrId.ToString();
+                throw new HttpResponseException(Request.CreateResponse(HttpStatusCode.BadRequest, "System Error"));
+            }
+
+            if (!String.IsNullOrEmpty(Error))
+            {
+                throw new HttpResponseException(Request.CreateResponse(HttpStatusCode.BadRequest, Error));
+            }
+
+            return result;
+
+        }
+
+
 
     }
 

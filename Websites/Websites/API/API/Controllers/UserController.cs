@@ -115,7 +115,7 @@ namespace API.Controllers
                 //ErrId = ErrorLog.Insert(ErrorInfo);
                 //APIError aeObj = new APIError(psObj.SystemLanguageId, "System Error");
                 //aeObj.Description = aeObj.Description + " " + ErrId.ToString();
-                throw new HttpResponseException(Request.CreateResponse(HttpStatusCode.BadRequest, "ErrorInfo"));
+                throw new HttpResponseException(Request.CreateResponse(HttpStatusCode.BadRequest, ErrorInfo));
             }
 
             if (!String.IsNullOrEmpty(Error))
@@ -127,10 +127,13 @@ namespace API.Controllers
         }
 
 
+         
 
-        
 
 
-        
+
+
+
+
     }
 }

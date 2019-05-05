@@ -30,7 +30,7 @@ Alter procedure [dbo].[sp_Role_Update]
 	@pParentRoleId int,
 	@pSystemRole bit,
 	@pAvailable bit,
-	@pCompanyId int,
+	@pCompanyId int, 
 	@pCopeFromRoleId int,
 	@pLastUpdateBy int,
 	@pLastUpdateByType int
@@ -40,8 +40,7 @@ SET NOCOUNT ON
 
 declare @pTime datetime = getutcdate()
 declare @pSecRoleCompanyId int = 0
-select @pSecRoleId = 0
-if(@pSecRoleCompanyId is null or @pSecRoleCompanyId = 0)
+if(@pSecRoleId is null or @pSecRoleId = 0)
 begin
 	insert into ANTOTO.[dbo].[SecRole]
 	(

@@ -59,7 +59,9 @@ CREATE TABLE [dbo].[Merchant](
 	[MerchantName] nvarchar(256) NOT NULL,
 	[MerchantDescription] nvarchar(max) NOT NULL,
 	[MerchantCategoryDescription] nvarchar(max) NOT NULL,
-	
+	[SupportOnline] bit NOT NULL,
+	[SupportRetail] bit NOT NULL,
+	[MerchantWebsite] nvarchar(max) NULL,
 	[Version] [timestamp] NOT NULL,
 	[CreateDate] [datetime] NOT NULL,
 	[LastUpdate] [datetime] NOT NULL,
